@@ -184,9 +184,56 @@ function initContactForm(form) {
   });
 }
 
+/* ── Carrusel ────────────────────────────────────────────────── */
+function initCarousels() {
+  document.querySelectorAll('[data-carousel]').forEach(c => {
+    const track = c.querySelector('.carousel-track');
+    const step = () => Math.max(240, track.querySelector('.carousel-slide')?.offsetWidth + 20 || 280);
+    c.querySelector('[data-prev]')?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    c.querySelector('[data-next]')?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  });
+}
+
+/* ── Reveal al hacer scroll (fade-up escalonado) ─────────────── */
+function initReveal() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const sel = '.section-head, .card, .step, .spec, .client-logo, .event, .stat, .carousel, .media-split, .news-card, .article';
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll(sel).forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = `${(i % 4) * 70}ms`;
+    io.observe(el);
+  });
+}
+
+/* ── Contadores animados (.num con data-count) ───────────────── */
+function initCounters() {
+  const nums = document.querySelectorAll('[data-count]');
+  if (!nums.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = parseFloat(el.dataset.count), suffix = el.dataset.suffix || '';
+      const dur = 1100, t0 = performance.now();
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick); io.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  nums.forEach(n => io.observe(n));
+}
+
 /* ── Init ────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   mountLayout();
+  initCarousels();
+  initReveal();
+  initCounters();
   const newsList = document.getElementById('news-list');   if (newsList) loadNewsList(newsList);
   const article  = document.getElementById('article');     if (article)  loadArticle(article);
   const events   = document.getElementById('events-list'); if (events)   loadEvents(events);
