@@ -18,15 +18,24 @@ function renderHeader() {
     return `<li><a href="${h}"${active}>${t}</a></li>`;
   }).join('');
   return `
+  <div class="topbar-utility">
+    <div class="container">
+      <a href="tel:+34927180032">📞 927 180 032</a>
+      <span class="sep">·</span>
+      <a href="mailto:info@eureqa3d.com">✉️ info@eureqa3d.com</a>
+      <span class="sep">·</span>
+      <a href="https://twitter.com/eureqa3D" target="_blank" rel="noopener">🐦 @eureqa3D</a>
+    </div>
+  </div>
   <header class="site-header">
     <div class="container nav">
       <a class="nav-logo" href="/" aria-label="Eureqa3D"><img src="/assets/img/logo.svg" alt="Eureqa3D"></a>
-      <nav>
+      <nav class="nav-main">
         <ul class="nav-links" id="navLinks">${links}
-          <li class="nav-cta-mobile"><a href="/contacto">Caso de prueba</a></li>
+          <li class="nav-cta-mobile"><a href="/contacto">Solicita un caso de prueba</a></li>
         </ul>
+        <a class="btn btn-primary nav-cta" href="/contacto">Caso de prueba</a>
       </nav>
-      <a class="btn btn-primary nav-cta" href="/contacto">Caso de prueba</a>
       <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
   </header>`;
