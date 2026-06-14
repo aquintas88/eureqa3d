@@ -1,0 +1,17 @@
+{
+  "name": "eureqa3d",
+  "version": "1.0.0",
+  "description": "Eureqa3D — Portal web.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "connect-pg-simple": "^10.0.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "pg": "^8.21.0"
+  }
+}

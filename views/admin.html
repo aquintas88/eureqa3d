@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel — Eureqa3D</title>
+  <link rel="icon" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/assets/admin.css" />
+</head>
+<body>
+  <div class="admin">
+    <aside class="sidebar">
+      <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="Eureqa3D" /></a>
+      <nav>
+        <button class="nav-item active" data-view="news">📰 Noticias</button>
+        <button class="nav-item" data-view="events">📅 Jornadas y eventos</button>
+        <button class="nav-item" data-view="messages">✉️ Mensajes</button>
+      </nav>
+      <div class="sidebar-foot">
+        <span id="who" class="muted"></span>
+        <a href="/" target="_blank">Ver web ↗</a>
+        <button id="logout" class="link">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="content-head">
+        <h1 id="view-title">Noticias</h1>
+        <button class="btn btn-primary" id="new-btn">+ Nuevo</button>
+      </header>
+      <div id="list"></div>
+    </main>
+  </div>
+
+  <!-- Modal editor -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card">
+      <header><h2 id="modal-title">Editar</h2><button class="link" id="modal-close">✕</button></header>
+      <form id="editor"></form>
+      <p class="form-msg err" id="modal-error" hidden></p>
+      <footer>
+        <button class="btn btn-ghost" id="cancel">Cancelar</button>
+        <button class="btn btn-primary" id="save">Guardar</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="/assets/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+/* Panel de administración Eureqa3D */
+body { background: var(--bg-soft); }
+.admin { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+
+.sidebar { background: var(--ink); color: #c8cdd4; display: flex; flex-direction: column; padding: 1.4rem 1rem; }
+.sidebar .brand img { height: 34px; filter: brightness(0) invert(1); margin: .3rem .5rem 1.6rem; }
+.sidebar nav { display: flex; flex-direction: column; gap: .25rem; flex: 1; }
+.nav-item { text-align: left; background: none; border: 0; color: #c8cdd4; font: inherit; font-weight: 600;
+  padding: .7rem .85rem; border-radius: 10px; cursor: pointer; }
+.nav-item:hover { background: #2a2f37; color: #fff; }
+.nav-item.active { background: var(--teal-dark); color: #fff; }
+.sidebar-foot { display: flex; flex-direction: column; gap: .5rem; font-size: .85rem; border-top: 1px solid #353a41; padding-top: 1rem; }
+.sidebar-foot a, .link { color: #c8cdd4; background: none; border: 0; text-align: left; cursor: pointer; font: inherit; padding: 0; }
+.link:hover, .sidebar-foot a:hover { color: #fff; }
+
+.content { padding: 2rem 2.4rem; }
+.content-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.6rem; }
+.content-head h1 { margin: 0; }
+
+/* tabla / listado */
+.row { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: .8rem;
+  display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm); }
+.row .grow { flex: 1; min-width: 0; }
+.row h3 { margin: 0 0 .2rem; font-size: 1.05rem; }
+.row .sub { color: var(--muted); font-size: .85rem; }
+.row .actions { display: flex; gap: .5rem; flex: 0 0 auto; }
+.pill { font-size: .72rem; font-weight: 700; padding: .15rem .55rem; border-radius: 999px; }
+.pill.on { background: #e7f6ec; color: #1b7a3d; }
+.pill.off { background: #f0f1f3; color: #7a828c; }
+.icon-btn { border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: .4rem .6rem; cursor: pointer; font-size: .9rem; }
+.icon-btn:hover { border-color: var(--teal); color: var(--teal-dark); }
+.icon-btn.danger:hover { border-color: #d33; color: #d33; }
+.empty { color: var(--muted); text-align: center; padding: 3rem 0; }
+
+/* modal */
+.modal { position: fixed; inset: 0; background: rgba(20,25,30,.55); display: grid; place-items: center; padding: 1.5rem; z-index: 100; }
+.modal-card { background: #fff; border-radius: 16px; width: 100%; max-width: 640px; max-height: 90vh; display: flex; flex-direction: column; }
+.modal-card header, .modal-card footer { padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+.modal-card header { border-bottom: 1px solid var(--line); }
+.modal-card footer { border-top: 1px solid var(--line); gap: .8rem; justify-content: flex-end; }
+.modal-card h2 { margin: 0; }
+#editor { padding: 1.2rem 1.5rem; overflow-y: auto; display: grid; gap: 1rem; }
+#editor label { font-family: var(--head); font-weight: 600; font-size: .9rem; display: flex; flex-direction: column; gap: .35rem; }
+#editor input, #editor textarea { padding: .7rem .85rem; border: 1px solid var(--line); border-radius: 10px; font: inherit; }
+#editor textarea { min-height: 120px; resize: vertical; }
+#editor input:focus, #editor textarea:focus { outline: 2px solid var(--teal); border-color: var(--teal); }
+#editor .check { flex-direction: row; align-items: center; gap: .6rem; }
+#editor .check input { width: auto; }
+#modal-error { margin: 0 1.5rem 1rem; }
+
+@media (max-width: 760px) {
+  .admin { grid-template-columns: 1fr; }
+  .sidebar { flex-direction: row; flex-wrap: wrap; align-items: center; }
+  .sidebar nav { flex-direction: row; flex-wrap: wrap; }
+  .sidebar-foot { flex-direction: row; border: 0; padding-top: 0; }
+  .content { padding: 1.4rem; }
+}
