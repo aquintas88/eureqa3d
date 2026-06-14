@@ -47,6 +47,7 @@ const slugify = (s) => s.toString().toLowerCase().trim()
 
 /* ── Schema bootstrap ────────────────────────────────────────── */
 async function ensureSchema() {
+  await db.query('CREATE SCHEMA IF NOT EXISTS eureqa3d');
   await db.query(`
     CREATE TABLE IF NOT EXISTS users (
       id            SERIAL PRIMARY KEY,
