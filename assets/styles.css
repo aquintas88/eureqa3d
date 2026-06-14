@@ -225,13 +225,26 @@ section { padding: clamp(3rem, 6vw, 5rem) 0; }
 .step p { margin: 0; color: var(--ink-soft); font-size: .94rem; }
 
 /* especialidades */
-.spec { position:relative; overflow:hidden; background:#fff; border:1px solid var(--line); border-radius: var(--radius); padding: 1.6rem 1.5rem; box-shadow: var(--shadow-sm);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-.spec::before { content:""; position:absolute; left:0; top:0; height:3px; width:0;
+.spec { position:relative; overflow:hidden; background:#fff; border:1px solid var(--line); border-radius: var(--radius); padding: 1.7rem 1.5rem; box-shadow: var(--shadow-sm);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
+.spec::before { content:""; position:absolute; left:0; top:0; height:3px; width:0; z-index:2;
   background: linear-gradient(90deg, var(--teal), var(--orange)); transition: width .45s ease; }
-.spec:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: rgba(57,144,176,.4); }
+/* barrido de brillo al hover */
+.spec::after { content:""; position:absolute; top:0; left:-70%; width:55%; height:100%; pointer-events:none;
+  background: linear-gradient(100deg, transparent, rgba(57,144,176,.10), transparent); transform: skewX(-18deg); transition: left .65s ease; }
+.spec:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: rgba(57,144,176,.45); }
 .spec:hover::before { width:100%; }
-.spec h3 { color: var(--teal-dark); display:flex; align-items:center; gap:.5rem; }
+.spec:hover::after { left:130%; }
+.spec-ic {
+  width:54px; height:54px; border-radius:16px; display:grid; place-items:center; font-size:1.65rem; margin-bottom:.9rem;
+  background: radial-gradient(circle at 32% 28%, rgba(57,144,176,.18), rgba(57,144,176,.05));
+  animation: float 6s ease-in-out infinite; will-change: transform;
+}
+.spec:nth-child(3n+2) .spec-ic { animation-delay:-2s; }
+.spec:nth-child(3n)   .spec-ic { animation-delay:-4s; }
+.spec:hover .spec-ic { background: radial-gradient(circle at 32% 28%, rgba(213,124,27,.22), rgba(213,124,27,.06)); }
+.spec h3 { color: var(--teal-dark); margin:0 0 .5rem; font-size:1.18rem; }
+@media (prefers-reduced-motion: reduce) { .spec-ic { animation:none; } }
 .spec ul { margin:.6rem 0 0; padding-left: 1.1rem; color: var(--ink-soft); }
 .spec li { margin: .25rem 0; }
 
