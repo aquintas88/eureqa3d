@@ -44,29 +44,36 @@
     'Impresión 3D · Sector Salud · ISO 9001': { en: '3D Printing · Healthcare · ISO 9001', fr: 'Impression 3D · Santé · ISO 9001', de: '3D-Druck · Gesundheitswesen · ISO 9001', it: 'Stampa 3D · Sanità · ISO 9001', el: 'Τρισδιάστατη εκτύπωση · Υγεία · ISO 9001' },
 
     /* ── Inicio ── */
-    'Impresión 3D · Sector salud · Extremadura': { en: '3D Printing · Healthcare · Extremadura', fr: 'Impression 3D · Santé · Estrémadure', de: '3D-Druck · Gesundheitswesen · Extremadura', it: 'Stampa 3D · Sanità · Estremadura', el: 'Τρισδιάστατη εκτύπωση · Υγεία · Εστρεμαδούρα' },
-    'Revolucionamos el <span>sector salud</span> mediante la Impresión 3D': {
-      en: 'We are revolutionizing the <span>healthcare sector</span> through 3D Printing',
-      fr: "Nous révolutionnons le <span>secteur de la santé</span> grâce à l'impression 3D",
-      de: 'Wir revolutionieren den <span>Gesundheitssektor</span> mit 3D-Druck',
-      it: 'Rivoluzioniamo il <span>settore sanitario</span> con la stampa 3D',
-      el: 'Φέρνουμε επανάσταση στον <span>τομέα της υγείας</span> μέσω της τρισδιάστατης εκτύπωσης' },
-    'Trabajamos directamente con los especialistas, facilitándoles la incorporación a la impresión 3D de forma fácil y sencilla, con un servicio externo profesional, especializado y exclusivo del sector.': {
-      en: 'We work directly with specialists, making it easy and simple for them to adopt 3D printing, with a professional external service that is specialized and exclusive to the sector.',
-      fr: "Nous travaillons directement avec les spécialistes, en leur facilitant l'adoption de l'impression 3D de façon simple et aisée, grâce à un service externe professionnel, spécialisé et exclusif au secteur.",
-      de: 'Wir arbeiten direkt mit den Fachleuten zusammen und erleichtern ihnen den einfachen und unkomplizierten Einstieg in den 3D-Druck – mit einem professionellen externen Service, der auf die Branche spezialisiert und ausschließlich auf sie ausgerichtet ist.',
-      it: "Lavoriamo direttamente con gli specialisti, facilitando loro l'adozione della stampa 3D in modo facile e semplice, con un servizio esterno professionale, specializzato ed esclusivo del settore.",
-      el: 'Συνεργαζόμαστε απευθείας με τους ειδικούς, διευκολύνοντας την ενσωμάτωση της τρισδιάστατης εκτύπωσης με εύκολο και απλό τρόπο, μέσω μιας επαγγελματικής εξωτερικής υπηρεσίας, εξειδικευμένης και αποκλειστικής για τον κλάδο.' },
+    'Impresión 3D y modelos digitales · Sector salud': { en: '3D Printing & digital models · Healthcare', fr: 'Impression 3D et modèles numériques · Santé', de: '3D-Druck & digitale Modelle · Gesundheitswesen', it: 'Stampa 3D e modelli digitali · Sanità', el: 'Τρισδιάστατη εκτύπωση & ψηφιακά μοντέλα · Υγεία' },
+    'Revolucionamos el <span>sector salud</span> con Impresión 3D y modelos digitales': {
+      en: 'We are revolutionizing the <span>healthcare sector</span> with 3D Printing and digital models',
+      fr: "Nous révolutionnons le <span>secteur de la santé</span> avec l'impression 3D et les modèles numériques",
+      de: 'Wir revolutionieren den <span>Gesundheitssektor</span> mit 3D-Druck und digitalen Modellen',
+      it: 'Rivoluzioniamo il <span>settore sanitario</span> con la stampa 3D e i modelli digitali',
+      el: 'Φέρνουμε επανάσταση στον <span>τομέα της υγείας</span> με τρισδιάστατη εκτύπωση και ψηφιακά μοντέλα' },
+    'Trabajamos directamente con los especialistas, facilitándoles la incorporación de la impresión 3D y los modelos digitales de forma fácil y sencilla, con un servicio externo profesional, especializado y exclusivo del sector.': {
+      en: 'We work directly with specialists, making it easy and simple for them to adopt 3D printing and digital models, with a professional external service that is specialized and exclusive to the sector.',
+      fr: "Nous travaillons directement avec les spécialistes, en leur facilitant l'adoption de l'impression 3D et des modèles numériques de façon simple et aisée, grâce à un service externe professionnel, spécialisé et exclusif au secteur.",
+      de: 'Wir arbeiten direkt mit den Fachleuten zusammen und erleichtern ihnen den einfachen und unkomplizierten Einstieg in den 3D-Druck und digitale Modelle – mit einem professionellen externen Service, der auf die Branche spezialisiert und ausschließlich auf sie ausgerichtet ist.',
+      it: "Lavoriamo direttamente con gli specialisti, facilitando loro l'adozione della stampa 3D e dei modelli digitali in modo facile e semplice, con un servizio esterno professionale, specializzato ed esclusivo del settore.",
+      el: 'Συνεργαζόμαστε απευθείας με τους ειδικούς, διευκολύνοντας την ενσωμάτωση της τρισδιάστατης εκτύπωσης και των ψηφιακών μοντέλων με εύκολο και απλό τρόπο, μέσω μιας επαγγελματικής εξωτερικής υπηρεσίας, εξειδικευμένης και αποκλειστικής για τον κλάδο.' },
     'Conoce el Método Eureqa': { en: 'Discover the Eureqa Method', fr: 'Découvrez la Méthode Eureqa', de: 'Lernen Sie die Eureqa-Methode kennen', it: 'Scopri il Metodo Eureqa', el: 'Γνωρίστε τη Μέθοδο Eureqa' },
     'Qué ofrecemos': { en: 'What we offer', fr: 'Ce que nous offrons', de: 'Was wir bieten', it: 'Cosa offriamo', el: 'Τι προσφέρουμε' },
     'Una nueva y exclusiva herramienta en manos del profesional': { en: 'A new and exclusive tool in the hands of the professional', fr: 'Un outil nouveau et exclusif entre les mains du professionnel', de: 'Ein neues und exklusives Werkzeug in den Händen des Fachmanns', it: 'Un nuovo ed esclusivo strumento nelle mani del professionista', el: 'Ένα νέο και αποκλειστικό εργαλείο στα χέρια του επαγγελματία' },
     'Una nueva y exclusiva herramienta en manos del profesional.': { en: 'A new and exclusive tool in the hands of the professional.', fr: 'Un outil nouveau et exclusif entre les mains du professionnel.', de: 'Ein neues und exklusives Werkzeug in den Händen des Fachmanns.', it: 'Un nuovo ed esclusivo strumento nelle mani del professionista.', el: 'Ένα νέο και αποκλειστικό εργαλείο στα χέρια του επαγγελματία.' },
-    'Especializados en el tratamiento de la imagen médica, segmentación, diseño e impresión 3D: obtenemos una reconstrucción física a tamaño real, réplica o modelo único de máxima calidad, adaptado a cada patología.': {
-      en: 'Specialized in medical image processing, segmentation, design and 3D printing: we produce a full-scale physical reconstruction, a replica or unique model of the highest quality, tailored to each pathology.',
-      fr: "Spécialisés dans le traitement de l'image médicale, la segmentation, la conception et l'impression 3D : nous obtenons une reconstruction physique à taille réelle, une réplique ou un modèle unique de la plus haute qualité, adapté à chaque pathologie.",
-      de: 'Spezialisiert auf die Verarbeitung medizinischer Bilder, Segmentierung, Design und 3D-Druck: Wir erstellen eine physische Rekonstruktion in Originalgröße, eine Replik oder ein einzigartiges Modell höchster Qualität, das an jede Pathologie angepasst ist.',
-      it: "Specializzati nel trattamento dell'immagine medica, segmentazione, progettazione e stampa 3D: otteniamo una ricostruzione fisica a grandezza naturale, una replica o un modello unico della massima qualità, adattato a ogni patologia.",
-      el: 'Εξειδικευμένοι στην επεξεργασία ιατρικής εικόνας, την κατάτμηση, τον σχεδιασμό και την τρισδιάστατη εκτύπωση: δημιουργούμε μια φυσική ανακατασκευή σε πραγματικό μέγεθος, ένα αντίγραφο ή μοναδικό μοντέλο ύψιστης ποιότητας, προσαρμοσμένο σε κάθε παθολογία.' },
+    'Especializados en el tratamiento de la imagen médica, segmentación, diseño, impresión 3D y modelos digitales: obtenemos una reconstrucción a tamaño real, física o digital, réplica o modelo único de máxima calidad, adaptado a cada patología.': {
+      en: 'Specialized in medical image processing, segmentation, design, 3D printing and digital models: we produce a full-scale reconstruction, physical or digital, a replica or unique model of the highest quality, tailored to each pathology.',
+      fr: "Spécialisés dans le traitement de l'image médicale, la segmentation, la conception, l'impression 3D et les modèles numériques : nous obtenons une reconstruction à taille réelle, physique ou numérique, une réplique ou un modèle unique de la plus haute qualité, adapté à chaque pathologie.",
+      de: 'Spezialisiert auf die Verarbeitung medizinischer Bilder, Segmentierung, Design, 3D-Druck und digitale Modelle: Wir erstellen eine Rekonstruktion in Originalgröße, physisch oder digital, eine Replik oder ein einzigartiges Modell höchster Qualität, das an jede Pathologie angepasst ist.',
+      it: "Specializzati nel trattamento dell'immagine medica, segmentazione, progettazione, stampa 3D e modelli digitali: otteniamo una ricostruzione a grandezza naturale, fisica o digitale, una replica o un modello unico della massima qualità, adattato a ogni patologia.",
+      el: 'Εξειδικευμένοι στην επεξεργασία ιατρικής εικόνας, την κατάτμηση, τον σχεδιασμό, την τρισδιάστατη εκτύπωση και τα ψηφιακά μοντέλα: δημιουργούμε μια ανακατασκευή σε πραγματικό μέγεθος, φυσική ή ψηφιακή, ένα αντίγραφο ή μοναδικό μοντέλο ύψιστης ποιότητας, προσαρμοσμένο σε κάθε παθολογία.' },
+    'Modelos digitales 3D': { en: 'Digital 3D models', fr: 'Modèles numériques 3D', de: 'Digitale 3D-Modelle', it: 'Modelli digitali 3D', el: 'Ψηφιακά τρισδιάστατα μοντέλα' },
+    'Reconstrucciones interactivas navegables en el navegador, con anotaciones clínicas, para estudiar y planificar el caso.': {
+      en: 'Interactive reconstructions you can explore in the browser, with clinical annotations, to study and plan the case.',
+      fr: 'Des reconstructions interactives explorables dans le navigateur, avec annotations cliniques, pour étudier et planifier le cas.',
+      de: 'Interaktive Rekonstruktionen, im Browser erkundbar, mit klinischen Anmerkungen, um den Fall zu untersuchen und zu planen.',
+      it: 'Ricostruzioni interattive esplorabili nel browser, con annotazioni cliniche, per studiare e pianificare il caso.',
+      el: 'Διαδραστικές ανακατασκευές που εξερευνώνται στον browser, με κλινικές σημειώσεις, για τη μελέτη και τον σχεδιασμό της περίπτωσης.' },
     'Imagen médica a 3D': { en: 'Medical imaging to 3D', fr: "De l'image médicale au 3D", de: 'Vom medizinischen Bild zum 3D-Modell', it: "Dall'immagine medica al 3D", el: 'Από ιατρική εικόνα σε 3D' },
     'Convertimos estudios radiológicos 2D en biomodelos físicos precisos, listos para el quirófano.': {
       en: 'We turn 2D radiological studies into precise physical biomodels, ready for the operating room.',
@@ -481,7 +488,7 @@
     'Modelos 3D — Eureqa3D': { en: '3D Models — Eureqa3D', fr: 'Modèles 3D — Eureqa3D', de: '3D-Modelle — Eureqa3D', it: 'Modelli 3D — Eureqa3D', el: '3D Μοντέλα — Eureqa3D' },
 
     /* ── Títulos de página (<title>) ── */
-    'Eureqa3D — Impresión 3D para el sector salud': { en: 'Eureqa3D — 3D Printing for the healthcare sector', fr: 'Eureqa3D — Impression 3D pour le secteur de la santé', de: 'Eureqa3D — 3D-Druck für den Gesundheitssektor', it: 'Eureqa3D — Stampa 3D per il settore sanitario', el: 'Eureqa3D — Τρισδιάστατη εκτύπωση για τον τομέα της υγείας' },
+    'Eureqa3D — Impresión 3D y modelos digitales para el sector salud': { en: 'Eureqa3D — 3D Printing & digital models for healthcare', fr: 'Eureqa3D — Impression 3D et modèles numériques pour la santé', de: 'Eureqa3D — 3D-Druck & digitale Modelle für das Gesundheitswesen', it: 'Eureqa3D — Stampa 3D e modelli digitali per la sanità', el: 'Eureqa3D — Τρισδιάστατη εκτύπωση & ψηφιακά μοντέλα για την υγεία' },
     'Quiénes somos — Eureqa3D': { en: 'About us — Eureqa3D', fr: 'À propos — Eureqa3D', de: 'Über uns — Eureqa3D', it: 'Chi siamo — Eureqa3D', el: 'Ποιοι είμαστε — Eureqa3D' },
     'Método Eureqa — Eureqa3D': { en: 'Eureqa Method — Eureqa3D', fr: 'Méthode Eureqa — Eureqa3D', de: 'Eureqa-Methode — Eureqa3D', it: 'Metodo Eureqa — Eureqa3D', el: 'Μέθοδος Eureqa — Eureqa3D' },
     'Traumatología — Eureqa3D': { en: 'Traumatology — Eureqa3D', fr: 'Traumatologie — Eureqa3D', de: 'Traumatologie — Eureqa3D', it: 'Traumatologia — Eureqa3D', el: 'Τραυματολογία — Eureqa3D' },
