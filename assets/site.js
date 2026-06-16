@@ -7,6 +7,7 @@ const NAV = [
   ['Método Eureqa', '/metodo-eureqa'],
   ['Traumatología', '/traumatologia'],
   ['Otras especialidades', '/otras-especialidades'],
+  ['Visor 3D', '/visor-3d'],
   ['Modelos 3D', '/modelos-3d'],
   ['Noticias', '/noticias'],
   ['Contacto', '/contacto'],
@@ -74,6 +75,7 @@ function renderFooter() {
             <li><a href="/metodo-eureqa">${tr('Método Eureqa')}</a></li>
             <li><a href="/traumatologia">${tr('Traumatología')}</a></li>
             <li><a href="/otras-especialidades">${tr('Otras especialidades')}</a></li>
+            <li><a href="/visor-3d">${tr('Visor 3D')}</a></li>
             <li><a href="/modelos-3d">${tr('Modelos 3D')}</a></li>
             <li><a href="/noticias">${tr('Noticias')}</a></li>
           </ul>
@@ -217,14 +219,13 @@ function initCarousels() {
   });
 }
 
-/* ── Visores 3D (Sketchfab) con carga diferida ───────────────── */
+/* ── Visores 3D con carga diferida (Sketchfab o iframe propio) ── */
 function initSketchfab() {
-  document.querySelectorAll('[data-sketchfab]').forEach(v => {
+  document.querySelectorAll('[data-sketchfab],[data-embed]').forEach(v => {
     const open = () => {
       if (v.dataset.loaded) return;
       v.dataset.loaded = '1';
-      const id = v.dataset.sketchfab;
-      const title = v.closest('.model-card, .model-feature')?.querySelector('h2, h3')?.textContent?.trim() || 'Eureqa3D';
+      const title = v.closest('.model-card, .model-feature, .visor-block')?.querySelector('h2, h3')?.textContent?.trim() || 'Eureqa3D';
       const frame = document.createElement('iframe');
       frame.className = 'sk-frame';
       frame.title = title;
@@ -232,7 +233,9 @@ function initSketchfab() {
       frame.allowFullscreen = true;
       frame.setAttribute('mozallowfullscreen', 'true');
       frame.setAttribute('webkitallowfullscreen', 'true');
-      frame.src = `https://sketchfab.com/models/${id}/embed?autostart=1&ui_theme=dark&dnt=1&ui_hint=0`;
+      frame.src = v.dataset.embed
+        ? v.dataset.embed
+        : `https://sketchfab.com/models/${v.dataset.sketchfab}/embed?autostart=1&ui_theme=dark&dnt=1&ui_hint=0`;
       v.innerHTML = '';
       v.appendChild(frame);
       v.classList.add('loaded');

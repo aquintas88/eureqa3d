@@ -484,3 +484,10 @@ form.contact textarea { min-height: 140px; resize: vertical; }
 .chat-foot button svg{ width:18px; height:18px; }
 .chat-foot button:disabled{ opacity:.5; cursor:not-allowed; }
 @media (max-width:480px){ .chat-panel{ right:8px; left:8px; width:auto; bottom:84px; height:70vh; } }
+
+/* ── Visor 3D propio (embed a pantalla amplia) ───────────────── */
+.visor-embed{ aspect-ratio:16/9; min-height:460px; border-radius:16px; box-shadow:var(--shadow); background:radial-gradient(circle at 50% 32%, #21323f, #0e1620); }
+.visor-embed .model-play{ background:#fff; }
+.visor-block{ margin-top:.5rem; }
+.visor-disclaimer{ margin-top:1rem; font-size:.85rem; }
+@media (max-width:600px){ .visor-embed{ aspect-ratio:auto; min-height:64vh; } }
