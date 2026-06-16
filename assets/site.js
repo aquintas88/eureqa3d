@@ -7,7 +7,7 @@ const NAV = [
   ['Método Eureqa', '/metodo-eureqa'],
   ['Traumatología', '/traumatologia'],
   ['Otras especialidades', '/otras-especialidades'],
-  ['Visor 3D', '/visor-3d'],
+  // ['Visor 3D', '/visor-3d'],   // oculto temporalmente: página preparada, sin mostrar
   ['Modelos 3D', '/modelos-3d'],
   ['Noticias', '/noticias'],
   ['Contacto', '/contacto'],
@@ -75,7 +75,6 @@ function renderFooter() {
             <li><a href="/metodo-eureqa">${tr('Método Eureqa')}</a></li>
             <li><a href="/traumatologia">${tr('Traumatología')}</a></li>
             <li><a href="/otras-especialidades">${tr('Otras especialidades')}</a></li>
-            <li><a href="/visor-3d">${tr('Visor 3D')}</a></li>
             <li><a href="/modelos-3d">${tr('Modelos 3D')}</a></li>
             <li><a href="/noticias">${tr('Noticias')}</a></li>
           </ul>
