@@ -38,6 +38,8 @@ function renderHeader() {
       <a href="mailto:info@eureqa3d.com">✉️ info@eureqa3d.com</a>
       <span class="sep">·</span>
       <a href="https://twitter.com/eureqa3D" target="_blank" rel="noopener">🐦 @eureqa3D</a>
+      <span class="sep">·</span>
+      <a href="/login" class="topbar-access">🔒 ${tr('Acceso')}</a>
       ${renderLangSwitch()}
     </div>
   </div>
@@ -62,7 +64,7 @@ function renderFooter() {
       <div class="footer-grid">
         <div>
           <img class="footer-logo" src="/assets/img/logo.svg" alt="Eureqa3D">
-          <p>${tr('Servicio integral de impresión 3D especializado en el sector salud. Tecnología y cirugía al servicio del profesional.')}</p>
+          <p>${tr('Servicio integral de impresión 3D y modelos digitales especializado en el sector salud. Tecnología y cirugía al servicio del profesional.')}</p>
           <p class="muted">${tr('Extremadura · España')}</p>
         </div>
         <div>
