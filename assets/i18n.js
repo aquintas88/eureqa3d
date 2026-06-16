@@ -455,13 +455,14 @@
       de: '3D-Modell eines Pankreastumors und seiner Beziehung zu den wichtigsten Gefäßachsen, nützlich für die Planung des chirurgischen Zugangs.',
       it: 'Modello 3D di un tumore del pancreas e della sua relazione con i principali assi vascolari, utile per pianificare l\'approccio chirurgico.',
       el: 'Τρισδιάστατο μοντέλο ενός όγκου παγκρέατος και της σχέσης του με τους κύριους αγγειακούς άξονες, χρήσιμο για τον σχεδιασμό της χειρουργικής προσέγγισης.' },
-    'Modelo anatómico 3D': { en: '3D anatomical model', fr: 'Modèle anatomique 3D', de: 'Anatomisches 3D-Modell', it: 'Modello anatomico 3D', el: 'Τρισδιάστατο ανατομικό μοντέλο' },
-    'Reconstrucción digital 3D con estructuras óseas, vasculares y de tejido blando, navegable y con anotaciones interactivas.': {
-      en: 'Digital 3D reconstruction with bone, vascular and soft-tissue structures, navigable and with interactive annotations.',
-      fr: 'Reconstruction numérique 3D avec structures osseuses, vasculaires et de tissus mous, navigable et avec annotations interactives.',
-      de: 'Digitale 3D-Rekonstruktion mit Knochen-, Gefäß- und Weichgewebestrukturen, navigierbar und mit interaktiven Anmerkungen.',
-      it: 'Ricostruzione digitale 3D con strutture ossee, vascolari e di tessuto molle, navigabile e con annotazioni interattive.',
-      el: 'Ψηφιακή τρισδιάστατη ανακατασκευή με οστικές, αγγειακές δομές και δομές μαλακών ιστών, με δυνατότητα πλοήγησης και διαδραστικές σημειώσεις.' },
+    'Maxilofacial · ORL': { en: 'Maxillofacial · ENT', fr: 'Maxillo-facial · ORL', de: 'MKG · HNO', it: 'Maxillo-facciale · ORL', el: 'Γναθοπροσωπική · ΩΡΛ' },
+    'Neoplasia de parótida izquierda': { en: 'Left parotid gland neoplasm', fr: 'Néoplasie de la parotide gauche', de: 'Neoplasie der linken Ohrspeicheldrüse', it: 'Neoplasia della parotide sinistra', el: 'Νεόπλασμα αριστερής παρωτίδας' },
+    'Modelo 3D de una neoplasia de la glándula parótida izquierda para el estudio anatómico y la planificación quirúrgica. Caso solicitado por el Dr. Eladio Rejas.': {
+      en: '3D model of a neoplasm of the left parotid gland for anatomical study and surgical planning. Case requested by Dr. Eladio Rejas.',
+      fr: "Modèle 3D d'une néoplasie de la glande parotide gauche pour l'étude anatomique et la planification chirurgicale. Cas demandé par le Dr Eladio Rejas.",
+      de: '3D-Modell einer Neoplasie der linken Ohrspeicheldrüse zur anatomischen Untersuchung und chirurgischen Planung. Fall angefordert von Dr. Eladio Rejas.',
+      it: 'Modello 3D di una neoplasia della ghiandola parotide sinistra per lo studio anatomico e la pianificazione chirurgica. Caso richiesto dal Dr. Eladio Rejas.',
+      el: 'Τρισδιάστατο μοντέλο νεοπλάσματος της αριστερής παρωτίδας για ανατομική μελέτη και χειρουργικό σχεδιασμό. Περίπτωση κατόπιν αιτήματος του Δρ. Eladio Rejas.' },
     'Explora nuestros modelos 3D': { en: 'Explore our 3D models', fr: 'Explorez nos modèles 3D', de: 'Entdecken Sie unsere 3D-Modelle', it: 'Esplora i nostri modelli 3D', el: 'Εξερευνήστε τα τρισδιάστατα μοντέλα μας' },
     'Del hueso al tejido blando: reconstrucciones digitales interactivas que llevan la planificación quirúrgica a otro nivel.': {
       en: 'From bone to soft tissue: interactive digital reconstructions that take surgical planning to another level.',
