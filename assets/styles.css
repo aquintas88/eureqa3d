@@ -111,7 +111,7 @@ img { max-width: 100%; display: block; }
 /* ── Hero (imagen real de marca) ─────────────────────────────── */
 .hero {
   position: relative; overflow: hidden; color: #fff;
-  background: #058aa9 url('/assets/img/hero.jpg') center right / cover no-repeat;
+  background: #058aa9 url('/assets/img/modelos/hero-pseudoaneurisma-a.jpg') center right / cover no-repeat;
   min-height: 460px; display: flex; align-items: center;
 }
 .hero::before {
@@ -383,4 +383,53 @@ form.contact textarea { min-height: 140px; resize: vertical; }
 @media (max-width: 560px) {
   .grid-3, .grid-4, .news-grid, .stats, .grid-2 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Modelos 3D interactivos (Sketchfab) ─────────────────────── */
+.model-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.model-card {
+  background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+  box-shadow: var(--shadow); display: flex; flex-direction: column;
+}
+.model-viewer {
+  position: relative; aspect-ratio: 16 / 10; background: #1a2230 center / cover no-repeat;
+  cursor: pointer; overflow: hidden;
+}
+.model-viewer::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,16,28,.05), rgba(8,16,28,.45));
+  transition: opacity .25s ease;
+}
+.model-viewer.loaded { cursor: default; aspect-ratio: 16 / 10; }
+.model-viewer.loaded::after { opacity: 0; pointer-events: none; }
+.model-viewer .sk-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.model-play {
+  position: absolute; z-index: 1; inset: 0; margin: auto; width: max-content; height: max-content;
+  display: inline-flex; align-items: center; gap: .6rem; padding: .8rem 1.3rem;
+  background: rgba(255,255,255,.92); color: var(--ink); border: 0; border-radius: 999px;
+  font-family: var(--head); font-weight: 700; font-size: .95rem; cursor: pointer;
+  box-shadow: 0 10px 26px rgba(0,0,0,.28); transition: transform .18s ease, background .18s ease;
+}
+.model-play:hover { transform: scale(1.05); background: #fff; }
+.model-play .play-ic {
+  display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px;
+  border-radius: 50%; background: var(--orange); color: #fff; font-size: .8rem; padding-left: 2px;
+}
+.model-body { padding: 1.4rem 1.5rem 1.6rem; }
+.model-spec {
+  display: inline-block; font-family: var(--head); font-weight: 700; font-size: .72rem;
+  letter-spacing: .04em; text-transform: uppercase; color: var(--orange-dark);
+  background: rgba(213,124,27,.1); padding: .25rem .6rem; border-radius: 6px; margin-bottom: .7rem;
+}
+.model-body h3 { margin: 0 0 .5rem; }
+.model-body p { margin: 0; color: var(--muted, #5a6473); }
+
+/* Visor destacado (Home / ancho completo) */
+.model-feature { display: grid; grid-template-columns: 1.25fr 1fr; gap: 2.5rem; align-items: center; }
+.model-feature .model-viewer { border-radius: 16px; box-shadow: var(--shadow); aspect-ratio: 16 / 11; }
+.model-feature .model-spec { background: rgba(255,255,255,.12); color: #ffd9a8; }
+
+@media (max-width: 860px) {
+  .model-grid { grid-template-columns: 1fr; }
+  .model-feature { grid-template-columns: 1fr; }
 }

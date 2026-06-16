@@ -407,6 +407,78 @@
     'Anterior': { en: 'Previous', fr: 'Précédent', de: 'Zurück', it: 'Precedente', el: 'Προηγούμενο' },
     'Siguiente': { en: 'Next', fr: 'Suivant', de: 'Weiter', it: 'Successivo', el: 'Επόμενο' },
 
+    /* ── Modelos 3D ── */
+    'Modelos 3D': { en: '3D Models', fr: 'Modèles 3D', de: '3D-Modelle', it: 'Modelli 3D', el: '3D Μοντέλα' },
+    'Innovación': { en: 'Innovation', fr: 'Innovation', de: 'Innovation', it: 'Innovazione', el: 'Καινοτομία' },
+    'Innovación · Modelos digitales': { en: 'Innovation · Digital models', fr: 'Innovation · Modèles numériques', de: 'Innovation · Digitale Modelle', it: 'Innovazione · Modelli digitali', el: 'Καινοτομία · Ψηφιακά μοντέλα' },
+    'Modelos digitales 3D de tejidos blandos': { en: 'Digital 3D models of soft tissue', fr: 'Modèles numériques 3D de tissus mous', de: 'Digitale 3D-Modelle von Weichgewebe', it: 'Modelli digitali 3D di tessuti molli', el: 'Ψηφιακά τρισδιάστατα μοντέλα μαλακών ιστών' },
+    'Reconstrucciones interactivas a partir de imagen médica real. Rota, amplía y explora cada modelo con sus anotaciones clínicas, directamente en el navegador.': {
+      en: 'Interactive reconstructions from real medical imaging. Rotate, zoom and explore each model with its clinical annotations, right in your browser.',
+      fr: "Des reconstructions interactives à partir d'imagerie médicale réelle. Tournez, zoomez et explorez chaque modèle avec ses annotations cliniques, directement dans le navigateur.",
+      de: 'Interaktive Rekonstruktionen aus echter medizinischer Bildgebung. Drehen, zoomen und erkunden Sie jedes Modell mit seinen klinischen Anmerkungen – direkt im Browser.',
+      it: 'Ricostruzioni interattive a partire da immagini mediche reali. Ruota, ingrandisci ed esplora ogni modello con le sue annotazioni cliniche, direttamente nel browser.',
+      el: 'Διαδραστικές ανακατασκευές από πραγματική ιατρική απεικόνιση. Περιστρέψτε, μεγεθύνετε και εξερευνήστε κάθε μοντέλο με τις κλινικές του σημειώσεις, απευθείας στον browser.' },
+    '<span class="play-ic">▶</span><span class="play-tx">Ver en 3D</span>': {
+      en: '<span class="play-ic">▶</span><span class="play-tx">View in 3D</span>',
+      fr: '<span class="play-ic">▶</span><span class="play-tx">Voir en 3D</span>',
+      de: '<span class="play-ic">▶</span><span class="play-tx">In 3D ansehen</span>',
+      it: '<span class="play-ic">▶</span><span class="play-tx">Vedi in 3D</span>',
+      el: '<span class="play-ic">▶</span><span class="play-tx">Προβολή σε 3D</span>' },
+    'Cirugía cardiaca': { en: 'Cardiac surgery', fr: 'Chirurgie cardiaque', de: 'Herzchirurgie', it: 'Chirurgia cardiaca', el: 'Καρδιοχειρουργική' },
+    'Cirugía pancreática': { en: 'Pancreatic surgery', fr: 'Chirurgie pancréatique', de: 'Pankreaschirurgie', it: 'Chirurgia pancreatica', el: 'Παγκρεατική χειρουργική' },
+    'Modelo anatómico': { en: 'Anatomical model', fr: 'Modèle anatomique', de: 'Anatomisches Modell', it: 'Modello anatomico', el: 'Ανατομικό μοντέλο' },
+    'Pseudoaneurisma cardiaco · Modelo A': { en: 'Cardiac pseudoaneurysm · Model A', fr: 'Pseudo-anévrisme cardiaque · Modèle A', de: 'Kardiales Pseudoaneurysma · Modell A', it: 'Pseudoaneurisma cardiaco · Modello A', el: 'Καρδιακό ψευδοανεύρυσμα · Μοντέλο A' },
+    'Pseudoaneurisma cardiaco · Modelo B': { en: 'Cardiac pseudoaneurysm · Model B', fr: 'Pseudo-anévrisme cardiaque · Modèle B', de: 'Kardiales Pseudoaneurysma · Modell B', it: 'Pseudoaneurisma cardiaco · Modello B', el: 'Καρδιακό ψευδοανεύρυσμα · Μοντέλο B' },
+    'Modelo 3D de un pseudoaneurisma cardiaco sobre el miocardio para el estudio y la planificación quirúrgica. Variante A.': {
+      en: '3D model of a cardiac pseudoaneurysm on the myocardium for study and surgical planning. Variant A.',
+      fr: "Modèle 3D d'un pseudo-anévrisme cardiaque sur le myocarde pour l'étude et la planification chirurgicale. Variante A.",
+      de: '3D-Modell eines kardialen Pseudoaneurysmas am Myokard für Studie und chirurgische Planung. Variante A.',
+      it: 'Modello 3D di uno pseudoaneurisma cardiaco sul miocardio per lo studio e la pianificazione chirurgica. Variante A.',
+      el: 'Τρισδιάστατο μοντέλο καρδιακού ψευδοανευρύσματος στο μυοκάρδιο για μελέτη και χειρουργικό σχεδιασμό. Παραλλαγή A.' },
+    'Modelo 3D de un pseudoaneurisma cardiaco sobre el miocardio para el estudio y la planificación quirúrgica. Variante B.': {
+      en: '3D model of a cardiac pseudoaneurysm on the myocardium for study and surgical planning. Variant B.',
+      fr: "Modèle 3D d'un pseudo-anévrisme cardiaque sur le myocarde pour l'étude et la planification chirurgicale. Variante B.",
+      de: '3D-Modell eines kardialen Pseudoaneurysmas am Myokard für Studie und chirurgische Planung. Variante B.',
+      it: 'Modello 3D di uno pseudoaneurisma cardiaco sul miocardio per lo studio e la pianificazione chirurgica. Variante B.',
+      el: 'Τρισδιάστατο μοντέλο καρδιακού ψευδοανευρύσματος στο μυοκάρδιο για μελέτη και χειρουργικό σχεδιασμό. Παραλλαγή B.' },
+    'Páncreas y entorno vascular': { en: 'Pancreas and vascular environment', fr: 'Pancréas et environnement vasculaire', de: 'Pankreas und Gefäßumgebung', it: 'Pancreas e contesto vascolare', el: 'Πάγκρεας και αγγειακό περιβάλλον' },
+    'Reconstrucción 3D de la región pancreática con su red vascular (vena porta, arterias y conductos) y anotaciones interactivas para el estudio del caso.': {
+      en: '3D reconstruction of the pancreatic region with its vascular network (portal vein, arteries and ducts) and interactive annotations for case study.',
+      fr: "Reconstruction 3D de la région pancréatique avec son réseau vasculaire (veine porte, artères et canaux) et des annotations interactives pour l'étude du cas.",
+      de: '3D-Rekonstruktion der Pankreasregion mit ihrem Gefäßnetz (Pfortader, Arterien und Gänge) und interaktiven Anmerkungen zur Fallanalyse.',
+      it: 'Ricostruzione 3D della regione pancreatica con la sua rete vascolare (vena porta, arterie e dotti) e annotazioni interattive per lo studio del caso.',
+      el: 'Τρισδιάστατη ανακατασκευή της παγκρεατικής περιοχής με το αγγειακό της δίκτυο (πυλαία φλέβα, αρτηρίες και πόροι) και διαδραστικές σημειώσεις για τη μελέτη της περίπτωσης.' },
+    'Cáncer de páncreas': { en: 'Pancreatic cancer', fr: 'Cancer du pancréas', de: 'Bauchspeicheldrüsenkrebs', it: 'Cancro del pancreas', el: 'Καρκίνος παγκρέατος' },
+    'Modelo 3D de un tumor de páncreas y su relación con los principales ejes vasculares, útil para planificar el abordaje quirúrgico.': {
+      en: '3D model of a pancreatic tumor and its relationship with the main vascular axes, useful for planning the surgical approach.',
+      fr: "Modèle 3D d'une tumeur du pancréas et de sa relation avec les principaux axes vasculaires, utile pour planifier l'abord chirurgical.",
+      de: '3D-Modell eines Pankreastumors und seiner Beziehung zu den wichtigsten Gefäßachsen, nützlich für die Planung des chirurgischen Zugangs.',
+      it: 'Modello 3D di un tumore del pancreas e della sua relazione con i principali assi vascolari, utile per pianificare l\'approccio chirurgico.',
+      el: 'Τρισδιάστατο μοντέλο ενός όγκου παγκρέατος και της σχέσης του με τους κύριους αγγειακούς άξονες, χρήσιμο για τον σχεδιασμό της χειρουργικής προσέγγισης.' },
+    'Modelo anatómico 3D': { en: '3D anatomical model', fr: 'Modèle anatomique 3D', de: 'Anatomisches 3D-Modell', it: 'Modello anatomico 3D', el: 'Τρισδιάστατο ανατομικό μοντέλο' },
+    'Reconstrucción digital 3D con estructuras óseas, vasculares y de tejido blando, navegable y con anotaciones interactivas.': {
+      en: 'Digital 3D reconstruction with bone, vascular and soft-tissue structures, navigable and with interactive annotations.',
+      fr: 'Reconstruction numérique 3D avec structures osseuses, vasculaires et de tissus mous, navigable et avec annotations interactives.',
+      de: 'Digitale 3D-Rekonstruktion mit Knochen-, Gefäß- und Weichgewebestrukturen, navigierbar und mit interaktiven Anmerkungen.',
+      it: 'Ricostruzione digitale 3D con strutture ossee, vascolari e di tessuto molle, navigabile e con annotazioni interattive.',
+      el: 'Ψηφιακή τρισδιάστατη ανακατασκευή με οστικές, αγγειακές δομές και δομές μαλακών ιστών, με δυνατότητα πλοήγησης και διαδραστικές σημειώσεις.' },
+    'Explora nuestros modelos 3D': { en: 'Explore our 3D models', fr: 'Explorez nos modèles 3D', de: 'Entdecken Sie unsere 3D-Modelle', it: 'Esplora i nostri modelli 3D', el: 'Εξερευνήστε τα τρισδιάστατα μοντέλα μας' },
+    'Del hueso al tejido blando: reconstrucciones digitales interactivas que llevan la planificación quirúrgica a otro nivel.': {
+      en: 'From bone to soft tissue: interactive digital reconstructions that take surgical planning to another level.',
+      fr: "De l'os aux tissus mous : des reconstructions numériques interactives qui élèvent la planification chirurgicale à un autre niveau.",
+      de: 'Vom Knochen zum Weichgewebe: interaktive digitale Rekonstruktionen, die die chirurgische Planung auf ein neues Niveau heben.',
+      it: 'Dall\'osso al tessuto molle: ricostruzioni digitali interattive che portano la pianificazione chirurgica a un altro livello.',
+      el: 'Από το οστό στον μαλακό ιστό: διαδραστικές ψηφιακές ανακατασκευές που ανεβάζουν τον χειρουργικό σχεδιασμό σε άλλο επίπεδο.' },
+    'Ver todos los modelos 3D': { en: 'View all 3D models', fr: 'Voir tous les modèles 3D', de: 'Alle 3D-Modelle ansehen', it: 'Vedi tutti i modelli 3D', el: 'Δείτε όλα τα τρισδιάστατα μοντέλα' },
+    '¿Quieres un modelo 3D de tu caso?': { en: 'Want a 3D model of your case?', fr: 'Vous voulez un modèle 3D de votre cas ?', de: 'Möchten Sie ein 3D-Modell Ihres Falls?', it: 'Vuoi un modello 3D del tuo caso?', el: 'Θέλετε ένα τρισδιάστατο μοντέλο της περίπτωσής σας;' },
+    'Convertimos la imagen médica de tu paciente en un modelo digital interactivo y en un biomodelo físico listo para el quirófano.': {
+      en: "We turn your patient's medical image into an interactive digital model and a physical biomodel ready for the operating room.",
+      fr: "Nous transformons l'image médicale de votre patient en un modèle numérique interactif et un biomodèle physique prêt pour le bloc opératoire.",
+      de: 'Wir verwandeln das medizinische Bild Ihres Patienten in ein interaktives digitales Modell und ein physisches Biomodell, bereit für den Operationssaal.',
+      it: "Trasformiamo l'immagine medica del tuo paziente in un modello digitale interattivo e in un biomodello fisico pronto per la sala operatoria.",
+      el: 'Μετατρέπουμε την ιατρική εικόνα του ασθενούς σας σε ένα διαδραστικό ψηφιακό μοντέλο και σε ένα φυσικό βιομοντέλο έτοιμο για το χειρουργείο.' },
+    'Modelos 3D — Eureqa3D': { en: '3D Models — Eureqa3D', fr: 'Modèles 3D — Eureqa3D', de: '3D-Modelle — Eureqa3D', it: 'Modelli 3D — Eureqa3D', el: '3D Μοντέλα — Eureqa3D' },
+
     /* ── Títulos de página (<title>) ── */
     'Eureqa3D — Impresión 3D para el sector salud': { en: 'Eureqa3D — 3D Printing for the healthcare sector', fr: 'Eureqa3D — Impression 3D pour le secteur de la santé', de: 'Eureqa3D — 3D-Druck für den Gesundheitssektor', it: 'Eureqa3D — Stampa 3D per il settore sanitario', el: 'Eureqa3D — Τρισδιάστατη εκτύπωση για τον τομέα της υγείας' },
     'Quiénes somos — Eureqa3D': { en: 'About us — Eureqa3D', fr: 'À propos — Eureqa3D', de: 'Über uns — Eureqa3D', it: 'Chi siamo — Eureqa3D', el: 'Ποιοι είμαστε — Eureqa3D' },
@@ -418,7 +490,7 @@
   };
 
   /* Elementos de contenido a traducir (clave = innerHTML normalizado) */
-  const RICH = 'h1,h2,h3,h4,h5,h6,p,li,button,.eyebrow,a.btn,.lbl';
+  const RICH = 'h1,h2,h3,h4,h5,h6,p,li,button,.eyebrow,a.btn,.lbl,.model-spec';
 
   const ORIG = new WeakMap();
   const norm = (s) => s.replace(/\s+/g, ' ').trim();

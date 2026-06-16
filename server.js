@@ -119,6 +119,7 @@ app.get('/quienes-somos',       page('quienes-somos.html'));
 app.get('/metodo-eureqa',       page('metodo-eureqa.html'));
 app.get('/traumatologia',       page('traumatologia.html'));
 app.get('/otras-especialidades',page('otras-especialidades.html'));
+app.get('/modelos-3d',          page('modelos-3d.html'));
 app.get('/noticias',            page('noticias.html'));
 app.get('/noticias/:slug',      page('noticia.html'));
 app.get('/contacto',            page('contacto.html'));

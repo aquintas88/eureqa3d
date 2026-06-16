@@ -7,6 +7,7 @@ const NAV = [
   ['Método Eureqa', '/metodo-eureqa'],
   ['Traumatología', '/traumatologia'],
   ['Otras especialidades', '/otras-especialidades'],
+  ['Modelos 3D', '/modelos-3d'],
   ['Noticias', '/noticias'],
   ['Contacto', '/contacto'],
 ];
@@ -71,6 +72,7 @@ function renderFooter() {
             <li><a href="/metodo-eureqa">${tr('Método Eureqa')}</a></li>
             <li><a href="/traumatologia">${tr('Traumatología')}</a></li>
             <li><a href="/otras-especialidades">${tr('Otras especialidades')}</a></li>
+            <li><a href="/modelos-3d">${tr('Modelos 3D')}</a></li>
             <li><a href="/noticias">${tr('Noticias')}</a></li>
           </ul>
         </div>
@@ -213,6 +215,30 @@ function initCarousels() {
   });
 }
 
+/* ── Visores 3D (Sketchfab) con carga diferida ───────────────── */
+function initSketchfab() {
+  document.querySelectorAll('[data-sketchfab]').forEach(v => {
+    const open = () => {
+      if (v.dataset.loaded) return;
+      v.dataset.loaded = '1';
+      const id = v.dataset.sketchfab;
+      const title = v.closest('.model-card, .model-feature')?.querySelector('h2, h3')?.textContent?.trim() || 'Eureqa3D';
+      const frame = document.createElement('iframe');
+      frame.className = 'sk-frame';
+      frame.title = title;
+      frame.allow = 'autoplay; fullscreen; xr-spatial-tracking';
+      frame.allowFullscreen = true;
+      frame.setAttribute('mozallowfullscreen', 'true');
+      frame.setAttribute('webkitallowfullscreen', 'true');
+      frame.src = `https://sketchfab.com/models/${id}/embed?autostart=1&ui_theme=dark&dnt=1&ui_hint=0`;
+      v.innerHTML = '';
+      v.appendChild(frame);
+      v.classList.add('loaded');
+    };
+    v.querySelector('.model-play')?.addEventListener('click', open);
+  });
+}
+
 /* ── Reveal al hacer scroll (fade-up escalonado) ─────────────── */
 function initReveal() {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -251,6 +277,7 @@ function initCounters() {
 document.addEventListener('DOMContentLoaded', () => {
   mountLayout();
   initCarousels();
+  initSketchfab();
   initReveal();
   initCounters();
   const newsList = document.getElementById('news-list');   if (newsList) loadNewsList(newsList);
