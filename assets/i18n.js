@@ -446,6 +446,46 @@
     '¡Gracias! Hemos recibido tu mensaje y te responderemos pronto.': { en: 'Thank you! We have received your message and will reply soon.', fr: 'Merci ! Nous avons bien reçu votre message et vous répondrons bientôt.', de: 'Vielen Dank! Wir haben Ihre Nachricht erhalten und melden uns bald.', it: 'Grazie! Abbiamo ricevuto il tuo messaggio e ti risponderemo presto.', el: 'Ευχαριστούμε! Λάβαμε το μήνυμά σας και θα απαντήσουμε σύντομα.' },
     'No se pudo enviar': { en: 'Could not send', fr: "Échec de l'envoi", de: 'Konnte nicht gesendet werden', it: 'Impossibile inviare', el: 'Δεν ήταν δυνατή η αποστολή' },
 
+    /* ── Chat de captación ── */
+    'Asistente de Eureqa3D': { en: 'Eureqa3D Assistant', fr: 'Assistant Eureqa3D', de: 'Eureqa3D-Assistent', it: 'Assistente Eureqa3D', el: 'Βοηθός Eureqa3D' },
+    'Normalmente responde en minutos': { en: 'Usually replies within minutes', fr: 'Répond généralement en quelques minutes', de: 'Antwortet meist innerhalb von Minuten', it: 'Di solito risponde in pochi minuti', el: 'Συνήθως απαντά μέσα σε λεπτά' },
+    'Escribe tu respuesta…': { en: 'Type your answer…', fr: 'Écrivez votre réponse…', de: 'Antwort eingeben…', it: 'Scrivi la tua risposta…', el: 'Γράψτε την απάντησή σας…' },
+    'Abrir chat': { en: 'Open chat', fr: 'Ouvrir le chat', de: 'Chat öffnen', it: 'Apri chat', el: 'Άνοιγμα συνομιλίας' },
+    'Cerrar chat': { en: 'Close chat', fr: 'Fermer le chat', de: 'Chat schließen', it: 'Chiudi chat', el: 'Κλείσιμο συνομιλίας' },
+    '👋 ¡Hola! Soy el asistente de Eureqa3D. Te hago un par de preguntas y te contactamos.': {
+      en: "👋 Hi! I'm the Eureqa3D assistant. I'll ask you a couple of questions and we'll get in touch.",
+      fr: "👋 Bonjour ! Je suis l'assistant d'Eureqa3D. Je vous pose deux ou trois questions et nous vous recontactons.",
+      de: '👋 Hallo! Ich bin der Eureqa3D-Assistent. Ich stelle Ihnen ein paar Fragen und wir melden uns bei Ihnen.',
+      it: "👋 Ciao! Sono l'assistente di Eureqa3D. Ti faccio un paio di domande e ti ricontattiamo.",
+      el: '👋 Γεια σας! Είμαι ο βοηθός της Eureqa3D. Θα σας κάνω μερικές ερωτήσεις και θα επικοινωνήσουμε μαζί σας.' },
+    'Para empezar, ¿cómo te llamas?': { en: "To start, what's your name?", fr: 'Pour commencer, comment vous appelez-vous ?', de: 'Zum Anfang: Wie heißen Sie?', it: 'Per iniziare, come ti chiami?', el: 'Αρχικά, πώς σας λένε;' },
+    'Encantado, {name}. ¿De qué empresa, hospital o centro nos escribes?': {
+      en: 'Nice to meet you, {name}. Which company, hospital or centre are you writing from?',
+      fr: 'Enchanté, {name}. De quelle entreprise, hôpital ou centre nous écrivez-vous ?',
+      de: 'Freut mich, {name}. Von welchem Unternehmen, Krankenhaus oder Zentrum schreiben Sie uns?',
+      it: 'Piacere, {name}. Da quale azienda, ospedale o centro ci scrivi?',
+      el: 'Χαίρω πολύ, {name}. Από ποια εταιρεία, νοσοκομείο ή κέντρο μας γράφετε;' },
+    '¿Y un email donde podamos contactarte?': { en: 'And an email where we can reach you?', fr: 'Et un email où nous pouvons vous joindre ?', de: 'Und eine E-Mail, unter der wir Sie erreichen können?', it: "E un'email dove possiamo contattarti?", el: 'Και ένα email για να επικοινωνήσουμε μαζί σας;' },
+    'Por último, cuéntanos brevemente qué necesitas.': { en: 'Finally, tell us briefly what you need.', fr: 'Enfin, dites-nous brièvement ce dont vous avez besoin.', de: 'Zum Schluss: Sagen Sie uns kurz, was Sie brauchen.', it: 'Infine, raccontaci brevemente di cosa hai bisogno.', el: 'Τέλος, πείτε μας σύντομα τι χρειάζεστε.' },
+    '¡Gracias, {name}! 🙌 Hemos recibido tu solicitud y te contactaremos muy pronto.': {
+      en: "Thank you, {name}! 🙌 We've received your request and will contact you very soon.",
+      fr: 'Merci, {name} ! 🙌 Nous avons reçu votre demande et vous contacterons très bientôt.',
+      de: 'Vielen Dank, {name}! 🙌 Wir haben Ihre Anfrage erhalten und melden uns sehr bald.',
+      it: 'Grazie, {name}! 🙌 Abbiamo ricevuto la tua richiesta e ti contatteremo molto presto.',
+      el: 'Ευχαριστούμε, {name}! 🙌 Λάβαμε το αίτημά σας και θα επικοινωνήσουμε πολύ σύντομα.' },
+    'Mmm, ese email no parece válido. ¿Puedes revisarlo?': {
+      en: "Hmm, that email doesn't look valid. Could you check it?",
+      fr: 'Hmm, cet email ne semble pas valide. Pouvez-vous le vérifier ?',
+      de: 'Hmm, diese E-Mail sieht ungültig aus. Können Sie sie überprüfen?',
+      it: "Mmm, quell'email non sembra valida. Puoi controllarla?",
+      el: 'Χμμ, αυτό το email δεν φαίνεται έγκυρο. Μπορείτε να το ελέγξετε;' },
+    'Ups, no hemos podido enviar tu solicitud. Inténtalo de nuevo en un momento.': {
+      en: "Oops, we couldn't send your request. Please try again in a moment.",
+      fr: "Oups, nous n'avons pas pu envoyer votre demande. Réessayez dans un instant.",
+      de: 'Hoppla, wir konnten Ihre Anfrage nicht senden. Bitte versuchen Sie es gleich noch einmal.',
+      it: 'Ops, non siamo riusciti a inviare la tua richiesta. Riprova tra un momento.',
+      el: 'Ωχ, δεν μπορέσαμε να στείλουμε το αίτημά σας. Δοκιμάστε ξανά σε λίγο.' },
+
     /* ── aria-labels ── */
     'Menú': { en: 'Menu', fr: 'Menu', de: 'Menü', it: 'Menu', el: 'Μενού' },
     'Anterior': { en: 'Previous', fr: 'Précédent', de: 'Zurück', it: 'Precedente', el: 'Προηγούμενο' },

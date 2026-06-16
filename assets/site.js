@@ -241,6 +241,126 @@ function initSketchfab() {
   });
 }
 
+/* ── Chat de captación de leads (estilo Kira) ────────────────── */
+function initChat() {
+  if (document.querySelector('.chat-fab')) return;
+
+  const GREETING = '👋 ¡Hola! Soy el asistente de Eureqa3D. Te hago un par de preguntas y te contactamos.';
+  const QUESTIONS = [
+    { field: 'name',    q: 'Para empezar, ¿cómo te llamas?' },
+    { field: 'company', q: 'Encantado, {name}. ¿De qué empresa, hospital o centro nos escribes?' },
+    { field: 'email',   q: '¿Y un email donde podamos contactarte?', type: 'email' },
+    { field: 'message', q: 'Por último, cuéntanos brevemente qué necesitas.' },
+  ];
+  const data = {};
+  let step = -1, started = false, finished = false;
+
+  // Botón flotante
+  const fab = document.createElement('button');
+  fab.className = 'chat-fab';
+  fab.type = 'button';
+  fab.setAttribute('aria-label', tr('Abrir chat'));
+  fab.innerHTML = `<span class="badge">1</span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.04 2 11.02c0 2.69 1.3 5.1 3.36 6.74L4.5 22l4.6-2.07c.92.25 1.9.39 2.9.39 5.52 0 10-4.04 10-9.02S17.52 2 12 2z"/></svg>`;
+
+  // Panel
+  const panel = document.createElement('div');
+  panel.className = 'chat-panel';
+  panel.setAttribute('data-no-i18n', '');
+  panel.innerHTML = `
+    <div class="chat-head">
+      <div class="av"><img src="/assets/img/logo.svg" alt="Eureqa3D"></div>
+      <div>
+        <h4>${esc(tr('Asistente de Eureqa3D'))}</h4>
+        <div class="status"><span class="dot"></span>${esc(tr('Normalmente responde en minutos'))}</div>
+      </div>
+      <button class="close" type="button" aria-label="${esc(tr('Cerrar chat'))}">×</button>
+    </div>
+    <div class="chat-body"></div>
+    <form class="chat-foot">
+      <input type="text" autocomplete="off" placeholder="${esc(tr('Escribe tu respuesta…'))}" aria-label="${esc(tr('Escribe tu respuesta…'))}" />
+      <button type="submit" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+    </form>`;
+
+  document.body.append(fab, panel);
+  const body = panel.querySelector('.chat-body');
+  const form = panel.querySelector('.chat-foot');
+  const input = panel.querySelector('input');
+  const badge = fab.querySelector('.badge');
+
+  const scroll = () => { body.scrollTop = body.scrollHeight; };
+  const addMsg = (text, who) => {
+    const d = document.createElement('div');
+    d.className = `chat-msg ${who}`;
+    d.textContent = text;
+    body.appendChild(d); scroll();
+  };
+  const botSay = (text) => new Promise(res => {
+    const t = document.createElement('div');
+    t.className = 'chat-typing';
+    t.innerHTML = '<span></span><span></span><span></span>';
+    body.appendChild(t); scroll();
+    setTimeout(() => { t.remove(); addMsg(text, 'bot'); res(); }, 750);
+  });
+  const ask = async () => {
+    const Q = QUESTIONS[step];
+    await botSay(tr(Q.q).replace('{name}', data.name || ''));
+  };
+
+  async function open() {
+    panel.classList.add('open');
+    badge.style.display = 'none';
+    input.focus();
+    if (started) return;
+    started = true;
+    await botSay(tr(GREETING));
+    step = 0;
+    await ask();
+  }
+  const close = () => panel.classList.remove('open');
+
+  fab.addEventListener('click', () => panel.classList.contains('open') ? close() : open());
+  panel.querySelector('.close').addEventListener('click', close);
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (finished || step < 0) return;
+    const val = input.value.trim();
+    if (!val) return;
+    const Q = QUESTIONS[step];
+    if (Q.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+      addMsg(val, 'me'); input.value = '';
+      await botSay(tr('Mmm, ese email no parece válido. ¿Puedes revisarlo?'));
+      return;
+    }
+    addMsg(val, 'me');
+    data[Q.field] = val;
+    input.value = '';
+    step++;
+    if (step < QUESTIONS.length) { await ask(); return; }
+
+    // Fin: enviar
+    finished = true;
+    input.disabled = true;
+    try {
+      const res = await fetch('/api/public/contact', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: `Solicitud desde el chat web${data.company ? ' — ' + data.company : ''}`,
+          body: `${data.message}\n\nEmpresa/centro: ${data.company || '-'}`
+        })
+      });
+      if (!res.ok) throw new Error();
+      await botSay(tr('¡Gracias, {name}! 🙌 Hemos recibido tu solicitud y te contactaremos muy pronto.').replace('{name}', data.name || ''));
+    } catch {
+      finished = false; input.disabled = false; step = QUESTIONS.length - 1;
+      await botSay(tr('Ups, no hemos podido enviar tu solicitud. Inténtalo de nuevo en un momento.'));
+    }
+  });
+}
+
 /* ── Reveal al hacer scroll (fade-up escalonado) ─────────────── */
 function initReveal() {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -280,6 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mountLayout();
   initCarousels();
   initSketchfab();
+  initChat();
   initReveal();
   initCounters();
   const newsList = document.getElementById('news-list');   if (newsList) loadNewsList(newsList);

@@ -5,10 +5,36 @@ const session   = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 const bcrypt    = require('bcryptjs');
 const path      = require('path');
+const nodemailer = require('nodemailer');
 const db        = require('./db/init');
 
 const app  = express();
 const PORT = process.env.PORT || 8080;
+
+/* ── Correo (opcional, se activa con variables SMTP_*) ───────────── */
+let _mailer; // undefined = sin inicializar, false = no configurado
+function getMailer() {
+  if (_mailer !== undefined) return _mailer;
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) { _mailer = false; return false; }
+  const port = Number(SMTP_PORT) || 587;
+  _mailer = nodemailer.createTransport({
+    host: SMTP_HOST, port, secure: port === 465,
+    auth: { user: SMTP_USER, pass: SMTP_PASS }
+  });
+  return _mailer;
+}
+async function sendLeadEmail({ name, email, subject, body }) {
+  const m = getMailer();
+  if (!m) return; // sin SMTP configurado → el lead queda guardado en BD
+  const to = process.env.LEAD_TO || process.env.SMTP_USER;
+  await m.sendMail({
+    from: `"Eureqa3D Web" <${process.env.SMTP_USER}>`,
+    to, replyTo: email,
+    subject: subject || `Nuevo mensaje de ${name}`,
+    text: `Nombre: ${name}\nEmail: ${email}\nAsunto: ${subject || '-'}\n\n${body}`
+  });
+}
 
 app.set('trust proxy', 1); // Railway / Nginx proxy
 
@@ -185,6 +211,8 @@ app.post('/api/public/contact', async (req, res, next) => {
     await db.query(
       'INSERT INTO messages (name, email, subject, body) VALUES ($1,$2,$3,$4)',
       [name.trim(), email.trim(), subject?.trim() || null, body.trim()]);
+    sendLeadEmail({ name: name.trim(), email: email.trim(), subject: subject?.trim(), body: body.trim() })
+      .catch(e => console.error('✉️  Error enviando correo del lead:', e.message));
     res.status(201).json({ ok: true });
   } catch (e) { next(e); }
 });
