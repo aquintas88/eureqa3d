@@ -5,9 +5,8 @@ const NAV = [
   ['Inicio', '/'],
   ['Quiénes somos', '/quienes-somos'],
   ['Método Eureqa', '/metodo-eureqa'],
-  ['Traumatología', '/traumatologia'],
-  ['Otras especialidades', '/otras-especialidades'],
-  // ['Visor 3D', '/visor-3d'],   // oculto temporalmente: página preparada, sin mostrar
+  ['Especialidades', '/otras-especialidades'],
+  ['Visor 3D', '/visor-3d'],
   ['Modelos 3D', '/modelos-3d'],
   ['Noticias', '/noticias'],
   ['Contacto', '/contacto'],
@@ -131,8 +130,9 @@ async function loadNewsList(el) {
       el.innerHTML = `<p class="muted center">${tr('Próximamente publicaremos novedades aquí.')}</p>`;
       return;
     }
-    el.innerHTML = items.map(n => `
-      <a class="card news-card" href="/noticias/${esc(n.slug)}">
+    const [first, ...rest] = items.slice(0, 3);
+    const makeCard = (n, cls = '') => `
+      <a class="news-card ${cls}" href="/noticias/${esc(n.slug)}">
         <div class="thumb" ${n.image_url ? `style="background-image:url('${esc(n.image_url)}')"` : ''}></div>
         <div class="body">
           <span class="date">${fmtDate(n.published_at)}</span>
@@ -140,7 +140,9 @@ async function loadNewsList(el) {
           <p>${esc(n.excerpt || '')}</p>
           <span class="more">${tr('Leer más →')}</span>
         </div>
-      </a>`).join('');
+      </a>`;
+    el.innerHTML = makeCard(first)
+      + (rest.length ? `<div class="news-secondary-col">${rest.map(n => makeCard(n, 'news-secondary')).join('')}</div>` : '');
   } catch {
     el.innerHTML = `<p class="muted center">${tr('No se pudieron cargar las noticias.')}</p>`;
   }

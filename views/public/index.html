@@ -11,83 +11,271 @@
 <body data-page="inicio">
   <div id="site-header"></div>
 
-  <!-- Hero -->
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
   <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline
            poster="/assets/img/modelos/hero-pseudoaneurisma-a.jpg">
       <source src="/assets/video/hero-visor.mp4"  type="video/mp4">
       <source src="/assets/video/hero-visor.webm" type="video/webm">
     </video>
+    <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="eyebrow">Impresión 3D y modelos digitales · Sector salud</span>
-        <h1>Revolucionamos el <span>sector salud</span> con Impresión 3D y modelos digitales</h1>
-        <p class="lead">Trabajamos directamente con los especialistas, facilitándoles la incorporación de la impresión 3D y los modelos digitales de forma fácil y sencilla, con un servicio externo profesional, especializado y exclusivo del sector.</p>
+        <span class="label">Impresión 3D · Modelos digitales · Sector salud</span>
+        <h1>Cada cirugía empieza<br>antes de <em>entrar</em> al quirófano</h1>
+        <p class="lead">Transformamos la imagen médica en modelos físicos y digitales 3D que permiten a los cirujanos planificar con una precisión que antes era imposible.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/contacto">Solicita un caso de prueba</a>
-          <a class="btn btn-light" href="/metodo-eureqa">Conoce el Método Eureqa</a>
+          <a class="btn btn-cyan" href="/visor-3d">Explorar el visor 3D</a>
+          <a class="btn btn-light" href="/contacto">Solicitar caso de prueba</a>
         </div>
       </div>
     </div>
+    <div class="hero-scroll">SCROLL</div>
   </section>
 
-  <!-- Propuesta de valor -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Qué ofrecemos</span>
-        <h2>Una nueva y exclusiva herramienta en manos del profesional</h2>
-        <p>Especializados en el tratamiento de la imagen médica, segmentación, diseño, impresión 3D y modelos digitales: obtenemos una reconstrucción a tamaño real, física o digital, réplica o modelo único de máxima calidad, adaptado a cada patología.</p>
-      </div>
-      <div class="grid grid-4">
-        <div class="card"><div class="ic">🩻</div><h3>Imagen médica a 3D</h3><p>Convertimos estudios radiológicos 2D en biomodelos físicos precisos, listos para el quirófano.</p></div>
-        <div class="card"><div class="ic">🖥️</div><h3>Modelos digitales 3D</h3><p>Reconstrucciones interactivas con transparencias, opción de mostrar u ocultar órganos y anotaciones clínicas, potenciadas con inteligencia artificial.</p></div>
-        <div class="card"><div class="ic">⚙️</div><h3>Método Eureqa</h3><p>Proceso propio certificado con sello de calidad ISO 9001 que garantiza trazabilidad y confidencialidad (RGPD).</p></div>
-        <div class="card"><div class="ic">⏱️</div><h3>Tiempo récord</h3><p>Entregamos los modelos entre 24 y 48 horas según solicitud, material y destino. Tu tiempo importa.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="section-teal">
+  <!-- ── Stats ─────────────────────────────────────────────────── -->
+  <div class="stats-strip">
     <div class="container">
       <div class="stats">
-        <div class="stat"><div class="num">24-48h</div><div class="lbl">Plazo de entrega</div></div>
+        <div class="stat"><div class="num">24–48h</div><div class="lbl">Plazo de entrega</div></div>
         <div class="stat"><div class="num">ISO 9001</div><div class="lbl">Calidad certificada</div></div>
         <div class="stat"><div class="num" data-count="100" data-suffix="%">0%</div><div class="lbl">Modelos a medida</div></div>
         <div class="stat"><div class="num">RGPD</div><div class="lbl">Confidencialidad</div></div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Áreas -->
-  <section class="section-soft">
+  <!-- ── Propuesta de valor ─────────────────────────────────────── -->
+  <section class="section-dark">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Áreas de aplicación</span>
-        <h2>Tecnología que revoluciona la cirugía</h2>
-      </div>
-      <div class="grid grid-2">
+      <div class="feat-grid">
         <div class="card">
-          <div class="ic">🦴</div>
-          <h3>Traumatología</h3>
-          <p>La planificación con biomodelos 3D facilita el estudio de la anatomía, el abordaje y la previsión de complicaciones intraoperatorias.</p>
-          <p style="margin-top:1rem"><a class="more" href="/traumatologia" style="font-family:var(--head);font-weight:700;color:var(--orange-dark)">Ver detalle →</a></p>
+          <span class="num-label">01</span>
+          <span class="ic">🩻</span>
+          <h3>Del DICOM al modelo en horas</h3>
+          <p>Convertimos cualquier estudio radiológico en un biomodelo físico o digital de alta fidelidad anatómica. Sin intermediarios, sin pérdida de información clínica.</p>
+          <p style="margin-top:1.2rem"><a class="btn btn-outline-cyan btn-sm" href="/metodo-eureqa">Ver el Método Eureqa →</a></p>
         </div>
         <div class="card">
-          <div class="ic">🫀</div>
-          <h3>Otras especialidades</h3>
-          <p>Urología, cardiología, maxilofacial, neurocirugía, vascular, torácica, ORL, digestivo y ginecología.</p>
-          <p style="margin-top:1rem"><a class="more" href="/otras-especialidades" style="font-family:var(--head);font-weight:700;color:var(--orange-dark)">Ver detalle →</a></p>
+          <span class="num-label">02</span>
+          <span class="ic">🖥️</span>
+          <h3>Visor 3D interactivo</h3>
+          <p>Modelos digitales con transparencias, capas anatómicas y anotaciones clínicas potenciadas con IA. Acceso desde cualquier dispositivo.</p>
+        </div>
+        <div class="card">
+          <span class="num-label">03</span>
+          <span class="ic">⚙️</span>
+          <h3>Proceso certificado</h3>
+          <p>ISO 9001, trazabilidad completa y cumplimiento RGPD en cada caso.</p>
+        </div>
+        <div class="card">
+          <span class="num-label">04</span>
+          <span class="ic">⏱️</span>
+          <h3>Tiempo récord</h3>
+          <p>24–48 horas desde la solicitud hasta entrega, según material y destino.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Clientes -->
-  <section>
+  <!-- ── Visor Eureqa 3D ────────────────────────────────────────── -->
+  <section class="section-surface">
     <div class="container">
-      <div class="section-head"><span class="eyebrow">Confianza</span><h2>Han confiado en nosotros</h2><p>Hospitales, mutuas y referentes del sector salud que trabajan con Eureqa3D.</p></div>
+      <div class="visor-layout">
+        <div>
+          <span class="label">Tecnología propia</span>
+          <h2>El Visor<br>Eureqa 3D</h2>
+          <p style="color:var(--text-soft);margin-bottom:1.6rem;line-height:1.75">Nuestro visor propio permite explorar anatomías completas con transparencias, ocultar y mostrar estructuras, añadir anotaciones clínicas y compartir el modelo con el equipo quirúrgico desde cualquier dispositivo.</p>
+          <ul style="list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:.7rem">
+            <li style="display:flex;gap:.8rem;align-items:center;color:var(--text-soft);font-size:.92rem"><span style="color:var(--cyan);font-size:1rem">◈</span> Rotación libre y zoom sin límites</li>
+            <li style="display:flex;gap:.8rem;align-items:center;color:var(--text-soft);font-size:.92rem"><span style="color:var(--cyan);font-size:1rem">◈</span> Capas anatómicas independientes</li>
+            <li style="display:flex;gap:.8rem;align-items:center;color:var(--text-soft);font-size:.92rem"><span style="color:var(--cyan);font-size:1rem">◈</span> Transparencias y cortes seccionales</li>
+            <li style="display:flex;gap:.8rem;align-items:center;color:var(--text-soft);font-size:.92rem"><span style="color:var(--cyan);font-size:1rem">◈</span> Anotaciones y mediciones clínicas</li>
+            <li style="display:flex;gap:.8rem;align-items:center;color:var(--text-soft);font-size:.92rem"><span style="color:var(--cyan);font-size:1rem">◈</span> Acceso por enlace seguro para el cirujano</li>
+          </ul>
+          <a class="btn btn-outline-cyan" href="/visor-3d">Acceder al visor</a>
+        </div>
+        <div class="visor-block">
+          <div class="visor-embed model-viewer"
+               data-sketchfab="73f92cd6e0f246bca13e6aaf7c506223"
+               style="background-image:url('/assets/img/modelos/pseudoaneurisma-a.jpg')">
+            <button class="model-play" type="button">
+              <span class="play-ic">▶</span><span class="play-tx">Ver en 3D</span>
+            </button>
+          </div>
+          <p class="visor-disclaimer muted">Modelo de demostración · Caso real anonimizado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Especialidades ─────────────────────────────────────────── -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">Especialidades</span>
+        <h2>Donde el 3D cambia la cirugía</h2>
+        <p>Trabajamos con los principales servicios quirúrgicos. Cada especialidad tiene sus propias patologías prioritarias y protocolos de uso del modelo.</p>
+      </div>
+      <div class="grid grid-3" style="gap:1rem">
+        <div class="spec">
+          <div class="spec-ic">🦴</div>
+          <h3>Traumatología</h3>
+          <p>Fracturas complejas, reconstrucciones de pelvis, columna y extremidades.</p>
+          <ul>
+            <li>Fracturas periprotésicas</li>
+            <li>Osteotomías correctoras</li>
+            <li>Tumores óseos</li>
+          </ul>
+          <a class="more-link" href="/traumatologia">Ver casos →</a>
+        </div>
+        <div class="spec">
+          <div class="spec-ic">🫀</div>
+          <h3>Cardiología y vascular</h3>
+          <p>Anomalías cardiacas congénitas, aneurismas y malformaciones vasculares.</p>
+          <ul>
+            <li>Cardiopatías congénitas</li>
+            <li>Aneurismas de aorta</li>
+            <li>Fístulas arteriovenosas</li>
+          </ul>
+          <a class="more-link" href="/otras-especialidades">Ver casos →</a>
+        </div>
+        <div class="spec">
+          <div class="spec-ic">🧠</div>
+          <h3>Neurocirugía</h3>
+          <p>Tumores de base de cráneo, malformaciones vasculares cerebrales.</p>
+          <ul>
+            <li>Meningiomas complejos</li>
+            <li>MAV cerebrales</li>
+            <li>Tumores de fosa posterior</li>
+          </ul>
+          <a class="more-link" href="/otras-especialidades">Ver casos →</a>
+        </div>
+        <div class="spec">
+          <div class="spec-ic">🦷</div>
+          <h3>Maxilofacial</h3>
+          <p>Reconstrucciones faciales, osteotomías ortognáticas y tumores mandibulares.</p>
+          <ul>
+            <li>Reconstrucción de mandíbula</li>
+            <li>Cirugía ortognática</li>
+            <li>Tumores de partes blandas</li>
+          </ul>
+          <a class="more-link" href="/otras-especialidades">Ver casos →</a>
+        </div>
+        <div class="spec">
+          <div class="spec-ic">🫁</div>
+          <h3>Torácica y urología</h3>
+          <p>Resecciones pulmonares, nefrectomías parciales y tumores renales complejos.</p>
+          <ul>
+            <li>Segmentectomías pulmonares</li>
+            <li>Nefrectomías parciales</li>
+            <li>Tumores suprarrenales</li>
+          </ul>
+          <a class="more-link" href="/otras-especialidades">Ver casos →</a>
+        </div>
+        <div class="spec">
+          <div class="spec-ic">🔬</div>
+          <h3>ORL y otras</h3>
+          <p>Cirugías de oído interno, laringes y patologías de cabeza y cuello.</p>
+          <ul>
+            <li>Colesteatomas complejos</li>
+            <li>Tumores de glándulas salivales</li>
+            <li>Ginecología oncológica</li>
+          </ul>
+          <a class="more-link" href="/otras-especialidades">Ver casos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Método en 4 pasos ──────────────────────────────────────── -->
+  <section class="section-surface">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+        <div>
+          <span class="label">El proceso</span>
+          <h2 style="margin-bottom:1.5rem">Del estudio<br>al quirófano</h2>
+          <p style="color:var(--text-soft);margin-bottom:2rem;line-height:1.75">Nuestro método garantiza la trazabilidad completa de cada caso con trazabilidad, confidencialidad y calidad ISO en cada paso.</p>
+          <a class="btn btn-ghost" href="/metodo-eureqa">Conocer el Método Eureqa</a>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Recogida del caso</h3>
+            <p>El cirujano nos traslada el estudio y las necesidades clínicas específicas.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Segmentación con IA</h3>
+            <p>Procesamos la imagen médica con inteligencia artificial y revisión experta.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Modelo digital o físico</h3>
+            <p>Generamos el visor 3D interactivo y/o el biomodelo impreso a escala 1:1.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Entrega en 24–48 h</h3>
+            <p>El cirujano recibe el enlace al visor y/o el modelo físico listo para el quirófano.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Jornadas y eventos (dinámico) ──────────────────────────── -->
+  <section class="section-dark" data-events-section>
+    <div class="container">
+      <div class="section-head">
+        <span class="label">Agenda</span>
+        <h2>Jornadas y eventos</h2>
+      </div>
+      <div id="events-list" style="max-width:720px;margin:0 auto"></div>
+    </div>
+  </section>
+
+  <!-- ── Noticias ───────────────────────────────────────────────── -->
+  <section class="section-surface">
+    <div class="container">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem">
+        <div>
+          <span class="label">Actualidad</span>
+          <h2 style="margin:0">Últimas noticias</h2>
+        </div>
+        <a class="btn btn-ghost btn-sm" href="/noticias">Ver todas →</a>
+      </div>
+      <div id="news-list" class="news-grid"></div>
+    </div>
+  </section>
+
+  <!-- ── Modelos 3D destacados ──────────────────────────────────── -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="model-feature">
+        <div class="visor-block">
+          <div class="model-viewer"
+               data-sketchfab="73f92cd6e0f246bca13e6aaf7c506223"
+               style="background-image:url('/assets/img/modelos/pseudoaneurisma-a.jpg');border-radius:var(--radius);box-shadow:var(--shadow)">
+            <button class="model-play" type="button">
+              <span class="play-ic">▶</span><span class="play-tx">Ver en 3D</span>
+            </button>
+          </div>
+        </div>
+        <div>
+          <span class="model-spec">Caso real · Cirugía vascular</span>
+          <h2>Explora nuestros modelos 3D</h2>
+          <p style="color:var(--text-soft)">Reconstrucciones digitales interactivas que llevan la planificación quirúrgica a otro nivel. Del hueso al tejido blando, con transparencias y anotaciones clínicas.</p>
+          <p style="margin-top:1.4rem"><a class="btn btn-outline-cyan" href="/modelos-3d">Ver todos los modelos 3D</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Clientes ───────────────────────────────────────────────── -->
+  <section class="section-surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">Confianza</span>
+        <h2>Han confiado en nosotros</h2>
+        <p>Hospitales, mutuas y referentes del sector salud que incorporan el 3D a su práctica clínica con Eureqa3D.</p>
+      </div>
       <div class="clients-grid">
         <div class="client-logo"><img src="/assets/img/clientes/hospital-clinico-san-carlos.png" alt="Hospital Clínico San Carlos"></div>
         <div class="client-logo"><img src="/assets/img/clientes/fraternidad-muprespa.png" alt="Fraternidad Muprespa"></div>
@@ -108,46 +296,13 @@
     </div>
   </section>
 
-  <!-- Eventos / Jornadas (dinámico, se oculta si está vacío) -->
-  <section class="section-teal" data-events-section>
-    <div class="container">
-      <div class="section-head"><span class="eyebrow" style="color:#ffd9a8">Agenda</span><h2>Jornadas y eventos</h2></div>
-      <div id="events-list" style="max-width:760px;margin:0 auto"></div>
-    </div>
-  </section>
-
-  <!-- Noticias (dinámico) -->
-  <section>
-    <div class="container">
-      <div class="section-head"><span class="eyebrow">Actualidad</span><h2>Últimas noticias</h2><p>Apariciones de Eureqa3D en los medios y novedades del proyecto.</p></div>
-      <div id="news-list" class="news-grid"></div>
-      <p class="center" style="margin-top:2rem"><a class="btn btn-ghost" href="/noticias">Ver todas las noticias</a></p>
-    </div>
-  </section>
-
-  <!-- Modelos 3D destacados -->
-  <section class="section-teal">
-    <div class="container">
-      <div class="model-feature">
-        <div class="model-viewer" data-sketchfab="73f92cd6e0f246bca13e6aaf7c506223" style="background-image:url('/assets/img/modelos/pseudoaneurisma-a.jpg')">
-          <button class="model-play" type="button"><span class="play-ic">▶</span><span class="play-tx">Ver en 3D</span></button>
-        </div>
-        <div>
-          <span class="model-spec">Innovación</span>
-          <h2>Explora nuestros modelos 3D</h2>
-          <p style="color:rgba(255,255,255,.9)">Del hueso al tejido blando: reconstrucciones digitales interactivas que llevan la planificación quirúrgica a otro nivel.</p>
-          <p style="margin-top:1.4rem"><a class="btn btn-light" href="/modelos-3d">Ver todos los modelos 3D</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
+  <!-- ── CTA ───────────────────────────────────────────────────── -->
   <section class="cta-band">
     <div class="container">
-      <h2>¿Quieres hacer un caso de prueba?</h2>
-      <p>Sabemos lo importante que es tu tiempo. Déjanos ayudarte a incorporar la impresión 3D a tu práctica clínica.</p>
-      <a class="btn btn-light" href="/contacto">Contacta con nosotros</a>
+      <span class="label" style="display:block;text-align:center;margin-bottom:1rem">Siguiente paso</span>
+      <h2>¿Quieres ver el 3D<br>aplicado a <em>tu</em> especialidad?</h2>
+      <p>Sabemos lo importante que es tu tiempo. Solicita un caso de prueba sin compromiso y descubre en horas lo que el 3D puede hacer por tu equipo.</p>
+      <a class="btn btn-cyan" href="/contacto">Solicitar caso de prueba gratuito</a>
     </div>
   </section>
 
