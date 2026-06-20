@@ -111,8 +111,16 @@ img { max-width: 100%; display: block; }
 /* ── Hero (imagen real de marca) ─────────────────────────────── */
 .hero {
   position: relative; overflow: hidden; color: #fff;
-  background: #058aa9 url('/assets/img/modelos/hero-pseudoaneurisma-a.jpg') center right / cover no-repeat;
+  background: #058aa9;
   min-height: 460px; display: flex; align-items: center;
+}
+.hero-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  z-index: 0; pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
 }
 .hero::before {
   content: ""; position: absolute; inset: 0;
