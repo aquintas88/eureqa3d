@@ -12,28 +12,71 @@
   <div class="admin">
     <aside class="sidebar">
       <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="Eureqa3D" /></a>
-      <nav>
-        <button class="nav-item active" data-view="news">📰 Noticias</button>
-        <button class="nav-item" data-view="events">📅 Jornadas y eventos</button>
-        <button class="nav-item" data-view="messages">✉️ Mensajes</button>
+      <nav id="sidebar-nav">
+        <!-- rendered by JS based on role -->
       </nav>
       <div class="sidebar-foot">
         <span id="who" class="muted"></span>
+        <span id="role-badge" class="role-badge"></span>
         <a href="/" target="_blank">Ver web ↗</a>
         <button id="logout" class="link">Cerrar sesión</button>
       </div>
     </aside>
 
     <main class="content">
-      <header class="content-head">
-        <h1 id="view-title">Noticias</h1>
-        <button class="btn btn-primary" id="new-btn">+ Nuevo</button>
-      </header>
-      <div id="list"></div>
+      <!-- Generic list view (news / events / messages) -->
+      <div id="list-view">
+        <header class="content-head">
+          <h1 id="view-title"></h1>
+          <button class="btn btn-primary" id="new-btn">+ Nuevo</button>
+        </header>
+        <div id="list"></div>
+      </div>
+
+      <!-- Kanban view -->
+      <div id="kanban-view" hidden>
+        <header class="content-head">
+          <h1>Backlog EureqaVisor3D</h1>
+          <button class="btn btn-primary" id="kanban-new-btn">+ Nueva tarjeta</button>
+        </header>
+        <div class="kanban-filters" id="kanban-filters">
+          <input type="search" id="kf-search" placeholder="Buscar…" />
+          <select id="kf-area"><option value="">Todas las áreas</option></select>
+          <select id="kf-prioridad">
+            <option value="">Prioridad</option>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+          </select>
+          <select id="kf-creador"><option value="">Creador</option></select>
+          <button class="btn btn-ghost btn-sm" id="kf-clear">Limpiar</button>
+        </div>
+        <div class="kanban-board" id="kanban-board">
+          <!-- columns rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Users view -->
+      <div id="users-view" hidden>
+        <header class="content-head">
+          <h1>Usuarios</h1>
+          <div style="display:flex;gap:.6rem">
+            <button class="btn btn-ghost btn-sm" id="invite-tab-btn">Invitados</button>
+            <button class="btn btn-primary" id="user-new-btn">+ Nuevo usuario</button>
+          </div>
+        </header>
+        <div id="users-list"></div>
+        <!-- Invites sub-panel -->
+        <div id="invites-panel" hidden>
+          <h2 style="margin:2rem 0 1rem;font-size:1.1rem">Invitaciones temporales</h2>
+          <button class="btn btn-teal btn-sm" id="invite-new-btn" style="margin-bottom:1rem">+ Nueva invitación</button>
+          <div id="invites-list"></div>
+        </div>
+      </div>
     </main>
   </div>
 
-  <!-- Modal editor -->
+  <!-- Modal genérico (noticias / eventos / usuarios / nueva tarjeta) -->
   <div class="modal" id="modal" hidden>
     <div class="modal-card">
       <header><h2 id="modal-title">Editar</h2><button class="link" id="modal-close">✕</button></header>
@@ -42,6 +85,24 @@
       <footer>
         <button class="btn btn-ghost" id="cancel">Cancelar</button>
         <button class="btn btn-primary" id="save">Guardar</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal detalle de tarjeta kanban -->
+  <div class="modal" id="card-modal" hidden>
+    <div class="modal-card modal-card--wide">
+      <header>
+        <div style="display:flex;align-items:center;gap:.8rem">
+          <span id="cm-id-badge" class="id-badge"></span>
+          <h2 id="cm-title" style="margin:0"></h2>
+        </div>
+        <button class="link" id="card-modal-close">✕</button>
+      </header>
+      <div id="card-detail" style="padding:1.2rem 1.5rem;overflow-y:auto;flex:1"></div>
+      <footer>
+        <button class="btn btn-ghost" id="card-edit-btn">Editar</button>
+        <button class="btn btn-ghost" id="card-modal-cancel">Cerrar</button>
       </footer>
     </div>
   </div>
