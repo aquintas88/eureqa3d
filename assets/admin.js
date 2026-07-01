@@ -537,7 +537,8 @@ function filterLicitaciones(items) {
     if (lFilters.q) {
       const q = lFilters.q.toLowerCase();
       if (!(item.organo_contratacion||'').toLowerCase().includes(q) &&
-          !(item.objeto_contrato||'').toLowerCase().includes(q)) return false;
+          !(item.objeto_contrato||'').toLowerCase().includes(q) &&
+          !(item.titulo_mostrar||'').toLowerCase().includes(q)) return false;
     }
     return true;
   });
@@ -571,7 +572,7 @@ function renderLicitacionCard(item) {
       ${encajeBadge(item.encaje)}
       ${scoreBadge(item.score_final)}
     </div>
-    <div class="kcard-title">${esc(item.objeto_contrato)}</div>
+    <div class="kcard-title">${esc(item.titulo_mostrar || item.objeto_contrato)}</div>
     <div class="kcard-meta">
       <span>${esc(item.organo_contratacion)}</span>
       ${item.fecha_limite_presentacion ? `<span>⏱ ${fmtShort(item.fecha_limite_presentacion)}</span>` : ''}
@@ -730,7 +731,7 @@ function openLicitacionDetail(item) {
   const clase = item.encaje === 'alto' ? 'Alta' : 'Media';
   $('#cm-id-badge').className = `prio prio--${clase}`;
   $('#cm-id-badge').textContent = (item.encaje || '').toUpperCase();
-  $('#cm-title').textContent = item.objeto_contrato || '';
+  $('#cm-title').textContent = item.titulo_mostrar || item.objeto_contrato || '';
 
   const field = (label, val) => `
     <div class="field">
@@ -754,6 +755,7 @@ function openLicitacionDetail(item) {
       ${field('Responsable', item.responsable)}
       ${field('Valor oferta', item.valor_oferta ? fmtEUR(item.valor_oferta) : null)}
     </div>
+    ${item.titulo_traducido && item.titulo_traducido !== item.objeto_contrato ? `<div class="card-detail-full"><label>Título original</label><p>${esc(item.objeto_contrato)}</p></div>` : ''}
     ${item.resumen_ia ? `<div class="card-detail-full"><label>Resumen IA</label><p>${esc(item.resumen_ia)}</p></div>` : ''}
     ${item.aplicaciones_detectadas?.length ? `<div class="card-detail-full"><label>Aplicaciones detectadas</label><p>${item.aplicaciones_detectadas.map(esc).join(', ')}</p></div>` : ''}
     ${item.notas ? `<div class="card-detail-full"><label>Notas</label><p>${esc(item.notas)}</p></div>` : ''}
