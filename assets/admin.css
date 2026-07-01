@@ -157,3 +157,12 @@ body { background: var(--bg-soft); }
   .kanban-col { flex: 0 0 240px; }
   .card-detail-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Licitaciones: acento de color por etapa del funnel ──── */
+.kanban-col[data-col="detectada"]         { border-top: 4px solid #8c959f; }
+.kanban-col[data-col="analizada"]         { border-top: 4px solid #0969da; }
+.kanban-col[data-col="interesante"]       { border-top: 4px solid #e88c1a; }
+.kanban-col[data-col="oferta_presentada"] { border-top: 4px solid #8250df; }
+.kanban-col[data-col="ganada"]            { border-top: 4px solid #1a7f37; }
+.kanban-col[data-col="perdida"]           { border-top: 4px solid #cf222e; }
+.kanban-col[data-col="descartada"]        { border-top: 4px solid #57606a; }

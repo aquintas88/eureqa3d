@@ -6,6 +6,7 @@ const $$ = (s) => [...document.querySelectorAll(s)];
 const esc = (s) => (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt = (iso) => iso ? new Date(iso).toLocaleDateString('es-ES', {day:'2-digit',month:'short',year:'numeric'}) : '—';
 const fmtShort = (iso) => iso ? new Date(iso).toLocaleDateString('es-ES', {day:'2-digit',month:'2-digit',year:'2-digit'}) : '—';
+const fmtEUR = (v) => v == null ? '—' : Number(v).toLocaleString('es-ES') + ' €';
 
 async function api(url, opts) {
   const res = await fetch(url, { headers: { 'Content-Type': 'application/json' }, ...opts });
@@ -31,8 +32,9 @@ const NAV_ITEMS = [
   { key: 'events',   label: '📅 Jornadas',          roles: ['admin'] },
   { key: 'messages', label: '✉️ Mensajes',          roles: ['admin'] },
   { key: '__sep__',  label: '',                      roles: ['admin'] },
-  { key: 'kanban',   label: '📋 Backlog Kanban',    roles: ['admin', 'investigador'] },
-  { key: 'users',    label: '👥 Usuarios',          roles: ['admin'] },
+  { key: 'kanban',       label: '📋 Backlog Kanban', roles: ['admin', 'investigador'] },
+  { key: 'licitaciones', label: '📈 Licitaciones',   roles: ['admin', 'investigador'] },
+  { key: 'users',        label: '👥 Usuarios',       roles: ['admin'] },
 ];
 
 const ROLE_LABELS = {
@@ -68,13 +70,14 @@ function setActiveNav(key) {
 }
 
 function showView(name) {
-  ['list-view', 'kanban-view', 'users-view'].forEach(id => {
+  ['list-view', 'kanban-view', 'licitaciones-view', 'users-view'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.hidden = (id !== name + '-view' && name !== 'list');
   });
   if (name === 'list') {
     $('#list-view').hidden = false;
     $('#kanban-view').hidden = true;
+    $('#licitaciones-view').hidden = true;
     $('#users-view').hidden = true;
   }
 }
@@ -124,8 +127,9 @@ async function loadView(key) {
   currentView = key;
   setActiveNav(key);
 
-  if (key === 'kanban') { showView('kanban'); return loadKanban(); }
-  if (key === 'users')  { showView('users');  return loadUsers(); }
+  if (key === 'kanban')       { showView('kanban');       return loadKanban(); }
+  if (key === 'licitaciones') { showView('licitaciones'); return loadLicitaciones(); }
+  if (key === 'users')        { showView('users');        return loadUsers(); }
 
   showView('list');
   const v = VIEWS[key];
@@ -504,6 +508,263 @@ $('#card-modal-cancel')?.addEventListener('click', closeCardModal);
 $('#card-modal')?.addEventListener('click', (e) => { if (e.target === $('#card-modal')) closeCardModal(); });
 
 /* ══════════════════════════════════════════════════════════════
+   LICITACIONES — funnel comercial (mirroring el bloque KANBAN)
+   ══════════════════════════════════════════════════════════════ */
+const LIC_COLUMNS = ['detectada', 'analizada', 'interesante', 'oferta_presentada', 'ganada', 'perdida', 'descartada'];
+const LIC_COLUMN_LABELS = {
+  detectada: 'Detectada', analizada: 'Analizada', interesante: 'Interesante',
+  oferta_presentada: 'Oferta presentada', ganada: 'Ganada', perdida: 'Perdida', descartada: 'Descartada',
+};
+let lItems = [];
+let lFilters = { q: '', encaje: '', responsable: '' };
+let lDragId = null;
+
+function encajeBadge(encaje) {
+  if (!encaje) return '';
+  const clase = encaje === 'alto' ? 'Alta' : 'Media';
+  return `<span class="prio prio--${clase}">${esc(encaje)}</span>`;
+}
+
+function scoreBadge(score) {
+  if (score == null) return '';
+  return `<span class="estim">${Math.round(score)} pts</span>`;
+}
+
+function filterLicitaciones(items) {
+  return items.filter(item => {
+    if (lFilters.encaje && item.encaje !== lFilters.encaje) return false;
+    if (lFilters.responsable && item.responsable !== lFilters.responsable) return false;
+    if (lFilters.q) {
+      const q = lFilters.q.toLowerCase();
+      if (!(item.organo_contratacion||'').toLowerCase().includes(q) &&
+          !(item.objeto_contrato||'').toLowerCase().includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderLicitacionesBoard() {
+  const board = $('#licitaciones-board');
+  if (!board) return;
+  const visible = filterLicitaciones(lItems);
+
+  board.innerHTML = LIC_COLUMNS.map(col => {
+    const cards = visible.filter(i => i.etapa === col);
+    return `<div class="kanban-col" data-col="${esc(col)}">
+      <div class="kanban-col-head">
+        <h3>${esc(LIC_COLUMN_LABELS[col] || col)}</h3>
+        <span class="kanban-col-count">${cards.length}</span>
+      </div>
+      <div class="kanban-cards" data-col="${esc(col)}">
+        ${cards.map(renderLicitacionCard).join('')}
+        <div class="drop-zone" data-col="${esc(col)}"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  setupLicitacionesColumnDrops();
+}
+
+function renderLicitacionCard(item) {
+  return `<div class="kcard" draggable="true" data-id="${esc(item.tender_id)}" data-col="${esc(item.etapa)}">
+    <div class="kcard-top">
+      ${encajeBadge(item.encaje)}
+      ${scoreBadge(item.score_final)}
+    </div>
+    <div class="kcard-title">${esc(item.objeto_contrato)}</div>
+    <div class="kcard-meta">
+      <span>${esc(item.organo_contratacion)}</span>
+      ${item.fecha_limite_presentacion ? `<span>⏱ ${fmtShort(item.fecha_limite_presentacion)}</span>` : ''}
+      ${item.presupuesto_total ? `<span>${fmtEUR(item.presupuesto_total)}</span>` : ''}
+    </div>
+  </div>`;
+}
+
+function initLicitacionesDragDrop() {
+  const board = $('#licitaciones-board');
+  if (!board) return;
+
+  board.addEventListener('click', (e) => {
+    if (lDragId) return;
+    const card = e.target.closest('.kcard');
+    if (!card) return;
+    openLicitacionDetail(lItems.find(i => String(i.tender_id) === card.dataset.id));
+  });
+
+  board.addEventListener('dragstart', (e) => {
+    const card = e.target.closest('.kcard');
+    if (!card) return;
+    lDragId = card.dataset.id;
+    card.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text', lDragId);
+  });
+
+  board.addEventListener('dragend', () => {
+    const dragging = board.querySelector('.dragging');
+    if (dragging) dragging.classList.remove('dragging');
+    board.querySelectorAll('.kanban-col').forEach(c => c.classList.remove('drag-over'));
+    setTimeout(() => { lDragId = null; }, 0);
+  });
+}
+
+function setupLicitacionesColumnDrops() {
+  const board = $('#licitaciones-board');
+  if (!board) return;
+
+  board.querySelectorAll('.kanban-col').forEach(col => {
+    col.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      board.querySelectorAll('.kanban-col').forEach(c => c.classList.remove('drag-over'));
+      col.classList.add('drag-over');
+    });
+    col.addEventListener('dragleave', (e) => {
+      if (!col.contains(e.relatedTarget)) col.classList.remove('drag-over');
+    });
+    col.addEventListener('drop', async (e) => {
+      e.preventDefault();
+      board.querySelectorAll('.kanban-col').forEach(c => c.classList.remove('drag-over'));
+      const newEtapa = col.dataset.col;
+      if (!lDragId || !newEtapa) return;
+      const item = lItems.find(i => String(i.tender_id) === lDragId);
+      if (!item || item.etapa === newEtapa) return;
+      const capturedId = lDragId;
+      try {
+        const updated = await api(`/api/licitaciones/items/${encodeURIComponent(capturedId)}`, {
+          method: 'PATCH', body: JSON.stringify({ etapa: newEtapa })
+        });
+        const idx = lItems.findIndex(i => String(i.tender_id) === capturedId);
+        if (idx !== -1) lItems[idx] = updated;
+        renderLicitacionesBoard();
+      } catch (err) { alert('Error: ' + err.message); }
+    });
+  });
+}
+
+async function loadLicitaciones() {
+  const board = $('#licitaciones-board');
+  if (!board) return;
+  board.innerHTML = '<p class="empty" style="padding:2rem">Cargando…</p>';
+  try {
+    const [items, meta] = await Promise.all([
+      api('/api/licitaciones/items'),
+      api('/api/licitaciones/meta'),
+    ]);
+    lItems = items;
+    populateLicitacionesFilters(meta);
+    renderLicitacionesBoard();
+  } catch { board.innerHTML = '<p class="empty">No se pudo cargar el funnel de licitaciones.</p>'; }
+}
+
+function populateLicitacionesFilters(meta) {
+  const responsableEl = $('#lf-responsable');
+  if (!responsableEl) return;
+  const saved = responsableEl.value;
+  responsableEl.innerHTML = '<option value="">Responsable</option>' +
+    meta.responsables.map(r => `<option value="${esc(r)}" ${saved===r?'selected':''}>${esc(r)}</option>`).join('');
+}
+
+function applyLicitacionesFilters() {
+  lFilters.q            = ($('#lf-search')?.value      || '').trim();
+  lFilters.encaje       =  $('#lf-encaje')?.value       || '';
+  lFilters.responsable  =  $('#lf-responsable')?.value  || '';
+  renderLicitacionesBoard();
+}
+
+$('#lf-search')?.addEventListener('input',  applyLicitacionesFilters);
+$('#lf-encaje')?.addEventListener('change', applyLicitacionesFilters);
+$('#lf-responsable')?.addEventListener('change', applyLicitacionesFilters);
+$('#lf-clear')?.addEventListener('click', () => {
+  ['#lf-search','#lf-encaje','#lf-responsable'].forEach(s => { const el = $(s); if (el) el.value = ''; });
+  lFilters = { q:'', encaje:'', responsable:'' };
+  renderLicitacionesBoard();
+});
+
+const LICITACIONES_FIELDS = [
+  { name:'etapa',           label:'Etapa',          type:'select', options: LIC_COLUMNS },
+  { name:'responsable',     label:'Responsable',    type:'text' },
+  { name:'valor_oferta',    label:'Valor de la oferta (€)', type:'number' },
+  { name:'motivo_descarte', label:'Motivo de descarte (si aplica)', type:'text' },
+  { name:'notas',           label:'Notas',          type:'textarea' },
+];
+
+function openLicitacionEditor(item) {
+  $('#modal-title').textContent = `Editar · ${item.organo_contratacion}`;
+  clearErr();
+  $('#editor').innerHTML = LICITACIONES_FIELDS.map(f => {
+    const val = item?.[f.name] ?? '';
+    if (f.type === 'textarea')
+      return `<label>${esc(f.label)}<textarea name="${esc(f.name)}">${esc(val)}</textarea></label>`;
+    if (f.type === 'select') {
+      const opts = f.options.map(o => `<option value="${esc(o)}" ${val===o?'selected':''}>${esc(LIC_COLUMN_LABELS[o] || o)}</option>`).join('');
+      return `<label>${esc(f.label)}<select name="${esc(f.name)}">${opts}</select></label>`;
+    }
+    return `<label>${esc(f.label)}<input type="${esc(f.type)}" name="${esc(f.name)}" value="${esc(val)}"></label>`;
+  }).join('');
+  $('#save').onclick = () => saveLicitacionItem(item.tender_id);
+  $('#modal').hidden = false;
+}
+
+async function saveLicitacionItem(tenderId) {
+  const form = $('#editor');
+  const body = {};
+  LICITACIONES_FIELDS.forEach(f => {
+    const el = form.elements[f.name];
+    if (el) body[f.name] = el.value || null;
+  });
+  try {
+    const updated = await api(`/api/licitaciones/items/${encodeURIComponent(tenderId)}`, {
+      method: 'PATCH', body: JSON.stringify(body)
+    });
+    const idx = lItems.findIndex(i => String(i.tender_id) === String(tenderId));
+    if (idx !== -1) lItems[idx] = updated;
+    closeModal();
+    renderLicitacionesBoard();
+  } catch (e) { showErr(e.message); }
+}
+
+function openLicitacionDetail(item) {
+  if (!item) return;
+  const cm = $('#card-modal');
+  const clase = item.encaje === 'alto' ? 'Alta' : 'Media';
+  $('#cm-id-badge').className = `prio prio--${clase}`;
+  $('#cm-id-badge').textContent = (item.encaje || '').toUpperCase();
+  $('#cm-title').textContent = item.objeto_contrato || '';
+
+  const field = (label, val) => `
+    <div class="field">
+      <label>${esc(label)}</label>
+      <span>${val ? esc(String(val)) : '<span style="color:var(--muted)">—</span>'}</span>
+    </div>`;
+
+  const enlaces = [
+    item.url_perfil ? `<a href="${esc(item.url_perfil)}" target="_blank" rel="noopener">Perfil del contratante ↗</a>` : '',
+    item.url_pliego_administrativo ? `<a href="${esc(item.url_pliego_administrativo)}" target="_blank" rel="noopener">Pliego administrativo ↗</a>` : '',
+  ].filter(Boolean).join(' · ');
+
+  $('#card-detail').innerHTML = `
+    <div class="card-detail-grid">
+      ${field('Órgano de contratación', item.organo_contratacion)}
+      ${field('Importe', item.presupuesto_total ? fmtEUR(item.presupuesto_total) : null)}
+      ${field('Fecha límite', fmtShort(item.fecha_limite_presentacion))}
+      ${field('Score IA', item.score_final)}
+      ${field('Encaje', item.encaje)}
+      ${field('Etapa', LIC_COLUMN_LABELS[item.etapa] || item.etapa)}
+      ${field('Responsable', item.responsable)}
+      ${field('Valor oferta', item.valor_oferta ? fmtEUR(item.valor_oferta) : null)}
+    </div>
+    ${item.resumen_ia ? `<div class="card-detail-full"><label>Resumen IA</label><p>${esc(item.resumen_ia)}</p></div>` : ''}
+    ${item.aplicaciones_detectadas?.length ? `<div class="card-detail-full"><label>Aplicaciones detectadas</label><p>${item.aplicaciones_detectadas.map(esc).join(', ')}</p></div>` : ''}
+    ${item.notas ? `<div class="card-detail-full"><label>Notas</label><p>${esc(item.notas)}</p></div>` : ''}
+    ${enlaces ? `<div class="card-detail-full"><label>Enlaces</label><p>${enlaces}</p></div>` : ''}
+  `;
+
+  $('#card-edit-btn').onclick = () => { closeCardModal(); openLicitacionEditor(item); };
+  cm.hidden = false;
+}
+
+/* ══════════════════════════════════════════════════════════════
    USUARIOS
    ══════════════════════════════════════════════════════════════ */
 let usersCache = [];
@@ -700,6 +961,7 @@ $('#invites-list')?.addEventListener('click', async (e) => {
   try {
     ME = await api('/api/auth/me');
     const defaultView = buildNav();
+    initLicitacionesDragDrop();
     if (defaultView) loadView(defaultView);
   } catch { location.href = '/login'; }
 })();
