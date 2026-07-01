@@ -516,7 +516,7 @@ const LIC_COLUMN_LABELS = {
   oferta_presentada: 'Oferta presentada', ganada: 'Ganada', perdida: 'Perdida', descartada: 'Descartada',
 };
 let lItems = [];
-let lFilters = { q: '', encaje: '', responsable: '' };
+let lFilters = { q: '', encaje: '', responsable: '', pais: '' };
 let lDragId = null;
 
 function encajeBadge(encaje) {
@@ -534,6 +534,7 @@ function filterLicitaciones(items) {
   return items.filter(item => {
     if (lFilters.encaje && item.encaje !== lFilters.encaje) return false;
     if (lFilters.responsable && item.responsable !== lFilters.responsable) return false;
+    if (lFilters.pais && item.pais_iso2 !== lFilters.pais) return false;
     if (lFilters.q) {
       const q = lFilters.q.toLowerCase();
       if (!(item.organo_contratacion||'').toLowerCase().includes(q) &&
@@ -575,6 +576,7 @@ function renderLicitacionCard(item) {
     <div class="kcard-title">${esc(item.titulo_mostrar || item.objeto_contrato)}</div>
     <div class="kcard-meta">
       <span>${esc(item.organo_contratacion)}</span>
+      ${item.pais_iso2 ? `<span>${esc(PAIS_LABELS[item.pais_iso2] || item.pais_iso2)}</span>` : ''}
       ${item.fecha_limite_presentacion ? `<span>⏱ ${fmtShort(item.fecha_limite_presentacion)}</span>` : ''}
       ${item.presupuesto_total ? `<span>${fmtEUR(item.presupuesto_total)}</span>` : ''}
     </div>
@@ -658,27 +660,35 @@ async function loadLicitaciones() {
   } catch { board.innerHTML = '<p class="empty">No se pudo cargar el funnel de licitaciones.</p>'; }
 }
 
+const PAIS_LABELS = { ES: 'España', GB: 'Reino Unido', DE: 'Alemania', IE: 'Irlanda', FR: 'Francia' };
+
 function populateLicitacionesFilters(meta) {
   const responsableEl = $('#lf-responsable');
-  if (!responsableEl) return;
-  const saved = responsableEl.value;
+  const paisEl = $('#lf-pais');
+  if (!responsableEl || !paisEl) return;
+  const savedResp = responsableEl.value;
+  const savedPais = paisEl.value;
   responsableEl.innerHTML = '<option value="">Responsable</option>' +
-    meta.responsables.map(r => `<option value="${esc(r)}" ${saved===r?'selected':''}>${esc(r)}</option>`).join('');
+    meta.responsables.map(r => `<option value="${esc(r)}" ${savedResp===r?'selected':''}>${esc(r)}</option>`).join('');
+  paisEl.innerHTML = '<option value="">País</option>' +
+    (meta.paises || []).map(p => `<option value="${esc(p)}" ${savedPais===p?'selected':''}>${esc(PAIS_LABELS[p] || p)}</option>`).join('');
 }
 
 function applyLicitacionesFilters() {
   lFilters.q            = ($('#lf-search')?.value      || '').trim();
   lFilters.encaje       =  $('#lf-encaje')?.value       || '';
   lFilters.responsable  =  $('#lf-responsable')?.value  || '';
+  lFilters.pais         =  $('#lf-pais')?.value         || '';
   renderLicitacionesBoard();
 }
 
 $('#lf-search')?.addEventListener('input',  applyLicitacionesFilters);
 $('#lf-encaje')?.addEventListener('change', applyLicitacionesFilters);
 $('#lf-responsable')?.addEventListener('change', applyLicitacionesFilters);
+$('#lf-pais')?.addEventListener('change', applyLicitacionesFilters);
 $('#lf-clear')?.addEventListener('click', () => {
-  ['#lf-search','#lf-encaje','#lf-responsable'].forEach(s => { const el = $(s); if (el) el.value = ''; });
-  lFilters = { q:'', encaje:'', responsable:'' };
+  ['#lf-search','#lf-encaje','#lf-responsable','#lf-pais'].forEach(s => { const el = $(s); if (el) el.value = ''; });
+  lFilters = { q:'', encaje:'', responsable:'', pais:'' };
   renderLicitacionesBoard();
 });
 
@@ -747,6 +757,7 @@ function openLicitacionDetail(item) {
   $('#card-detail').innerHTML = `
     <div class="card-detail-grid">
       ${field('Órgano de contratación', item.organo_contratacion)}
+      ${field('País', PAIS_LABELS[item.pais_iso2] || item.pais_iso2)}
       ${field('Importe', item.presupuesto_total ? fmtEUR(item.presupuesto_total) : null)}
       ${field('Fecha límite', fmtShort(item.fecha_limite_presentacion))}
       ${field('Score IA', item.score_final)}

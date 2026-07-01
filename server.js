@@ -520,11 +520,20 @@ app.get('/api/licitaciones/items', requireLicitacionesAccess, async (req, res, n
 
 app.get('/api/licitaciones/meta', requireLicitacionesAccess, async (req, res, next) => {
   try {
-    const { rows } = await db.query(
-      `SELECT DISTINCT responsable FROM licitaciones.pipeline_comercial
-       WHERE responsable IS NOT NULL ORDER BY responsable`
-    );
-    res.json({ responsables: rows.map(r => r.responsable) });
+    const [responsables, paises] = await Promise.all([
+      db.query(
+        `SELECT DISTINCT responsable FROM licitaciones.pipeline_comercial
+         WHERE responsable IS NOT NULL ORDER BY responsable`
+      ),
+      db.query(
+        `SELECT DISTINCT pais_iso2 FROM licitaciones.v_funnel
+         WHERE pais_iso2 IS NOT NULL AND etapa IS NOT NULL ORDER BY pais_iso2`
+      ),
+    ]);
+    res.json({
+      responsables: responsables.rows.map(r => r.responsable),
+      paises: paises.rows.map(r => r.pais_iso2),
+    });
   } catch (e) { next(e); }
 });
 
