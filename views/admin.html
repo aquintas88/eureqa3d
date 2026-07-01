@@ -56,6 +56,26 @@
         </div>
       </div>
 
+      <!-- Licitaciones view -->
+      <div id="licitaciones-view" hidden>
+        <header class="content-head">
+          <h1>Licitaciones — Funnel comercial</h1>
+        </header>
+        <div class="kanban-filters" id="licitaciones-filters">
+          <input type="search" id="lf-search" placeholder="Buscar por órgano u objeto…" />
+          <select id="lf-encaje">
+            <option value="">Encaje</option>
+            <option value="alto">Alto</option>
+            <option value="medio">Medio</option>
+          </select>
+          <select id="lf-responsable"><option value="">Responsable</option></select>
+          <button class="btn btn-ghost btn-sm" id="lf-clear">Limpiar</button>
+        </div>
+        <div class="kanban-board" id="licitaciones-board">
+          <!-- columns rendered by JS -->
+        </div>
+      </div>
+
       <!-- Users view -->
       <div id="users-view" hidden>
         <header class="content-head">

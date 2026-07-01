@@ -84,6 +84,10 @@ const requireBacklogAccess = (req, res, next) => {
   return requireRole('admin', 'investigador')(req, res, next);
 };
 
+// Licitaciones: solo sesión admin/investigador — el agente de ingesta escribe
+// directo a Postgres (schema licitaciones), nunca llama a esta API.
+const requireLicitacionesAccess = requireRole('admin', 'investigador');
+
 const slugify = (s) => s.toString().toLowerCase().trim()
   .normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
@@ -498,6 +502,88 @@ app.get('/api/backlog/meta', requireBacklogAccess, async (req, res, next) => {
       responsables: responsables.rows.map(r => r.responsable),
     });
   } catch (e) { next(e); }
+});
+
+/* ── API: Licitaciones (admin + investigador) ─────────────────── */
+// Solo lectura + PATCH de etapa/notas: las licitaciones las crea el agente de
+// ingesta (schema licitaciones, misma Postgres), no hay creación manual aquí.
+app.get('/api/licitaciones/items', requireLicitacionesAccess, async (req, res, next) => {
+  try {
+    const { rows } = await db.query(
+      `SELECT * FROM licitaciones.v_funnel
+       WHERE etapa IS NOT NULL
+       ORDER BY fecha_limite_presentacion ASC NULLS LAST`
+    );
+    res.json(rows);
+  } catch (e) { next(e); }
+});
+
+app.get('/api/licitaciones/meta', requireLicitacionesAccess, async (req, res, next) => {
+  try {
+    const { rows } = await db.query(
+      `SELECT DISTINCT responsable FROM licitaciones.pipeline_comercial
+       WHERE responsable IS NOT NULL ORDER BY responsable`
+    );
+    res.json({ responsables: rows.map(r => r.responsable) });
+  } catch (e) { next(e); }
+});
+
+app.patch('/api/licitaciones/items/:tenderId', requireLicitacionesAccess, async (req, res, next) => {
+  const client = await db.pool.connect();
+  try {
+    await client.query('BEGIN');
+
+    const { rows: current } = await client.query(
+      'SELECT etapa FROM licitaciones.pipeline_comercial WHERE tender_id=$1 FOR UPDATE',
+      [req.params.tenderId]
+    );
+    if (!current[0]) {
+      await client.query('ROLLBACK');
+      return res.status(404).json({ error: 'Licitación no encontrada en el funnel' });
+    }
+    const etapaAnterior = current[0].etapa;
+
+    const b = req.body;
+    const fields = ['etapa', 'responsable', 'notas', 'valor_oferta', 'motivo_descarte'];
+    const sets = [];
+    const params = [];
+    for (const f of fields) {
+      if (f in b) { params.push(b[f] ?? null); sets.push(`${f}=$${params.length}`); }
+    }
+    if (!sets.length) {
+      await client.query('ROLLBACK');
+      return res.status(400).json({ error: 'Sin campos para actualizar' });
+    }
+    sets.push('actualizado_en=NOW()');
+    const etapaCambia = 'etapa' in b && b.etapa !== etapaAnterior;
+    if (etapaCambia) sets.push('fecha_cambio_etapa=NOW()');
+    params.push(req.params.tenderId);
+
+    await client.query(
+      `UPDATE licitaciones.pipeline_comercial SET ${sets.join(',')} WHERE tender_id=$${params.length}`,
+      params
+    );
+
+    if (etapaCambia) {
+      await client.query(
+        `INSERT INTO licitaciones.pipeline_historial (tender_id, etapa_anterior, etapa_nueva, cambiado_por)
+         VALUES ($1,$2,$3,$4)`,
+        [req.params.tenderId, etapaAnterior, b.etapa, req.session.user?.name || null]
+      );
+    }
+
+    await client.query('COMMIT');
+
+    const { rows: updated } = await db.query(
+      'SELECT * FROM licitaciones.v_funnel WHERE tender_id=$1', [req.params.tenderId]
+    );
+    res.json(updated[0]);
+  } catch (e) {
+    await client.query('ROLLBACK').catch(() => {});
+    next(e);
+  } finally {
+    client.release();
+  }
 });
 
 /* ── API: público (lectura) ──────────────────────────────────── */
