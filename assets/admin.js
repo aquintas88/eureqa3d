@@ -32,7 +32,6 @@ const NAV_ITEMS = [
   { key: 'events',   label: '📅 Jornadas',          roles: ['admin'] },
   { key: 'messages', label: '✉️ Mensajes',          roles: ['admin'] },
   { key: '__sep__',  label: '',                      roles: ['admin'] },
-  { key: 'kanban',       label: '📋 Backlog Kanban', roles: ['admin', 'investigador'] },
   { key: 'licitaciones', label: '📈 Licitaciones',   roles: ['admin', 'investigador'] },
   { key: 'users',        label: '👥 Usuarios',       roles: ['admin'] },
 ];
@@ -70,13 +69,12 @@ function setActiveNav(key) {
 }
 
 function showView(name) {
-  ['list-view', 'kanban-view', 'licitaciones-view', 'users-view'].forEach(id => {
+  ['list-view', 'licitaciones-view', 'users-view'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.hidden = (id !== name + '-view' && name !== 'list');
   });
   if (name === 'list') {
     $('#list-view').hidden = false;
-    $('#kanban-view').hidden = true;
     $('#licitaciones-view').hidden = true;
     $('#users-view').hidden = true;
   }
@@ -127,7 +125,6 @@ async function loadView(key) {
   currentView = key;
   setActiveNav(key);
 
-  if (key === 'kanban')       { showView('kanban');       return loadKanban(); }
   if (key === 'licitaciones') { showView('licitaciones'); return loadLicitaciones(); }
   if (key === 'users')        { showView('users');        return loadUsers(); }
 
@@ -219,289 +216,7 @@ $('#list').addEventListener('click', async (e) => {
   }
 });
 
-/* ══════════════════════════════════════════════════════════════
-   KANBAN
-   ══════════════════════════════════════════════════════════════ */
-const COLUMNS = ['Backlog', 'Pendiente', 'En curso', 'Hecho', 'Duda'];
-let kItems = [];
-let kFilters = { q: '', area: '', prioridad: '', creador: '' };
-let dragId = null;
-
-function idPrefix(id) {
-  return (id || '').split('-')[0] || 'default';
-}
-
-function prioBadge(p) {
-  if (!p) return '';
-  return `<span class="prio prio--${esc(p)}">${esc(p)}</span>`;
-}
-
-function estimBadge(e) {
-  if (!e) return '';
-  return `<span class="estim">${esc(e)}</span>`;
-}
-
-function idBadge(id) {
-  const pre = idPrefix(id);
-  return `<span class="id-badge id-badge--${esc(pre)}">${esc(id)}</span>`;
-}
-
-function filterItems(items) {
-  return items.filter(item => {
-    if (kFilters.area && item.area !== kFilters.area) return false;
-    if (kFilters.prioridad && item.prioridad !== kFilters.prioridad) return false;
-    if (kFilters.creador && item.creador !== kFilters.creador) return false;
-    if (kFilters.q) {
-      const q = kFilters.q.toLowerCase();
-      if (!(item.titulo||'').toLowerCase().includes(q) &&
-          !(item.id||'').toLowerCase().includes(q) &&
-          !(item.historia||'').toLowerCase().includes(q) &&
-          !(item.area||'').toLowerCase().includes(q)) return false;
-    }
-    return true;
-  });
-}
-
-function renderKanban() {
-  const board = $('#kanban-board');
-  if (!board) return;
-  const visible = filterItems(kItems);
-
-  board.innerHTML = COLUMNS.map(col => {
-    const cards = visible.filter(i => i.estado === col);
-    return `<div class="kanban-col" data-col="${esc(col)}" id="col-${esc(col)}">
-      <div class="kanban-col-head">
-        <h3>${esc(col)}</h3>
-        <span class="kanban-col-count">${cards.length}</span>
-      </div>
-      <div class="kanban-cards" data-col="${esc(col)}">
-        ${cards.map(renderCard).join('')}
-        <div class="drop-zone" data-col="${esc(col)}"></div>
-      </div>
-    </div>`;
-  }).join('');
-
-  setupDragDrop();
-}
-
-function renderCard(item) {
-  const pre = idPrefix(item.id);
-  return `<div class="kcard" draggable="true" data-id="${esc(item.id)}" data-col="${esc(item.estado)}">
-    <div class="kcard-top">
-      ${idBadge(item.id)}
-      ${prioBadge(item.prioridad)}
-      ${estimBadge(item.estimacion)}
-    </div>
-    <div class="kcard-title">${esc(item.titulo)}</div>
-    <div class="kcard-meta">
-      ${item.area ? `<span>${esc(item.area)}</span>` : ''}
-      ${item.responsable ? `<span>→ ${esc(item.responsable)}</span>` : ''}
-    </div>
-  </div>`;
-}
-
-function setupDragDrop() {
-  const board = $('#kanban-board');
-
-  board.querySelectorAll('.kcard').forEach(card => {
-    card.addEventListener('click', (e) => {
-      if (dragId) return; // ignore click after drag
-      const id = card.dataset.id;
-      openCardDetail(kItems.find(i => i.id === id));
-    });
-    card.addEventListener('dragstart', (e) => {
-      dragId = card.dataset.id;
-      card.classList.add('dragging');
-      e.dataTransfer.effectAllowed = 'move';
-    });
-    card.addEventListener('dragend', () => {
-      card.classList.remove('dragging');
-      board.querySelectorAll('.kanban-col').forEach(c => c.classList.remove('drag-over'));
-      setTimeout(() => { dragId = null; }, 0);
-    });
-  });
-
-  board.querySelectorAll('.kanban-col').forEach(col => {
-    col.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      col.classList.add('drag-over');
-    });
-    col.addEventListener('dragleave', (e) => {
-      if (!col.contains(e.relatedTarget)) col.classList.remove('drag-over');
-    });
-    col.addEventListener('drop', async (e) => {
-      e.preventDefault();
-      col.classList.remove('drag-over');
-      const newEstado = col.dataset.col;
-      if (!dragId || !newEstado) return;
-      const item = kItems.find(i => i.id === dragId);
-      if (!item || item.estado === newEstado) return;
-      try {
-        const updated = await api(`/api/backlog/items/${encodeURIComponent(dragId)}`, {
-          method: 'PATCH', body: JSON.stringify({ estado: newEstado })
-        });
-        const idx = kItems.findIndex(i => i.id === dragId);
-        if (idx !== -1) kItems[idx] = updated;
-        renderKanban();
-      } catch (e) { alert('Error: ' + e.message); }
-    });
-  });
-}
-
-async function loadKanban() {
-  const board = $('#kanban-board');
-  if (!board) return;
-  board.innerHTML = '<p class="empty" style="padding:2rem">Cargando…</p>';
-  try {
-    const [items, meta] = await Promise.all([
-      api('/api/backlog/items'),
-      api('/api/backlog/meta'),
-    ]);
-    kItems = items;
-    populateKanbanFilters(meta);
-    renderKanban();
-  } catch { board.innerHTML = '<p class="empty">No se pudo cargar el backlog.</p>'; }
-}
-
-function populateKanbanFilters(meta) {
-  const areaEl = $('#kf-area');
-  const creadorEl = $('#kf-creador');
-  if (!areaEl || !creadorEl) return;
-
-  const savedArea = areaEl.value;
-  const savedCreador = creadorEl.value;
-
-  areaEl.innerHTML = '<option value="">Todas las áreas</option>' +
-    meta.areas.map(a => `<option value="${esc(a)}" ${savedArea===a?'selected':''}>${esc(a)}</option>`).join('');
-  creadorEl.innerHTML = '<option value="">Creador</option>' +
-    meta.creadores.map(c => `<option value="${esc(c)}" ${savedCreador===c?'selected':''}>${esc(c)}</option>`).join('');
-}
-
-function applyKanbanFilters() {
-  kFilters.q         = ($('#kf-search')?.value   || '').trim();
-  kFilters.area      =  $('#kf-area')?.value     || '';
-  kFilters.prioridad =  $('#kf-prioridad')?.value || '';
-  kFilters.creador   =  $('#kf-creador')?.value  || '';
-  renderKanban();
-}
-
-$('#kf-search')?.addEventListener('input',  applyKanbanFilters);
-$('#kf-area')?.addEventListener('change',   applyKanbanFilters);
-$('#kf-prioridad')?.addEventListener('change', applyKanbanFilters);
-$('#kf-creador')?.addEventListener('change', applyKanbanFilters);
-$('#kf-clear')?.addEventListener('click', () => {
-  ['#kf-search','#kf-area','#kf-prioridad','#kf-creador'].forEach(s => { const el = $(s); if (el) el.value = ''; });
-  kFilters = { q:'', area:'', prioridad:'', creador:'' };
-  renderKanban();
-});
-
-/* ── Nueva tarjeta kanban ─────────────────────────────────────── */
-$('#kanban-new-btn')?.addEventListener('click', () => openKanbanEditor(null));
-
-const KANBAN_FIELDS = [
-  { name:'id',          label:'ID (PLT-XX / JES-XX / CEL-XX / PRD-XX)', type:'text', required:true },
-  { name:'titulo',      label:'Título',        type:'text',     required:true },
-  { name:'area',        label:'Área / Épica',  type:'text' },
-  { name:'historia',    label:'Historia de usuario', type:'textarea' },
-  { name:'tipo',        label:'Tipo',          type:'select', options:['Feature','Mejora','Bug','Seguridad','Deuda técnica','Otro'] },
-  { name:'modulo',      label:'Módulo impactado', type:'text' },
-  { name:'prioridad',   label:'Prioridad',     type:'select', options:['', 'Alta', 'Media', 'Baja'] },
-  { name:'estimacion',  label:'Estimación',    type:'select', options:['', 'S', 'M', 'L', 'XL'] },
-  { name:'estado',      label:'Estado',        type:'select', options:['Backlog','Pendiente','En curso','Hecho','Duda'] },
-  { name:'origen',      label:'Origen',        type:'text' },
-  { name:'creador',     label:'Creador',       type:'text' },
-  { name:'responsable', label:'Responsable',   type:'text' },
-  { name:'fecha_alta',  label:'Fecha alta',    type:'date' },
-  { name:'fecha_cierre',label:'Fecha cierre',  type:'date' },
-  { name:'notas',       label:'Notas / análisis', type:'textarea' },
-];
-
-let editingKanbanId = null;
-
-function openKanbanEditor(item) {
-  editingKanbanId = item?.id ?? null;
-  $('#modal-title').textContent = item ? `Editar · ${item.id}` : 'Nueva tarjeta';
-  clearErr();
-  const today = new Date().toISOString().slice(0,10);
-  $('#editor').innerHTML = KANBAN_FIELDS.map(f => {
-    let val = item?.[f.name] ?? '';
-    if (f.name === 'creador' && !item) val = ME?.name || '';
-    if (f.name === 'fecha_alta' && !item) val = today;
-    if (f.name === 'estado' && !item) val = 'Backlog';
-
-    if (f.type === 'textarea')
-      return `<label>${esc(f.label)}<textarea name="${esc(f.name)}">${esc(val)}</textarea></label>`;
-    if (f.type === 'select') {
-      const opts = f.options.map(o => `<option value="${esc(o)}" ${val===o?'selected':''}>${esc(o)||'—'}</option>`).join('');
-      return `<label>${esc(f.label)}<select name="${esc(f.name)}">${opts}</select></label>`;
-    }
-    const dateVal = f.type === 'date' && val ? new Date(val).toISOString().slice(0,10) : esc(val);
-    return `<label>${esc(f.label)}<input type="${esc(f.type)}" name="${esc(f.name)}" value="${dateVal}" ${f.required?'required':''}></label>`;
-  }).join('');
-  $('#save').onclick = saveKanbanItem;
-  $('#modal').hidden = false;
-}
-
-async function saveKanbanItem() {
-  const form = $('#editor');
-  const body = {};
-  KANBAN_FIELDS.forEach(f => {
-    const el = form.elements[f.name];
-    if (el) body[f.name] = el.value || null;
-  });
-  if (!body.id?.trim() || !body.titulo?.trim()) { showErr('ID y título son obligatorios'); return; }
-  try {
-    if (editingKanbanId) {
-      const updated = await api(`/api/backlog/items/${encodeURIComponent(editingKanbanId)}`, {
-        method: 'PATCH', body: JSON.stringify(body)
-      });
-      const idx = kItems.findIndex(i => i.id === editingKanbanId);
-      if (idx !== -1) kItems[idx] = updated; else kItems.push(updated);
-    } else {
-      const created = await api('/api/backlog/items', { method: 'POST', body: JSON.stringify(body) });
-      kItems.push(created);
-    }
-    closeModal();
-    renderKanban();
-  } catch (e) { showErr(e.message); }
-}
-
-/* ── Detalle de tarjeta ───────────────────────────────────────── */
-function openCardDetail(item) {
-  if (!item) return;
-  const cm = $('#card-modal');
-  const pre = idPrefix(item.id);
-  $('#cm-id-badge').className = `id-badge id-badge--${esc(pre)}`;
-  $('#cm-id-badge').textContent = item.id;
-  $('#cm-title').textContent = item.titulo || '';
-
-  const field = (label, val) => `
-    <div class="field">
-      <label>${esc(label)}</label>
-      <span>${val ? esc(String(val)) : '<span style="color:var(--muted)">—</span>'}</span>
-    </div>`;
-
-  $('#card-detail').innerHTML = `
-    <div class="card-detail-grid">
-      ${field('Estado',      item.estado)}
-      ${field('Prioridad',   item.prioridad)}
-      ${field('Área / Épica',item.area)}
-      ${field('Tipo',        item.tipo)}
-      ${field('Estimación',  item.estimacion)}
-      ${field('Módulo',      item.modulo)}
-      ${field('Creador',     item.creador)}
-      ${field('Responsable', item.responsable)}
-      ${field('Fecha alta',  fmtShort(item.fecha_alta))}
-      ${field('Fecha cierre',fmtShort(item.fecha_cierre))}
-      ${field('Origen',      item.origen)}
-    </div>
-    ${item.historia ? `<div class="card-detail-full"><label>Historia de usuario</label><p>${esc(item.historia)}</p></div>` : ''}
-    ${item.notas    ? `<div class="card-detail-full"><label>Notas / análisis</label><p>${esc(item.notas)}</p></div>` : ''}
-  `;
-
-  $('#card-edit-btn').onclick = () => { closeCardModal(); openKanbanEditor(item); };
-  cm.hidden = false;
-}
+/* ── Detalle de tarjeta (modal compartido con Licitaciones) ───── */
 function closeCardModal() { $('#card-modal').hidden = true; }
 $('#card-modal-close')?.addEventListener('click', closeCardModal);
 $('#card-modal-cancel')?.addEventListener('click', closeCardModal);
@@ -975,6 +690,14 @@ $('#invites-list')?.addEventListener('click', async (e) => {
     ME = await api('/api/auth/me');
     const defaultView = buildNav();
     initLicitacionesDragDrop();
-    if (defaultView) loadView(defaultView);
+    const licitacionId = new URLSearchParams(location.search).get('licitacion');
+    if (licitacionId) {
+      showView('licitaciones');
+      await loadLicitaciones();
+      const item = lItems.find(i => String(i.tender_id) === licitacionId);
+      if (item) openLicitacionDetail(item);
+    } else if (defaultView) {
+      loadView(defaultView);
+    }
   } catch { location.href = '/login'; }
 })();
