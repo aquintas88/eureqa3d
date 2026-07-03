@@ -237,6 +237,8 @@ app.get('/login', (req, res) => {
   }
   res.sendFile(path.join(__dirname, 'views', 'login.html'));
 });
+app.get('/admin/licitaciones-info', requireLicitacionesAccess, (req, res) =>
+  res.sendFile(path.join(__dirname, 'views', 'licitaciones-info.html')));
 app.get('/admin',         requireAuth, (req, res) => res.sendFile(path.join(__dirname, 'views', 'admin.html')));
 app.get('/admin/{*path}', requireAuth, (req, res) => res.sendFile(path.join(__dirname, 'views', 'admin.html')));
 app.get('/logout', (req, res) => req.session.destroy(() => res.redirect('/login')));
@@ -534,6 +536,23 @@ app.get('/api/licitaciones/meta', requireLicitacionesAccess, async (req, res, ne
       responsables: responsables.rows.map(r => r.responsable),
       paises: paises.rows.map(r => r.pais_iso2),
     });
+  } catch (e) { next(e); }
+});
+
+app.get('/api/licitaciones/dashboard-stats', requireLicitacionesAccess, async (req, res, next) => {
+  try {
+    const { rows } = await db.query(`
+      SELECT
+        f.codigo, f.pais_iso2, f.nombre, f.activa,
+        count(t.id) AS ingeridas,
+        count(a.id) FILTER (WHERE a.encaje IN ('alto','medio')) AS oportunidades
+      FROM licitaciones.fuentes f
+      LEFT JOIN licitaciones.tenders t ON t.fuente_id = f.id
+      LEFT JOIN licitaciones.analisis a ON a.tender_id = t.id
+      GROUP BY f.id
+      ORDER BY f.pais_iso2
+    `);
+    res.json(rows);
   } catch (e) { next(e); }
 });
 

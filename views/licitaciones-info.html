@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Equipo de agentes de Licitaciones — Eureqa3D</title>
+<style>
+  :root {
+    --teal: #3990B0; --teal-dark: #058aa9; --teal-700: #1f6e8c;
+    --orange: #D57C1B; --orange-dark: #b9670f;
+    --ink: #1c2127; --ink-soft: #4a525c; --muted: #7a828c;
+    --line: #e6e9ee; --bg: #ffffff; --bg-soft: #f5f8fa; --bg-teal: #ecf4f8;
+    --radius: 14px; --radius-sm: 10px;
+    --shadow: 0 10px 30px rgba(31,110,140,.10);
+    --font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --head: "Raleway", var(--font);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--font); color: var(--ink); background: var(--bg-soft);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  h1, h2, h3 { font-family: var(--head); color: var(--ink); }
+  h1 { font-size: 1.9rem; margin: 0 0 .3rem; }
+  .lead { color: var(--ink-soft); font-size: 1.05rem; margin: 0 0 2.2rem; }
+  h2 { font-size: 1.3rem; margin: 0 0 1rem; border-left: 5px solid var(--teal); padding-left: .7rem; }
+  .card {
+    background: var(--bg); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 1.6rem 1.8rem; margin-bottom: 2rem;
+  }
+
+  /* Flujo del pipeline */
+  .flow { display: flex; flex-wrap: wrap; gap: 0; align-items: stretch; margin-top: .5rem; }
+  .flow-step {
+    flex: 1 1 200px; background: var(--bg-teal); border-radius: var(--radius-sm);
+    padding: 1.1rem 1.2rem; position: relative; margin: .3rem;
+  }
+  .flow-step h3 { font-size: .95rem; margin: 0 0 .4rem; color: var(--teal-700); }
+  .flow-step p { font-size: .85rem; color: var(--ink-soft); margin: 0; }
+  .flow-step .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--teal); color: #fff;
+    font-weight: 700; font-size: .8rem; margin-bottom: .5rem;
+  }
+  .flow-arrow { display: flex; align-items: center; color: var(--muted); font-size: 1.4rem; padding: 0 .2rem; }
+  @media (max-width: 900px) { .flow-arrow { display: none; } }
+
+  .cost-note {
+    background: #fdf3e7; border-left: 4px solid var(--orange); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: .9rem 1.2rem; font-size: .88rem; color: var(--ink-soft); margin-top: 1.2rem;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  th, td { padding: .65rem .8rem; text-align: left; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 700; text-transform: uppercase; font-size: .72rem; letter-spacing: .04em; }
+  tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .flag { font-size: 1.2rem; margin-right: .4rem; }
+  .badge {
+    display: inline-block; padding: .2rem .6rem; border-radius: 999px; font-size: .72rem; font-weight: 700;
+  }
+  .badge--activo { background: #e3f5e9; color: #1e7a43; }
+  .badge--pendiente { background: #f1f2f4; color: var(--muted); }
+  .oport { font-weight: 700; }
+  .oport--pos { color: var(--orange-dark); }
+  .oport--zero { color: var(--muted); font-weight: 400; }
+  .motivo { color: var(--muted); font-size: .82rem; }
+  .loading { color: var(--muted); padding: 1rem 0; }
+
+  .back-link {
+    display: inline-block; margin-bottom: 1.2rem; color: var(--teal-700); text-decoration: none; font-size: .9rem;
+  }
+  .back-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back-link" href="/admin">&larr; Volver al panel</a>
+  <h1>Equipo de agentes de Licitaciones</h1>
+  <p class="lead">Cómo encontramos oportunidades de negocio en concursos públicos de forma automática, y en qué estado está cada país.</p>
+
+  <div class="card">
+    <h2>¿Qué hace este sistema?</h2>
+    <p style="color:var(--ink-soft)">
+      Cada día, un pipeline automático revisa las plataformas de contratación pública de varios países
+      buscando licitaciones que encajen con lo que hacemos: <strong>biomodelos, planificación quirúrgica,
+      prótesis a medida, guías quirúrgicas y fabricación aditiva médica</strong>. El proceso tiene 4 pasos:
+    </p>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="num">1</div>
+        <h3>Ingesta</h3>
+        <p>Cada país publica sus concursos en un portal oficial. Descargamos automáticamente los nuevos cada día (sin coste de IA, solo descarga y guardado).</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="num">2</div>
+        <h3>Filtro gratis</h3>
+        <p>Un filtro por palabras clave y códigos de clasificación descarta, sin gastar nada, todo lo que claramente no tiene que ver con nuestro negocio.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="num">3</div>
+        <h3>Análisis con IA</h3>
+        <p>Solo lo que pasa el filtro se manda a la IA (Gemini), que resume, traduce el título si hace falta, y decide el encaje: alto, medio o bajo.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="num">4</div>
+        <h3>Funnel comercial</h3>
+        <p>Las de encaje alto/medio entran en el tablero de Licitaciones del panel, avisamos por Telegram, y el equipo decide si presentar oferta.</p>
+      </div>
+    </div>
+    <div class="cost-note">
+      💡 <strong>Por qué es barato:</strong> la IA nunca ve una licitación que no ha pasado antes el filtro gratis por palabras clave.
+      La inmensa mayoría de concursos públicos (obras, limpieza, suministros genéricos…) se descartan sin coste alguno —
+      solo pagamos IA por el pequeño porcentaje que realmente podría interesarnos.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Estado por país</h2>
+    <div id="tabla-paises" class="loading">Cargando datos en vivo…</div>
+  </div>
+
+  <div class="card">
+    <h2>Países pendientes de analizar</h2>
+    <table>
+      <thead><tr><th>País</th><th>Motivo</th></tr></thead>
+      <tbody>
+        <tr><td><span class="flag">🇮🇹</span>Italia</td><td class="motivo">Fuente completa (ANAC) bloqueada por firewall; la accesible (CONSIP) cubre poco, solo acuerdos marco centrales</td></tr>
+        <tr><td><span class="flag">🇵🇱</span>Polonia</td><td class="motivo">API real existe, pero necesita documentación de integración adicional (valores de parámetros no públicos)</td></tr>
+        <tr><td><span class="flag">🏴</span>Gales</td><td class="motivo">Certificado ya no falla, pero su propio servidor da un error 500 real — bug de ellos, no nuestro</td></tr>
+        <tr><td><span class="flag">🇦🇺</span>Australia</td><td class="motivo">Requiere token de autenticación; sin registro self-service, hay que contactar directamente</td></tr>
+        <tr><td><span class="flag">🇩🇰</span><span class="flag">🇳🇴</span>Dinamarca / Noruega</td><td class="motivo">Sin API pública real accesible sin ingeniería inversa (Doffin es scraping HTML frágil)</td></tr>
+        <tr><td><span class="flag">🇸🇦</span>Arabia Saudí</td><td class="motivo">Señal de demanda más fuerte del análisis de mercado (Vision 2030 exige contenido local en concursos hospitalarios), pero su API oficial requiere cuenta con aprobación incierta para empresas extranjeras — pendiente de decidir si merece la pena tramitarla</td></tr>
+        <tr><td><span class="flag">🇰🇷</span>Corea del Sur</td><td class="motivo">Alta madurez de e-gobierno, demanda real (hospital Asan + EOS), pendiente de verificar API concreta</td></tr>
+        <tr><td><span class="flag">🇯🇵</span>Japón</td><td class="motivo">Mercado real (60+ dispositivos 3D aprobados desde 2016), pero los avisos parecen manuales, no API-first</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const PAIS_LABELS = { ES: 'España 🇪🇸', GB: 'Reino Unido 🇬🇧', DE: 'Alemania 🇩🇪', IE: 'Irlanda 🇮🇪', FR: 'Francia 🇫🇷', NL: 'Países Bajos 🇳🇱', PT: 'Portugal 🇵🇹', BR: 'Brasil 🇧🇷', CA: 'Canadá 🇨🇦' };
+
+function fmtMiles(n) {
+  return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+async function cargar() {
+  const cont = document.getElementById('tabla-paises');
+  try {
+    const res = await fetch('/api/licitaciones/dashboard-stats');
+    if (!res.ok) throw new Error();
+    const filas = await res.json();
+    if (!filas.length) { cont.innerHTML = '<p class="loading">Sin datos todavía.</p>'; return; }
+
+    let html = '<table><thead><tr><th>País</th><th>Estado</th><th class="num">Licitaciones ingeridas (2026)</th><th class="num">Oportunidades generadas</th></tr></thead><tbody>';
+    for (const f of filas) {
+      const oport = Number(f.oportunidades) || 0;
+      html += `<tr>
+        <td>${PAIS_LABELS[f.pais_iso2] || f.pais_iso2}</td>
+        <td><span class="badge ${f.activa ? 'badge--activo' : 'badge--pendiente'}">${f.activa ? 'Activo' : 'Pausado'}</span></td>
+        <td class="num">${fmtMiles(f.ingeridas)}</td>
+        <td class="num oport ${oport > 0 ? 'oport--pos' : 'oport--zero'}">${oport}</td>
+      </tr>`;
+    }
+    html += '</tbody></table>';
+    cont.innerHTML = html;
+  } catch {
+    cont.innerHTML = '<p class="loading">No se pudo cargar el estado en vivo — revisa que has iniciado sesión.</p>';
+  }
+}
+cargar();
+</script>
+</body>
+</html>
