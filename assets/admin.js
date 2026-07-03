@@ -660,7 +660,7 @@ async function loadLicitaciones() {
   } catch { board.innerHTML = '<p class="empty">No se pudo cargar el funnel de licitaciones.</p>'; }
 }
 
-const PAIS_LABELS = { ES: 'España', GB: 'Reino Unido', DE: 'Alemania', IE: 'Irlanda', FR: 'Francia' };
+const PAIS_LABELS = { ES: 'España', GB: 'Reino Unido', DE: 'Alemania', IE: 'Irlanda', FR: 'Francia', NL: 'Países Bajos', PT: 'Portugal' };
 
 function populateLicitacionesFilters(meta) {
   const responsableEl = $('#lf-responsable');
