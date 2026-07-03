@@ -67,6 +67,8 @@
   .oport--zero { color: var(--muted); font-weight: 400; }
   .motivo { color: var(--muted); font-size: .82rem; }
   .loading { color: var(--muted); padding: 1rem 0; }
+  .update-note { font-size: .82rem; color: var(--muted); margin: -.4rem 0 1rem; }
+  .update-note strong { color: var(--ink-soft); }
 
   .back-link {
     display: inline-block; margin-bottom: 1.2rem; color: var(--teal-700); text-decoration: none; font-size: .9rem;
@@ -121,11 +123,14 @@
 
   <div class="card">
     <h2>Estado por país</h2>
+    <p class="update-note">📡 Datos en vivo desde la base de datos — se actualizan solos, no hay que tocar nada aquí. <span id="hora-carga"></span></p>
     <div id="tabla-paises" class="loading">Cargando datos en vivo…</div>
   </div>
 
   <div class="card">
     <h2>Países pendientes de analizar</h2>
+    <p class="update-note">📝 Última actualización de esta tabla: <strong id="fecha-manual">3 de julio de 2026</strong> ·
+      esta lista es manual — <strong>actualízala cada vez que investigues, desbloquees o descartes un país nuevo</strong>.</p>
     <table>
       <thead><tr><th>País</th><th>Motivo</th></tr></thead>
       <tbody>
@@ -174,6 +179,13 @@ async function cargar() {
   }
 }
 cargar();
+
+const horaEl = document.getElementById('hora-carga');
+if (horaEl) {
+  horaEl.textContent = '(consultado ' + new Date().toLocaleString('es-ES', {
+    day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
+  }) + ')';
+}
 </script>
 </body>
 </html>
