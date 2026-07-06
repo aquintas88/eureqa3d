@@ -563,16 +563,36 @@ app.get('/api/licitaciones/dashboard-stats', requireLicitacionesAccess, async (r
 // "oportunidades" se cuenta aparte sobre analisis+tenders porque el análisis IA no
 // es por fuente (analysis_runs es una única fila global por noche) -- se reparte por
 // país agrupando por la fecha en que se analizó cada licitación.
+// ?year=YYYY&month=1-12 filtran la tabla diaria (por defecto, mes en curso); el
+// resumen anual siempre es del año en curso real, independiente de esos parámetros.
+function sumarPorFuente(rows, campoValor) {
+  const porFuente = {};
+  for (const r of rows) porFuente[r.codigo] = r[campoValor] || 0;
+  return porFuente;
+}
+
 app.get('/api/licitaciones/ejecuciones', requireLicitacionesAccess, async (req, res, next) => {
   try {
-    const [fuentesRes, ingestaRes, oportunidadesRes] = await Promise.all([
+    const ahora = new Date();
+    let year = parseInt(req.query.year, 10);
+    let month = parseInt(req.query.month, 10);
+    if (!Number.isInteger(year)) year = ahora.getUTCFullYear();
+    if (!Number.isInteger(month) || month < 1 || month > 12) month = ahora.getUTCMonth() + 1;
+
+    const mesInicio = new Date(Date.UTC(year, month - 1, 1));
+    const mesFin     = new Date(Date.UTC(month === 12 ? year + 1 : year, month === 12 ? 0 : month, 1));
+    const anioActual  = ahora.getUTCFullYear();
+    const anioInicio  = new Date(Date.UTC(anioActual, 0, 1));
+    const anioFin     = new Date(Date.UTC(anioActual + 1, 0, 1));
+
+    // Nota: sin ::date -- ese cast hace que node-postgres reinterprete la fecha con
+    // el huso horario LOCAL del proceso Node (no el de la sesión de Postgres, que es
+    // UTC), desplazando el día en 1 si el contenedor no corre exactamente en UTC.
+    // Dejar el timestamptz truncado y cortar la fecha en JS con toISOString() evita
+    // esa reinterpretación (confirmado en real: con el cast, un cron de las 05:xx UTC
+    // aparecía fechado el día anterior al ejecutar este servidor en Europe/Madrid).
+    const [fuentesRes, ingestaRes, oportunidadesRes, anualIngestaRes, anualOportunidadesRes] = await Promise.all([
       db.query(`SELECT codigo, nombre, pais_iso2, url_base, activa FROM licitaciones.fuentes ORDER BY pais_iso2, codigo`),
-      // Nota: sin ::date -- ese cast hace que node-postgres reinterprete la fecha con
-      // el huso horario LOCAL del proceso Node (no el de la sesión de Postgres, que es
-      // UTC), desplazando el día en 1 si el contenedor no corre exactamente en UTC.
-      // Dejar el timestamptz truncado y cortar la fecha en JS con toISOString() evita
-      // esa reinterpretación (confirmado en real: con el cast, un cron de las 05:xx UTC
-      // aparecía fechado el día anterior al ejecutar este servidor en Europe/Madrid).
       db.query(`
         SELECT date_trunc('day', r.iniciado_en) AS dia, f.codigo,
                SUM(r.entries_nuevas)::int AS encontrados,
@@ -580,16 +600,33 @@ app.get('/api/licitaciones/ejecuciones', requireLicitacionesAccess, async (req, 
                string_agg(DISTINCT r.error, ' | ') FILTER (WHERE r.error IS NOT NULL) AS error
         FROM licitaciones.ingest_runs r
         JOIN licitaciones.fuentes f ON f.id = r.fuente_id
+        WHERE r.iniciado_en >= $1 AND r.iniciado_en < $2
         GROUP BY 1, 2
-      `),
+      `, [mesInicio, mesFin]),
       db.query(`
         SELECT date_trunc('day', a.analizado_en) AS dia, f.codigo,
                COUNT(*) FILTER (WHERE a.encaje IN ('alto','medio'))::int AS oportunidades
         FROM licitaciones.analisis a
         JOIN licitaciones.tenders t ON t.id = a.tender_id
         JOIN licitaciones.fuentes f ON f.id = t.fuente_id
+        WHERE a.analizado_en >= $1 AND a.analizado_en < $2
         GROUP BY 1, 2
-      `),
+      `, [mesInicio, mesFin]),
+      db.query(`
+        SELECT f.codigo, SUM(r.entries_nuevas)::int AS encontrados
+        FROM licitaciones.ingest_runs r
+        JOIN licitaciones.fuentes f ON f.id = r.fuente_id
+        WHERE r.iniciado_en >= $1 AND r.iniciado_en < $2
+        GROUP BY 1
+      `, [anioInicio, anioFin]),
+      db.query(`
+        SELECT f.codigo, COUNT(*) FILTER (WHERE a.encaje IN ('alto','medio'))::int AS oportunidades
+        FROM licitaciones.analisis a
+        JOIN licitaciones.tenders t ON t.id = a.tender_id
+        JOIN licitaciones.fuentes f ON f.id = t.fuente_id
+        WHERE a.analizado_en >= $1 AND a.analizado_en < $2
+        GROUP BY 1
+      `, [anioInicio, anioFin]),
     ]);
 
     const oportunidadesPorClave = new Map();
@@ -623,7 +660,26 @@ app.get('/api/licitaciones/ejecuciones', requireLicitacionesAccess, async (req, 
         };
       });
 
-    res.json({ fuentes: fuentesRes.rows, dias });
+    const anualEncontrados = sumarPorFuente(anualIngestaRes.rows, 'encontrados');
+    const anualOportunidades = sumarPorFuente(anualOportunidadesRes.rows, 'oportunidades');
+    const anualPorFuente = {};
+    for (const f of fuentesRes.rows) {
+      anualPorFuente[f.codigo] = {
+        encontrados: anualEncontrados[f.codigo] || 0,
+        oportunidades: anualOportunidades[f.codigo] || 0,
+      };
+    }
+    const anualValores = Object.values(anualPorFuente);
+    const anual = {
+      anio: anioActual,
+      resumen: {
+        encontrados: anualValores.reduce((s, v) => s + v.encontrados, 0),
+        oportunidades: anualValores.reduce((s, v) => s + v.oportunidades, 0),
+      },
+      porFuente: anualPorFuente,
+    };
+
+    res.json({ fuentes: fuentesRes.rows, anio: year, mes: month, dias, anual });
   } catch (e) { next(e); }
 });
 
