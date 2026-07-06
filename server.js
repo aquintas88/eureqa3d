@@ -556,6 +556,32 @@ app.get('/api/licitaciones/dashboard-stats', requireLicitacionesAccess, async (r
   } catch (e) { next(e); }
 });
 
+// Ejecuciones del pipeline (cron diario): ingesta por fuente + análisis IA.
+// Unifica ingest_runs y analysis_runs -- son dos tablas separadas porque las escribe
+// código distinto (un conector por fuente vs. el análisis global), pero de cara al
+// reporting son "la misma ejecución de anoche" y se listan juntas por fecha.
+app.get('/api/licitaciones/ejecuciones', requireLicitacionesAccess, async (req, res, next) => {
+  try {
+    const { rows } = await db.query(`
+      SELECT * FROM (
+        SELECT 'ingesta' AS tipo, f.codigo AS fuente_codigo, f.nombre AS fuente_nombre, f.pais_iso2,
+               r.iniciado_en, r.finalizado_en, r.estado, r.error,
+               r.entries_leidas AS m1, r.entries_nuevas AS m2, r.entries_actualizadas AS m3
+        FROM licitaciones.ingest_runs r
+        LEFT JOIN licitaciones.fuentes f ON f.id = r.fuente_id
+        UNION ALL
+        SELECT 'analisis' AS tipo, NULL, 'Análisis IA', NULL,
+               a.iniciado_en, a.finalizado_en, a.estado, a.error,
+               a.procesados AS m1, a.nuevas_oportunidades AS m2, a.errores AS m3
+        FROM licitaciones.analysis_runs a
+      ) t
+      ORDER BY iniciado_en DESC
+      LIMIT 300
+    `);
+    res.json(rows);
+  } catch (e) { next(e); }
+});
+
 app.patch('/api/licitaciones/items/:tenderId', requireLicitacionesAccess, async (req, res, next) => {
   const client = await db.pool.connect();
   try {

@@ -55,6 +55,28 @@
         </div>
       </div>
 
+      <!-- Ejecuciones view -->
+      <div id="ejecuciones-view" hidden>
+        <header class="content-head">
+          <h1>Ejecuciones del pipeline</h1>
+        </header>
+        <div class="kanban-filters" id="ejec-filters">
+          <select id="ej-tipo">
+            <option value="">Tipo</option>
+            <option value="ingesta">Ingesta</option>
+            <option value="analisis">Análisis IA</option>
+          </select>
+          <select id="ej-estado">
+            <option value="">Estado</option>
+            <option value="ok">OK</option>
+            <option value="error">Error</option>
+            <option value="en_curso">En curso</option>
+          </select>
+          <button class="btn btn-ghost btn-sm" id="ej-clear">Limpiar</button>
+        </div>
+        <div id="ejecuciones-list"></div>
+      </div>
+
       <!-- Users view -->
       <div id="users-view" hidden>
         <header class="content-head">

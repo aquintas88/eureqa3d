@@ -33,6 +33,7 @@ const NAV_ITEMS = [
   { key: 'messages', label: '✉️ Mensajes',          roles: ['admin'] },
   { key: '__sep__',  label: '',                      roles: ['admin'] },
   { key: 'licitaciones', label: '📈 Licitaciones',   roles: ['admin', 'investigador'] },
+  { key: 'ejecuciones',  label: '🛠️ Ejecuciones',    roles: ['admin', 'investigador'] },
   { key: 'users',        label: '👥 Usuarios',       roles: ['admin'] },
 ];
 
@@ -69,13 +70,14 @@ function setActiveNav(key) {
 }
 
 function showView(name) {
-  ['list-view', 'licitaciones-view', 'users-view'].forEach(id => {
+  ['list-view', 'licitaciones-view', 'ejecuciones-view', 'users-view'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.hidden = (id !== name + '-view' && name !== 'list');
   });
   if (name === 'list') {
     $('#list-view').hidden = false;
     $('#licitaciones-view').hidden = true;
+    $('#ejecuciones-view').hidden = true;
     $('#users-view').hidden = true;
   }
 }
@@ -126,6 +128,7 @@ async function loadView(key) {
   setActiveNav(key);
 
   if (key === 'licitaciones') { showView('licitaciones'); return loadLicitaciones(); }
+  if (key === 'ejecuciones')  { showView('ejecuciones');  return loadEjecuciones(); }
   if (key === 'users')        { showView('users');        return loadUsers(); }
 
   showView('list');
@@ -491,6 +494,87 @@ function openLicitacionDetail(item) {
   $('#card-edit-btn').onclick = () => { closeCardModal(); openLicitacionEditor(item); };
   cm.hidden = false;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   EJECUCIONES — historial de ingesta + análisis IA (cron diario)
+   ══════════════════════════════════════════════════════════════ */
+let ejItems = [];
+let ejFilters = { tipo: '', estado: '' };
+
+const fmtDateTime = (iso) => iso ? new Date(iso).toLocaleString('es-ES', {
+  day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
+}) : '—';
+
+function fmtDuracion(inicio, fin) {
+  if (!inicio || !fin) return '—';
+  const ms = new Date(fin) - new Date(inicio);
+  if (ms < 0) return '—';
+  const s = Math.round(ms / 1000);
+  if (s < 60) return `${s}s`;
+  const m = Math.floor(s / 60);
+  return `${m}min ${s % 60}s`;
+}
+
+const EJ_ESTADO_LABEL = { ok: 'OK', error: 'Error', en_curso: 'En curso' };
+const EJ_METRICAS = {
+  ingesta:  ['leídas', 'nuevas', 'actualizadas'],
+  analisis: ['procesados', 'oportunidades', 'errores'],
+};
+
+function filterEjecuciones(items) {
+  return items.filter(i => {
+    if (ejFilters.tipo && i.tipo !== ejFilters.tipo) return false;
+    if (ejFilters.estado && i.estado !== ejFilters.estado) return false;
+    return true;
+  });
+}
+
+function renderEjecuciones() {
+  const list = $('#ejecuciones-list');
+  if (!list) return;
+  const visible = filterEjecuciones(ejItems);
+  if (!visible.length) { list.innerHTML = '<p class="empty">No hay ejecuciones registradas.</p>'; return; }
+
+  list.innerHTML = visible.map(i => {
+    const estado = i.estado || 'en_curso';
+    const pillClass = estado === 'ok' ? 'on' : (estado === 'error' ? 'off' : 'off');
+    const labels = EJ_METRICAS[i.tipo] || ['m1', 'm2', 'm3'];
+    const metricas = [
+      i.m1 != null ? `${i.m1} ${labels[0]}` : null,
+      i.m2 != null ? `${i.m2} ${labels[1]}` : null,
+      i.m3 != null ? `${i.m3} ${labels[2]}` : null,
+    ].filter(Boolean).join(' · ');
+    const fuente = i.tipo === 'ingesta'
+      ? `${esc(i.fuente_nombre || i.fuente_codigo || '—')}${i.pais_iso2 ? ' (' + esc(i.pais_iso2) + ')' : ''}`
+      : 'Análisis IA (todas las fuentes)';
+
+    return `<div class="row">
+      <div class="grow">
+        <h3>${fuente} <span class="pill ${estado === 'ok' ? 'on' : 'off'}">${EJ_ESTADO_LABEL[estado] || estado}</span></h3>
+        <div class="sub">${fmtDateTime(i.iniciado_en)} · duración ${fmtDuracion(i.iniciado_en, i.finalizado_en)}${metricas ? ' · ' + esc(metricas) : ''}</div>
+        ${i.error ? `<p class="sub" style="margin:.5rem 0 0;color:#b3261e">${esc(i.error)}</p>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function loadEjecuciones() {
+  const list = $('#ejecuciones-list');
+  if (!list) return;
+  list.innerHTML = '<p class="empty">Cargando…</p>';
+  try {
+    ejItems = await api('/api/licitaciones/ejecuciones');
+    renderEjecuciones();
+  } catch { list.innerHTML = '<p class="empty">No se pudo cargar el histórico de ejecuciones.</p>'; }
+}
+
+$('#ej-tipo')?.addEventListener('change', () => { ejFilters.tipo = $('#ej-tipo').value; renderEjecuciones(); });
+$('#ej-estado')?.addEventListener('change', () => { ejFilters.estado = $('#ej-estado').value; renderEjecuciones(); });
+$('#ej-clear')?.addEventListener('click', () => {
+  $('#ej-tipo').value = ''; $('#ej-estado').value = '';
+  ejFilters = { tipo: '', estado: '' };
+  renderEjecuciones();
+});
 
 /* ══════════════════════════════════════════════════════════════
    USUARIOS
