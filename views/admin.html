@@ -37,7 +37,10 @@
       <div id="licitaciones-view" hidden>
         <header class="content-head">
           <h1>Licitaciones — Funnel comercial</h1>
-          <a href="/admin/licitaciones-info" target="_blank" class="btn btn-ghost btn-sm">ℹ️ Cómo funciona</a>
+          <div style="display:flex;gap:.6rem">
+            <a href="/admin/ejecuciones" target="_blank" class="btn btn-ghost btn-sm">🛠️ Ejecuciones</a>
+            <a href="/admin/licitaciones-info" target="_blank" class="btn btn-ghost btn-sm">ℹ️ Cómo funciona</a>
+          </div>
         </header>
         <div class="kanban-filters" id="licitaciones-filters">
           <input type="search" id="lf-search" placeholder="Buscar por órgano u objeto…" />
@@ -53,28 +56,6 @@
         <div class="kanban-board" id="licitaciones-board">
           <!-- columns rendered by JS -->
         </div>
-      </div>
-
-      <!-- Ejecuciones view -->
-      <div id="ejecuciones-view" hidden>
-        <header class="content-head">
-          <h1>Ejecuciones del pipeline</h1>
-        </header>
-        <div class="kanban-filters" id="ejec-filters">
-          <select id="ej-tipo">
-            <option value="">Tipo</option>
-            <option value="ingesta">Ingesta</option>
-            <option value="analisis">Análisis IA</option>
-          </select>
-          <select id="ej-estado">
-            <option value="">Estado</option>
-            <option value="ok">OK</option>
-            <option value="error">Error</option>
-            <option value="en_curso">En curso</option>
-          </select>
-          <button class="btn btn-ghost btn-sm" id="ej-clear">Limpiar</button>
-        </div>
-        <div id="ejecuciones-list"></div>
       </div>
 
       <!-- Users view -->

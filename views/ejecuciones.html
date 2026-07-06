@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ejecuciones del pipeline — Eureqa3D</title>
+<style>
+  :root {
+    --teal: #3990B0; --teal-dark: #058aa9; --teal-700: #1f6e8c;
+    --orange: #D57C1B; --orange-dark: #b9670f;
+    --ink: #1c2127; --ink-soft: #4a525c; --muted: #7a828c;
+    --line: #e6e9ee; --bg: #ffffff; --bg-soft: #f5f8fa; --bg-teal: #ecf4f8;
+    --radius: 14px; --radius-sm: 10px;
+    --shadow: 0 10px 30px rgba(31,110,140,.10);
+    --font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --head: "Raleway", var(--font);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font); color: var(--ink); background: var(--bg-soft); line-height: 1.55; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  h1 { font-family: var(--head); font-size: 1.9rem; margin: 0 0 .3rem; }
+  .lead { color: var(--ink-soft); font-size: 1.05rem; margin: 0 0 2.2rem; max-width: 70ch; }
+  .card { background: var(--bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.6rem 1.8rem; margin-bottom: 2rem; }
+  .update-note { font-size: .82rem; color: var(--muted); margin: -.4rem 0 1.2rem; }
+  .back-link { display: inline-block; margin-bottom: 1.2rem; color: var(--teal-700); text-decoration: none; font-size: .9rem; }
+  .back-link:hover { text-decoration: underline; }
+  .loading { color: var(--muted); padding: 1rem 0; }
+
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; white-space: nowrap; }
+  th, td { padding: .6rem .75rem; text-align: center; border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--muted); font-weight: 700; text-transform: uppercase; font-size: .68rem; letter-spacing: .04em; }
+  th a { color: var(--teal-700); text-decoration: none; font-size: .8rem; text-transform: none; letter-spacing: 0; }
+  th a:hover { text-decoration: underline; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--bg-teal); }
+
+  td.cell { cursor: help; }
+  .split { display: inline-flex; align-items: baseline; gap: .25rem; font-variant-numeric: tabular-nums; }
+  .split .found { font-weight: 700; color: var(--ink); }
+  .split .sep { color: var(--muted); }
+  .split .opp { color: var(--muted); }
+  .split .opp.opp--pos { color: var(--orange-dark); font-weight: 700; }
+  td.cell--error { background: #fdecea; }
+  td.cell--error .found { color: #b3261e; }
+  td.muted { color: var(--muted); }
+
+  .resumen-cell .found { font-size: 1rem; }
+
+  .legend { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: .82rem; color: var(--ink-soft); margin-top: 1rem; }
+  .legend span.found { font-weight: 700; color: var(--ink); }
+  .legend span.opp { color: var(--orange-dark); font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back-link" href="/admin">&larr; Volver al panel</a>
+  <h1>Ejecuciones del pipeline</h1>
+  <p class="lead">Una fila por cada noche que corrió el cron (05:00 UTC). Cada columna de país enlaza a la fuente oficial que se scrapea. En cada celda: licitaciones <strong>encontradas</strong> / <strong>oportunidades</strong> detectadas por la IA ese país esa noche. Pasa el ratón por una celda para ver el detalle (fuente, estado, error si lo hubo).</p>
+
+  <div class="card">
+    <p class="update-note">📡 Datos en vivo desde <code>ingest_runs</code> / <code>analisis</code> — se actualizan solos cada noche. <span id="hora-carga"></span></p>
+    <div id="tabla-ejecuciones" class="table-scroll loading">Cargando datos en vivo…</div>
+    <div class="legend">
+      <div><span class="found">37.449</span> = licitaciones nuevas encontradas ese país esa noche</div>
+      <div><span class="opp">12</span> = de esas, cuántas la IA marcó como encaje alto/medio (oportunidad)</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const FLAGS = { ES:'🇪🇸', GB:'🇬🇧', DE:'🇩🇪', IE:'🇮🇪', FR:'🇫🇷', NL:'🇳🇱', PT:'🇵🇹', BR:'🇧🇷', CA:'🇨🇦' };
+const esc = (s) => (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmtMiles = (n) => String(n ?? 0).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+const fmtFecha = (iso) => { const [y,m,d] = iso.split('-'); return `${d}/${m}/${y}`; };
+
+function celda(encontrados, oportunidades, estado, tooltip, extraClass) {
+  const errClass = estado === 'error' ? ' cell--error' : '';
+  return `<td class="cell${errClass}${extraClass ? ' ' + extraClass : ''}" title="${esc(tooltip || '')}">
+    <span class="split">
+      <span class="found">${fmtMiles(encontrados)}</span>
+      <span class="sep">/</span>
+      <span class="opp ${oportunidades > 0 ? 'opp--pos' : ''}">${oportunidades}</span>
+    </span>
+  </td>`;
+}
+
+async function cargar() {
+  const cont = document.getElementById('tabla-ejecuciones');
+  try {
+    const res = await fetch('/api/licitaciones/ejecuciones');
+    if (!res.ok) throw new Error();
+    const { fuentes, dias } = await res.json();
+    if (!dias.length) { cont.innerHTML = '<p class="loading">Sin ejecuciones registradas todavía.</p>'; return; }
+
+    let thead = '<tr><th>Fecha</th><th>Resumen</th>' + fuentes.map(f =>
+      `<th><a href="${esc(f.url_base || '#')}" target="_blank" rel="noopener" title="${esc(f.nombre)}">${FLAGS[f.pais_iso2] || ''} ${esc(f.codigo)}</a></th>`
+    ).join('') + '</tr>';
+
+    let rows = '';
+    for (const d of dias) {
+      rows += `<tr><td>${fmtFecha(d.dia)}</td>`;
+      rows += celda(d.resumen.encontrados, d.resumen.oportunidades, null,
+        'Total de todas las fuentes esa noche', 'resumen-cell');
+      for (const f of fuentes) {
+        const c = d.porFuente[f.codigo];
+        if (!c) { rows += '<td class="muted">—</td>'; continue; }
+        const tooltip = c.estado === 'error'
+          ? `${f.nombre} — ERROR: ${c.error}`
+          : `${f.nombre} — completado sin errores`;
+        rows += celda(c.encontrados, c.oportunidades, c.estado, tooltip);
+      }
+      rows += '</tr>';
+    }
+    cont.innerHTML = `<table><thead>${thead}</thead><tbody>${rows}</tbody></table>`;
+  } catch {
+    cont.innerHTML = '<p class="loading">No se pudo cargar — revisa que has iniciado sesión.</p>';
+  }
+}
+cargar();
+
+const horaEl = document.getElementById('hora-carga');
+if (horaEl) {
+  horaEl.textContent = '(consultado ' + new Date().toLocaleString('es-ES', {
+    day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
+  }) + ')';
+}
+</script>
+</body>
+</html>

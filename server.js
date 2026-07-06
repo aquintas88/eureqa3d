@@ -239,6 +239,8 @@ app.get('/login', (req, res) => {
 });
 app.get('/admin/licitaciones-info', requireLicitacionesAccess, (req, res) =>
   res.sendFile(path.join(__dirname, 'views', 'licitaciones-info.html')));
+app.get('/admin/ejecuciones', requireLicitacionesAccess, (req, res) =>
+  res.sendFile(path.join(__dirname, 'views', 'ejecuciones.html')));
 app.get('/admin',         requireAuth, (req, res) => res.sendFile(path.join(__dirname, 'views', 'admin.html')));
 app.get('/admin/{*path}', requireAuth, (req, res) => res.sendFile(path.join(__dirname, 'views', 'admin.html')));
 app.get('/logout', (req, res) => req.session.destroy(() => res.redirect('/login')));
@@ -556,29 +558,72 @@ app.get('/api/licitaciones/dashboard-stats', requireLicitacionesAccess, async (r
   } catch (e) { next(e); }
 });
 
-// Ejecuciones del pipeline (cron diario): ingesta por fuente + análisis IA.
-// Unifica ingest_runs y analysis_runs -- son dos tablas separadas porque las escribe
-// código distinto (un conector por fuente vs. el análisis global), pero de cara al
-// reporting son "la misma ejecución de anoche" y se listan juntas por fecha.
+// Ejecuciones del pipeline (cron diario), pivotadas: una fila por noche de cron,
+// una columna por fuente/país. "Encontrados" viene de ingest_runs (entries_nuevas);
+// "oportunidades" se cuenta aparte sobre analisis+tenders porque el análisis IA no
+// es por fuente (analysis_runs es una única fila global por noche) -- se reparte por
+// país agrupando por la fecha en que se analizó cada licitación.
 app.get('/api/licitaciones/ejecuciones', requireLicitacionesAccess, async (req, res, next) => {
   try {
-    const { rows } = await db.query(`
-      SELECT * FROM (
-        SELECT 'ingesta' AS tipo, f.codigo AS fuente_codigo, f.nombre AS fuente_nombre, f.pais_iso2,
-               r.iniciado_en, r.finalizado_en, r.estado, r.error,
-               r.entries_leidas AS m1, r.entries_nuevas AS m2, r.entries_actualizadas AS m3
+    const [fuentesRes, ingestaRes, oportunidadesRes] = await Promise.all([
+      db.query(`SELECT codigo, nombre, pais_iso2, url_base, activa FROM licitaciones.fuentes ORDER BY pais_iso2, codigo`),
+      // Nota: sin ::date -- ese cast hace que node-postgres reinterprete la fecha con
+      // el huso horario LOCAL del proceso Node (no el de la sesión de Postgres, que es
+      // UTC), desplazando el día en 1 si el contenedor no corre exactamente en UTC.
+      // Dejar el timestamptz truncado y cortar la fecha en JS con toISOString() evita
+      // esa reinterpretación (confirmado en real: con el cast, un cron de las 05:xx UTC
+      // aparecía fechado el día anterior al ejecutar este servidor en Europe/Madrid).
+      db.query(`
+        SELECT date_trunc('day', r.iniciado_en) AS dia, f.codigo,
+               SUM(r.entries_nuevas)::int AS encontrados,
+               bool_or(r.estado = 'error') AS con_error,
+               string_agg(DISTINCT r.error, ' | ') FILTER (WHERE r.error IS NOT NULL) AS error
         FROM licitaciones.ingest_runs r
-        LEFT JOIN licitaciones.fuentes f ON f.id = r.fuente_id
-        UNION ALL
-        SELECT 'analisis' AS tipo, NULL, 'Análisis IA', NULL,
-               a.iniciado_en, a.finalizado_en, a.estado, a.error,
-               a.procesados AS m1, a.nuevas_oportunidades AS m2, a.errores AS m3
-        FROM licitaciones.analysis_runs a
-      ) t
-      ORDER BY iniciado_en DESC
-      LIMIT 300
-    `);
-    res.json(rows);
+        JOIN licitaciones.fuentes f ON f.id = r.fuente_id
+        GROUP BY 1, 2
+      `),
+      db.query(`
+        SELECT date_trunc('day', a.analizado_en) AS dia, f.codigo,
+               COUNT(*) FILTER (WHERE a.encaje IN ('alto','medio'))::int AS oportunidades
+        FROM licitaciones.analisis a
+        JOIN licitaciones.tenders t ON t.id = a.tender_id
+        JOIN licitaciones.fuentes f ON f.id = t.fuente_id
+        GROUP BY 1, 2
+      `),
+    ]);
+
+    const oportunidadesPorClave = new Map();
+    for (const o of oportunidadesRes.rows) {
+      oportunidadesPorClave.set(`${o.dia.toISOString().slice(0, 10)}|${o.codigo}`, o.oportunidades);
+    }
+
+    const diasMap = new Map();
+    for (const r of ingestaRes.rows) {
+      const fecha = r.dia.toISOString().slice(0, 10);
+      if (!diasMap.has(fecha)) diasMap.set(fecha, {});
+      diasMap.get(fecha)[r.codigo] = {
+        encontrados: r.encontrados || 0,
+        oportunidades: oportunidadesPorClave.get(`${fecha}|${r.codigo}`) || 0,
+        estado: r.con_error ? 'error' : 'ok',
+        error: r.error || null,
+      };
+    }
+
+    const dias = [...diasMap.entries()]
+      .sort((a, b) => b[0].localeCompare(a[0]))
+      .map(([fecha, porFuente]) => {
+        const valores = Object.values(porFuente);
+        return {
+          dia: fecha,
+          resumen: {
+            encontrados: valores.reduce((s, v) => s + v.encontrados, 0),
+            oportunidades: valores.reduce((s, v) => s + v.oportunidades, 0),
+          },
+          porFuente,
+        };
+      });
+
+    res.json({ fuentes: fuentesRes.rows, dias });
   } catch (e) { next(e); }
 });
 
