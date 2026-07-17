@@ -514,12 +514,14 @@ app.get('/api/backlog/meta', requireBacklogAccess, async (req, res, next) => {
 //
 // El agente de ingesta solo escribe en tenders/analisis, no en pipeline_comercial
 // (el funnel del kanban) -- por eso una oportunidad detectada (encaje alto/medio)
-// no aparecía sola en el kanban. Como este servidor no tiene ningún cron/worker
-// propio, la sincronización se hace "a demanda": cada vez que se pide el listado
-// del kanban, primero se da de alta (etapa inicial 'detectada') cualquier tender
-// con encaje alto/medio que todavía no tenga fila en pipeline_comercial.
+// no aparecía sola en el kanban. La sincronización se hace desde dos sitios: a
+// demanda (cada vez que se pide el listado del kanban) y en segundo plano cada
+// pocos minutos (ver setInterval junto a app.listen) para que el aviso por email
+// no dependa de que alguien tenga el panel abierto. Da de alta (etapa inicial
+// 'detectada') cualquier tender con encaje alto/medio sin fila en pipeline_comercial
+// y avisa por correo a los admins de las que sean nuevas.
 async function sincronizarOportunidadesFunnel() {
-  await db.query(`
+  const { rows: nuevas } = await db.query(`
     INSERT INTO licitaciones.pipeline_comercial (tender_id, etapa)
     SELECT a.tender_id, 'detectada'
     FROM licitaciones.analisis a
@@ -527,7 +529,55 @@ async function sincronizarOportunidadesFunnel() {
       AND NOT EXISTS (
         SELECT 1 FROM licitaciones.pipeline_comercial p WHERE p.tender_id = a.tender_id
       )
+    RETURNING tender_id
   `);
+  if (!nuevas.length) return;
+
+  const { rows: detalle } = await db.query(`
+    SELECT t.id AS tender_id, COALESCE(a.titulo_traducido, t.objeto_contrato) AS titulo,
+           t.organo_contratacion, t.pais_iso2, t.fecha_limite_presentacion, t.url_perfil,
+           a.encaje, a.resumen_ia, a.score_final, f.nombre AS fuente_nombre
+    FROM licitaciones.tenders t
+    JOIN licitaciones.analisis a ON a.tender_id = t.id
+    JOIN licitaciones.fuentes f ON f.id = t.fuente_id
+    WHERE t.id = ANY($1::bigint[])
+    ORDER BY a.score_final DESC
+  `, [nuevas.map(n => n.tender_id)]);
+
+  try {
+    await enviarCorreoOportunidades(detalle);
+  } catch (e) {
+    console.error('No se pudo enviar el correo de nuevas oportunidades:', e.message);
+  }
+}
+
+async function enviarCorreoOportunidades(oportunidades) {
+  const m = getMailer();
+  if (!m || !oportunidades.length) return;
+
+  const { rows: admins } = await db.query(`SELECT email FROM users WHERE role='admin'`);
+  const destinatarios = admins.map(a => a.email).filter(Boolean);
+  if (!destinatarios.length) return;
+
+  const asunto = oportunidades.length === 1
+    ? `Nueva oportunidad detectada: ${oportunidades[0].titulo}`
+    : `${oportunidades.length} nuevas oportunidades detectadas en licitaciones`;
+
+  const lineas = oportunidades.map(o => {
+    const limite = o.fecha_limite_presentacion
+      ? new Date(o.fecha_limite_presentacion).toLocaleDateString('es-ES')
+      : 'sin fecha límite';
+    return `- [${(o.encaje || '').toUpperCase()}] ${o.titulo}\n  ${o.fuente_nombre}${o.organo_contratacion ? ' · ' + o.organo_contratacion : ''} · límite ${limite}\n  ${o.url_perfil || '(sin enlace)'}`;
+  }).join('\n\n');
+
+  const urlPanel = `${process.env.APP_URL || 'https://eureqa3d-production.up.railway.app'}/admin`;
+
+  await m.sendMail({
+    from: `"Eureqa3D Web" <${process.env.SMTP_USER}>`,
+    to: destinatarios.join(','),
+    subject: asunto,
+    text: `La IA ha marcado ${oportunidades.length === 1 ? 'una nueva licitación' : `${oportunidades.length} nuevas licitaciones`} como oportunidad (encaje alto/medio):\n\n${lineas}\n\nVer en el kanban: ${urlPanel}`
+  });
 }
 
 app.get('/api/licitaciones/items', requireLicitacionesAccess, async (req, res, next) => {
@@ -981,4 +1031,10 @@ app.listen(PORT, () => {
   console.log(`✅  Eureqa3D → http://localhost:${PORT}`);
   console.log(`🔐  Panel privado → http://localhost:${PORT}/admin`);
   ensureSchema().catch(err => console.error('Schema error:', err.message));
+
+  // Revisa cada 5 min si hay nuevas oportunidades (encaje alto/medio) para darlas
+  // de alta en el kanban y avisar por email, sin depender de que alguien abra el panel.
+  setInterval(() => {
+    sincronizarOportunidadesFunnel().catch(err => console.error('Sync oportunidades:', err.message));
+  }, 5 * 60 * 1000);
 });

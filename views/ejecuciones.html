@@ -35,6 +35,10 @@
   th { color: var(--muted); font-weight: 700; text-transform: uppercase; font-size: .68rem; letter-spacing: .04em; }
   th a { color: var(--teal-700); text-decoration: none; font-size: .8rem; text-transform: none; letter-spacing: 0; }
   th a:hover { text-decoration: underline; }
+  #tabla-anual-tbl th a { display: flex; flex-direction: column; align-items: center; gap: .15rem; }
+  #tabla-anual-tbl .th-flag { font-size: 1.3rem; line-height: 1; }
+  #tabla-anual-tbl .th-pais { font-size: .68rem; white-space: normal; max-width: 9ch; line-height: 1.15; }
+  #tabla-anual-tbl th, #tabla-anual-tbl td { padding: .5rem .4rem; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: var(--bg-teal); }
 
@@ -118,6 +122,7 @@
 
 <script>
 const FLAGS = { ES:'🇪🇸', GB:'🇬🇧', DE:'🇩🇪', IE:'🇮🇪', FR:'🇫🇷', NL:'🇳🇱', PT:'🇵🇹', BR:'🇧🇷', CA:'🇨🇦' };
+const PAIS_LABELS = { ES:'España', GB:'Reino Unido', DE:'Alemania', IE:'Irlanda', FR:'Francia', NL:'Países Bajos', PT:'Portugal', BR:'Brasil', CA:'Canadá' };
 const MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 const esc = (s) => (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmtMiles = (n) => String(n ?? 0).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -137,15 +142,28 @@ function celda(encontrados, oportunidades, estado, tooltip, extraClass, scope) {
   </td>`;
 }
 
-function headerRow(fuentes, primeraCol) {
-  return '<tr><th>' + primeraCol + '</th><th>Resumen</th>' + fuentes.map(f =>
-    `<th><a href="${esc(f.url_base || '#')}" target="_blank" rel="noopener" title="${esc(f.nombre)}">${FLAGS[f.pais_iso2] || ''} ${esc(f.codigo)}</a></th>`
-  ).join('') + '</tr>';
+function paisLabelCorto(f, fuentes) {
+  const label = PAIS_LABELS[f.pais_iso2] || f.pais_iso2;
+  const duplicado = fuentes.filter(x => x.pais_iso2 === f.pais_iso2).length > 1;
+  if (!duplicado) return label;
+  const m = f.nombre.match(/\(([^)]+)\)/);
+  const paren = m && m[1];
+  return (paren && paren.toLowerCase() !== label.toLowerCase()) ? `${label} · ${paren}` : label;
+}
+
+function headerRow(fuentes, primeraCol, soloPais) {
+  return '<tr><th>' + primeraCol + '</th><th>Resumen</th>' + fuentes.map(f => {
+    const flag = FLAGS[f.pais_iso2] || '';
+    const contenido = soloPais
+      ? `<span class="th-flag">${flag}</span><span class="th-pais">${esc(paisLabelCorto(f, fuentes))}</span>`
+      : `${flag} ${esc(f.codigo)}`;
+    return `<th><a href="${esc(f.url_base || '#')}" target="_blank" rel="noopener" title="${esc(f.nombre)}">${contenido}</a></th>`;
+  }).join('') + '</tr>';
 }
 
 function renderAnual(fuentes, anual) {
   document.getElementById('anual-titulo').textContent = `Resumen anual — ${anual.anio} (año en curso)`;
-  const thead = headerRow(fuentes, 'Año');
+  const thead = headerRow(fuentes, 'Año', true);
   let row = `<tr><td>${anual.anio}</td>`;
   row += celda(anual.resumen.encontrados, anual.resumen.oportunidades, null,
     'Total de todas las fuentes en lo que va de año — pincha para ver el listado', 'resumen-cell',
