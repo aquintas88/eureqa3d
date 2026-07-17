@@ -683,6 +683,55 @@ app.get('/api/licitaciones/ejecuciones', requireLicitacionesAccess, async (req, 
   } catch (e) { next(e); }
 });
 
+// Listado de licitaciones marcadas como oportunidad (encaje alto/medio) para un
+// rango dado: un día concreto (?dia=YYYY-MM-DD), un año completo (?year=YYYY sin
+// month) o un mes (?year=YYYY&month=1-12, por defecto mes en curso). Filtra
+// opcionalmente por fuente (?codigo=). Usa el mismo criterio que el conteo de
+// "oportunidades" en /api/licitaciones/ejecuciones para que la lista cuadre con
+// el número sobre el que se pinchó.
+app.get('/api/licitaciones/ejecuciones/oportunidades', requireLicitacionesAccess, async (req, res, next) => {
+  try {
+    const ahora = new Date();
+    let desde, hasta;
+    if (req.query.dia) {
+      const d = new Date(`${req.query.dia}T00:00:00.000Z`);
+      desde = d;
+      hasta = new Date(d.getTime() + 24 * 60 * 60 * 1000);
+    } else {
+      let year = parseInt(req.query.year, 10);
+      if (!Number.isInteger(year)) year = ahora.getUTCFullYear();
+      let month = parseInt(req.query.month, 10);
+      if (Number.isInteger(month) && month >= 1 && month <= 12) {
+        desde = new Date(Date.UTC(year, month - 1, 1));
+        hasta = new Date(Date.UTC(month === 12 ? year + 1 : year, month === 12 ? 0 : month, 1));
+      } else {
+        desde = new Date(Date.UTC(year, 0, 1));
+        hasta = new Date(Date.UTC(year + 1, 0, 1));
+      }
+    }
+
+    const params = [desde, hasta];
+    let filtroFuente = '';
+    if (req.query.codigo) { params.push(req.query.codigo); filtroFuente = `AND f.codigo = $${params.length}`; }
+
+    const { rows } = await db.query(`
+      SELECT t.id AS tender_id,
+             COALESCE(a.titulo_traducido, t.objeto_contrato) AS titulo,
+             t.organo_contratacion, t.pais_iso2, t.fecha_limite_presentacion,
+             t.url_perfil, a.encaje, a.resumen_ia, f.codigo AS fuente_codigo,
+             a.analizado_en
+      FROM licitaciones.analisis a
+      JOIN licitaciones.tenders t ON t.id = a.tender_id
+      JOIN licitaciones.fuentes f ON f.id = t.fuente_id
+      WHERE a.analizado_en >= $1 AND a.analizado_en < $2
+        AND a.encaje IN ('alto','medio')
+        ${filtroFuente}
+      ORDER BY a.analizado_en DESC
+    `, params);
+    res.json(rows);
+  } catch (e) { next(e); }
+});
+
 app.patch('/api/licitaciones/items/:tenderId', requireLicitacionesAccess, async (req, res, next) => {
   const client = await db.pool.connect();
   try {

@@ -8,6 +8,7 @@
   :root {
     --teal: #3990B0; --teal-dark: #058aa9; --teal-700: #1f6e8c;
     --orange: #D57C1B; --orange-dark: #b9670f;
+    --green: #1f8a4c; --green-dark: #166b3b; --bg-green: #e6f6ec;
     --ink: #1c2127; --ink-soft: #4a525c; --muted: #7a828c;
     --line: #e6e9ee; --bg: #ffffff; --bg-soft: #f5f8fa; --bg-teal: #ecf4f8;
     --radius: 14px; --radius-sm: 10px;
@@ -38,11 +39,17 @@
   tr:hover td { background: var(--bg-teal); }
 
   td.cell { cursor: help; }
+  td.cell[data-scope] { cursor: pointer; }
+  td.cell[data-scope]:hover { background: var(--bg-teal); }
+  td.cell.cell--tiene-opp { background: var(--bg-green); }
+  td.cell.cell--tiene-opp[data-scope]:hover { background: #d3efdc; }
+  td.cell[data-scope].cell--activa { background: var(--bg-teal); box-shadow: inset 0 0 0 2px var(--teal); }
+  td.cell.cell--tiene-opp[data-scope].cell--activa { background: #d3efdc; box-shadow: inset 0 0 0 2px var(--green); }
   .split { display: inline-flex; align-items: baseline; gap: .25rem; font-variant-numeric: tabular-nums; }
   .split .found { font-weight: 700; color: var(--ink); }
   .split .sep { color: var(--muted); }
   .split .opp { color: var(--muted); }
-  .split .opp.opp--pos { color: var(--orange-dark); font-weight: 700; }
+  .split .opp.opp--pos { color: var(--green-dark); font-weight: 700; }
   td.cell--error { background: #fdecea; }
   td.cell--error .found { color: #b3261e; }
   td.muted { color: var(--muted); }
@@ -52,7 +59,7 @@
 
   .legend { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: .82rem; color: var(--ink-soft); margin-top: 1rem; }
   .legend span.found { font-weight: 700; color: var(--ink); }
-  .legend span.opp { color: var(--orange-dark); font-weight: 700; }
+  .legend span.opp { color: var(--green-dark); font-weight: 700; }
 
   .month-nav { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.4rem; }
   .month-nav button {
@@ -62,6 +69,18 @@
   .month-nav button:hover:not(:disabled) { border-color: var(--teal); background: var(--bg-teal); }
   .month-nav button:disabled { opacity: .4; cursor: default; }
   .month-nav .month-label { font-weight: 700; font-family: var(--head); min-width: 11ch; text-align: center; text-transform: capitalize; }
+
+  .opp-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .8rem; }
+  .opp-item { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .8rem 1rem; white-space: normal; }
+  .opp-item-head { display: flex; align-items: baseline; gap: .55rem; flex-wrap: wrap; }
+  .opp-badge { font-size: .68rem; font-weight: 700; padding: .12rem .5rem; border-radius: 6px; white-space: nowrap; text-transform: uppercase; letter-spacing: .03em; }
+  .opp-badge--alto  { background: #fde8e8; color: #c0392b; }
+  .opp-badge--medio { background: #fef3cd; color: #9a6700; }
+  .opp-item-title { font-weight: 700; }
+  .opp-item-meta { font-size: .82rem; color: var(--muted); margin-top: .3rem; }
+  .opp-item-resumen { font-size: .88rem; color: var(--ink-soft); margin: .5rem 0 0; }
+  .opp-item a { color: var(--teal-700); text-decoration: none; }
+  .opp-item a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -80,14 +99,20 @@
     <p class="update-note">📡 Datos en vivo desde <code>ingest_runs</code> / <code>analisis</code>. <span id="hora-carga"></span></p>
     <div id="tabla-ejecuciones" class="table-scroll loading">Cargando datos en vivo…</div>
     <div class="legend">
-      <div><span class="found">37.449</span> = licitaciones nuevas encontradas ese país esa noche</div>
-      <div><span class="opp">12</span> = de esas, cuántas la IA marcó como encaje alto/medio (oportunidad)</div>
+      <div>Formato de cada celda: <span class="found">encontradas</span> / <span class="opp">oportunidades</span> (ejemplo: <span class="found">37.449</span> / <span class="opp">12</span>)</div>
+      <div>Las celdas con oportunidades se resaltan <strong style="color:var(--green-dark)">en verde</strong> — pincha para ver el listado debajo</div>
     </div>
     <div class="month-nav">
       <button id="mes-prev">&larr; Mes anterior</button>
       <span class="month-label" id="mes-label">—</span>
       <button id="mes-next">Mes siguiente &rarr;</button>
     </div>
+  </div>
+
+  <div class="card">
+    <h2 id="oportunidades-titulo">Oportunidades detectadas</h2>
+    <p class="update-note">Pincha un número de la tabla de arriba para filtrar esta lista por ese día/fuente. Por defecto se muestran las del mes en vista.</p>
+    <div id="oportunidades-lista" class="loading">Cargando…</div>
   </div>
 </div>
 
@@ -98,9 +123,12 @@ const esc = (s) => (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<
 const fmtMiles = (n) => String(n ?? 0).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const fmtFecha = (iso) => { const [y,m,d] = iso.split('-'); return `${d}/${m}/${y}`; };
 
-function celda(encontrados, oportunidades, estado, tooltip, extraClass) {
-  const errClass = estado === 'error' ? ' cell--error' : '';
-  return `<td class="cell${errClass}${extraClass ? ' ' + extraClass : ''}" title="${esc(tooltip || '')}">
+function celda(encontrados, oportunidades, estado, tooltip, extraClass, scope) {
+  const esError = estado === 'error';
+  const errClass = esError ? ' cell--error' : '';
+  const oppClass = (oportunidades > 0 && !esError) ? ' cell--tiene-opp' : '';
+  const scopeAttr = scope ? ` data-scope='${esc(JSON.stringify(scope))}'` : '';
+  return `<td class="cell${errClass}${oppClass}${extraClass ? ' ' + extraClass : ''}" title="${esc(tooltip || '')}"${scopeAttr}>
     <span class="split">
       <span class="found">${fmtMiles(encontrados)}</span>
       <span class="sep">/</span>
@@ -120,10 +148,12 @@ function renderAnual(fuentes, anual) {
   const thead = headerRow(fuentes, 'Año');
   let row = `<tr><td>${anual.anio}</td>`;
   row += celda(anual.resumen.encontrados, anual.resumen.oportunidades, null,
-    'Total de todas las fuentes en lo que va de año', 'resumen-cell');
+    'Total de todas las fuentes en lo que va de año — pincha para ver el listado', 'resumen-cell',
+    { anio: anual.anio });
   for (const f of fuentes) {
     const c = anual.porFuente[f.codigo];
-    row += celda(c ? c.encontrados : 0, c ? c.oportunidades : 0, null, f.nombre);
+    row += celda(c ? c.encontrados : 0, c ? c.oportunidades : 0, null, f.nombre + ' — pincha para ver el listado',
+      null, { anio: anual.anio, codigo: f.codigo });
   }
   row += '</tr>';
   document.getElementById('tabla-anual').innerHTML = `<table id="tabla-anual-tbl">${thead}<tbody>${row}</tbody></table>`;
@@ -139,19 +169,87 @@ function renderMes(fuentes, dias) {
   for (const d of dias) {
     rows += `<tr><td>${fmtFecha(d.dia)}</td>`;
     rows += celda(d.resumen.encontrados, d.resumen.oportunidades, null,
-      'Total de todas las fuentes esa noche', 'resumen-cell');
+      'Total de todas las fuentes esa noche — pincha para ver el listado', 'resumen-cell', { dia: d.dia });
     for (const f of fuentes) {
       const c = d.porFuente[f.codigo];
       if (!c) { rows += '<td class="muted">—</td>'; continue; }
-      const tooltip = c.estado === 'error'
+      const tooltip = (c.estado === 'error'
         ? `${f.nombre} — ERROR: ${c.error}`
-        : `${f.nombre} — completado sin errores`;
-      rows += celda(c.encontrados, c.oportunidades, c.estado, tooltip);
+        : `${f.nombre} — completado sin errores`) + ' — pincha para ver el listado';
+      rows += celda(c.encontrados, c.oportunidades, c.estado, tooltip, null, { dia: d.dia, codigo: f.codigo });
     }
     rows += '</tr>';
   }
   document.getElementById('tabla-ejecuciones').innerHTML = `<table>${thead}<tbody>${rows}</tbody></table>`;
 }
+
+function marcarCeldaActiva(scope) {
+  document.querySelectorAll('td.cell--activa').forEach(td => td.classList.remove('cell--activa'));
+  if (!scope) return;
+  const claveBuscada = JSON.stringify(scope);
+  document.querySelectorAll('#tabla-anual td[data-scope], #tabla-ejecuciones td[data-scope]').forEach(td => {
+    if (td.dataset.scope === claveBuscada) td.classList.add('cell--activa');
+  });
+}
+
+function encajeLabel(e) { return e === 'alto' ? 'Alto' : 'Medio'; }
+
+function renderOportunidades(rows, etiqueta) {
+  document.getElementById('oportunidades-titulo').textContent = `Oportunidades detectadas — ${etiqueta} (${rows.length})`;
+  const cont = document.getElementById('oportunidades-lista');
+  if (!rows.length) {
+    cont.innerHTML = '<p class="loading">Sin oportunidades en este rango.</p>';
+    return;
+  }
+  cont.innerHTML = '<ul class="opp-list">' + rows.map(r => `
+    <li class="opp-item">
+      <div class="opp-item-head">
+        <span class="opp-badge opp-badge--${r.encaje}">${encajeLabel(r.encaje)}</span>
+        <span class="opp-item-title">${esc(r.titulo || '(sin título)')}</span>
+      </div>
+      <div class="opp-item-meta">
+        ${FLAGS[r.pais_iso2] || ''} ${esc(r.fuente_codigo)}${r.organo_contratacion ? ' · ' + esc(r.organo_contratacion) : ''}${r.fecha_limite_presentacion ? ' · límite ' + fmtFecha(r.fecha_limite_presentacion.slice(0, 10)) : ''}
+      </div>
+      ${r.resumen_ia ? `<p class="opp-item-resumen">${esc(r.resumen_ia)}</p>` : ''}
+      ${r.url_perfil ? `<p class="opp-item-meta"><a href="${esc(r.url_perfil)}" target="_blank" rel="noopener">Ver ficha ↗</a></p>` : ''}
+    </li>`).join('') + '</ul>';
+}
+
+async function mostrarOportunidades(scope) {
+  const params = new URLSearchParams();
+  let etiqueta;
+  if (scope.dia) {
+    params.set('dia', scope.dia);
+    etiqueta = fmtFecha(scope.dia);
+  } else if (scope.anio && !scope.mes) {
+    params.set('year', scope.anio);
+    etiqueta = `año ${scope.anio}`;
+  } else {
+    params.set('year', scope.anio);
+    params.set('month', scope.mes);
+    etiqueta = `${MESES[scope.mes - 1]} ${scope.anio}`;
+  }
+  if (scope.codigo) { params.set('codigo', scope.codigo); etiqueta += ` · ${scope.codigo}`; }
+  marcarCeldaActiva(scope.mes ? null : scope);
+  const cont = document.getElementById('oportunidades-lista');
+  cont.innerHTML = '<p class="loading">Cargando…</p>';
+  try {
+    const res = await fetch(`/api/licitaciones/ejecuciones/oportunidades?${params}`);
+    if (!res.ok) throw new Error();
+    const rows = await res.json();
+    renderOportunidades(rows, etiqueta);
+  } catch {
+    cont.innerHTML = '<p class="loading">No se pudo cargar.</p>';
+  }
+}
+
+function onCeldaClick(e) {
+  const td = e.target.closest('td[data-scope]');
+  if (!td) return;
+  mostrarOportunidades(JSON.parse(td.dataset.scope));
+}
+document.getElementById('tabla-anual').addEventListener('click', onCeldaClick);
+document.getElementById('tabla-ejecuciones').addEventListener('click', onCeldaClick);
 
 const hoy = new Date();
 let vista = { anio: hoy.getUTCFullYear(), mes: hoy.getUTCMonth() + 1 };
@@ -169,6 +267,7 @@ async function cargar() {
     const { fuentes, dias, anual } = await res.json();
     renderAnual(fuentes, anual);
     renderMes(fuentes, dias);
+    mostrarOportunidades({ anio: vista.anio, mes: vista.mes });
   } catch {
     contMes.innerHTML = '<p class="loading">No se pudo cargar — revisa que has iniciado sesión.</p>';
     contAnual.innerHTML = '<p class="loading">No se pudo cargar.</p>';
