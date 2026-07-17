@@ -511,8 +511,28 @@ app.get('/api/backlog/meta', requireBacklogAccess, async (req, res, next) => {
 /* ── API: Licitaciones (admin + investigador) ─────────────────── */
 // Solo lectura + PATCH de etapa/notas: las licitaciones las crea el agente de
 // ingesta (schema licitaciones, misma Postgres), no hay creación manual aquí.
+//
+// El agente de ingesta solo escribe en tenders/analisis, no en pipeline_comercial
+// (el funnel del kanban) -- por eso una oportunidad detectada (encaje alto/medio)
+// no aparecía sola en el kanban. Como este servidor no tiene ningún cron/worker
+// propio, la sincronización se hace "a demanda": cada vez que se pide el listado
+// del kanban, primero se da de alta (etapa inicial 'detectada') cualquier tender
+// con encaje alto/medio que todavía no tenga fila en pipeline_comercial.
+async function sincronizarOportunidadesFunnel() {
+  await db.query(`
+    INSERT INTO licitaciones.pipeline_comercial (tender_id, etapa)
+    SELECT a.tender_id, 'detectada'
+    FROM licitaciones.analisis a
+    WHERE a.encaje IN ('alto','medio')
+      AND NOT EXISTS (
+        SELECT 1 FROM licitaciones.pipeline_comercial p WHERE p.tender_id = a.tender_id
+      )
+  `);
+}
+
 app.get('/api/licitaciones/items', requireLicitacionesAccess, async (req, res, next) => {
   try {
+    await sincronizarOportunidadesFunnel();
     const { rows } = await db.query(
       `SELECT * FROM licitaciones.v_funnel
        WHERE etapa IS NOT NULL
