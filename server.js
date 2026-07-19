@@ -551,33 +551,51 @@ async function sincronizarOportunidadesFunnel() {
   }
 }
 
-async function enviarCorreoOportunidades(oportunidades) {
-  const m = getMailer();
-  if (!m || !oportunidades.length) return;
+const escHtml = (s) => (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-  const { rows: admins } = await db.query(`SELECT email FROM users WHERE role='admin'`);
-  const destinatarios = admins.map(a => a.email).filter(Boolean);
+// Envío vía API HTTP de Brevo (no SMTP): con solo BREVO_API_KEY basta, sin
+// necesitar el "login" SMTP que Brevo no expone junto a la SMTP key. Mismo
+// patrón que src/lib/brevo.ts en KiraConnect. Ojo: BREVO_API_KEY es una key
+// compartida con KiraConnect y el workflow de Dapart (mismo BREVO_DAILY_LIMIT).
+async function enviarCorreoOportunidades(oportunidades) {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey || !oportunidades.length) return;
+
+  const { rows: admins } = await db.query(`SELECT email, name FROM users WHERE role='admin'`);
+  const destinatarios = admins.filter(a => a.email).map(a => ({ email: a.email, name: a.name || undefined }));
   if (!destinatarios.length) return;
 
   const asunto = oportunidades.length === 1
     ? `Nueva oportunidad detectada: ${oportunidades[0].titulo}`
     : `${oportunidades.length} nuevas oportunidades detectadas en licitaciones`;
 
-  const lineas = oportunidades.map(o => {
+  const items = oportunidades.map(o => {
     const limite = o.fecha_limite_presentacion
       ? new Date(o.fecha_limite_presentacion).toLocaleDateString('es-ES')
       : 'sin fecha límite';
-    return `- [${(o.encaje || '').toUpperCase()}] ${o.titulo}\n  ${o.fuente_nombre}${o.organo_contratacion ? ' · ' + o.organo_contratacion : ''} · límite ${limite}\n  ${o.url_perfil || '(sin enlace)'}`;
-  }).join('\n\n');
+    return `<li style="margin-bottom:14px">
+      <strong>[${escHtml((o.encaje || '').toUpperCase())}]</strong> ${escHtml(o.titulo)}<br>
+      <span style="color:#666">${escHtml(o.fuente_nombre)}${o.organo_contratacion ? ' · ' + escHtml(o.organo_contratacion) : ''} · límite ${limite}</span><br>
+      ${o.url_perfil ? `<a href="${escHtml(o.url_perfil)}">${escHtml(o.url_perfil)}</a>` : '(sin enlace)'}
+    </li>`;
+  }).join('');
 
   const urlPanel = `${process.env.APP_URL || 'https://eureqa3d-production.up.railway.app'}/admin`;
+  const senderEmail = process.env.BREVO_SENDER_EMAIL || 'aquintas@gmail.com';
 
-  await m.sendMail({
-    from: `"Eureqa3D Web" <${process.env.SMTP_USER}>`,
-    to: destinatarios.join(','),
-    subject: asunto,
-    text: `La IA ha marcado ${oportunidades.length === 1 ? 'una nueva licitación' : `${oportunidades.length} nuevas licitaciones`} como oportunidad (encaje alto/medio):\n\n${lineas}\n\nVer en el kanban: ${urlPanel}`
+  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: { 'api-key': apiKey, 'content-type': 'application/json', accept: 'application/json' },
+    body: JSON.stringify({
+      sender: { email: senderEmail, name: 'Eureqa3D · Licitaciones' },
+      to: destinatarios,
+      subject: asunto,
+      htmlContent: `<p>La IA ha marcado ${oportunidades.length === 1 ? 'una nueva licitación' : `${oportunidades.length} nuevas licitaciones`} como oportunidad (encaje alto/medio):</p><ul>${items}</ul><p><a href="${urlPanel}">Ver en el kanban</a></p>`
+    })
   });
+  if (!res.ok) {
+    throw new Error(`Brevo ${res.status}: ${await res.text()}`);
+  }
 }
 
 app.get('/api/licitaciones/items', requireLicitacionesAccess, async (req, res, next) => {
