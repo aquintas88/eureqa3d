@@ -132,7 +132,7 @@ function renderFooter() {
       </div>
       <div class="footer-bottom">
         <span>© ${new Date().getFullYear()} Eureqa3D. ${tr('Todos los derechos reservados.')}</span>
-        <span>${tr('Impresión 3D · Sector Salud · ISO 9001')}</span>
+        <span>${tr('Impresión 3D · Sector Salud')}</span>
       </div>
     </div>
   </footer>`;

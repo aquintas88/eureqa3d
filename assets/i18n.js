@@ -42,7 +42,7 @@
     'Extremadura · España': { en: 'Extremadura · Spain', fr: 'Estrémadure · Espagne', de: 'Extremadura · Spanien', it: 'Estremadura · Spagna', el: 'Εστρεμαδούρα · Ισπανία' },
     'Navegación': { en: 'Navigation', fr: 'Navigation', de: 'Navigation', it: 'Navigazione', el: 'Πλοήγηση' },
     'Todos los derechos reservados.': { en: 'All rights reserved.', fr: 'Tous droits réservés.', de: 'Alle Rechte vorbehalten.', it: 'Tutti i diritti riservati.', el: 'Με την επιφύλαξη παντός δικαιώματος.' },
-    'Impresión 3D · Sector Salud · ISO 9001': { en: '3D Printing · Healthcare · ISO 9001', fr: 'Impression 3D · Santé · ISO 9001', de: '3D-Druck · Gesundheitswesen · ISO 9001', it: 'Stampa 3D · Sanità · ISO 9001', el: 'Τρισδιάστατη εκτύπωση · Υγεία · ISO 9001' },
+    'Impresión 3D · Sector Salud': { en: '3D Printing · Healthcare', fr: 'Impression 3D · Santé', de: '3D-Druck · Gesundheitswesen', it: 'Stampa 3D · Sanità', el: 'Τρισδιάστατη εκτύπωση · Υγεία' },
 
     /* ── Inicio ── */
     'Impresión 3D y modelos digitales · Sector salud': { en: '3D Printing & digital models · Healthcare', fr: 'Impression 3D et modèles numériques · Santé', de: '3D-Druck & digitale Modelle · Gesundheitswesen', it: 'Stampa 3D e modelli digitali · Sanità', el: 'Τρισδιάστατη εκτύπωση & ψηφιακά μοντέλα · Υγεία' },
@@ -118,12 +118,6 @@
       de: 'Wir verwandeln 2D-Röntgenstudien in präzise physische Biomodelle, bereit für den Operationssaal.',
       it: 'Trasformiamo gli studi radiologici 2D in biomodelli fisici precisi, pronti per la sala operatoria.',
       el: 'Μετατρέπουμε δισδιάστατες ακτινολογικές μελέτες σε ακριβή φυσικά βιομοντέλα, έτοιμα για το χειρουργείο.' },
-    'Proceso propio certificado con sello de calidad ISO 9001 que garantiza trazabilidad y confidencialidad (RGPD).': {
-      en: 'Our own process, certified with the ISO 9001 quality seal, guaranteeing traceability and confidentiality (GDPR).',
-      fr: 'Un processus propriétaire certifié par le label qualité ISO 9001, garantissant la traçabilité et la confidentialité (RGPD).',
-      de: 'Ein eigenes Verfahren, zertifiziert mit dem ISO-9001-Qualitätssiegel, das Rückverfolgbarkeit und Vertraulichkeit (DSGVO) gewährleistet.',
-      it: 'Processo proprietario certificato con il marchio di qualità ISO 9001 che garantisce tracciabilità e riservatezza (GDPR).',
-      el: 'Ιδιόκτητη διαδικασία πιστοποιημένη με τη σφραγίδα ποιότητας ISO 9001 που εγγυάται ιχνηλασιμότητα και εμπιστευτικότητα (GDPR).' },
     'Tiempo récord': { en: 'Record time', fr: 'Temps record', de: 'Rekordzeit', it: 'Tempo record', el: 'Χρόνος-ρεκόρ' },
     'Entregamos los modelos entre 24 y 48 horas según solicitud, material y destino. Tu tiempo importa.': {
       en: 'We deliver the models within 24 to 48 hours depending on request, material and destination. Your time matters.',
@@ -191,30 +185,30 @@
 
     /* ── Quiénes somos ── */
     'Especialistas en impresión 3D y modelos digitales en el sector salud': { en: 'Specialists in 3D printing and digital models for the healthcare sector', fr: "Spécialistes de l'impression 3D et des modèles numériques dans le secteur de la santé", de: 'Spezialisten für 3D-Druck und digitale Modelle im Gesundheitssektor', it: 'Specialisti nella stampa 3D e nei modelli digitali nel settore sanitario', el: 'Ειδικοί στην τρισδιάστατη εκτύπωση και τα ψηφιακά μοντέλα στον τομέα της υγείας' },
-    'Eureqa3D es una empresa joven formada por <strong>ingenieros, médicos y cirujanos</strong> que ofrece, a través de la impresión 3D y los modelos digitales, una innovadora tecnología al profesional, revolucionando el sector salud.': {
-      en: 'Eureqa3D is a young company made up of <strong>engineers, doctors and surgeons</strong> that offers professionals an innovative technology through 3D printing and digital models, revolutionizing the healthcare sector.',
-      fr: "Eureqa3D est une jeune entreprise composée d'<strong>ingénieurs, médecins et chirurgiens</strong> qui offre au professionnel, grâce à l'impression 3D et aux modèles numériques, une technologie innovante, révolutionnant le secteur de la santé.",
-      de: 'Eureqa3D ist ein junges Unternehmen aus <strong>Ingenieuren, Ärzten und Chirurgen</strong>, das Fachleuten durch 3D-Druck und digitale Modelle eine innovative Technologie bietet und den Gesundheitssektor revolutioniert.',
-      it: 'Eureqa3D è una giovane azienda formata da <strong>ingegneri, medici e chirurghi</strong> che offre al professionista, attraverso la stampa 3D e i modelli digitali, una tecnologia innovativa, rivoluzionando il settore sanitario.',
-      el: 'Η Eureqa3D είναι μια νέα εταιρεία αποτελούμενη από <strong>μηχανικούς, ιατρούς και χειρουργούς</strong> που προσφέρει στον επαγγελματία, μέσω της τρισδιάστατης εκτύπωσης και των ψηφιακών μοντέλων, μια καινοτόμο τεχνολογία, φέρνοντας επανάσταση στον τομέα της υγείας.' },
-    'Ofrecemos un servicio diferencial, al estar especializados en el tratamiento de la imagen médica, segmentación, diseño, impresión 3D y modelos digitales, obteniendo una reconstrucción a tamaño real, física o digital: réplica o modelo único de máxima calidad, adaptado a las necesidades de cada patología y del profesional.': {
-      en: 'We offer a differentiating service, specialized in medical image processing, segmentation, design, 3D printing and digital models, producing a full-scale reconstruction, physical or digital: a replica or unique model of the highest quality, tailored to the needs of each pathology and professional.',
-      fr: "Nous proposons un service différenciant, spécialisés dans le traitement de l'image médicale, la segmentation, la conception, l'impression 3D et les modèles numériques, obtenant une reconstruction à taille réelle, physique ou numérique : une réplique ou un modèle unique de la plus haute qualité, adapté aux besoins de chaque pathologie et de chaque professionnel.",
-      de: 'Wir bieten einen differenzierenden Service: spezialisiert auf die Verarbeitung medizinischer Bilder, Segmentierung, Design, 3D-Druck und digitale Modelle, mit dem wir eine Rekonstruktion in Originalgröße erstellen, physisch oder digital: eine Replik oder ein einzigartiges Modell höchster Qualität, abgestimmt auf die Anforderungen jeder Pathologie und jedes Fachmanns.',
-      it: "Offriamo un servizio differenziante, essendo specializzati nel trattamento dell'immagine medica, segmentazione, progettazione, stampa 3D e modelli digitali, ottenendo una ricostruzione a grandezza naturale, fisica o digitale: una replica o un modello unico della massima qualità, adattato alle esigenze di ogni patologia e di ogni professionista.",
-      el: 'Προσφέρουμε μια διαφοροποιημένη υπηρεσία, καθώς είμαστε εξειδικευμένοι στην επεξεργασία ιατρικής εικόνας, την κατάτμηση, τον σχεδιασμό, την τρισδιάστατη εκτύπωση και τα ψηφιακά μοντέλα, δημιουργώντας μια ανακατασκευή σε πραγματικό μέγεθος, φυσική ή ψηφιακή: ένα αντίγραφο ή μοναδικό μοντέλο ύψιστης ποιότητας, προσαρμοσμένο στις ανάγκες κάθε παθολογίας και επαγγελματία.' },
-    '«Una nueva y exclusiva herramienta en manos del profesional»': {
-      en: '«A new and exclusive tool in the hands of the professional»',
-      fr: '« Un outil nouveau et exclusif entre les mains du professionnel »',
-      de: '„Ein neues und exklusives Werkzeug in den Händen des Fachmanns“',
-      it: '«Un nuovo ed esclusivo strumento nelle mani del professionista»',
-      el: '«Ένα νέο και αποκλειστικό εργαλείο στα χέρια του επαγγελματία»' },
-    'Garantizamos la máxima calidad de nuestros trabajos gracias a nuestro método de producción, el <strong>Método Eureqa</strong>, certificado con el sello de calidad <strong>ISO 9001</strong>, y a un equipo de profesionales altamente cualificados.': {
-      en: 'We guarantee the highest quality of our work thanks to our production method, the <strong>Eureqa Method</strong>, certified with the <strong>ISO 9001</strong> quality seal, and to a team of highly qualified professionals.',
-      fr: 'Nous garantissons la plus haute qualité de nos travaux grâce à notre méthode de production, la <strong>Méthode Eureqa</strong>, certifiée par le label qualité <strong>ISO 9001</strong>, et à une équipe de professionnels hautement qualifiés.',
-      de: 'Wir garantieren höchste Qualität unserer Arbeit dank unserer Produktionsmethode, der <strong>Eureqa-Methode</strong>, zertifiziert mit dem Qualitätssiegel <strong>ISO 9001</strong>, sowie einem Team hochqualifizierter Fachleute.',
-      it: 'Garantiamo la massima qualità dei nostri lavori grazie al nostro metodo di produzione, il <strong>Metodo Eureqa</strong>, certificato con il marchio di qualità <strong>ISO 9001</strong>, e a un team di professionisti altamente qualificati.',
-      el: 'Εγγυόμαστε την ύψιστη ποιότητα των εργασιών μας χάρη στη μέθοδο παραγωγής μας, τη <strong>Μέθοδο Eureqa</strong>, πιστοποιημένη με τη σφραγίδα ποιότητας <strong>ISO 9001</strong>, και σε μια ομάδα άρτια καταρτισμένων επαγγελματιών.' },
+    'Eureqa3D es una empresa joven formada por <strong>ingenieros y médicos</strong>. Convertimos la imagen médica del paciente en biomodelos físicos y digitales que ayudan al profesional a planificar con más seguridad.': {
+      en: 'Eureqa3D is a young company made up of <strong>engineers and doctors</strong>. We convert the patient\'s medical imaging into physical and digital biomodels that help the professional plan with more confidence.',
+      fr: "Eureqa3D est une jeune entreprise composée d'<strong>ingénieurs et de médecins</strong>. Nous convertissons l'image médicale du patient en biomodèles physiques et numériques qui aident le professionnel à planifier en toute confiance.",
+      de: 'Eureqa3D ist ein junges Unternehmen aus <strong>Ingenieuren und Ärzten</strong>. Wir wandeln die medizinische Bildgebung des Patienten in physische und digitale Biomodelle um, die dem Fachmann helfen, mit mehr Sicherheit zu planen.',
+      it: "Eureqa3D è una giovane azienda formata da <strong>ingegneri e medici</strong>. Convertiamo l'immagine medica del paziente in biomodelli fisici e digitali che aiutano il professionista a pianificare con maggiore sicurezza.",
+      el: 'Η Eureqa3D είναι μια νέα εταιρεία αποτελούμενη από <strong>μηχανικούς και ιατρούς</strong>. Μετατρέπουμε την ιατρική εικόνα του ασθενούς σε φυσικά και ψηφιακά βιομοντέλα που βοηθούν τον επαγγελματία να σχεδιάσει με μεγαλύτερη ασφάλεια.' },
+    'Estamos especializados en el tratamiento de la imagen médica: segmentación, diseño e impresión 3D. El resultado es una reconstrucción a tamaño real —física o digital— adaptada a la patología y a las necesidades del profesional.': {
+      en: 'We specialize in medical image processing: segmentation, design and 3D printing. The result is a full-scale reconstruction —physical or digital— tailored to the pathology and the professional\'s needs.',
+      fr: "Nous sommes spécialisés dans le traitement de l'image médicale : segmentation, conception et impression 3D. Le résultat est une reconstruction à taille réelle —physique ou numérique— adaptée à la pathologie et aux besoins du professionnel.",
+      de: 'Wir sind spezialisiert auf die Verarbeitung medizinischer Bilder: Segmentierung, Design und 3D-Druck. Das Ergebnis ist eine Rekonstruktion in Originalgröße —physisch oder digital— abgestimmt auf die Pathologie und die Bedürfnisse des Fachmanns.',
+      it: "Siamo specializzati nel trattamento dell'immagine medica: segmentazione, progettazione e stampa 3D. Il risultato è una ricostruzione a grandezza naturale —fisica o digitale— adattata alla patologia e alle esigenze del professionista.",
+      el: 'Είμαστε εξειδικευμένοι στην επεξεργασία ιατρικής εικόνας: κατάτμηση, σχεδιασμός και τρισδιάστατη εκτύπωση. Το αποτέλεσμα είναι μια ανακατασκευή σε πραγματικό μέγεθος —φυσική ή ψηφιακή— προσαρμοσμένη στην παθολογία και στις ανάγκες του επαγγελματία.' },
+    '«Ingenieros y médicos, alrededor de la misma mesa»': {
+      en: '«Engineers and doctors, around the same table»',
+      fr: '« Ingénieurs et médecins, autour de la même table »',
+      de: '„Ingenieure und Ärzte, an einem Tisch“',
+      it: '«Ingegneri e medici, intorno allo stesso tavolo»',
+      el: '«Μηχανικοί και ιατροί, γύρω από το ίδιο τραπέζι»' },
+    'Garantizamos la máxima calidad de nuestros trabajos gracias a nuestro método de producción, el <strong>Método Eureqa</strong>, y a un equipo de profesionales altamente cualificados.': {
+      en: 'We guarantee the highest quality of our work thanks to our production method, the <strong>Eureqa Method</strong>, and a team of highly qualified professionals.',
+      fr: 'Nous garantissons la plus haute qualité de nos travaux grâce à notre méthode de production, la <strong>Méthode Eureqa</strong>, et à une équipe de professionnels hautement qualifiés.',
+      de: 'Wir garantieren höchste Qualität unserer Arbeit dank unserer Produktionsmethode, der <strong>Eureqa-Methode</strong>, sowie einem Team hochqualifizierter Fachleute.',
+      it: 'Garantiamo la massima qualità dei nostri lavori grazie al nostro metodo di produzione, il <strong>Metodo Eureqa</strong>, e a un team di professionisti altamente qualificati.',
+      el: 'Εγγυόμαστε την ύψιστη ποιότητα των εργασιών μας χάρη στη μέθοδο παραγωγής μας, τη <strong>Μέθοδο Eureqa</strong>, και σε μια ομάδα άρτια καταρτισμένων επαγγελματιών.' },
     'Trabajamos en tiempo récord, entregando los modelos entre <strong>24 y 48 horas</strong> (según tiempos y condiciones: solicitud, material y destino).': {
       en: 'We work in record time, delivering the models within <strong>24 to 48 hours</strong> (depending on times and conditions: request, material and destination).',
       fr: 'Nous travaillons en temps record, en livrant les modèles entre <strong>24 et 48 heures</strong> (selon les délais et conditions : demande, matériau et destination).',
@@ -230,8 +224,8 @@
       it: "Combiniamo software di segmentazione, intelligenza artificiale e stampa 3D di precisione per trasformare l'immagine medica del paziente in una replica anatomica fedele —fisica o digitale interattiva— pronta per pianificare l'intervento.",
       el: 'Συνδυάζουμε λογισμικό κατάτμησης, τεχνητή νοημοσύνη και τρισδιάστατη εκτύπωση ακριβείας για να μετατρέψουμε την ιατρική εικόνα του ασθενούς σε ένα πιστό ανατομικό αντίγραφο —φυσικό ή ψηφιακό διαδραστικό— έτοιμο για τον σχεδιασμό της επέμβασης.' },
     'Equipo multidisciplinar': { en: 'Multidisciplinary team', fr: 'Équipe pluridisciplinaire', de: 'Multidisziplinäres Team', it: 'Team multidisciplinare', el: 'Διεπιστημονική ομάδα' },
-    'Ingenieros, médicos y cirujanos trabajando juntos.': { en: 'Engineers, doctors and surgeons working together.', fr: 'Ingénieurs, médecins et chirurgiens travaillant ensemble.', de: 'Ingenieure, Ärzte und Chirurgen arbeiten zusammen.', it: 'Ingegneri, medici e chirurghi che lavorano insieme.', el: 'Μηχανικοί, ιατροί και χειρουργοί που εργάζονται μαζί.' },
-    'Calidad ISO 9001': { en: 'ISO 9001 quality', fr: 'Qualité ISO 9001', de: 'ISO-9001-Qualität', it: 'Qualità ISO 9001', el: 'Ποιότητα ISO 9001' },
+    'Ingenieros y médicos trabajando juntos.': { en: 'Engineers and doctors working together.', fr: 'Ingénieurs et médecins travaillant ensemble.', de: 'Ingenieure und Ärzte arbeiten zusammen.', it: 'Ingegneri e medici che lavorano insieme.', el: 'Μηχανικοί και ιατροί που εργάζονται μαζί.' },
+    'Calidad certificada': { en: 'Certified quality', fr: 'Qualité certifiée', de: 'Zertifizierte Qualität', it: 'Qualità certificata', el: 'Πιστοποιημένη ποιότητα' },
     'Método de producción propio certificado.': { en: 'Our own certified production method.', fr: 'Méthode de production propriétaire certifiée.', de: 'Eigene zertifizierte Produktionsmethode.', it: 'Metodo di produzione proprietario certificato.', el: 'Ιδιόκτητη πιστοποιημένη μέθοδος παραγωγής.' },
     'Cumplimiento estricto del RGPD en cada caso.': { en: 'Strict GDPR compliance in every case.', fr: 'Respect strict du RGPD dans chaque cas.', de: 'Strikte DSGVO-Konformität in jedem Fall.', it: 'Rigorosa conformità al GDPR in ogni caso.', el: 'Αυστηρή συμμόρφωση με τον GDPR σε κάθε περίπτωση.' },
     'Trabajemos juntos': { en: "Let's work together", fr: 'Travaillons ensemble', de: 'Arbeiten wir zusammen', it: 'Lavoriamo insieme', el: 'Ας συνεργαστούμε' },
