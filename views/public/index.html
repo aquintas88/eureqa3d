@@ -4,28 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eureqa3D — Impresión 3D y modelos digitales para el sector salud</title>
-  <meta name="description" content="Servicio integral de impresión 3D y modelos digitales especializado en el sector salud. Biomodelos físicos y reconstrucciones digitales a tamaño real que revolucionan la planificación quirúrgica." />
+  <meta name="description" content="Servicio integral de impresión 3D y modelos digitales especializado en el sector salud. Biomodelos físicos y reconstrucciones digitales a tamaño real, listos en 24-48 horas." />
   <link rel="icon" href="/assets/favicon.svg" />
   <link rel="stylesheet" href="/assets/styles.css" />
+  <!-- Oculta el hero antes de pintar solo si se va a animar (evita FOUC) -->
+  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim');</script>
 </head>
 <body data-page="inicio">
   <div id="site-header"></div>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero hero-cine">
     <video class="hero-video" autoplay muted loop playsinline
            poster="/assets/img/modelos/hero-pseudoaneurisma-a.jpg">
       <source src="/assets/video/hero-visor.mp4"  type="video/mp4">
       <source src="/assets/video/hero-visor.webm" type="video/webm">
     </video>
+    <canvas id="hero3d" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <span class="hero-glow hero-glow-teal" aria-hidden="true"></span>
+    <span class="hero-glow hero-glow-orange" aria-hidden="true"></span>
     <div class="container">
-      <div class="hero-content">
-        <span class="eyebrow">Impresión 3D y modelos digitales · Sector salud</span>
-        <h1>Revolucionamos el <span>sector salud</span> con Impresión 3D y modelos digitales</h1>
-        <p class="lead">Trabajamos directamente con los especialistas, facilitándoles la incorporación de la impresión 3D y los modelos digitales de forma fácil y sencilla, con un servicio externo profesional, especializado y exclusivo del sector.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="/contacto">Solicita un caso de prueba</a>
-          <a class="btn btn-light" href="/metodo-eureqa">Conoce el Método Eureqa</a>
+      <div class="hero-glass">
+        <div class="hero-content">
+          <span class="eyebrow">Impresión 3D y modelos digitales · Sector salud</span>
+          <h1>El biomodelo 3D real de tu paciente, listo en <span>24-48 horas</span></h1>
+          <p class="lead">Trabajamos directamente con cirujanos y especialistas: tú te centras en el caso, nosotros en el biomodelo. Sin equipo propio que formar ni software que aprender — un servicio externo especializado y exclusivo del sector salud.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/contacto">Solicita un caso de prueba</a>
+            <a class="btn btn-glass" href="/metodo-eureqa">Conoce el Método Eureqa</a>
+          </div>
+          <p class="hero-note">Sin compromiso: analizamos tu caso y te decimos si es viable.</p>
+          <ul class="hero-chips">
+            <li class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>ISO 9001</li>
+            <li class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>RGPD</li>
+            <li class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Entrega 24-48 h</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -36,20 +50,46 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Qué ofrecemos</span>
-        <h2>Una nueva y exclusiva herramienta en manos del profesional</h2>
-        <p>Especializados en el tratamiento de la imagen médica, segmentación, diseño, impresión 3D y modelos digitales: obtenemos una reconstrucción a tamaño real, física o digital, réplica o modelo único de máxima calidad, adaptado a cada patología.</p>
+        <h2>Imagen médica convertida en biomodelo, en cuatro pasos</h2>
+        <p>Tratamos la imagen médica del paciente —segmentación, diseño e impresión 3D— hasta obtener una reconstrucción a tamaño real, física o digital. Cada modelo es único y se adapta a la patología concreta del caso.</p>
       </div>
-      <div class="grid grid-4">
-        <div class="card"><div class="ic">🩻</div><h3>Imagen médica a 3D</h3><p>Convertimos estudios radiológicos 2D en biomodelos físicos precisos, listos para el quirófano.</p></div>
-        <div class="card"><div class="ic">🖥️</div><h3>Modelos digitales 3D</h3><p>Reconstrucciones interactivas con transparencias, opción de mostrar u ocultar órganos y anotaciones clínicas, potenciadas con inteligencia artificial.</p></div>
-        <div class="card"><div class="ic">⚙️</div><h3>Método Eureqa</h3><p>Proceso propio certificado con sello de calidad ISO 9001 que garantiza trazabilidad y confidencialidad (RGPD).</p></div>
-        <div class="card"><div class="ic">⏱️</div><h3>Tiempo récord</h3><p>Entregamos los modelos entre 24 y 48 horas según solicitud, material y destino. Tu tiempo importa.</p></div>
+      <div class="bento">
+        <article class="bento-item bento-a b-photo">
+          <img class="b-bg" src="/assets/img/foto/impresora.jpg" alt="Impresora 3D fabricando un biomodelo quirúrgico" loading="lazy">
+          <div class="b-inner">
+            <span class="b-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></span>
+            <h3>Imagen médica a 3D</h3>
+            <p>Convertimos estudios radiológicos 2D en biomodelos físicos precisos, listos para el quirófano.</p>
+          </div>
+        </article>
+        <article class="bento-item bento-b b-photo">
+          <img class="b-bg" src="/assets/img/modelos/pseudoaneurisma-a.jpg" alt="Modelo digital 3D interactivo de un caso vascular" loading="lazy">
+          <div class="b-inner">
+            <span class="b-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+            <h3>Modelos digitales 3D</h3>
+            <p>Reconstrucciones interactivas con transparencias, órganos ocultables y anotaciones clínicas, potenciadas con IA.</p>
+          </div>
+        </article>
+        <article class="bento-item bento-c b-teal">
+          <div class="b-inner">
+            <span class="b-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3>Método Eureqa</h3>
+            <p>Proceso propio certificado ISO 9001: trazabilidad y confidencialidad (RGPD).</p>
+          </div>
+        </article>
+        <article class="bento-item bento-d b-num">
+          <div class="b-inner">
+            <div class="big">24-48 h</div>
+            <h3>Tiempo récord</h3>
+            <p>Entrega según solicitud, material y destino.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Stats -->
-  <section class="section-teal">
+  <section class="section-cine">
     <div class="container">
       <div class="stats">
         <div class="stat"><div class="num">24-48h</div><div class="lbl">Plazo de entrega</div></div>
@@ -65,21 +105,31 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Áreas de aplicación</span>
-        <h2>Tecnología que revoluciona la cirugía</h2>
+        <h2>Biomodelos para cada especialidad quirúrgica</h2>
       </div>
       <div class="grid grid-2">
-        <div class="card">
-          <div class="ic">🦴</div>
-          <h3>Traumatología</h3>
-          <p>La planificación con biomodelos 3D facilita el estudio de la anatomía, el abordaje y la previsión de complicaciones intraoperatorias.</p>
-          <p style="margin-top:1rem"><a class="more" href="/traumatologia" style="font-family:var(--head);font-weight:700;color:var(--orange-dark)">Ver detalle →</a></p>
-        </div>
-        <div class="card">
-          <div class="ic">🫀</div>
-          <h3>Otras especialidades</h3>
-          <p>Urología, cardiología, maxilofacial, neurocirugía, vascular, torácica, ORL, digestivo y ginecología.</p>
-          <p style="margin-top:1rem"><a class="more" href="/otras-especialidades" style="font-family:var(--head);font-weight:700;color:var(--orange-dark)">Ver detalle →</a></p>
-        </div>
+        <a class="area-card" href="/traumatologia">
+          <div class="media">
+            <img src="/assets/img/traumatologia/biomodelo-humero.jpg" alt="Biomodelo 3D de húmero para planificación traumatológica" loading="lazy">
+            <span class="badge-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></span>
+          </div>
+          <div class="body">
+            <h3>Traumatología</h3>
+            <p>La planificación con biomodelos 3D facilita el estudio de la anatomía, el abordaje y la previsión de complicaciones intraoperatorias.</p>
+            <span class="more">Ver detalle →</span>
+          </div>
+        </a>
+        <a class="area-card" href="/otras-especialidades">
+          <div class="media">
+            <img src="/assets/img/modelos/cancer-pancreas.jpg" alt="Modelo digital 3D de un caso de cáncer de páncreas" loading="lazy">
+            <span class="badge-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span>
+          </div>
+          <div class="body">
+            <h3>Otras especialidades</h3>
+            <p>De la urología a la ginecología: biomodelos 3D que facilitan la planificación en nueve especialidades quirúrgicas más.</p>
+            <span class="more">Ver detalle →</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -126,16 +176,18 @@
   </section>
 
   <!-- Modelos 3D destacados -->
-  <section class="section-teal">
+  <section class="section-cine">
     <div class="container">
       <div class="model-feature">
-        <div class="model-viewer" data-sketchfab="73f92cd6e0f246bca13e6aaf7c506223" style="background-image:url('/assets/img/modelos/pseudoaneurisma-a.jpg')">
-          <button class="model-play" type="button"><span class="play-ic">▶</span><span class="play-tx">Ver en 3D</span></button>
+        <!-- PENDIENTE: el ID de Sketchfab original (73f92cd6e0f246bca13e6aaf7c506223) fue dado de baja.
+             Sustituir por un vídeo o modelo 3D real (.glb o nuevo enlace de Sketchfab) en cuanto esté disponible. -->
+        <div class="model-viewer model-viewer--pending" style="background-image:url('/assets/img/modelos/pseudoaneurisma-a.jpg')">
+          <span class="model-play model-play--pending"><span class="play-ic">▶</span><span class="play-tx">Vídeo en preparación</span></span>
         </div>
         <div>
           <span class="model-spec">Innovación</span>
           <h2>Explora nuestros modelos 3D</h2>
-          <p style="color:rgba(255,255,255,.9)">Del hueso al tejido blando: reconstrucciones digitales interactivas que llevan la planificación quirúrgica a otro nivel.</p>
+          <p style="color:rgba(255,255,255,.9)">Del hueso al tejido blando: modelos que puedes rotar, seccionar y explorar capa a capa, directamente en el navegador.</p>
           <p style="margin-top:1.4rem"><a class="btn btn-light" href="/modelos-3d">Ver todos los modelos 3D</a></p>
         </div>
       </div>
@@ -154,5 +206,9 @@
   <div id="site-footer"></div>
   <script src="/assets/i18n.js"></script>
   <script src="/assets/site.js"></script>
+  <script src="/assets/vendor/motion.min.js"></script>
+  <script src="/assets/motion-fx.js"></script>
+  <script src="/assets/vendor/three.min.js"></script>
+  <script src="/assets/hero3d.js"></script>
 </body>
 </html>
