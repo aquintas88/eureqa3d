@@ -6,37 +6,11 @@ const pgSession = require('connect-pg-simple')(session);
 const bcrypt    = require('bcryptjs');
 const crypto    = require('crypto');
 const path      = require('path');
-const nodemailer = require('nodemailer');
 const db        = require('./db/init');
 const BACKLOG_SEED = require('./db/backlog-seed');
 
 const app  = express();
 const PORT = process.env.PORT || 8080;
-
-/* ── Correo (opcional) ───────────────────────────────────────── */
-let _mailer;
-function getMailer() {
-  if (_mailer !== undefined) return _mailer;
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
-  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) { _mailer = false; return false; }
-  const port = Number(SMTP_PORT) || 587;
-  _mailer = nodemailer.createTransport({
-    host: SMTP_HOST, port, secure: port === 465,
-    auth: { user: SMTP_USER, pass: SMTP_PASS }
-  });
-  return _mailer;
-}
-async function sendLeadEmail({ name, email, subject, body }) {
-  const m = getMailer();
-  if (!m) return;
-  const to = process.env.LEAD_TO || process.env.SMTP_USER;
-  await m.sendMail({
-    from: `"Eureqa3D Web" <${process.env.SMTP_USER}>`,
-    to, replyTo: email,
-    subject: subject || `Nuevo mensaje de ${name}`,
-    text: `Nombre: ${name}\nEmail: ${email}\nAsunto: ${subject || '-'}\n\n${body}`
-  });
-}
 
 app.set('trust proxy', 1);
 
@@ -553,6 +527,39 @@ async function sincronizarOportunidadesFunnel() {
 
 const escHtml = (s) => (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
+// Aviso de un nuevo mensaje del formulario de contacto, vía API HTTP de Brevo
+// (mismo patrón que enviarCorreoOportunidades). LEAD_NOTIFY_EMAILS admite
+// varias direcciones separadas por comas, para no depender de un único buzón
+// (info@eureqa3d.com recibe mucho spam y algún cliente se ha escapado por eso).
+async function enviarCorreoLead({ name, email, subject, body }) {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) return;
+
+  const destinatarios = (process.env.LEAD_NOTIFY_EMAILS || 'info@eureqa3d.com')
+    .split(',').map(e => e.trim()).filter(Boolean).map(addr => ({ email: addr }));
+  if (!destinatarios.length) return;
+
+  const senderEmail = process.env.BREVO_SENDER_EMAIL || 'aquintas@gmail.com';
+
+  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: { 'api-key': apiKey, 'content-type': 'application/json', accept: 'application/json' },
+    body: JSON.stringify({
+      sender: { email: senderEmail, name: 'Eureqa3D · Web' },
+      to: destinatarios,
+      replyTo: { email, name },
+      subject: subject || `Nuevo mensaje de ${name} (formulario web)`,
+      htmlContent: `<p><strong>Nombre:</strong> ${escHtml(name)}</p>
+        <p><strong>Email:</strong> ${escHtml(email)}</p>
+        <p><strong>Asunto:</strong> ${escHtml(subject || '-')}</p>
+        <p>${escHtml(body).replace(/\n/g, '<br>')}</p>`
+    })
+  });
+  if (!res.ok) {
+    throw new Error(`Brevo ${res.status}: ${await res.text()}`);
+  }
+}
+
 // Envío vía API HTTP de Brevo (no SMTP): con solo BREVO_API_KEY basta, sin
 // necesitar el "login" SMTP que Brevo no expone junto a la SMTP key. Mismo
 // patrón que src/lib/brevo.ts en KiraConnect. Ojo: BREVO_API_KEY es una key
@@ -913,7 +920,7 @@ app.post('/api/public/contact', async (req, res, next) => {
     await db.query(
       'INSERT INTO messages (name, email, subject, body) VALUES ($1,$2,$3,$4)',
       [name.trim(), email.trim(), subject?.trim() || null, body.trim()]);
-    sendLeadEmail({ name: name.trim(), email: email.trim(), subject: subject?.trim(), body: body.trim() })
+    enviarCorreoLead({ name: name.trim(), email: email.trim(), subject: subject?.trim(), body: body.trim() })
       .catch(e => console.error('✉️  Error enviando correo del lead:', e.message));
     res.status(201).json({ ok: true });
   } catch (e) { next(e); }

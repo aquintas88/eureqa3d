@@ -75,7 +75,7 @@ function renderHeader() {
   return `
   <div class="topbar-utility" data-no-i18n>
     <div class="container">
-      <a href="tel:+34927180032">${svgIcon(ICONS.phone, 15)} 927 180 032</a>
+      <a href="tel:+34654552044">${svgIcon(ICONS.phone, 15)} 654 55 20 44</a>
       <span class="sep">·</span>
       <a href="mailto:info@eureqa3d.com">${svgIcon(ICONS.mail, 15)} info@eureqa3d.com</a>
       <span class="sep">·</span>
@@ -107,7 +107,7 @@ function renderFooter() {
         <div>
           <img class="footer-logo" src="/assets/img/logo.svg" alt="Eureqa3D">
           <p>${tr('Servicio integral de impresión 3D y modelos digitales especializado en el sector salud. Tecnología y cirugía al servicio del profesional.')}</p>
-          <p class="muted">${tr('Extremadura · España')}</p>
+          <p class="muted">${tr('Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres')}</p>
         </div>
         <div>
           <h4>${tr('Navegación')}</h4>
@@ -124,8 +124,7 @@ function renderFooter() {
           <h4>${tr('Contacto')}</h4>
           <ul>
             <li><a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a></li>
-            <li><a href="tel:+34927180032">927 180 032</a></li>
-            <li><a href="tel:+34654552044">654 552 044</a></li>
+            <li><a href="tel:+34654552044">654 55 20 44</a></li>
             <li><a href="https://twitter.com/eureqa3D" target="_blank" rel="noopener">@eureqa3D</a></li>
           </ul>
         </div>

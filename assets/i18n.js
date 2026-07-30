@@ -39,7 +39,7 @@
       it: 'Servizio completo di stampa 3D e modelli digitali specializzato nel settore sanitario. Tecnologia e chirurgia al servizio del professionista.',
       el: 'Ολοκληρωμένη υπηρεσία τρισδιάστατης εκτύπωσης και ψηφιακών μοντέλων ειδικευμένη στον τομέα της υγείας. Τεχνολογία και χειρουργική στην υπηρεσία του επαγγελματία.' },
     'Acceso': { en: 'Login', fr: 'Accès', de: 'Zugang', it: 'Accedi', el: 'Είσοδος' },
-    'Extremadura · España': { en: 'Extremadura · Spain', fr: 'Estrémadure · Espagne', de: 'Extremadura · Spanien', it: 'Estremadura · Spagna', el: 'Εστρεμαδούρα · Ισπανία' },
+    'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres': { en: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres', fr: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres', de: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres', it: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres', el: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres' },
     'Navegación': { en: 'Navigation', fr: 'Navigation', de: 'Navigation', it: 'Navigazione', el: 'Πλοήγηση' },
     'Todos los derechos reservados.': { en: 'All rights reserved.', fr: 'Tous droits réservés.', de: 'Alle Rechte vorbehalten.', it: 'Tutti i diritti riservati.', el: 'Με την επιφύλαξη παντός δικαιώματος.' },
     'Impresión 3D · Sector Salud': { en: '3D Printing · Healthcare', fr: 'Impression 3D · Santé', de: '3D-Druck · Gesundheitswesen', it: 'Stampa 3D · Sanità', el: 'Τρισδιάστατη εκτύπωση · Υγεία' },
@@ -425,13 +425,6 @@
     'Mensaje': { en: 'Message', fr: 'Message', de: 'Nachricht', it: 'Messaggio', el: 'Μήνυμα' },
     'Enviar mensaje': { en: 'Send message', fr: 'Envoyer le message', de: 'Nachricht senden', it: 'Invia messaggio', el: 'Αποστολή μηνύματος' },
     'Llámanos': { en: 'Call us', fr: 'Appelez-nous', de: 'Rufen Sie uns an', it: 'Chiamaci', el: 'Καλέστε μας' },
-    '<span class="ic">📍</span><span>Extremadura · España</span>': {
-      en: '<span class="ic">📍</span><span>Extremadura · Spain</span>',
-      fr: '<span class="ic">📍</span><span>Estrémadure · Espagne</span>',
-      de: '<span class="ic">📍</span><span>Extremadura · Spanien</span>',
-      it: '<span class="ic">📍</span><span>Estremadura · Spagna</span>',
-      el: '<span class="ic">📍</span><span>Εστρεμαδούρα · Ισπανία</span>' },
-
     /* ── Cadenas dinámicas (JS) ── */
     'Leer más →': { en: 'Read more →', fr: 'Lire la suite →', de: 'Mehr lesen →', it: 'Leggi di più →', el: 'Διαβάστε περισσότερα →' },
     'Próximamente publicaremos novedades aquí.': { en: "We'll publish updates here soon.", fr: 'Nous publierons bientôt des nouveautés ici.', de: 'Hier veröffentlichen wir bald Neuigkeiten.', it: 'Presto pubblicheremo novità qui.', el: 'Σύντομα θα δημοσιεύσουμε νέα εδώ.' },
