@@ -139,9 +139,9 @@ img { max-width: 100%; display: block; }
     linear-gradient(100deg, rgba(6,18,26,.95) 0%, rgba(6,18,26,.72) 30%, rgba(6,18,26,.22) 58%, rgba(6,18,26,0) 100%),
     linear-gradient(180deg, rgba(6,18,26,.28) 0%, transparent 32%, transparent 62%, rgba(6,18,26,.85) 100%);
 }
-/* Espejo horizontal: el modelo 3D pasa a la derecha (visible junto al
-   panel) y la UI del visor queda a la izquierda, oculta tras el glass. */
-.hero-cine .hero-video { object-position: 50% 42%; transform: scaleX(-1) scale(1.08); }
+/* Vídeo real del visor (caso CHUB2026002, EureqaVisor3D): sin espejo,
+   las etiquetas anatómicas del caso deben leerse bien. */
+.hero-cine .hero-video { object-position: 62% 38%; }
 .hero-glow {
   position: absolute; z-index: 0; border-radius: 50%; pointer-events: none;
   filter: blur(40px); opacity: .7;
@@ -162,9 +162,12 @@ img { max-width: 100%; display: block; }
   -webkit-backdrop-filter: blur(18px) saturate(130%);
   box-shadow: 0 34px 90px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.22);
 }
+/* Panel más compacto en el hero cinematográfico: el visor real es el
+   protagonista, el texto ocupa menos espacio y no le compite. */
+.hero-cine .hero-glass { max-width: 26rem; padding: clamp(1.3rem, 2.4vw, 1.9rem); }
 .hero-cine .hero-content { max-width: none; }
-.hero-cine h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); text-shadow: 0 2px 30px rgba(0,0,0,.35); }
-.hero-cine .lead { color: rgba(255,255,255,.9); }
+.hero-cine h1 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); text-shadow: 0 2px 30px rgba(0,0,0,.35); }
+.hero-cine .lead { color: rgba(255,255,255,.9); font-size: 1rem; }
 
 /* Chips de confianza translúcidos */
 .hero-chips { display: flex; flex-wrap: wrap; gap: .55rem; list-style: none; margin: 1.5rem 0 0; padding: 0; }
