@@ -918,6 +918,23 @@ const SEED = [
     "responsable": "Kira Level (dev)",
     "fecha_cierre": null,
     "notas": "DIFERENCIADOR MUNDIAL. Ningún competidor analizado (Cella, BioDigital, 3D Organon, Visible Body, Mimics, Anatomage) tiene esta funcionalidad. Enatom la está desarrollando solo para educación. Implementación: raycasting Three.js identifica la malla clicada → obtiene nombre del segmento + metadatos (volumen, categoría) → construye prompt contextual → llama a Anthropic SDK (claude-sonnet-4-6) → respuesta en panel lateral del visor. El contexto puede enriquecerse con el caso clínico (tipo de cirugía, estructuras vecinas visibles, mediciones activas). Fase 2: el asistente puede responder sobre lo que está visible en pantalla (frustum culling) no solo lo clicado. Fase 3: modo dictado — el cirujano habla y el asistente anota observaciones sobre el modelo."
+  },
+  {
+    "id": "WEB-01",
+    "fecha_alta": "2026-07-30",
+    "creador": "Antonio",
+    "area": "Web / Email",
+    "titulo": "Verificar remitente info@eureqa3d.com en Brevo (SPF/DKIM) para los correos del formulario de contacto",
+    "historia": "Como visitante que rellena el formulario de contacto quiero recibir la confirmación desde una dirección @eureqa3d.com, no desde una cuenta de Gmail personal marcada por Gmail como 'via sendinblue.com'",
+    "tipo": "Mejora",
+    "modulo": "Backend (Brevo)",
+    "prioridad": "Media",
+    "estimacion": "S",
+    "estado": "Pendiente",
+    "origen": "Antonio",
+    "responsable": "Antonio",
+    "fecha_cierre": null,
+    "notas": "BLOQUEADO: Antonio no tiene acceso al DNS de eureqa3d.com todavía. Pasos cuando se tenga acceso: 1) añadir info@eureqa3d.com como remitente en Brevo (Configuración → Remitentes); 2) añadir los registros SPF/DKIM que dé Brevo al DNS del dominio; 3) una vez verificado, poner BREVO_SENDER_EMAIL=info@eureqa3d.com en las variables de Railway (hoy usa aquintas@gmail.com por defecto, el único remitente verificado junto con info@dapart.es — ver enviarCorreoLead/enviarCorreoConfirmacionLead en server.js)."
   }
 ];
 
