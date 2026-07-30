@@ -163,10 +163,11 @@ function esc(s) {
 }
 
 /* ── Noticias: listado público ───────────────────────────────── */
-async function loadNewsList(el) {
+async function loadNewsList(el, limit) {
   try {
     const res = await fetch('/api/public/news');
-    const items = await res.json();
+    let items = await res.json();
+    if (limit) items = items.slice(0, limit);
     if (!items.length) {
       el.innerHTML = `<p class="muted center">${tr('Próximamente publicaremos novedades aquí.')}</p>`;
       return;
@@ -446,7 +447,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initChat();
   initReveal();
   initCounters();
-  const newsList = document.getElementById('news-list');   if (newsList) loadNewsList(newsList);
+  const newsList = document.getElementById('news-list');
+  if (newsList) loadNewsList(newsList, document.body.dataset.page === 'inicio' ? 3 : undefined);
   const article  = document.getElementById('article');     if (article)  loadArticle(article);
   const events   = document.getElementById('events-list'); if (events)   loadEvents(events);
   const contact  = document.getElementById('contact-form');if (contact)  initContactForm(contact);
