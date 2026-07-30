@@ -717,6 +717,31 @@ form.contact textarea { min-height: 140px; resize: vertical; }
 .chat-foot button:disabled{ opacity:.5; cursor:not-allowed; }
 @media (max-width:480px){ .chat-panel{ right:8px; left:8px; width:auto; bottom:84px; height:70vh; } }
 
+/* ── Banner de consentimiento de cookies (RGPD) ──────────────── */
+.cookie-banner{
+  position:fixed; left:20px; bottom:20px; z-index:190; width:400px;
+  max-width:calc(100vw - 32px);
+  background:#fff; border-radius:18px; box-shadow:0 28px 70px rgba(0,0,0,.32);
+  border:1px solid var(--line);
+  padding:1.4rem 1.5rem;
+  display:flex; gap:1rem; align-items:flex-start;
+  opacity:0; transform:translateY(16px) scale(.97); pointer-events:none;
+  transition:opacity .25s var(--ease-out), transform .25s var(--ease-out);
+}
+.cookie-banner.in{ opacity:1; transform:none; pointer-events:auto; }
+.cookie-banner-icon{
+  flex:0 0 auto; width:44px; height:44px; border-radius:12px;
+  background:var(--bg-teal); color:var(--teal-dark); display:grid; place-items:center;
+}
+.cookie-banner-icon svg{ width:22px; height:22px; }
+.cookie-banner-body{ flex:1; min-width:0; }
+.cookie-banner-body h4{ margin:0 0 .35rem; font-family:var(--head); font-weight:800; font-size:1.02rem; color:var(--ink); }
+.cookie-banner-body p{ margin:0 0 1.1rem; font-size:.87rem; color:var(--ink-soft); line-height:1.5; }
+.cookie-banner-actions{ display:flex; gap:.6rem; }
+.cookie-banner-actions .btn{ padding:.6rem 1rem; font-size:.85rem; flex:1; justify-content:center; }
+@media (max-width:480px){ .cookie-banner{ left:8px; right:8px; width:auto; bottom:8px; } }
+@media (prefers-reduced-motion: reduce){ .cookie-banner{ transition:opacity .15s linear; transform:none; } }
+
 /* ── Visor 3D propio (embed a pantalla amplia) ───────────────── */
 .visor-embed{ aspect-ratio:16/9; min-height:460px; border-radius:16px; box-shadow:var(--shadow); background:radial-gradient(circle at 50% 32%, #21323f, #0e1620); }
 .visor-embed .model-play{ background:#fff; }

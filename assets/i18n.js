@@ -598,6 +598,18 @@
       it: 'Apparizioni sui media, premi e novità di Eureqa3D.',
       el: 'Εμφανίσεις στα μέσα, βραβεία και νέα της Eureqa3D.' },
 
+    /* ── Banner de cookies ── */
+    'Cookies': { en: 'Cookies', fr: 'Cookies', de: 'Cookies', it: 'Cookie', el: 'Cookies' },
+    'Tu privacidad': { en: 'Your privacy', fr: 'Votre vie privée', de: 'Ihre Privatsphäre', it: 'La tua privacy', el: 'Το απόρρητό σας' },
+    'Usamos cookies analíticas para entender cómo se usa la web. No se activan hasta que las aceptas.': {
+      en: 'We use analytics cookies to understand how the site is used. They stay off until you accept them.',
+      fr: "Nous utilisons des cookies analytiques pour comprendre comment le site est utilisé. Ils restent désactivés tant que vous ne les acceptez pas.",
+      de: 'Wir verwenden Analyse-Cookies, um zu verstehen, wie die Website genutzt wird. Sie bleiben deaktiviert, bis Sie sie akzeptieren.',
+      it: "Utilizziamo cookie analitici per capire come viene utilizzato il sito. Restano disattivati finché non li accetti.",
+      el: 'Χρησιμοποιούμε cookies ανάλυσης για να κατανοήσουμε πώς χρησιμοποιείται ο ιστότοπος. Παραμένουν ανενεργά έως ότου τα αποδεχτείτε.' },
+    'Aceptar': { en: 'Accept', fr: 'Accepter', de: 'Akzeptieren', it: 'Accetta', el: 'Αποδοχή' },
+    'Rechazar': { en: 'Reject', fr: 'Refuser', de: 'Ablehnen', it: 'Rifiuta', el: 'Απόρριψη' },
+
     /* ── Contacto ── */
     'Cuéntanos tu caso y te responderemos lo antes posible.': {
       en: "Tell us about your case and we'll get back to you as soon as possible.",
@@ -631,6 +643,12 @@
       it: '<span class="play-ic">▶</span><span class="play-tx">Prova il visore</span>',
       el: '<span class="play-ic">▶</span><span class="play-tx">Δοκιμάστε το πρόγραμμα προβολής</span>' },
     'Lo nuevo · Visor digital 3D': { en: 'New · Digital 3D viewer', fr: 'Nouveau · Visionneuse 3D', de: 'Neu · Digitaler 3D-Viewer', it: 'Novità · Visore digitale 3D', el: 'Νέο · Ψηφιακό πρόγραμμα προβολής 3D' },
+    'Herramienta de apoyo a la visualización de modelos anatómicos 3D digitales. No es un producto sanitario certificado para la visualización de estudios radiológicos y no sustituye a un informe radiológico. No usar con fines diagnósticos.': {
+      en: 'A support tool for viewing digital 3D anatomical models. It is not a certified medical device for viewing radiological studies and does not replace a radiological report. Not for diagnostic use.',
+      fr: "Outil d'aide à la visualisation de modèles anatomiques 3D numériques. Ce n'est pas un dispositif médical certifié pour la visualisation d'études radiologiques et il ne remplace pas un compte rendu radiologique. À ne pas utiliser à des fins diagnostiques.",
+      de: 'Hilfsmittel zur Visualisierung digitaler 3D-Anatomiemodelle. Es handelt sich nicht um ein zertifiziertes Medizinprodukt zur Betrachtung radiologischer Studien und ersetzt keinen radiologischen Befund. Nicht für diagnostische Zwecke verwenden.',
+      it: 'Strumento di supporto alla visualizzazione di modelli anatomici 3D digitali. Non è un dispositivo medico certificato per la visualizzazione di studi radiologici e non sostituisce un referto radiologico. Da non utilizzare a scopo diagnostico.',
+      el: 'Εργαλείο υποστήριξης για την οπτικοποίηση ψηφιακών ανατομικών μοντέλων 3D. Δεν αποτελεί πιστοποιημένο ιατροτεχνολογικό προϊόν για την προβολή ακτινολογικών μελετών και δεν αντικαθιστά ακτινολογική έκθεση. Να μη χρησιμοποιείται για διαγνωστικούς σκοπούς.' },
     'Explora la anatomía del paciente en 3D, desde el navegador': {
       en: "Explore the patient's anatomy in 3D, right from the browser",
       fr: "Explorez l'anatomie du patient en 3D, directement depuis le navigateur",
@@ -867,6 +885,7 @@
     'Otras especialidades — Eureqa3D': { en: 'Other specialties — Eureqa3D', fr: 'Autres spécialités — Eureqa3D', de: 'Weitere Fachbereiche — Eureqa3D', it: 'Altre specialità — Eureqa3D', el: 'Άλλες ειδικότητες — Eureqa3D' },
     'Cirugía Oncológica — Eureqa3D': { en: 'Oncological Surgery — Eureqa3D', fr: 'Chirurgie Oncologique — Eureqa3D', de: 'Onkologische Chirurgie — Eureqa3D', it: 'Chirurgia Oncologica — Eureqa3D', el: 'Ογκολογική Χειρουργική — Eureqa3D' },
     'Noticias — Eureqa3D': { en: 'News — Eureqa3D', fr: 'Actualités — Eureqa3D', de: 'Aktuelles — Eureqa3D', it: 'Notizie — Eureqa3D', el: 'Νέα — Eureqa3D' },
+    'Noticia — Eureqa3D': { en: 'News — Eureqa3D', fr: 'Actualité — Eureqa3D', de: 'Nachricht — Eureqa3D', it: 'Notizia — Eureqa3D', el: 'Είδηση — Eureqa3D' },
     'Contacto — Eureqa3D': { en: 'Contact — Eureqa3D', fr: 'Contact — Eureqa3D', de: 'Kontakt — Eureqa3D', it: 'Contatti — Eureqa3D', el: 'Επικοινωνία — Eureqa3D' },
   };
 
