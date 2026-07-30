@@ -232,7 +232,7 @@ function initContactForm(form) {
     const msg = form.querySelector('.form-msg') || (() => {
       const d = document.createElement('div'); form.prepend(d); return d;
     })();
-    msg.className = 'form-msg'; msg.textContent = '';
+    msg.hidden = false; msg.className = 'form-msg'; msg.textContent = '';
     const body = Object.fromEntries(new FormData(form));
     try {
       const res = await fetch('/api/public/contact', {
