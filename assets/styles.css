@@ -112,7 +112,14 @@ img { max-width: 100%; display: block; }
 .nav-cta-mobile { display: none; }
 .nav-cta { flex: 0 0 auto; padding: .6rem 1.2rem; font-size: .9rem; }
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: .4rem; }
-.nav-toggle span { display: block; width: 26px; height: 3px; background: var(--ink); border-radius: 3px; margin: 5px 0; transition: .2s; }
+.nav-toggle span {
+  display: block; width: 26px; height: 3px; background: var(--ink); border-radius: 3px; margin: 5px 0;
+  transition: transform .28s var(--ease-in-out), opacity .2s ease;
+}
+/* Hamburguesa → X cuando el menú móvil está abierto (sin JS extra) */
+.nav:has(.nav-links.open) .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav:has(.nav-links.open) .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav:has(.nav-links.open) .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* ── Hero (imagen real de marca) ─────────────────────────────── */
 .hero {
@@ -279,6 +286,9 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity:1; transform:none; transition:none; }
   .subhero::before, .subhero::after, .orb, .hero .orb { animation:none; }
+  .nav-links, .nav-toggle span { transition: opacity .15s linear; }
+  .nav-links { transform: none; }
+  .nav:has(.nav-links.open) .nav-toggle span { transform: none; }
 }
 .prose { max-width: 760px; }
 .prose p { color: var(--ink-soft); font-size: 1.05rem; }
@@ -582,10 +592,12 @@ form.contact textarea { min-height: 140px; resize: vertical; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-links {
     position: absolute; top: 76px; left:0; right:0; flex-direction: column; gap:0;
-    background:#fff; border-bottom:1px solid var(--line); padding:.5rem 1.5rem; display:none;
+    background:#fff; border-bottom:1px solid var(--line); padding:.5rem 1.5rem;
     box-shadow: var(--shadow);
+    opacity: 0; transform: translateY(-8px); pointer-events: none;
+    transition: opacity .22s var(--ease-out), transform .22s var(--ease-out);
   }
-  .nav-links.open { display:flex; }
+  .nav-links.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
   .nav-links li { width:100%; }
   .nav-links a { display:block; padding:.9rem 0; border-bottom:1px solid var(--line); font-size:1rem; }
   .nav-links a.active::after { display:none; }

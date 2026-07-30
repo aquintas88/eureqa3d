@@ -94,7 +94,7 @@ function renderHeader() {
         </ul>
         <a class="btn btn-primary nav-cta" href="/contacto">${tr('Caso de prueba')}</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="${tr('Menú')}"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="${tr('Menú')}" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>`;
 }
@@ -144,7 +144,10 @@ function mountLayout() {
   if (f) f.outerHTML = renderFooter();
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
-  if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
+  if (toggle && links) toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
   // Selector de idioma
   document.querySelectorAll('.lang-btn').forEach(btn =>
     btn.addEventListener('click', () => window.I18N && window.I18N.setLang(btn.dataset.lang)));
