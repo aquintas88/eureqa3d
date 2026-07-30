@@ -531,8 +531,14 @@ section { padding: clamp(3rem, 6vw, 5rem) 0; }
 
 /* figura lateral (imagen + texto) */
 .media-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
-.media-split img { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; max-height: 420px; object-fit: cover; }
-@media (max-width: 820px) { .media-split { grid-template-columns: 1fr; } }
+.media-split img, .media-split video { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; max-height: 420px; object-fit: cover; display: block; }
+.media-split--reverse { grid-template-columns: 1fr 1fr; }
+.media-split--reverse > :first-child { order: 2; }
+.media-split--reverse > :last-child { order: 1; }
+@media (max-width: 820px) {
+  .media-split { grid-template-columns: 1fr; }
+  .media-split--reverse > :first-child, .media-split--reverse > :last-child { order: initial; }
+}
 
 /* ── Formulario contacto ─────────────────────────────────────── */
 .contact-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items:start; }
