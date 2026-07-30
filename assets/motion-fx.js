@@ -12,11 +12,16 @@
   const revealHero = () => {
     const glass = document.querySelector('.hero-glass');
     const items = document.querySelectorAll('.hero-content > *');
-    if (!glass && !items.length) return;
+    const demo = document.querySelector('.hero-demo');
+    if (!glass && !items.length && !demo) return;
     // Fallback: sin librería o con reduced-motion → mostrar sin animar
     if (reduce || !M || !M.animate) {
       if (glass) { glass.style.opacity = '1'; glass.style.transform = 'none'; }
+      if (demo) { demo.style.opacity = '1'; demo.style.transform = 'none'; }
       items.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      // El vídeo de la ventana de producto se detiene en su primer fotograma
+      const video = demo && demo.querySelector('video');
+      if (reduce && video) { video.removeAttribute('autoplay'); video.pause(); }
       return;
     }
     // 1) El panel de vidrio se materializa (escala + fade)
@@ -27,7 +32,15 @@
         { duration: 0.75, easing: EASE }
       );
     }
-    // 2) El contenido cae en cascada, ligeramente después
+    // 2) La ventana de producto entra justo después, desde el otro lado
+    if (demo) {
+      M.animate(
+        demo,
+        { opacity: [0, 1], transform: ['translateY(26px) scale(.97)', 'translateY(0) scale(1)'] },
+        { duration: 0.75, delay: 0.1, easing: EASE }
+      );
+    }
+    // 3) El contenido cae en cascada, ligeramente después
     if (items.length) {
       M.animate(
         items,
