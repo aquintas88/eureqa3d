@@ -670,13 +670,23 @@ app.get('/api/licitaciones/meta', requireLicitacionesAccess, async (req, res, ne
   } catch (e) { next(e); }
 });
 
+// Todas las cuentas de "oportunidades" de este endpoint y de /ejecuciones filtran por
+// MAX(version) (hallazgo real 2026-07-30, mismo motivo que sincronizarOportunidadesFunnel
+// más arriba): sin el filtro, una licitación reanalizada y corregida a 'bajo' seguía
+// contando como oportunidad para siempre porque su primera versión (errónea) seguía
+// cumpliendo el WHERE. Efecto secundario asumido a propósito: al reanalizar una licitación,
+// su recuento "por noche" se desplaza a la noche de la reanálisis, no la de detección
+// original -- preferible a arrastrar un número que ya no es cierto.
 app.get('/api/licitaciones/dashboard-stats', requireLicitacionesAccess, async (req, res, next) => {
   try {
     const { rows } = await db.query(`
       SELECT
         f.codigo, f.pais_iso2, f.nombre, f.activa,
         count(t.id) AS ingeridas,
-        count(a.id) FILTER (WHERE a.encaje IN ('alto','medio')) AS oportunidades
+        count(a.id) FILTER (
+          WHERE a.encaje IN ('alto','medio')
+            AND a.version = (SELECT MAX(version) FROM licitaciones.analisis WHERE tender_id = a.tender_id)
+        ) AS oportunidades
       FROM licitaciones.fuentes f
       LEFT JOIN licitaciones.tenders t ON t.fuente_id = f.id
       LEFT JOIN licitaciones.analisis a ON a.tender_id = t.id
@@ -734,7 +744,10 @@ app.get('/api/licitaciones/ejecuciones', requireLicitacionesAccess, async (req, 
       `, [mesInicio, mesFin]),
       db.query(`
         SELECT date_trunc('day', a.analizado_en) AS dia, f.codigo,
-               COUNT(*) FILTER (WHERE a.encaje IN ('alto','medio'))::int AS oportunidades
+               COUNT(*) FILTER (
+                 WHERE a.encaje IN ('alto','medio')
+                   AND a.version = (SELECT MAX(version) FROM licitaciones.analisis WHERE tender_id = a.tender_id)
+               )::int AS oportunidades
         FROM licitaciones.analisis a
         JOIN licitaciones.tenders t ON t.id = a.tender_id
         JOIN licitaciones.fuentes f ON f.id = t.fuente_id
@@ -749,7 +762,10 @@ app.get('/api/licitaciones/ejecuciones', requireLicitacionesAccess, async (req, 
         GROUP BY 1
       `, [anioInicio, anioFin]),
       db.query(`
-        SELECT f.codigo, COUNT(*) FILTER (WHERE a.encaje IN ('alto','medio'))::int AS oportunidades
+        SELECT f.codigo, COUNT(*) FILTER (
+          WHERE a.encaje IN ('alto','medio')
+            AND a.version = (SELECT MAX(version) FROM licitaciones.analisis WHERE tender_id = a.tender_id)
+        )::int AS oportunidades
         FROM licitaciones.analisis a
         JOIN licitaciones.tenders t ON t.id = a.tender_id
         JOIN licitaciones.fuentes f ON f.id = t.fuente_id
@@ -854,6 +870,7 @@ app.get('/api/licitaciones/ejecuciones/oportunidades', requireLicitacionesAccess
       JOIN licitaciones.fuentes f ON f.id = t.fuente_id
       WHERE a.analizado_en >= $1 AND a.analizado_en < $2
         AND a.encaje IN ('alto','medio')
+        AND a.version = (SELECT MAX(version) FROM licitaciones.analisis WHERE tender_id = a.tender_id)
         ${filtroFuente}
       ORDER BY a.analizado_en DESC
     `, params);
