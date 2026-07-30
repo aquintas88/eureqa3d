@@ -1,6 +1,6 @@
 'use strict';
 /* ─────────────────────────────────────────────────────────────
-   hero-model.js — Carga el biomodelo 3D REAL de Eureqa3D
+   hero-model.js — Carga el modelo anatómico 3D REAL de Eureqa3D
    (Sketchfab) en el hero, auto-iniciado y girando. Es su
    producto de verdad como protagonista, no un adorno.
    Si el iframe no carga (red), quedan el campo de partículas y
@@ -25,7 +25,7 @@
   ].join('&');
 
   const frame = document.createElement('iframe');
-  frame.title = 'Biomodelo 3D real — Eureqa3D';
+  frame.title = 'Modelo anatómico 3D real — Eureqa3D';
   frame.allow = 'autoplay; fullscreen; xr-spatial-tracking';
   frame.setAttribute('allowfullscreen', 'true');
   frame.setAttribute('mozallowfullscreen', 'true');

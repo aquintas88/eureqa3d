@@ -112,12 +112,12 @@
       it: "Applichiamo l'intelligenza artificiale nella segmentazione e nell'elaborazione dell'immagine medica.",
       el: 'Εφαρμόζουμε τεχνητή νοημοσύνη στην κατάτμηση και την επεξεργασία της ιατρικής εικόνας.' },
     'Imagen médica a 3D': { en: 'Medical imaging to 3D', fr: "De l'image médicale au 3D", de: 'Vom medizinischen Bild zum 3D-Modell', it: "Dall'immagine medica al 3D", el: 'Από ιατρική εικόνα σε 3D' },
-    'Convertimos estudios radiológicos 2D en biomodelos físicos precisos, listos para el quirófano.': {
-      en: 'We turn 2D radiological studies into precise physical biomodels, ready for the operating room.',
-      fr: 'Nous transformons les études radiologiques 2D en biomodèles physiques précis, prêts pour le bloc opératoire.',
-      de: 'Wir verwandeln 2D-Röntgenstudien in präzise physische Biomodelle, bereit für den Operationssaal.',
-      it: 'Trasformiamo gli studi radiologici 2D in biomodelli fisici precisi, pronti per la sala operatoria.',
-      el: 'Μετατρέπουμε δισδιάστατες ακτινολογικές μελέτες σε ακριβή φυσικά βιομοντέλα, έτοιμα για το χειρουργείο.' },
+    'Convertimos estudios radiológicos 2D en modelos anatómicos 3D físicos precisos, listos para el quirófano.': {
+      en: 'We turn 2D radiological studies into precise physical 3D anatomical models, ready for the operating room.',
+      fr: 'Nous transformons les études radiologiques 2D en modèles anatomiques 3D physiques précis, prêts pour le bloc opératoire.',
+      de: 'Wir verwandeln 2D-Röntgenstudien in präzise physische 3D-Anatomiemodelle, bereit für den Operationssaal.',
+      it: 'Trasformiamo gli studi radiologici 2D in modelli anatomici 3D fisici precisi, pronti per la sala operatoria.',
+      el: 'Μετατρέπουμε δισδιάστατες ακτινολογικές μελέτες σε ακριβή φυσικά ανατομικά μοντέλα 3D, έτοιμα για το χειρουργείο.' },
     'Tiempo récord': { en: 'Record time', fr: 'Temps record', de: 'Rekordzeit', it: 'Tempo record', el: 'Χρόνος-ρεκόρ' },
     'Entregamos los modelos entre 24 y 48 horas según solicitud, material y destino. Tu tiempo importa.': {
       en: 'We deliver the models within 24 to 48 hours depending on request, material and destination. Your time matters.',
@@ -131,12 +131,12 @@
     'Confidencialidad': { en: 'Confidentiality', fr: 'Confidentialité', de: 'Vertraulichkeit', it: 'Riservatezza', el: 'Εμπιστευτικότητα' },
     'Áreas de aplicación': { en: 'Areas of application', fr: "Domaines d'application", de: 'Anwendungsbereiche', it: 'Aree di applicazione', el: 'Τομείς εφαρμογής' },
     'Tecnología que revoluciona la cirugía': { en: 'Technology that revolutionizes surgery', fr: 'Une technologie qui révolutionne la chirurgie', de: 'Technologie, die die Chirurgie revolutioniert', it: 'Tecnologia che rivoluziona la chirurgia', el: 'Τεχνολογία που φέρνει επανάσταση στη χειρουργική' },
-    'La planificación con biomodelos 3D facilita el estudio de la anatomía, el abordaje y la previsión de complicaciones intraoperatorias.': {
-      en: 'Planning with 3D biomodels makes it easier to study the anatomy, plan the approach and anticipate intraoperative complications.',
-      fr: "La planification avec des biomodèles 3D facilite l'étude de l'anatomie, l'abord et l'anticipation des complications peropératoires.",
-      de: 'Die Planung mit 3D-Biomodellen erleichtert das Studium der Anatomie, den Zugang und die Vorhersage intraoperativer Komplikationen.',
-      it: "La pianificazione con biomodelli 3D facilita lo studio dell'anatomia, l'approccio e la previsione delle complicanze intraoperatorie.",
-      el: 'Ο σχεδιασμός με τρισδιάστατα βιομοντέλα διευκολύνει τη μελέτη της ανατομίας, την προσέγγιση και την πρόβλεψη διεγχειρητικών επιπλοκών.' },
+    'La planificación con modelos anatómicos 3D facilita el estudio de la anatomía, el abordaje y la previsión de complicaciones intraoperatorias.': {
+      en: 'Planning with 3D anatomical models makes it easier to study the anatomy, plan the approach and anticipate intraoperative complications.',
+      fr: "La planification avec des modèles anatomiques 3D facilite l'étude de l'anatomie, l'abord et l'anticipation des complications peropératoires.",
+      de: 'Die Planung mit 3D-Anatomiemodellen erleichtert das Studium der Anatomie, den Zugang und die Vorhersage intraoperativer Komplikationen.',
+      it: "La pianificazione con modelli anatomici 3D facilita lo studio dell'anatomia, l'approccio e la previsione delle complicanze intraoperatorie.",
+      el: 'Ο σχεδιασμός με ανατομικά μοντέλα 3D διευκολύνει τη μελέτη της ανατομίας, την προσέγγιση και την πρόβλεψη διεγχειρητικών επιπλοκών.' },
     '<a class="more" href="/traumatologia" style="font-family:var(--head);font-weight:700;color:var(--orange-dark)">Ver detalle →</a>': {
       en: '<a class="more" href="/traumatologia" style="font-family:var(--head);font-weight:700;color:var(--orange-dark)">View details →</a>',
       fr: '<a class="more" href="/traumatologia" style="font-family:var(--head);font-weight:700;color:var(--orange-dark)">Voir le détail →</a>',
@@ -185,12 +185,12 @@
 
     /* ── Quiénes somos ── */
     'Especialistas en impresión 3D y modelos digitales en el sector salud': { en: 'Specialists in 3D printing and digital models for the healthcare sector', fr: "Spécialistes de l'impression 3D et des modèles numériques dans le secteur de la santé", de: 'Spezialisten für 3D-Druck und digitale Modelle im Gesundheitssektor', it: 'Specialisti nella stampa 3D e nei modelli digitali nel settore sanitario', el: 'Ειδικοί στην τρισδιάστατη εκτύπωση και τα ψηφιακά μοντέλα στον τομέα της υγείας' },
-    'Eureqa3D es una empresa joven formada por <strong>ingenieros y médicos</strong>. Convertimos la imagen médica del paciente en biomodelos físicos y digitales que ayudan al profesional a planificar cada cirugía con más seguridad.': {
-      en: 'Eureqa3D is a young company made up of <strong>engineers and doctors</strong>. We convert the patient\'s medical imaging into physical and digital biomodels that help the professional plan each surgery with more confidence.',
-      fr: "Eureqa3D est une jeune entreprise composée d'<strong>ingénieurs et de médecins</strong>. Nous convertissons l'image médicale du patient en biomodèles physiques et numériques qui aident le professionnel à planifier chaque intervention en toute confiance.",
-      de: 'Eureqa3D ist ein junges Unternehmen aus <strong>Ingenieuren und Ärzten</strong>. Wir wandeln die medizinische Bildgebung des Patienten in physische und digitale Biomodelle um, die dem Fachmann helfen, jede Operation mit mehr Sicherheit zu planen.',
-      it: "Eureqa3D è una giovane azienda formata da <strong>ingegneri e medici</strong>. Convertiamo l'immagine medica del paziente in biomodelli fisici e digitali che aiutano il professionista a pianificare ogni intervento con maggiore sicurezza.",
-      el: 'Η Eureqa3D είναι μια νέα εταιρεία αποτελούμενη από <strong>μηχανικούς και ιατρούς</strong>. Μετατρέπουμε την ιατρική εικόνα του ασθενούς σε φυσικά και ψηφιακά βιομοντέλα που βοηθούν τον επαγγελματία να σχεδιάσει κάθε επέμβαση με μεγαλύτερη ασφάλεια.' },
+    'Eureqa3D es una empresa joven formada por <strong>ingenieros y médicos</strong>. Convertimos la imagen médica del paciente en modelos anatómicos 3D físicos y digitales que ayudan al profesional a planificar cada cirugía con más seguridad.': {
+      en: 'Eureqa3D is a young company made up of <strong>engineers and doctors</strong>. We convert the patient\'s medical imaging into physical and digital 3D anatomical models that help the professional plan each surgery with more confidence.',
+      fr: "Eureqa3D est une jeune entreprise composée d'<strong>ingénieurs et de médecins</strong>. Nous convertissons l'image médicale du patient en modèles anatomiques 3D physiques et numériques qui aident le professionnel à planifier chaque intervention en toute confiance.",
+      de: 'Eureqa3D ist ein junges Unternehmen aus <strong>Ingenieuren und Ärzten</strong>. Wir wandeln die medizinische Bildgebung des Patienten in physische und digitale 3D-Anatomiemodelle um, die dem Fachmann helfen, jede Operation mit mehr Sicherheit zu planen.',
+      it: "Eureqa3D è una giovane azienda formata da <strong>ingegneri e medici</strong>. Convertiamo l'immagine medica del paziente in modelli anatomici 3D fisici e digitali che aiutano il professionista a pianificare ogni intervento con maggiore sicurezza.",
+      el: 'Η Eureqa3D είναι μια νέα εταιρεία αποτελούμενη από <strong>μηχανικούς και ιατρούς</strong>. Μετατρέπουμε την ιατρική εικόνα του ασθενούς σε φυσικά και ψηφιακά ανατομικά μοντέλα 3D που βοηθούν τον επαγγελματία να σχεδιάσει κάθε επέμβαση με μεγαλύτερη ασφάλεια.' },
     'Estamos especializados en el tratamiento de la imagen médica: segmentación, diseño e impresión 3D. El resultado es una reconstrucción a tamaño real —física o digital— adaptada a la patología y a las necesidades del profesional.': {
       en: 'We specialize in medical image processing: segmentation, design and 3D printing. The result is a full-scale reconstruction —physical or digital— tailored to the pathology and the professional\'s needs.',
       fr: "Nous sommes spécialisés dans le traitement de l'image médicale : segmentation, conception et impression 3D. Le résultat est une reconstruction à taille réelle —physique ou numérique— adaptée à la pathologie et aux besoins du professionnel.",
@@ -290,7 +290,7 @@
       it: "Applichiamo il Metodo Eureqa, supportato dall'intelligenza artificiale per la segmentazione, e otteniamo una ricostruzione 3D unica, esclusiva e di alta qualità.",
       el: 'Εφαρμόζουμε τη Μέθοδο Eureqa, υποστηριζόμενη από τεχνητή νοημοσύνη για την κατάτμηση, και αποκτούμε μια μοναδική, αποκλειστική και υψηλής ποιότητας τρισδιάστατη ανακατασκευή.' },
     'Fabricación del modelo': { en: 'Model manufacturing', fr: 'Fabrication du modèle', de: 'Herstellung des Modells', it: 'Fabbricazione del modello', el: 'Κατασκευή του μοντέλου' },
-    'Producimos el biomodelo mediante impresión 3D.': { en: 'We produce the biomodel through 3D printing.', fr: 'Nous produisons le biomodèle par impression 3D.', de: 'Wir fertigen das Biomodell mittels 3D-Druck.', it: 'Produciamo il biomodello tramite stampa 3D.', el: 'Παράγουμε το βιομοντέλο μέσω τρισδιάστατης εκτύπωσης.' },
+    'Producimos el modelo anatómico mediante impresión 3D.': { en: 'We produce the anatomical model through 3D printing.', fr: "Nous produisons le modèle anatomique par impression 3D.", de: 'Wir fertigen das Anatomiemodell mittels 3D-Druck.', it: 'Produciamo il modello anatomico tramite stampa 3D.', el: 'Παράγουμε το ανατομικό μοντέλο μέσω τρισδιάστατης εκτύπωσης.' },
     'Simulación quirúrgica (opcional)': { en: 'Surgical simulation (optional)', fr: 'Simulation chirurgicale (facultatif)', de: 'Chirurgische Simulation (optional)', it: 'Simulazione chirurgica (opzionale)', el: 'Χειρουργική προσομοίωση (προαιρετικά)' },
     'Posibilidad de simular el procedimiento quirúrgico sobre el modelo.': { en: 'Possibility of simulating the surgical procedure on the model.', fr: "Possibilité de simuler l'intervention chirurgicale sur le modèle.", de: 'Möglichkeit, den chirurgischen Eingriff am Modell zu simulieren.', it: 'Possibilità di simulare la procedura chirurgica sul modello.', el: 'Δυνατότητα προσομοίωσης της χειρουργικής επέμβασης στο μοντέλο.' },
     'Preparación y envío': { en: 'Preparation and shipping', fr: 'Préparation et expédition', de: 'Vorbereitung und Versand', it: 'Preparazione e spedizione', el: 'Προετοιμασία και αποστολή' },
@@ -307,14 +307,14 @@
     /* ── Traumatología ── */
     'Servicios · Traumatología': { en: 'Services · Traumatology', fr: 'Services · Traumatologie', de: 'Leistungen · Traumatologie', it: 'Servizi · Traumatologia', el: 'Υπηρεσίες · Τραυματολογία' },
     'La tecnología que revoluciona la cirugía': { en: 'The technology that revolutionizes surgery', fr: 'La technologie qui révolutionne la chirurgie', de: 'Die Technologie, die die Chirurgie revolutioniert', it: 'La tecnologia che rivoluziona la chirurgia', el: 'Η τεχνολογία που φέρνει επανάσταση στη χειρουργική' },
-    'La planificación quirúrgica con ayuda de un biomodelo 3D facilita el estudio de la anatomía, la preparación del abordaje y el instrumental, y mejora la previsión de complicaciones intraoperatorias.': {
-      en: 'Surgical planning with the help of a 3D biomodel makes it easier to study the anatomy, prepare the approach and instruments, and improves the anticipation of intraoperative complications.',
-      fr: "La planification chirurgicale à l'aide d'un biomodèle 3D facilite l'étude de l'anatomie, la préparation de l'abord et de l'instrumentation, et améliore l'anticipation des complications peropératoires.",
-      de: 'Die chirurgische Planung mithilfe eines 3D-Biomodells erleichtert das Studium der Anatomie, die Vorbereitung von Zugang und Instrumentarium und verbessert die Vorhersage intraoperativer Komplikationen.',
-      it: "La pianificazione chirurgica con l'aiuto di un biomodello 3D facilita lo studio dell'anatomia, la preparazione dell'approccio e della strumentazione, e migliora la previsione delle complicanze intraoperatorie.",
-      el: 'Ο χειρουργικός σχεδιασμός με τη βοήθεια ενός τρισδιάστατου βιομοντέλου διευκολύνει τη μελέτη της ανατομίας, την προετοιμασία της προσέγγισης και των εργαλείων, και βελτιώνει την πρόβλεψη διεγχειρητικών επιπλοκών.' },
+    'La planificación quirúrgica con ayuda de un modelo anatómico 3D facilita el estudio de la anatomía, la preparación del abordaje y el instrumental, y mejora la previsión de complicaciones intraoperatorias.': {
+      en: 'Surgical planning with the help of a 3D anatomical model makes it easier to study the anatomy, prepare the approach and instruments, and improves the anticipation of intraoperative complications.',
+      fr: "La planification chirurgicale à l'aide d'un modèle anatomique 3D facilite l'étude de l'anatomie, la préparation de l'abord et de l'instrumentation, et améliore l'anticipation des complications peropératoires.",
+      de: 'Die chirurgische Planung mithilfe eines 3D-Anatomiemodells erleichtert das Studium der Anatomie, die Vorbereitung von Zugang und Instrumentarium und verbessert die Vorhersage intraoperativer Komplikationen.',
+      it: "La pianificazione chirurgica con l'aiuto di un modello anatomico 3D facilita lo studio dell'anatomia, la preparazione dell'approccio e della strumentazione, e migliora la previsione delle complicanze intraoperatorie.",
+      el: 'Ο χειρουργικός σχεδιασμός με τη βοήθεια ενός ανατομικού μοντέλου 3D διευκολύνει τη μελέτη της ανατομίας, την προετοιμασία της προσέγγισης και των εργαλείων, και βελτιώνει την πρόβλεψη διεγχειρητικών επιπλοκών.' },
     'Casos habituales': { en: 'Common cases', fr: 'Cas fréquents', de: 'Häufige Fälle', it: 'Casi frequenti', el: 'Συνήθεις περιπτώσεις' },
-    'Biomodelos donde la impresión 3D marca la diferencia': { en: 'Biomodels where 3D printing makes the difference', fr: "Des biomodèles où l'impression 3D fait la différence", de: 'Biomodelle, bei denen der 3D-Druck den Unterschied macht', it: 'Biomodelli dove la stampa 3D fa la differenza', el: 'Βιομοντέλα όπου η τρισδιάστατη εκτύπωση κάνει τη διαφορά' },
+    'Modelos anatómicos donde la impresión 3D marca la diferencia': { en: '3D anatomical models where 3D printing makes the difference', fr: "Des modèles anatomiques où l'impression 3D fait la différence", de: 'Anatomiemodelle, bei denen der 3D-Druck den Unterschied macht', it: 'Modelli anatomici dove la stampa 3D fa la differenza', el: 'Ανατομικά μοντέλα όπου η τρισδιάστατη εκτύπωση κάνει τη διαφορά' },
     'Réplicas a tamaño real impresas a partir del estudio radiológico del paciente.': {
       en: "Full-scale replicas printed from the patient's radiological study.",
       fr: "Des répliques à taille réelle imprimées à partir de l'étude radiologique du patient.",
@@ -353,22 +353,22 @@
       it: 'La somma di questi miglioramenti consente inoltre un <strong>risparmio sul costo del trattamento</strong> per il servizio sanitario.',
       el: 'Το σύνολο αυτών των βελτιώσεων επιτυγχάνει επιπλέον <strong>εξοικονόμηση στο κόστος της θεραπείας</strong> για την υπηρεσία υγείας.' },
     '¿Tienes un caso complejo?': { en: 'Do you have a complex case?', fr: 'Vous avez un cas complexe ?', de: 'Haben Sie einen komplexen Fall?', it: 'Hai un caso complesso?', el: 'Έχετε μια πολύπλοκη περίπτωση;' },
-    'Solicita un biomodelo y planifica tu intervención con total confianza.': {
-      en: 'Request a biomodel and plan your intervention with total confidence.',
-      fr: 'Demandez un biomodèle et planifiez votre intervention en toute confiance.',
-      de: 'Fordern Sie ein Biomodell an und planen Sie Ihren Eingriff mit voller Sicherheit.',
-      it: 'Richiedi un biomodello e pianifica il tuo intervento con totale sicurezza.',
-      el: 'Ζητήστε ένα βιομοντέλο και σχεδιάστε την επέμβασή σας με απόλυτη σιγουριά.' },
+    'Solicita un modelo anatómico 3D y planifica tu intervención con total confianza.': {
+      en: 'Request a 3D anatomical model and plan your intervention with total confidence.',
+      fr: 'Demandez un modèle anatomique 3D et planifiez votre intervention en toute confiance.',
+      de: 'Fordern Sie ein 3D-Anatomiemodell an und planen Sie Ihren Eingriff mit voller Sicherheit.',
+      it: 'Richiedi un modello anatomico 3D e pianifica il tuo intervento con totale sicurezza.',
+      el: 'Ζητήστε ένα ανατομικό μοντέλο 3D και σχεδιάστε την επέμβασή σας με απόλυτη σιγουριά.' },
 
     /* ── Otras especialidades ── */
     'Servicios · Otras especialidades': { en: 'Services · Other specialties', fr: 'Services · Autres spécialités', de: 'Leistungen · Weitere Fachbereiche', it: 'Servizi · Altre specialità', el: 'Υπηρεσίες · Άλλες ειδικότητες' },
     'La impresión 3D es útil en muchas más áreas': { en: '3D printing is useful in many more areas', fr: "L'impression 3D est utile dans bien d'autres domaines", de: 'Der 3D-Druck ist in vielen weiteren Bereichen nützlich', it: 'La stampa 3D è utile in molte altre aree', el: 'Η τρισδιάστατη εκτύπωση είναι χρήσιμη σε πολλούς ακόμη τομείς' },
-    'Más allá de la traumatología, los biomodelos 3D ayudan a planificar intervenciones en numerosas especialidades quirúrgicas.': {
-      en: 'Beyond traumatology, 3D biomodels help plan interventions across numerous surgical specialties.',
-      fr: 'Au-delà de la traumatologie, les biomodèles 3D aident à planifier des interventions dans de nombreuses spécialités chirurgicales.',
-      de: 'Über die Traumatologie hinaus helfen 3D-Biomodelle bei der Planung von Eingriffen in zahlreichen chirurgischen Fachbereichen.',
-      it: 'Oltre alla traumatologia, i biomodelli 3D aiutano a pianificare interventi in numerose specialità chirurgiche.',
-      el: 'Πέρα από την τραυματολογία, τα τρισδιάστατα βιομοντέλα βοηθούν στον σχεδιασμό επεμβάσεων σε πολυάριθμες χειρουργικές ειδικότητες.' },
+    'Más allá de la traumatología, los modelos anatómicos 3D ayudan a planificar intervenciones en numerosas especialidades quirúrgicas.': {
+      en: 'Beyond traumatology, 3D anatomical models help plan interventions across numerous surgical specialties.',
+      fr: 'Au-delà de la traumatologie, les modèles anatomiques 3D aident à planifier des interventions dans de nombreuses spécialités chirurgicales.',
+      de: 'Über die Traumatologie hinaus helfen 3D-Anatomiemodelle bei der Planung von Eingriffen in zahlreichen chirurgischen Fachbereichen.',
+      it: 'Oltre alla traumatologia, i modelli anatomici 3D aiutano a pianificare interventi in numerose specialità chirurgiche.',
+      el: 'Πέρα από την τραυματολογία, τα ανατομικά μοντέλα 3D βοηθούν στον σχεδιασμό επεμβάσεων σε πολυάριθμες χειρουργικές ειδικότητες.' },
     'Urología': { en: 'Urology', fr: 'Urologie', de: 'Urologie', it: 'Urologia', el: 'Ουρολογία' },
     'Neoplasia renal: cirugía de nefrectomía parcial': { en: 'Renal neoplasia: partial nephrectomy surgery', fr: 'Néoplasie rénale : chirurgie de néphrectomie partielle', de: 'Nierenneoplasie: Operation zur partiellen Nephrektomie', it: 'Neoplasia renale: chirurgia di nefrectomia parziale', el: 'Νεφρική νεοπλασία: χειρουργική μερικής νεφρεκτομής' },
     'Neoplasia prostática': { en: 'Prostate neoplasia', fr: 'Néoplasie prostatique', de: 'Prostataneoplasie', it: 'Neoplasia prostatica', el: 'Νεοπλασία προστάτη' },
@@ -650,12 +650,12 @@
       el: 'Από το οστό στον μαλακό ιστό: διαδραστικές ψηφιακές ανακατασκευές που ανεβάζουν τον χειρουργικό σχεδιασμό σε άλλο επίπεδο.' },
     'Ver todos los modelos 3D': { en: 'View all 3D models', fr: 'Voir tous les modèles 3D', de: 'Alle 3D-Modelle ansehen', it: 'Vedi tutti i modelli 3D', el: 'Δείτε όλα τα τρισδιάστατα μοντέλα' },
     '¿Quieres un modelo 3D de tu caso?': { en: 'Want a 3D model of your case?', fr: 'Vous voulez un modèle 3D de votre cas ?', de: 'Möchten Sie ein 3D-Modell Ihres Falls?', it: 'Vuoi un modello 3D del tuo caso?', el: 'Θέλετε ένα τρισδιάστατο μοντέλο της περίπτωσής σας;' },
-    'Convertimos la imagen médica de tu paciente en un modelo digital interactivo y en un biomodelo físico listo para el quirófano.': {
-      en: "We turn your patient's medical image into an interactive digital model and a physical biomodel ready for the operating room.",
-      fr: "Nous transformons l'image médicale de votre patient en un modèle numérique interactif et un biomodèle physique prêt pour le bloc opératoire.",
-      de: 'Wir verwandeln das medizinische Bild Ihres Patienten in ein interaktives digitales Modell und ein physisches Biomodell, bereit für den Operationssaal.',
-      it: "Trasformiamo l'immagine medica del tuo paziente in un modello digitale interattivo e in un biomodello fisico pronto per la sala operatoria.",
-      el: 'Μετατρέπουμε την ιατρική εικόνα του ασθενούς σας σε ένα διαδραστικό ψηφιακό μοντέλο και σε ένα φυσικό βιομοντέλο έτοιμο για το χειρουργείο.' },
+    'Convertimos la imagen médica de tu paciente en un modelo digital interactivo y en un modelo anatómico 3D físico listo para el quirófano.': {
+      en: "We turn your patient's medical image into an interactive digital model and a physical 3D anatomical model ready for the operating room.",
+      fr: "Nous transformons l'image médicale de votre patient en un modèle numérique interactif et un modèle anatomique 3D physique prêt pour le bloc opératoire.",
+      de: 'Wir verwandeln das medizinische Bild Ihres Patienten in ein interaktives digitales Modell und ein physisches 3D-Anatomiemodell, bereit für den Operationssaal.',
+      it: "Trasformiamo l'immagine medica del tuo paziente in un modello digitale interattivo e in un modello anatomico 3D fisico pronto per la sala operatoria.",
+      el: 'Μετατρέπουμε την ιατρική εικόνα του ασθενούς σας σε ένα διαδραστικό ψηφιακό μοντέλο και σε ένα φυσικό ανατομικό μοντέλο 3D έτοιμο για το χειρουργείο.' },
     'Modelos 3D — Eureqa3D': { en: '3D Models — Eureqa3D', fr: 'Modèles 3D — Eureqa3D', de: '3D-Modelle — Eureqa3D', it: 'Modelli 3D — Eureqa3D', el: '3D Μοντέλα — Eureqa3D' },
 
     /* ── Títulos de página (<title>) ── */
