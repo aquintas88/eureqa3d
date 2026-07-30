@@ -494,12 +494,20 @@ app.get('/api/backlog/meta', requireBacklogAccess, async (req, res, next) => {
 // no dependa de que alguien tenga el panel abierto. Da de alta (etapa inicial
 // 'detectada') cualquier tender con encaje alto/medio sin fila en pipeline_comercial
 // y avisa por correo a los admins de las que sean nuevas.
+//
+// SOLO la versión MÁS RECIENTE de analisis cuenta (hallazgo real 2026-07-30): `analisis`
+// es una tabla versionada (una fila nueva por reanálisis, nunca se borra la anterior). Sin
+// el filtro por MAX(version), un tender que en su primer análisis salió 'medio' por error
+// (bug ya corregido en el agente de ingesta) volvía a colarse aquí para siempre aunque una
+// reanálisis posterior lo corrigiera a 'bajo'/'nulo' -- la fila vieja seguía cumpliendo el
+// WHERE igualmente. Mismo patrón que ya usan las queries de /api/licitaciones/ejecuciones.
 async function sincronizarOportunidadesFunnel() {
   const { rows: nuevas } = await db.query(`
     INSERT INTO licitaciones.pipeline_comercial (tender_id, etapa)
     SELECT a.tender_id, 'detectada'
     FROM licitaciones.analisis a
     WHERE a.encaje IN ('alto','medio')
+      AND a.version = (SELECT MAX(version) FROM licitaciones.analisis WHERE tender_id = a.tender_id)
       AND NOT EXISTS (
         SELECT 1 FROM licitaciones.pipeline_comercial p WHERE p.tender_id = a.tender_id
       )
@@ -513,6 +521,7 @@ async function sincronizarOportunidadesFunnel() {
            a.encaje, a.resumen_ia, a.score_final, f.nombre AS fuente_nombre
     FROM licitaciones.tenders t
     JOIN licitaciones.analisis a ON a.tender_id = t.id
+      AND a.version = (SELECT MAX(version) FROM licitaciones.analisis WHERE tender_id = t.id)
     JOIN licitaciones.fuentes f ON f.id = t.fuente_id
     WHERE t.id = ANY($1::bigint[])
     ORDER BY a.score_final DESC
