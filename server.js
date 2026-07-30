@@ -569,6 +569,31 @@ async function enviarCorreoLead({ name, email, subject, body }) {
   }
 }
 
+// Auto-respuesta de cortesía a quien rellena el formulario público, para que
+// sepa que su mensaje ha llegado (antes no se enviaba nada al propio lead).
+async function enviarCorreoConfirmacionLead({ name, email }) {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) return;
+
+  const senderEmail = process.env.BREVO_SENDER_EMAIL || 'aquintas@gmail.com';
+
+  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: { 'api-key': apiKey, 'content-type': 'application/json', accept: 'application/json' },
+    body: JSON.stringify({
+      sender: { email: senderEmail, name: 'Eureqa3D' },
+      to: [{ email, name }],
+      subject: 'Gracias por contactar con Eureqa3D',
+      htmlContent: `<p>Hola ${escHtml(name)},</p>
+        <p>Gracias por ponerte en contacto con Eureqa3D. Hemos recibido tu mensaje y te responderemos en breve.</p>
+        <p>Un saludo,<br>El equipo de Eureqa3D</p>`
+    })
+  });
+  if (!res.ok) {
+    throw new Error(`Brevo ${res.status}: ${await res.text()}`);
+  }
+}
+
 // Envío vía API HTTP de Brevo (no SMTP): con solo BREVO_API_KEY basta, sin
 // necesitar el "login" SMTP que Brevo no expone junto a la SMTP key. Mismo
 // patrón que src/lib/brevo.ts en KiraConnect. Ojo: BREVO_API_KEY es una key
@@ -931,6 +956,8 @@ app.post('/api/public/contact', async (req, res, next) => {
       [name.trim(), email.trim(), subject?.trim() || null, body.trim()]);
     enviarCorreoLead({ name: name.trim(), email: email.trim(), subject: subject?.trim(), body: body.trim() })
       .catch(e => console.error('✉️  Error enviando correo del lead:', e.message));
+    enviarCorreoConfirmacionLead({ name: name.trim(), email: email.trim() })
+      .catch(e => console.error('✉️  Error enviando confirmación al lead:', e.message));
     res.status(201).json({ ok: true });
   } catch (e) { next(e); }
 });
