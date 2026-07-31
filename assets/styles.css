@@ -292,8 +292,20 @@ img { max-width: 100%; display: block; }
 }
 .prose { max-width: 760px; }
 .prose p { color: var(--ink-soft); font-size: 1.05rem; }
+.prose ul { color: var(--ink-soft); font-size: 1.05rem; padding-left: 1.3rem; }
+.prose li { margin: .4rem 0; }
+.prose h2 { margin-top: 2.4rem; }
+.prose h3 { margin-top: 1.6rem; }
 .quote { font-family: var(--head); font-weight:700; font-size:1.4rem; color: var(--teal-dark);
   border-left:4px solid var(--orange); padding:.4rem 0 .4rem 1.2rem; margin:1.8rem 0; }
+
+/* ── Tabla dentro de texto largo (políticas legales) ─────────── */
+.prose-table-wrap { overflow-x: auto; margin: 1.2rem 0 1.8rem; }
+.prose table { width: 100%; border-collapse: collapse; font-size: .92rem; min-width: 560px; }
+.prose th, .prose td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.prose th { font-family: var(--head); font-weight: 700; color: #fff; background: var(--teal-dark); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+.prose td { color: var(--ink-soft); }
+.prose tr:last-child td { border-bottom: 0; }
 
 /* ── Secciones ───────────────────────────────────────────────── */
 section { padding: clamp(3rem, 6vw, 5rem) 0; }
@@ -582,14 +594,17 @@ form.contact textarea { min-height: 140px; resize: vertical; }
 .site-footer li { margin:.4rem 0; }
 .footer-logo { height:38px; margin-bottom:1rem; filter: brightness(0) invert(1); }
 .footer-bottom { border-top:1px solid #353a41; margin-top:2.5rem; padding-top:1.2rem; font-size:.85rem; color:#8b929b;
-  display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem; }
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem 1.5rem; }
+.footer-legal { display:flex; gap:1.1rem; flex-wrap:wrap; }
+.footer-legal a { color:#8b929b; font-size:.85rem; }
+.footer-legal a:hover { color:#fff; }
 
 /* ── Responsive ──────────────────────────────────────────────── */
-@media (max-width: 920px) {
-  .hero-grid, .contact-grid { grid-template-columns: 1fr; }
-  .hero-art { order:-1; }
-  .grid-3, .grid-4, .news-grid, .stats { grid-template-columns: repeat(2,1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+/* Breakpoint propio para el menú (más ancho que el de las rejillas de
+   contenido): con 8 enlaces + CTA, el nav ya no cabe en una sola línea
+   por debajo de ~1300px aunque el resto del layout todavía tenga sitio
+   de sobra, así que pasa a hamburguesa antes que el resto del contenido. */
+@media (max-width: 1300px) {
   .nav-links {
     position: absolute; top: 76px; left:0; right:0; flex-direction: column; gap:0;
     background:#fff; border-bottom:1px solid var(--line); padding:.5rem 1.5rem;
@@ -605,6 +620,12 @@ form.contact textarea { min-height: 140px; resize: vertical; }
   .nav-cta-mobile a { color: var(--orange-dark) !important; font-weight:700; }
   .nav-toggle { display:block; }
   .nav-cta { display:none; }
+}
+@media (max-width: 920px) {
+  .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-art { order:-1; }
+  .grid-3, .grid-4, .news-grid, .stats { grid-template-columns: repeat(2,1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
   .topbar-utility .container { justify-content:center; flex-wrap:wrap; gap:.5rem 1rem; height:auto; padding-top:.4rem; padding-bottom:.4rem; }
   .lang-switch { margin-left:0; width:100%; justify-content:center; }
 }

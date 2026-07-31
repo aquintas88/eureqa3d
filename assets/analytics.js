@@ -9,11 +9,35 @@
    segmentar el tráfico por idioma en GA4 aunque todas las versiones
    compartan la misma URL. */
 const GA_MEASUREMENT_ID = '';
+const COOKIE_CONSENT_KEY = 'eureqa3d_cookie_consent'; // 'accepted' | 'rejected'
+
+/* Botón "cambiar mi elección" en /politica-cookies: borra la elección
+   guardada y recarga para que vuelva a aparecer el banner. Si Analytics
+   no está activo todavía, no hay nada que reconfigurar. */
+window.eureqa3dOpenCookieSettings = function () {
+  if (!GA_MEASUREMENT_ID) return false;
+  localStorage.removeItem(COOKIE_CONSENT_KEY);
+  location.reload();
+  return true;
+};
+
+/* Botón en /politica-cookies (ver esa página): si Analytics no está
+   activo, muestra la nota de que no hay nada que reconfigurar. */
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('cookie-settings-btn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    if (!window.eureqa3dOpenCookieSettings()) {
+      const note = document.getElementById('cookie-settings-note');
+      if (note) note.hidden = false;
+    }
+  });
+});
 
 (function () {
   if (!GA_MEASUREMENT_ID) return;
 
-  const CONSENT_KEY = 'eureqa3d_cookie_consent'; // 'accepted' | 'rejected'
+  const CONSENT_KEY = COOKIE_CONSENT_KEY;
   const tr = (s) => (window.I18N ? window.I18N.t(s) : s);
 
   function loadGA() {

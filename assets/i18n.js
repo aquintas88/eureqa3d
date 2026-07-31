@@ -43,6 +43,8 @@
     'Acceso': { en: 'Login', fr: 'Accès', de: 'Zugang', it: 'Accedi', el: 'Είσοδος' },
     'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres': { en: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres', fr: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres', de: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres', it: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres', el: 'Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres' },
     'Navegación': { en: 'Navigation', fr: 'Navigation', de: 'Navigation', it: 'Navigazione', el: 'Πλοήγηση' },
+    'Aviso legal': { en: 'Legal notice', fr: 'Mentions légales', de: 'Impressum', it: 'Note legali', el: 'Νομική σημείωση' },
+    'Privacidad': { en: 'Privacy', fr: 'Confidentialité', de: 'Datenschutz', it: 'Privacy', el: 'Απόρρητο' },
     'Todos los derechos reservados.': { en: 'All rights reserved.', fr: 'Tous droits réservés.', de: 'Alle Rechte vorbehalten.', it: 'Tutti i diritti riservati.', el: 'Με την επιφύλαξη παντός δικαιώματος.' },
     'Impresión 3D · Sector Salud': { en: '3D Printing · Healthcare', fr: 'Impression 3D · Santé', de: '3D-Druck · Gesundheitswesen', it: 'Stampa 3D · Sanità', el: 'Τρισδιάστατη εκτύπωση · Υγεία' },
 

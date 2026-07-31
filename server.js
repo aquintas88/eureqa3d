@@ -203,6 +203,9 @@ app.get('/modelos-3d',          page('modelos-3d.html'));
 app.get('/noticias',            page('noticias.html'));
 app.get('/noticias/:slug',      page('noticia.html'));
 app.get('/contacto',            page('contacto.html'));
+app.get('/aviso-legal',         page('aviso-legal.html'));
+app.get('/politica-privacidad', page('politica-privacidad.html'));
+app.get('/politica-cookies',    page('politica-cookies.html'));
 
 /* ── Private zone ────────────────────────────────────────────── */
 app.get('/login', (req, res) => {
