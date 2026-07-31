@@ -763,9 +763,7 @@ form.contact textarea { min-height: 140px; resize: vertical; }
 @media (max-width:480px){ .cookie-banner{ left:8px; right:8px; width:auto; bottom:8px; } }
 @media (prefers-reduced-motion: reduce){ .cookie-banner{ transition:opacity .15s linear; transform:none; } }
 
-/* ── Visor 3D propio (embed a pantalla amplia) ───────────────── */
-.visor-embed{ aspect-ratio:16/9; min-height:460px; border-radius:16px; box-shadow:var(--shadow); background:radial-gradient(circle at 50% 32%, #21323f, #0e1620); }
-.visor-embed .model-play{ background:#fff; }
-.visor-block{ margin-top:.5rem; }
+/* ── Visor 3D propio (vídeo grande a pantalla amplia) ────────── */
+.visor-showcase-wrap{ max-width:900px; margin:0 auto; }
+.visor-showcase-wrap .hero-demo{ box-shadow:0 34px 90px rgba(0,0,0,.28); }
 .visor-disclaimer{ margin-top:1rem; font-size:.85rem; }
-@media (max-width:600px){ .visor-embed{ aspect-ratio:auto; min-height:64vh; } }

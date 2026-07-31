@@ -199,7 +199,7 @@ app.get('/metodo-eureqa',       page('metodo-eureqa.html'));
 app.get('/traumatologia',       page('traumatologia.html'));
 app.get('/otras-especialidades',page('otras-especialidades.html'));
 app.get('/visor-3d',            page('visor-3d.html'));
-app.get('/modelos-3d',          page('modelos-3d.html'));
+app.get('/modelos-3d',          (req, res) => res.redirect(301, '/visor-3d')); // fusionada con /visor-3d
 app.get('/noticias',            page('noticias.html'));
 app.get('/noticias/:slug',      page('noticia.html'));
 app.get('/contacto',            page('contacto.html'));

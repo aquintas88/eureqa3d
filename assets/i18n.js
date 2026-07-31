@@ -746,6 +746,77 @@
     'Probar el visor 3D': { en: 'Try the 3D viewer', fr: 'Essayer la visionneuse 3D', de: 'Den 3D-Viewer testen', it: 'Prova il visore 3D', el: 'Δοκιμάστε το πρόγραμμα προβολής 3D' },
     'Visor 3D — Eureqa3D': { en: '3D Viewer — Eureqa3D', fr: 'Visionneuse 3D — Eureqa3D', de: '3D-Viewer — Eureqa3D', it: 'Visore 3D — Eureqa3D', el: 'Πρόγραμμα προβολής 3D — Eureqa3D' },
 
+    /* ── Visor 3D (página fusionada con Modelos 3D) ── */
+    'Lo nuevo · EureqaVisor3D': { en: 'New · EureqaVisor3D', fr: 'Nouveau · EureqaVisor3D', de: 'Neu · EureqaVisor3D', it: 'Novità · EureqaVisor3D', el: 'Νέο · EureqaVisor3D' },
+    'El visor digital de Eureqa3D, directamente en el navegador': {
+      en: "Eureqa3D's digital viewer, right in your browser",
+      fr: "La visionneuse numérique d'Eureqa3D, directement dans le navigateur",
+      de: 'Der digitale Viewer von Eureqa3D, direkt im Browser',
+      it: 'Il visore digitale di Eureqa3D, direttamente nel browser',
+      el: 'Το ψηφιακό πρόγραμμα προβολής της Eureqa3D, απευθείας στον browser' },
+    'Explora la anatomía del paciente en 3D sin instalar nada: cortes, transparencias y la posibilidad de mostrar u ocultar cada estructura, en cualquier ordenador, tablet o móvil.': {
+      en: "Explore the patient's anatomy in 3D without installing anything: sections, transparency and the ability to show or hide every structure, on any computer, tablet or phone.",
+      fr: "Explorez l'anatomie du patient en 3D sans rien installer : coupes, transparences et possibilité d'afficher ou de masquer chaque structure, sur tout ordinateur, tablette ou mobile.",
+      de: 'Erkunden Sie die Anatomie des Patienten in 3D, ohne etwas zu installieren: Schnitte, Transparenzen und die Möglichkeit, jede Struktur ein- oder auszublenden – auf jedem Computer, Tablet oder Smartphone.',
+      it: "Esplora l'anatomia del paziente in 3D senza installare nulla: sezioni, trasparenze e possibilità di mostrare o nascondere ogni struttura, su qualsiasi computer, tablet o cellulare.",
+      el: 'Εξερευνήστε την ανατομία του ασθενούς σε 3D χωρίς καμία εγκατάσταση: τομές, διαφάνειες και δυνατότητα εμφάνισης ή απόκρυψης κάθε δομής, σε οποιονδήποτε υπολογιστή, tablet ή κινητό.' },
+    'Para el especialista': { en: 'For the specialist', fr: 'Pour le spécialiste', de: 'Für den Facharzt', it: 'Per lo specialista', el: 'Για τον ειδικό' },
+    'Pensado para el quirófano, no para el laboratorio': {
+      en: 'Built for the operating room, not the laboratory',
+      fr: 'Conçu pour le bloc opératoire, pas pour le laboratoire',
+      de: 'Für den Operationssaal gemacht, nicht für das Labor',
+      it: 'Pensato per la sala operatoria, non per il laboratorio',
+      el: 'Σχεδιασμένο για το χειρουργείο, όχι για το εργαστήριο' },
+    'Rota el modelo, aplica cortes en los planos axial, sagital y coronal, ajusta la transparencia de cada tejido y aísla la estructura que te interesa: el vaso, el tumor, el hueso. Todo con el ratón o con el dedo, sin curva de aprendizaje y sin instalar software especializado en tu equipo.': {
+      en: 'Rotate the model, apply cuts in the axial, sagittal and coronal planes, adjust the transparency of each tissue and isolate the structure you need: the vessel, the tumor, the bone. All with your mouse or your finger, with no learning curve and no specialized software to install on your computer.',
+      fr: "Faites pivoter le modèle, appliquez des coupes dans les plans axial, sagittal et coronal, ajustez la transparence de chaque tissu et isolez la structure qui vous intéresse : le vaisseau, la tumeur, l'os. Le tout avec la souris ou le doigt, sans courbe d'apprentissage et sans installer de logiciel spécialisé sur votre équipement.",
+      de: 'Drehen Sie das Modell, wenden Sie Schnitte in axialer, sagittaler und koronaler Ebene an, passen Sie die Transparenz jedes Gewebes an und isolieren Sie die gewünschte Struktur: das Gefäß, den Tumor, den Knochen. Alles mit Maus oder Finger, ohne Lernkurve und ohne spezialisierte Software auf Ihrem Rechner zu installieren.',
+      it: "Ruota il modello, applica tagli nei piani assiale, sagittale e coronale, regola la trasparenza di ogni tessuto e isola la struttura che ti interessa: il vaso, il tumore, l'osso. Tutto con il mouse o con il dito, senza curva di apprendimento e senza installare software specializzato sul tuo computer.",
+      el: 'Περιστρέψτε το μοντέλο, εφαρμόστε τομές στα αξονικά, οβελιαία και στεφανιαία επίπεδα, ρυθμίστε τη διαφάνεια κάθε ιστού και απομονώστε τη δομή που σας ενδιαφέρει: το αγγείο, τον όγκο, το οστό. Όλα με το ποντίκι ή το δάχτυλο, χωρίς καμπύλη εκμάθησης και χωρίς εγκατάσταση εξειδικευμένου λογισμικού στον υπολογιστή σας.' },
+    'Por dentro': { en: 'Under the hood', fr: "Dans les coulisses", de: 'Dahinter', it: 'Dietro le quinte', el: 'Από μέσα' },
+    'Tecnología sin fricción': { en: 'Friction-free technology', fr: 'Une technologie sans friction', de: 'Reibungslose Technologie', it: 'Tecnologia senza attriti', el: 'Τεχνολογία χωρίς τριβές' },
+    'El modelo se genera a partir del TC o la RMN del paciente mediante el Método Eureqa, con segmentación asistida por inteligencia artificial. Se sirve por navegador (WebGL, sin plugins ni descargas) a través de un enlace privado con caducidad de 30 días, alojado en infraestructura propia de Eureqa3D — ideal para compartir un caso con el resto del equipo quirúrgico sin mover archivos ni instalar nada.': {
+      en: "The model is generated from the patient's CT or MRI using the Eureqa Method, with AI-assisted segmentation. It is served through the browser (WebGL, no plugins or downloads) via a private link that expires after 30 days, hosted on Eureqa3D's own infrastructure — ideal for sharing a case with the rest of the surgical team without moving files or installing anything.",
+      fr: "Le modèle est généré à partir du scanner ou de l'IRM du patient grâce à la Méthode Eureqa, avec une segmentation assistée par intelligence artificielle. Il est servi par navigateur (WebGL, sans plugin ni téléchargement) via un lien privé qui expire au bout de 30 jours, hébergé sur l'infrastructure propre d'Eureqa3D — idéal pour partager un cas avec le reste de l'équipe chirurgicale sans déplacer de fichiers ni rien installer.",
+      de: 'Das Modell wird aus dem CT oder MRT des Patienten mittels der Eureqa-Methode erstellt, mit KI-unterstützter Segmentierung. Es wird über den Browser bereitgestellt (WebGL, ohne Plugins oder Downloads) über einen privaten Link, der nach 30 Tagen abläuft, gehostet auf eigener Infrastruktur von Eureqa3D — ideal, um einen Fall mit dem übrigen OP-Team zu teilen, ohne Dateien zu verschieben oder etwas zu installieren.',
+      it: "Il modello viene generato a partire dalla TAC o dalla RM del paziente tramite il Metodo Eureqa, con segmentazione assistita dall'intelligenza artificiale. Viene servito tramite browser (WebGL, senza plugin né download) attraverso un link privato che scade dopo 30 giorni, ospitato su infrastruttura proprietaria di Eureqa3D — ideale per condividere un caso con il resto dell'équipe chirurgica senza spostare file né installare nulla.",
+      el: 'Το μοντέλο δημιουργείται από την αξονική ή τη μαγνητική του ασθενούς μέσω της Μεθόδου Eureqa, με κατάτμηση υποβοηθούμενη από τεχνητή νοημοσύνη. Παρέχεται μέσω browser (WebGL, χωρίς plugins ή λήψεις) μέσω ενός ιδιωτικού συνδέσμου που λήγει μετά από 30 ημέρες, φιλοξενούμενο σε δική της υποδομή της Eureqa3D — ιδανικό για την κοινή χρήση μιας περίπτωσης με την υπόλοιπη χειρουργική ομάδα χωρίς μετακίνηση αρχείων ή εγκατάσταση.' },
+    'Funcionalidades principales': { en: 'Key features', fr: 'Fonctionnalités principales', de: 'Hauptfunktionen', it: 'Funzionalità principali', el: 'Βασικές λειτουργίες' },
+    'Ver u ocultar estructuras': { en: 'Show or hide structures', fr: 'Afficher ou masquer des structures', de: 'Strukturen ein- oder ausblenden', it: 'Mostra o nascondi strutture', el: 'Εμφάνιση ή απόκρυψη δομών' },
+    'Segmentación con IA': { en: 'AI-assisted segmentation', fr: 'Segmentation par IA', de: 'KI-gestützte Segmentierung', it: 'Segmentazione con IA', el: 'Κατάτμηση με ΤΝ' },
+    'El Método Eureqa aplica inteligencia artificial en la segmentación de cada caso.': {
+      en: 'The Eureqa Method applies artificial intelligence to the segmentation of each case.',
+      fr: "La Méthode Eureqa applique l'intelligence artificielle à la segmentation de chaque cas.",
+      de: 'Die Eureqa-Methode setzt künstliche Intelligenz bei der Segmentierung jedes Falls ein.',
+      it: "Il Metodo Eureqa applica l'intelligenza artificiale nella segmentazione di ogni caso.",
+      el: 'Η Μέθοδος Eureqa εφαρμόζει τεχνητή νοημοσύνη στην κατάτμηση κάθε περίπτωσης.' },
+    'Cualquier dispositivo': { en: 'Any device', fr: "Tout appareil", de: 'Jedes Gerät', it: 'Qualsiasi dispositivo', el: 'Οποιαδήποτε συσκευή' },
+    'Ordenador, tablet o móvil: funciona en el navegador, sin instalar nada.': {
+      en: 'Computer, tablet or phone: it works in the browser, with nothing to install.',
+      fr: 'Ordinateur, tablette ou mobile : fonctionne dans le navigateur, sans rien installer.',
+      de: 'Computer, Tablet oder Smartphone: funktioniert im Browser, ohne Installation.',
+      it: 'Computer, tablet o cellulare: funziona nel browser, senza installare nulla.',
+      el: 'Υπολογιστής, tablet ή κινητό: λειτουργεί στον browser, χωρίς εγκατάσταση.' },
+    'Trazabilidad completa y confidencialidad del paciente en cada caso.': {
+      en: "Full traceability and patient confidentiality in every case.",
+      fr: 'Traçabilité complète et confidentialité du patient pour chaque cas.',
+      de: 'Vollständige Rückverfolgbarkeit und Vertraulichkeit des Patienten bei jedem Fall.',
+      it: 'Tracciabilità completa e riservatezza del paziente in ogni caso.',
+      el: 'Πλήρης ιχνηλασιμότητα και εμπιστευτικότητα ασθενούς σε κάθε περίπτωση.' },
+    'Casos reales': { en: 'Real cases', fr: 'Cas réels', de: 'Echte Fälle', it: 'Casi reali', el: 'Πραγματικές περιπτώσεις' },
+    'Ejemplos de modelos ya trabajados en el visor': {
+      en: 'Examples of models already processed in the viewer',
+      fr: 'Exemples de modèles déjà traités dans la visionneuse',
+      de: 'Beispiele bereits bearbeiteter Modelle im Viewer',
+      it: 'Esempi di modelli già lavorati nel visore',
+      el: 'Παραδείγματα μοντέλων που έχουν ήδη επεξεργαστεί στο πρόγραμμα προβολής' },
+    'Cada uno de estos casos es un modelo interactivo real, del mismo tipo que verías tú en el EureqaVisor3D.': {
+      en: "Each of these cases is a real interactive model, the same kind you'd see in EureqaVisor3D.",
+      fr: "Chacun de ces cas est un modèle interactif réel, du même type que celui que vous verriez dans EureqaVisor3D.",
+      de: 'Jeder dieser Fälle ist ein echtes interaktives Modell, wie Sie es auch in EureqaVisor3D sehen würden.',
+      it: 'Ognuno di questi casi è un modello interattivo reale, dello stesso tipo che vedresti nell\'EureqaVisor3D.',
+      el: 'Κάθε μία από αυτές τις περιπτώσεις είναι ένα πραγματικό διαδραστικό μοντέλο, ίδιου τύπου με αυτό που θα βλέπατε στο EureqaVisor3D.' },
+
     /* ── Chat de captación ── */
     'Asistente de Eureqa3D': { en: 'Eureqa3D Assistant', fr: 'Assistant Eureqa3D', de: 'Eureqa3D-Assistent', it: 'Assistente Eureqa3D', el: 'Βοηθός Eureqa3D' },
     'Normalmente responde en minutos': { en: 'Usually replies within minutes', fr: 'Répond généralement en quelques minutes', de: 'Antwortet meist innerhalb von Minuten', it: 'Di solito risponde in pochi minuti', el: 'Συνήθως απαντά μέσα σε λεπτά' },
