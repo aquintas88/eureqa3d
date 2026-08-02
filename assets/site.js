@@ -135,7 +135,6 @@ function renderFooter() {
           <a href="/politica-privacidad">${tr('Privacidad')}</a>
           <a href="/politica-cookies">${tr('Cookies')}</a>
         </nav>
-        <span>${tr('Impresión 3D · Sector Salud')}</span>
       </div>
     </div>
   </footer>`;

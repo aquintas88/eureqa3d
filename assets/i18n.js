@@ -46,7 +46,6 @@
     'Aviso legal': { en: 'Legal notice', fr: 'Mentions légales', de: 'Impressum', it: 'Note legali', el: 'Νομική σημείωση' },
     'Privacidad': { en: 'Privacy', fr: 'Confidentialité', de: 'Datenschutz', it: 'Privacy', el: 'Απόρρητο' },
     'Todos los derechos reservados.': { en: 'All rights reserved.', fr: 'Tous droits réservés.', de: 'Alle Rechte vorbehalten.', it: 'Tutti i diritti riservati.', el: 'Με την επιφύλαξη παντός δικαιώματος.' },
-    'Impresión 3D · Sector Salud': { en: '3D Printing · Healthcare', fr: 'Impression 3D · Santé', de: '3D-Druck · Gesundheitswesen', it: 'Stampa 3D · Sanità', el: 'Τρισδιάστατη εκτύπωση · Υγεία' },
 
     /* ── Inicio ── */
     'Impresión 3D y modelos digitales · Sector salud': { en: '3D Printing & digital models · Healthcare', fr: 'Impression 3D et modèles numériques · Santé', de: '3D-Druck & digitale Modelle · Gesundheitswesen', it: 'Stampa 3D e modelli digitali · Sanità', el: 'Τρισδιάστατη εκτύπωση & ψηφιακά μοντέλα · Υγεία' },
