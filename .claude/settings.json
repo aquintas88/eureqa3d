@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc)",
+      "Bash(railway variables)",
+      "mcp__claude_ai_n8n__get_execution",
+      "Bash(npx vitest)",
+      "Bash(railway status *)",
+      "mcp__claude_ai_n8n__get_workflow_details",
+      "mcp__claude_ai_n8n__search_executions",
+      "mcp__claude_ai_n8n__validate_workflow",
+      "mcp__claude_ai_n8n__search_workflows",
+      "mcp__claude_ai_Google_Drive__search_files",
+      "mcp__ide__getDiagnostics",
+      "mcp__claude_ai_Google_Drive__download_file_content",
+      "Bash(railway logs *)",
+      "mcp__railway__list_services",
+      "mcp__railway__list_projects",
+      "mcp__railway__whoami",
+      "mcp__claude_ai_n8n__search_nodes",
+      "mcp__claude_ai_n8n__get_node_types",
+      "mcp__claude_ai_n8n__get_sdk_reference",
+      "mcp__claude_ai_Google_Drive__read_file_content"
+    ]
+  }
+}

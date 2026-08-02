@@ -123,12 +123,12 @@
       it: 'Trasformiamo gli studi radiologici 2D in modelli anatomici 3D fisici precisi, pronti per la sala operatoria.',
       el: 'Μετατρέπουμε δισδιάστατες ακτινολογικές μελέτες σε ακριβή φυσικά ανατομικά μοντέλα 3D, έτοιμα για το χειρουργείο.' },
     'Tiempo récord': { en: 'Record time', fr: 'Temps record', de: 'Rekordzeit', it: 'Tempo record', el: 'Χρόνος-ρεκόρ' },
-    'Entregamos los modelos entre 24 y 48 horas según solicitud, material y destino. Tu tiempo importa.': {
-      en: 'We deliver the models within 24 to 48 hours depending on request, material and destination. Your time matters.',
-      fr: 'Nous livrons les modèles entre 24 et 48 heures selon la demande, le matériau et la destination. Votre temps compte.',
-      de: 'Wir liefern die Modelle innerhalb von 24 bis 48 Stunden, je nach Anfrage, Material und Zielort. Ihre Zeit zählt.',
-      it: 'Consegniamo i modelli entro 24-48 ore in base alla richiesta, al materiale e alla destinazione. Il tuo tempo conta.',
-      el: 'Παραδίδουμε τα μοντέλα σε 24 έως 48 ώρες ανάλογα με το αίτημα, το υλικό και τον προορισμό. Ο χρόνος σας μετράει.' },
+    'Entregamos los modelos en 7 días según solicitud, material y destino. Tu tiempo importa.': {
+      en: 'We deliver the models within 7 days depending on request, material and destination. Your time matters.',
+      fr: 'Nous livrons les modèles en 7 jours selon la demande, le matériau et la destination. Votre temps compte.',
+      de: 'Wir liefern die Modelle innerhalb von 7 Tagen, je nach Anfrage, Material und Zielort. Ihre Zeit zählt.',
+      it: 'Consegniamo i modelli entro 7 giorni in base alla richiesta, al materiale e alla destinazione. Il tuo tempo conta.',
+      el: 'Παραδίδουμε τα μοντέλα σε 7 ημέρες ανάλογα με το αίτημα, το υλικό και τον προορισμό. Ο χρόνος σας μετράει.' },
     'Plazo de entrega': { en: 'Delivery time', fr: 'Délai de livraison', de: 'Lieferzeit', it: 'Tempi di consegna', el: 'Χρόνος παράδοσης' },
     'Calidad certificada': { en: 'Certified quality', fr: 'Qualité certifiée', de: 'Zertifizierte Qualität', it: 'Qualità certificata', el: 'Πιστοποιημένη ποιότητα' },
     'Modelos a medida': { en: 'Custom-made models', fr: 'Modèles sur mesure', de: 'Maßgeschneiderte Modelle', it: 'Modelli su misura', el: 'Μοντέλα κατά παραγγελία' },
@@ -179,12 +179,12 @@
       el: 'Εμφανίσεις της Eureqa3D στα μέσα ενημέρωσης και νέα του έργου.' },
     'Ver todas las noticias': { en: 'View all news', fr: 'Voir toutes les actualités', de: 'Alle Nachrichten ansehen', it: 'Vedi tutte le notizie', el: 'Δείτε όλα τα νέα' },
     '¿Quieres hacer un caso de prueba?': { en: 'Want to run a test case?', fr: 'Vous souhaitez réaliser un cas test ?', de: 'Möchten Sie einen Testfall durchführen?', it: 'Vuoi realizzare un caso di prova?', el: 'Θέλετε να κάνετε μια δοκιμαστική περίπτωση;' },
-    'Sabemos lo importante que es tu tiempo. Déjanos ayudarte a incorporar la impresión 3D a tu práctica clínica.': {
-      en: 'We know how important your time is. Let us help you bring 3D printing into your clinical practice.',
-      fr: "Nous savons à quel point votre temps est précieux. Laissez-nous vous aider à intégrer l'impression 3D dans votre pratique clinique.",
-      de: 'Wir wissen, wie wertvoll Ihre Zeit ist. Lassen Sie uns Ihnen helfen, den 3D-Druck in Ihre klinische Praxis zu integrieren.',
-      it: 'Sappiamo quanto è importante il tuo tempo. Lascia che ti aiutiamo a integrare la stampa 3D nella tua pratica clinica.',
-      el: 'Γνωρίζουμε πόσο σημαντικός είναι ο χρόνος σας. Αφήστε μας να σας βοηθήσουμε να εντάξετε την τρισδιάστατη εκτύπωση στην κλινική σας πρακτική.' },
+    'Sabemos lo importante que es tu tiempo. Déjanos ayudarte a incorporar la tecnología 3D a tu práctica clínica.': {
+      en: 'We know how important your time is. Let us help you bring 3D technology into your clinical practice.',
+      fr: "Nous savons à quel point votre temps est précieux. Laissez-nous vous aider à intégrer la technologie 3D dans votre pratique clinique.",
+      de: 'Wir wissen, wie wertvoll Ihre Zeit ist. Lassen Sie uns Ihnen helfen, die 3D-Technologie in Ihre klinische Praxis zu integrieren.',
+      it: 'Sappiamo quanto è importante il tuo tempo. Lascia che ti aiutiamo a integrare la tecnologia 3D nella tua pratica clinica.',
+      el: 'Γνωρίζουμε πόσο σημαντικός είναι ο χρόνος σας. Αφήστε μας να σας βοηθήσουμε να εντάξετε την τρισδιάστατη τεχνολογία στην κλινική σας πρακτική.' },
     'Contacta con nosotros': { en: 'Get in touch', fr: 'Contactez-nous', de: 'Kontaktieren Sie uns', it: 'Contattaci', el: 'Επικοινωνήστε μαζί μας' },
     'Modelo anatómico 3D real de tu paciente, listo en <span>tiempo récord</span>': {
       en: 'Real 3D anatomical model of your patient, ready in <span>record time</span>',
@@ -204,12 +204,12 @@
       de: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>DSGVO',
       it: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>GDPR',
       el: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>ΓΚΠΔ' },
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Entrega en pocos días': {
-      en: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Delivery in a few days',
-      fr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Livraison en quelques jours',
-      de: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Lieferung innerhalb weniger Tage',
-      it: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Consegna in pochi giorni',
-      el: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Παράδοση σε λίγες ημέρες' },
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Entrega en 7 días': {
+      en: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Delivery in 7 days',
+      fr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Livraison en 7 jours',
+      de: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Lieferung in 7 Tagen',
+      it: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Consegna in 7 giorni',
+      el: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Παράδοση σε 7 ημέρες' },
     'Modelos anatómicos 3D para cada especialidad quirúrgica': {
       en: '3D anatomical models for every surgical specialty',
       fr: 'Modèles anatomiques 3D pour chaque spécialité chirurgicale',
@@ -255,12 +255,12 @@
       it: "Trattiamo l'immagine medica del paziente —segmentazione anatomica e progettazione digitale— fino a ottenere una ricostruzione a grandezza naturale in scala 1:1, in formato digitale o realizzata con stampa 3D. Ogni modello è unico e adattato alla patologia specifica di ogni caso.",
       el: 'Επεξεργαζόμαστε την ιατρική εικόνα του ασθενούς —ανατομική κατάτμηση και ψηφιακό σχεδιασμό— έως ότου επιτύχουμε μια ανακατασκευή σε πραγματικό μέγεθος, κλίμακας 1:1, σε ψηφιακή μορφή ή κατασκευασμένη με τρισδιάστατη εκτύπωση. Κάθε μοντέλο είναι μοναδικό και προσαρμοσμένο στη συγκεκριμένη παθολογία κάθε περίπτωσης.' },
     'Imagen médica a impresión 3D': { en: 'Medical imaging to 3D printing', fr: "De l'image médicale à l'impression 3D", de: 'Vom medizinischen Bild zum 3D-Druck', it: "Dall'immagine medica alla stampa 3D", el: 'Από ιατρική εικόνα σε τρισδιάστατη εκτύπωση' },
-    'Entrega en unos días, según solicitud, material y destino.': {
-      en: 'Delivered within days, depending on the request, material and destination.',
-      fr: 'Livraison en quelques jours, selon la demande, le matériau et la destination.',
-      de: 'Lieferung innerhalb weniger Tage, je nach Anfrage, Material und Zielort.',
-      it: 'Consegna in pochi giorni, in base alla richiesta, al materiale e alla destinazione.',
-      el: 'Παράδοση μέσα σε λίγες ημέρες, ανάλογα με το αίτημα, το υλικό και τον προορισμό.' },
+    'Entrega en 7 días, según solicitud, material y destino.': {
+      en: 'Delivered within 7 days, depending on the request, material and destination.',
+      fr: 'Livraison en 7 jours, selon la demande, le matériau et la destination.',
+      de: 'Lieferung innerhalb von 7 Tagen, je nach Anfrage, Material und Zielort.',
+      it: 'Consegna in 7 giorni, in base alla richiesta, al materiale e alla destinazione.',
+      el: 'Παράδοση σε 7 ημέρες, ανάλογα με το αίτημα, το υλικό και τον προορισμό.' },
     'Casos anonimizados': { en: 'Anonymized cases', fr: 'Cas anonymisés', de: 'Anonymisierte Fälle', it: 'Casi anonimizzati', el: 'Ανωνυμοποιημένες περιπτώσεις' },
     'Cumplimiento normativo': { en: 'Regulatory compliance', fr: 'Conformité réglementaire', de: 'Regulatorische Konformität', it: 'Conformità normativa', el: 'Κανονιστική συμμόρφωση' },
     'Cirugía Oncológica (todas las especialidades)': { en: 'Oncological Surgery (all specialties)', fr: 'Chirurgie Oncologique (toutes spécialités)', de: 'Onkologische Chirurgie (alle Fachbereiche)', it: 'Chirurgia Oncologica (tutte le specialità)', el: 'Ογκολογική Χειρουργική (όλες οι ειδικότητες)' },
@@ -304,12 +304,12 @@
       de: 'Wir garantieren höchste Qualität unserer Arbeit dank unserer Produktionsmethode, der <strong>Eureqa-Methode</strong>, sowie einem Team hochqualifizierter Fachleute.',
       it: 'Garantiamo la massima qualità dei nostri lavori grazie al nostro metodo di produzione, il <strong>Metodo Eureqa</strong>, e a un team di professionisti altamente qualificati.',
       el: 'Εγγυόμαστε την ύψιστη ποιότητα των εργασιών μας χάρη στη μέθοδο παραγωγής μας, τη <strong>Μέθοδο Eureqa</strong>, και σε μια ομάδα άρτια καταρτισμένων επαγγελματιών.' },
-    'Trabajamos en tiempo récord, entregando los modelos entre <strong>24 y 48 horas</strong> (según tiempos y condiciones: solicitud, material y destino).': {
-      en: 'We work in record time, delivering the models within <strong>24 to 48 hours</strong> (depending on times and conditions: request, material and destination).',
-      fr: 'Nous travaillons en temps record, en livrant les modèles entre <strong>24 et 48 heures</strong> (selon les délais et conditions : demande, matériau et destination).',
-      de: 'Wir arbeiten in Rekordzeit und liefern die Modelle innerhalb von <strong>24 bis 48 Stunden</strong> (je nach Fristen und Bedingungen: Anfrage, Material und Zielort).',
-      it: 'Lavoriamo in tempo record, consegnando i modelli entro <strong>24-48 ore</strong> (in base a tempi e condizioni: richiesta, materiale e destinazione).',
-      el: 'Εργαζόμαστε σε χρόνο-ρεκόρ, παραδίδοντας τα μοντέλα σε <strong>24 έως 48 ώρες</strong> (ανάλογα με τους χρόνους και τις συνθήκες: αίτημα, υλικό και προορισμός).' },
+    'Trabajamos en tiempo récord, entregando los modelos en <strong>7 días</strong> (según tiempos y condiciones: solicitud, material y destino).': {
+      en: 'We work in record time, delivering the models within <strong>7 days</strong> (depending on times and conditions: request, material and destination).',
+      fr: 'Nous travaillons en temps record, en livrant les modèles en <strong>7 jours</strong> (selon les délais et conditions : demande, matériau et destination).',
+      de: 'Wir arbeiten in Rekordzeit und liefern die Modelle innerhalb von <strong>7 Tagen</strong> (je nach Fristen und Bedingungen: Anfrage, Material und Zielort).',
+      it: 'Lavoriamo in tempo record, consegnando i modelli entro <strong>7 giorni</strong> (in base a tempi e condizioni: richiesta, materiale e destinazione).',
+      el: 'Εργαζόμαστε σε χρόνο-ρεκόρ, παραδίδοντας τα μοντέλα σε <strong>7 ημέρες</strong> (ανάλογα με τους χρόνους και τις συνθήκες: αίτημα, υλικό και προορισμός).' },
     'Tecnología propia': { en: 'Proprietary technology', fr: 'Technologie propriétaire', de: 'Eigene Technologie', it: 'Tecnologia proprietaria', el: 'Ιδιόκτητη τεχνολογία' },
     'Del estudio radiológico al modelo físico o digital': { en: 'From radiological study to physical or digital model', fr: "De l'étude radiologique au modèle physique ou numérique", de: 'Von der radiologischen Studie zum physischen oder digitalen Modell', it: 'Dallo studio radiologico al modello fisico o digitale', el: 'Από την ακτινολογική μελέτη στο φυσικό ή ψηφιακό μοντέλο' },
     'Combinamos software de segmentación, inteligencia artificial e impresión 3D de precisión para transformar la imagen médica del paciente en una réplica anatómica fiel —física o digital interactiva— lista para planificar la intervención.': {
@@ -324,12 +324,12 @@
     'Método de producción propio certificado.': { en: 'Our own certified production method.', fr: 'Méthode de production propriétaire certifiée.', de: 'Eigene zertifizierte Produktionsmethode.', it: 'Metodo di produzione proprietario certificato.', el: 'Ιδιόκτητη πιστοποιημένη μέθοδος παραγωγής.' },
     'Cumplimiento estricto del RGPD en cada caso.': { en: 'Strict GDPR compliance in every case.', fr: 'Respect strict du RGPD dans chaque cas.', de: 'Strikte DSGVO-Konformität in jedem Fall.', it: 'Rigorosa conformità al GDPR in ogni caso.', el: 'Αυστηρή συμμόρφωση με τον GDPR σε κάθε περίπτωση.' },
     'Trabajemos juntos': { en: "Let's work together", fr: 'Travaillons ensemble', de: 'Arbeiten wir zusammen', it: 'Lavoriamo insieme', el: 'Ας συνεργαστούμε' },
-    'Déjanos ayudarte a incorporar la impresión 3D a tu práctica clínica.': {
-      en: 'Let us help you bring 3D printing into your clinical practice.',
-      fr: "Laissez-nous vous aider à intégrer l'impression 3D dans votre pratique clinique.",
-      de: 'Lassen Sie uns Ihnen helfen, den 3D-Druck in Ihre klinische Praxis zu integrieren.',
-      it: 'Lascia che ti aiutiamo a integrare la stampa 3D nella tua pratica clinica.',
-      el: 'Αφήστε μας να σας βοηθήσουμε να εντάξετε την τρισδιάστατη εκτύπωση στην κλινική σας πρακτική.' },
+    'Déjanos ayudarte a incorporar la tecnología 3D a tu práctica clínica.': {
+      en: 'Let us help you bring 3D technology into your clinical practice.',
+      fr: "Laissez-nous vous aider à intégrer la technologie 3D dans votre pratique clinique.",
+      de: 'Lassen Sie uns Ihnen helfen, die 3D-Technologie in Ihre klinische Praxis zu integrieren.',
+      it: 'Lascia che ti aiutiamo a integrare la tecnologia 3D nella tua pratica clinica.',
+      el: 'Αφήστε μας να σας βοηθήσουμε να εντάξετε την τρισδιάστατη τεχνολογία στην κλινική σας πρακτική.' },
     'Especialistas en impresión 3D y modelos digitales<br>en el sector salud': {
       en: 'Specialists in 3D printing and digital models<br>for the healthcare sector',
       fr: "Spécialistes de l'impression 3D et des modèles numériques<br>dans le secteur de la santé",
@@ -348,12 +348,12 @@
       de: 'Wir sind spezialisiert auf die Verarbeitung medizinischer Bilder: anatomische Segmentierung, Design und 3D-Druck. Das Ergebnis ist eine Rekonstruktion in Originalgröße —physisch oder digital, im Maßstab 1:1— abgestimmt auf die Pathologie jedes Patienten und die Bedürfnisse des Fachmanns.',
       it: "Siamo specializzati nel trattamento dell'immagine medica: segmentazione anatomica, progettazione e stampa 3D. Il risultato è una ricostruzione a grandezza naturale —fisica o digitale, in scala 1:1— adattata alla patologia di ogni paziente e alle esigenze del professionista.",
       el: 'Είμαστε εξειδικευμένοι στην επεξεργασία ιατρικής εικόνας: ανατομική κατάτμηση, σχεδιασμός και τρισδιάστατη εκτύπωση. Το αποτέλεσμα είναι μια ανακατασκευή σε πραγματικό μέγεθος —φυσική ή ψηφιακή, σε κλίμακα 1:1— προσαρμοσμένη στην παθολογία κάθε ασθενούς και στις ανάγκες του επαγγελματία.' },
-    'Trabajamos en tiempo récord, entregando los modelos en pocos días (según necesidades y condiciones de cada intervención: solicitud, material de fabricación y destino). También ofrecemos <strong>opción de solicitudes urgentes</strong>.': {
-      en: 'We work in record time, delivering the models within a few days (depending on the needs and conditions of each intervention: request, manufacturing material and destination). We also offer an <strong>option for urgent requests</strong>.',
-      fr: "Nous travaillons en temps record, en livrant les modèles en quelques jours (selon les besoins et conditions de chaque intervention : demande, matériau de fabrication et destination). Nous proposons également une <strong>option de demandes urgentes</strong>.",
-      de: 'Wir arbeiten in Rekordzeit und liefern die Modelle innerhalb weniger Tage (je nach Bedarf und Bedingungen jedes Eingriffs: Anfrage, Herstellungsmaterial und Zielort). Wir bieten außerdem eine <strong>Option für dringende Anfragen</strong>.',
-      it: "Lavoriamo in tempo record, consegnando i modelli in pochi giorni (in base alle esigenze e alle condizioni di ogni intervento: richiesta, materiale di fabbricazione e destinazione). Offriamo anche un'<strong>opzione per richieste urgenti</strong>.",
-      el: 'Εργαζόμαστε σε χρόνο-ρεκόρ, παραδίδοντας τα μοντέλα σε λίγες ημέρες (ανάλογα με τις ανάγκες και τις συνθήκες κάθε επέμβασης: αίτημα, υλικό κατασκευής και προορισμός). Προσφέρουμε επίσης <strong>επιλογή επειγόντων αιτημάτων</strong>.' },
+    'Trabajamos en tiempo récord, entregando los modelos en 7 días (según necesidades y condiciones de cada intervención: solicitud, material de fabricación y destino). También ofrecemos <strong>opción de solicitudes urgentes</strong>.': {
+      en: 'We work in record time, delivering the models within 7 days (depending on the needs and conditions of each intervention: request, manufacturing material and destination). We also offer an <strong>option for urgent requests</strong>.',
+      fr: "Nous travaillons en temps record, en livrant les modèles en 7 jours (selon les besoins et conditions de chaque intervention : demande, matériau de fabrication et destination). Nous proposons également une <strong>option de demandes urgentes</strong>.",
+      de: 'Wir arbeiten in Rekordzeit und liefern die Modelle innerhalb von 7 Tagen (je nach Bedarf und Bedingungen jedes Eingriffs: Anfrage, Herstellungsmaterial und Zielort). Wir bieten außerdem eine <strong>Option für dringende Anfragen</strong>.',
+      it: "Lavoriamo in tempo record, consegnando i modelli in 7 giorni (in base alle esigenze e alle condizioni di ogni intervento: richiesta, materiale di fabbricazione e destinazione). Offriamo anche un'<strong>opzione per richieste urgenti</strong>.",
+      el: 'Εργαζόμαστε σε χρόνο-ρεκόρ, παραδίδοντας τα μοντέλα σε 7 ημέρες (ανάλογα με τις ανάγκες και τις συνθήκες κάθε επέμβασης: αίτημα, υλικό κατασκευής και προορισμός). Προσφέρουμε επίσης <strong>επιλογή επειγόντων αιτημάτων</strong>.' },
 
     /* ── Método Eureqa ── */
     'El método para alcanzar la excelencia': { en: 'The method to achieve excellence', fr: "La méthode pour atteindre l'excellence", de: 'Die Methode, um Spitzenleistung zu erreichen', it: 'Il metodo per raggiungere l\'eccellenza', el: 'Η μέθοδος για την επίτευξη της αριστείας' },
