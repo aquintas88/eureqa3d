@@ -557,12 +557,12 @@
     'Ginecología': { en: 'Gynecology', fr: 'Gynécologie', de: 'Gynäkologie', it: 'Ginecologia', el: 'Γυναικολογία' },
     'Resección de carcinomas ginecológicos': { en: 'Resection of gynecological carcinomas', fr: 'Résection de carcinomes gynécologiques', de: 'Resektion gynäkologischer Karzinome', it: 'Resezione di carcinomi ginecologici', el: 'Εκτομή γυναικολογικών καρκινωμάτων' },
     '¿Tu especialidad no está en la lista?': { en: 'Is your specialty not on the list?', fr: "Votre spécialité n'est pas dans la liste ?", de: 'Ist Ihr Fachgebiet nicht aufgeführt?', it: 'La tua specialità non è in elenco?', el: 'Η ειδικότητά σας δεν είναι στη λίστα;' },
-    'Cuéntanos tu caso: la impresión 3D tiene aplicación en prácticamente cualquier procedimiento que requiera planificación anatómica.': {
-      en: 'Tell us about your case: 3D printing can be applied to virtually any procedure that requires anatomical planning.',
-      fr: "Parlez-nous de votre cas : l'impression 3D s'applique à pratiquement toute intervention nécessitant une planification anatomique.",
-      de: 'Erzählen Sie uns von Ihrem Fall: Der 3D-Druck lässt sich bei praktisch jedem Eingriff anwenden, der eine anatomische Planung erfordert.',
-      it: 'Raccontaci il tuo caso: la stampa 3D si applica praticamente a qualsiasi procedura che richieda una pianificazione anatomica.',
-      el: 'Πείτε μας την περίπτωσή σας: η τρισδιάστατη εκτύπωση εφαρμόζεται σχεδόν σε κάθε επέμβαση που απαιτεί ανατομικό σχεδιασμό.' },
+    'Cuéntanos tu caso: el modelado 3D tiene aplicación en prácticamente cualquier procedimiento que requiera planificación anatómica.': {
+      en: 'Tell us about your case: 3D modeling can be applied to virtually any procedure that requires anatomical planning.',
+      fr: "Parlez-nous de votre cas : la modélisation 3D s'applique à pratiquement toute intervention nécessitant une planification anatomique.",
+      de: 'Erzählen Sie uns von Ihrem Fall: Die 3D-Modellierung lässt sich bei praktisch jedem Eingriff anwenden, der eine anatomische Planung erfordert.',
+      it: 'Raccontaci il tuo caso: la modellazione 3D si applica praticamente a qualsiasi procedura che richieda una pianificazione anatomica.',
+      el: 'Πείτε μας την περίπτωσή σας: η τρισδιάστατη μοντελοποίηση εφαρμόζεται σχεδόν σε κάθε επέμβαση που απαιτεί ανατομικό σχεδιασμό.' },
     'Hablemos de tu caso': { en: "Let's talk about your case", fr: 'Parlons de votre cas', de: 'Sprechen wir über Ihren Fall', it: 'Parliamo del tuo caso', el: 'Ας μιλήσουμε για την περίπτωσή σας' },
     'Servicios · Cirugía Oncológica (todas las especialidades)': { en: 'Services · Oncological Surgery (all specialties)', fr: 'Services · Chirurgie Oncologique (toutes spécialités)', de: 'Leistungen · Onkologische Chirurgie (alle Fachbereiche)', it: 'Servizi · Chirurgia Oncologica (tutte le specialità)', el: 'Υπηρεσίες · Ογκολογική Χειρουργική (όλες οι ειδικότητες)' },
     'Modelos anatómicos 3D para cirugía oncológica y otras especialidades quirúrgicas: general y hepatobiliopancreática, urología, ginecología, torácica, cardiovascular, otorrinolaringología y neurocirugía.': {
