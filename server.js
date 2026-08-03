@@ -1,5 +1,7 @@
 'use strict';
 
+require('dotenv').config();
+
 const express   = require('express');
 const session   = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
@@ -7,6 +9,8 @@ const bcrypt    = require('bcryptjs');
 const crypto    = require('crypto');
 const path      = require('path');
 const rateLimit = require('express-rate-limit');
+const passport  = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const db        = require('./db/init');
 const BACKLOG_SEED = require('./db/backlog-seed');
 
@@ -36,6 +40,50 @@ app.use(session({
     secure: process.env.NODE_ENV === 'production'
   }
 }));
+
+/* ── Passport: OAuth2 Setup ──────────────────────────────────────── */
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new GoogleStrategy({
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: (process.env.BASE_URL || 'http://localhost:8080') + '/auth/google/callback',
+  passReqToCallback: true
+}, async (req, accessToken, refreshToken, profile, done) => {
+  try {
+    const { email, name, picture } = profile._json;
+    const { rows } = await db.query(
+      `SELECT * FROM users WHERE email=$1`, [email.toLowerCase().trim()]);
+
+    let user = rows[0];
+    if (!user) {
+      const { rows: created } = await db.query(
+        `INSERT INTO users (name, email, password_hash, role, google_id)
+         VALUES ($1, $2, $3, $4, $5)
+         RETURNING id, name, email, role`,
+        [name || email, email.toLowerCase().trim(), '', 'investigador', profile.id]);
+      user = created[0];
+    } else if (!user.google_id) {
+      await db.query(
+        `UPDATE users SET google_id=$1 WHERE id=$2`,
+        [profile.id, user.id]);
+    }
+    return done(null, user);
+  } catch (err) {
+    return done(err);
+  }
+}));
+
+passport.serializeUser((user, done) => done(null, user.id));
+passport.deserializeUser(async (id, done) => {
+  try {
+    const { rows } = await db.query(`SELECT * FROM users WHERE id=$1`, [id]);
+    done(null, rows[0] || null);
+  } catch (err) {
+    done(err);
+  }
+});
 
 /* ── Security: Rate Limiting ─────────────────────────────────── */
 const apiLimiter = rateLimit({
@@ -76,7 +124,7 @@ app.use((req, res, next) => {
     "style-src 'self' 'unsafe-inline'; " +
     "img-src 'self' data:; " +
     "font-src 'self'; " +
-    "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; " +
+    "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://accounts.google.com; " +
     "frame-ancestors 'none'"
   );
   next();
@@ -145,6 +193,8 @@ async function ensureSchema() {
   await db.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS invite_token TEXT UNIQUE`);
   await db.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS invite_expires_at TIMESTAMPTZ`);
   await db.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS invite_model_id TEXT`);
+  // Añade columna de OAuth
+  await db.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS google_id TEXT UNIQUE`);
 
   await db.query(`
     CREATE TABLE IF NOT EXISTS news (
@@ -283,6 +333,26 @@ app.get('/login', (req, res) => {
   }
   res.sendFile(path.join(__dirname, 'views', 'login.html'));
 });
+
+/* ── OAuth: Google ───────────────────────────────────────────────── */
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+app.get('/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  (req, res) => {
+    if (req.user) {
+      req.session.user = {
+        id: req.user.id,
+        name: req.user.name,
+        email: req.user.email,
+        role: req.user.role
+      };
+    }
+    res.redirect(req.user?.role === 'invitado' ? '/visor-3d' : '/admin');
+  }
+);
 app.get('/admin/licitaciones-info', requireLicitacionesAccess, (req, res) =>
   res.sendFile(path.join(__dirname, 'views', 'licitaciones-info.html')));
 app.get('/admin/ejecuciones', requireLicitacionesAccess, (req, res) =>
