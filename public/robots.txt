@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /api/
+
+Sitemap: https://www.eureqa3d.com/sitemap.xml

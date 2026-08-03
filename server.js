@@ -6,6 +6,7 @@ const pgSession = require('connect-pg-simple')(session);
 const bcrypt    = require('bcryptjs');
 const crypto    = require('crypto');
 const path      = require('path');
+const rateLimit = require('express-rate-limit');
 const db        = require('./db/init');
 const BACKLOG_SEED = require('./db/backlog-seed');
 
@@ -29,12 +30,57 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 7 * 24 * 60 * 60 * 1000,
+    maxAge: 30 * 60 * 1000,
     httpOnly: true,
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production'
   }
 }));
+
+/* ── Security: Rate Limiting ─────────────────────────────────── */
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: 'Demasiadas solicitudes. Por favor intenta más tarde.',
+  standardHeaders: true,
+  legacyHeaders: false
+});
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  skipSuccessfulRequests: true,
+  message: 'Demasiados intentos de acceso. Por favor intenta más tarde.'
+});
+
+const contactFormLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 3,
+  message: 'Demasiados mensajes de contacto. Por favor intenta más tarde.'
+});
+
+app.use('/api', apiLimiter);
+app.use('/login', authLimiter);
+app.use('/register', authLimiter);
+app.use('/contacto', contactFormLimiter);
+
+/* ── Security: Headers ───────────────────────────────────────── */
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+  res.setHeader('Content-Security-Policy',
+    "default-src 'self'; " +
+    "script-src 'self' https://esm.sh; " +
+    "style-src 'self' 'unsafe-inline'; " +
+    "img-src 'self' data:; " +
+    "font-src 'self'; " +
+    "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; " +
+    "frame-ancestors 'none'"
+  );
+  next();
+});
 
 /* ── Auth helpers ────────────────────────────────────────────── */
 const requireAuth = (req, res, next) => {
@@ -50,6 +96,18 @@ const requireRole = (...roles) => (req, res, next) => {
 };
 
 const requireAdminAPI = requireRole('admin');
+
+/* ── Audit logging helper ────────────────────────────────────── */
+const auditLog = async (userId, action, resource, details = {}, ipAddress = '') => {
+  try {
+    await db.query(
+      'INSERT INTO audit_log (user_id, action, resource, details, ip_address) VALUES ($1, $2, $3, $4, $5)',
+      [userId || null, action, resource, JSON.stringify(details), ipAddress]
+    );
+  } catch (e) {
+    console.error('Audit log error:', e.message);
+  }
+};
 
 // Backlog: sesión admin/investigador O API key de agente
 const requireBacklogAccess = (req, res, next) => {
@@ -156,6 +214,17 @@ async function ensureSchema() {
       UNIQUE(user_id, model_id)
     )
   `);
+  await db.query(`
+    CREATE TABLE IF NOT EXISTS audit_log (
+      id         SERIAL PRIMARY KEY,
+      user_id    INTEGER,
+      action     TEXT NOT NULL,
+      resource   TEXT,
+      details    JSONB,
+      ip_address TEXT,
+      created_at TIMESTAMPTZ DEFAULT NOW()
+    )
+  `);
 
   // Admin por defecto
   const { rows: usersCount } = await db.query('SELECT COUNT(*)::int AS n FROM users');
@@ -260,6 +329,26 @@ app.post('/api/auth/login', async (req, res, next) => {
 app.post('/api/auth/logout', (req, res) => req.session.destroy(() => res.json({ ok: true })));
 app.get('/api/auth/me', (req, res) =>
   req.session.user ? res.json(req.session.user) : res.status(401).json({ error: 'No autenticado' }));
+
+/* ── RGPD: Right to be Forgotten ─────────────────────────────── */
+app.delete('/api/user/delete-account', async (req, res, next) => {
+  try {
+    if (!req.session.user) return res.status(401).json({ error: 'No autenticado' });
+    const userId = req.session.user.id;
+    const ipAddress = req.ip || req.socket.remoteAddress || '';
+
+    await db.query('BEGIN');
+    await db.query('INSERT INTO audit_log (user_id, action, resource, ip_address, details) VALUES ($1, $2, $3, $4, $5)',
+      [userId, 'DELETE_ACCOUNT', 'users', ipAddress, JSON.stringify({ timestamp: new Date().toISOString() })]);
+    await db.query('DELETE FROM users WHERE id=$1', [userId]);
+    await db.query('COMMIT');
+
+    req.session.destroy(() => res.json({ message: 'Cuenta eliminada correctamente' }));
+  } catch (e) {
+    try { await db.query('ROLLBACK'); } catch(re) {}
+    next(e);
+  }
+});
 
 /* ── API: Usuarios (admin) ───────────────────────────────────── */
 app.get('/api/users', requireAdminAPI, async (req, res, next) => {
