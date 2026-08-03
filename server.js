@@ -322,6 +322,7 @@ app.get('/modelos-3d',          (req, res) => res.redirect(301, '/visor-3d')); /
 app.get('/noticias',            page('noticias.html'));
 app.get('/noticias/:slug',      page('noticia.html'));
 app.get('/contacto',            page('contacto.html'));
+app.get('/faq',                 page('faq.html'));
 app.get('/aviso-legal',         page('aviso-legal.html'));
 app.get('/politica-privacidad', page('politica-privacidad.html'));
 app.get('/politica-cookies',    page('politica-cookies.html'));
