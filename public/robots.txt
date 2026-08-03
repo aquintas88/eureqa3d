@@ -1,8 +1,16 @@
+# robots.txt — Eureqa3D
+
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /login/
-Disallow: /private/
+Disallow: /login
+Disallow: /invite/
 Disallow: /api/
+Disallow: /assets/
+Disallow: /*.json
 
+# Sitemap reference
 Sitemap: https://www.eureqa3d.com/sitemap.xml
+
+# Crawl delay (respectful)
+Crawl-delay: 1
