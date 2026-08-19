@@ -958,7 +958,7 @@
     'Cirugía Oncológica — Eureqa3D': { en: 'Oncological Surgery — Eureqa3D', fr: 'Chirurgie Oncologique — Eureqa3D', de: 'Onkologische Chirurgie — Eureqa3D', it: 'Chirurgia Oncologica — Eureqa3D', el: 'Ογκολογική Χειρουργική — Eureqa3D' },
     'Noticias — Eureqa3D': { en: 'News — Eureqa3D', fr: 'Actualités — Eureqa3D', de: 'Aktuelles — Eureqa3D', it: 'Notizie — Eureqa3D', el: 'Νέα — Eureqa3D' },
     'Noticia — Eureqa3D': { en: 'News — Eureqa3D', fr: 'Actualité — Eureqa3D', de: 'Nachricht — Eureqa3D', it: 'Notizia — Eureqa3D', el: 'Είδηση — Eureqa3D' },
-    'Contacto — Eureqa3D': { en: 'Contact — Eureqa3D', fr: 'Contact — Eureqa3D', de: 'Kontakt — Eureqa3D', it: 'Contatti — Eureqa3D', el: 'Επικοινωνία — Eureqa3D' },,
+    'Contacto — Eureqa3D': { en: 'Contact — Eureqa3D', fr: 'Contact — Eureqa3D', de: 'Kontakt — Eureqa3D', it: 'Contatti — Eureqa3D', el: 'Επικοινωνία — Eureqa3D' },
 
     /* ══════════════════════════════════════════════════════════════════════════
        LEGAL PAGES — Aviso legal, Política de privacidad, Política de cookies
@@ -1523,8 +1523,6 @@
     el: 'Μπορείτε να αλλάξετε την απόφασή σας για το banner των cookies ανά πάσα στιγμή. Μπορείτε επίσης να αποκλείσετε ή να διαγράψετε cookies ανά πάσα στιγμή από τις ρυθμίσεις του προγράμματος περιήγησής σας (Chrome, Firefox, Safari, Edge ή άλλο). Σημειώστε ότι το αποκλεισμό του τεχνικού cookie connect.sid θα σας εμποδίσει να διατηρήσετε τη συνεδρία σας στον ιδιωτικό πίνακα.'
   },
 };
-
-  };
 
   /* Elementos de contenido a traducir (clave = innerHTML normalizado) */
   const RICH = 'h1,h2,h3,h4,h5,h6,p,li,button,.eyebrow,a.btn,.lbl,.model-spec';
