@@ -197,18 +197,18 @@
       de: 'Unverbindlich: Wir analysieren Ihren Fall und sagen Ihnen, ob er machbar ist.',
       it: 'Senza impegno: analizziamo il tuo caso e ti diciamo se è fattibile.',
       el: 'Χωρίς δέσμευση: αναλύουμε την περίπτωσή σας και σας λέμε αν είναι εφικτή.' },
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>RGPD': {
-      en: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>GDPR',
-      fr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>RGPD',
-      de: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>DSGVO',
-      it: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>GDPR',
-      el: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>ΓΚΠΔ' },
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Entrega en 7 días': {
-      en: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Delivery in 7 days',
-      fr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Livraison en 7 jours',
-      de: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Lieferung in 7 Tagen',
-      it: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Consegna in 7 giorni',
-      el: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Παράδοση σε 7 ημέρες' },
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>RGPD': {
+      en: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>GDPR',
+      fr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>RGPD',
+      de: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>DSGVO',
+      it: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>GDPR',
+      el: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>ΓΚΠΔ' },
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Entrega en 7 días': {
+      en: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Delivery in 7 days',
+      fr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Livraison en 7 jours',
+      de: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Lieferung in 7 Tagen',
+      it: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Consegna in 7 giorni',
+      el: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Παράδοση σε 7 ημέρες' },
     'Modelos anatómicos 3D para cada especialidad quirúrgica': {
       en: '3D anatomical models for every surgical specialty',
       fr: 'Modèles anatomiques 3D pour chaque spécialité chirurgicale',
@@ -247,12 +247,12 @@
       de: 'Wir verwandeln die radiologische Untersuchung in ein 3D-Anatomiemodell, erklärt in vier Schritten',
       it: 'Trasformiamo lo studio radiologico in un modello anatomico 3D, spiegato in quattro passaggi',
       el: 'Μετατρέπουμε την ακτινολογική μελέτη σε ανατομικό μοντέλο 3D, σε τέσσερα βήματα' },
-    'Tratamos la imagen médica del paciente —segmentación anatómica y diseño digital— hasta obtener una reconstrucción a tamaño real a escala 1:1, en formato digital o fabricado con impresión 3D. Cada modelo es único y adaptado a la patología concreta de cada caso.': {
-      en: "We process the patient's medical image —anatomical segmentation and digital design— to obtain a full-scale 1:1 reconstruction, in digital format or manufactured with 3D printing. Each model is unique and tailored to the specific pathology of each case.",
-      fr: "Nous traitons l'image médicale du patient —segmentation anatomique et conception numérique— jusqu'à obtenir une reconstruction à taille réelle à l'échelle 1:1, au format numérique ou fabriquée par impression 3D. Chaque modèle est unique et adapté à la pathologie précise de chaque cas.",
-      de: 'Wir verarbeiten das medizinische Bild des Patienten —anatomische Segmentierung und digitales Design— bis wir eine originalgetreue Rekonstruktion im Maßstab 1:1 erhalten, digital oder im 3D-Druck gefertigt. Jedes Modell ist einzigartig und auf die konkrete Pathologie jedes Falls abgestimmt.',
-      it: "Trattiamo l'immagine medica del paziente —segmentazione anatomica e progettazione digitale— fino a ottenere una ricostruzione a grandezza naturale in scala 1:1, in formato digitale o realizzata con stampa 3D. Ogni modello è unico e adattato alla patologia specifica di ogni caso.",
-      el: 'Επεξεργαζόμαστε την ιατρική εικόνα του ασθενούς —ανατομική κατάτμηση και ψηφιακό σχεδιασμό— έως ότου επιτύχουμε μια ανακατασκευή σε πραγματικό μέγεθος, κλίμακας 1:1, σε ψηφιακή μορφή ή κατασκευασμένη με τρισδιάστατη εκτύπωση. Κάθε μοντέλο είναι μοναδικό και προσαρμοσμένο στη συγκεκριμένη παθολογία κάθε περίπτωσης.' },
+    'Tratamos la imagen médica del paciente —segmentación anatómica y diseño digital— hasta obtener una reconstrucción a tamaño real a escala 1:1, en formato digital o fabricado con impresión 3D. Cada modelo es único y adaptado a la patología concreta de cada caso. <a href="/faq" style="color: var(--teal); text-decoration: none; font-weight: 600;">¿Preguntas frecuentes sobre el proceso?</a>': {
+      en: "We process the patient's medical image —anatomical segmentation and digital design— to obtain a full-scale 1:1 reconstruction, in digital format or manufactured with 3D printing. Each model is unique and tailored to the specific pathology of each case. <a href=\"/faq\" style=\"color: var(--teal); text-decoration: none; font-weight: 600;\">Frequently asked questions about the process?</a>",
+      fr: "Nous traitons l'image médicale du patient —segmentation anatomique et conception numérique— jusqu'à obtenir une reconstruction à taille réelle à l'échelle 1:1, au format numérique ou fabriquée par impression 3D. Chaque modèle est unique et adapté à la pathologie précise de chaque cas. <a href=\"/faq\" style=\"color: var(--teal); text-decoration: none; font-weight: 600;\">Questions fréquentes sur le processus ?</a>",
+      de: 'Wir verarbeiten das medizinische Bild des Patienten —anatomische Segmentierung und digitales Design— bis wir eine originalgetreue Rekonstruktion im Maßstab 1:1 erhalten, digital oder im 3D-Druck gefertigt. Jedes Modell ist einzigartig und auf die konkrete Pathologie jedes Falls abgestimmt. <a href="/faq" style="color: var(--teal); text-decoration: none; font-weight: 600;">Häufige Fragen zum Prozess?</a>',
+      it: "Trattiamo l'immagine medica del paziente —segmentazione anatomica e progettazione digitale— fino a ottenere una ricostruzione a grandezza naturale in scala 1:1, in formato digitale o realizzata con stampa 3D. Ogni modello è unico e adattato alla patologia specifica di ogni caso. <a href=\"/faq\" style=\"color: var(--teal); text-decoration: none; font-weight: 600;\">Domande frequenti sul processo?</a>",
+      el: 'Επεξεργαζόμαστε την ιατρική εικόνα του ασθενούς —ανατομική κατάτμηση και ψηφιακό σχεδιασμό— έως ότου επιτύχουμε μια ανακατασκευή σε πραγματικό μέγεθος, κλίμακας 1:1, σε ψηφιακή μορφή ή κατασκευασμένη με τρισδιάστατη εκτύπωση. Κάθε μοντέλο είναι μοναδικό και προσαρμοσμένο στη συγκεκριμένη παθολογία κάθε περίπτωσης. <a href="/faq" style="color: var(--teal); text-decoration: none; font-weight: 600;">Συχνές ερωτήσεις σχετικά με τη διαδικασία;</a>' },
     'Imagen médica a impresión 3D': { en: 'Medical imaging to 3D printing', fr: "De l'image médicale à l'impression 3D", de: 'Vom medizinischen Bild zum 3D-Druck', it: "Dall'immagine medica alla stampa 3D", el: 'Από ιατρική εικόνα σε τρισδιάστατη εκτύπωση' },
     'Entrega en 7 días, según solicitud, material y destino.': {
       en: 'Delivered within 7 days, depending on the request, material and destination.',
@@ -963,6 +963,14 @@
     /* ══════════════════════════════════════════════════════════════════════════
        LEGAL PAGES — Aviso legal, Política de privacidad, Política de cookies
        ══════════════════════════════════════════════════════════════════════════ */
+  'Aviso legal — Eureqa3D': {
+    en: 'Legal Notice — Eureqa3D',
+    fr: 'Mentions légales — Eureqa3D',
+    de: 'Impressum — Eureqa3D',
+    it: 'Note legali — Eureqa3D',
+    el: 'Νομική σημείωση — Eureqa3D'
+  },
+
   'AVISO LEGAL': {
     en: 'LEGAL NOTICE',
     fr: 'MENTIONS LÉGALES',
@@ -987,20 +995,20 @@
     el: '1. Δεδομένα αναγνώρισης του ιδιοκτήτη'
   },
 
-  'En cumplimiento del artículo 10 de la LSSI-CE, se informa de los siguientes datos: el titular de este sitio web es Eureqa Medicina y Cirugía S.L. (CIF B10474732), con domicilio social en C/ Alborada, 26, 10200 Trujillo, Cáceres (España), operando bajo el nombre comercial "Eureqa3D" (en adelante, "Eureqa3D" o "el Sitio"). Las oficinas se ubican en Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.': {
-    en: 'In compliance with Article 10 of Directive 2000/31/EC (Electronic Commerce Directive), we provide the following information: the owner of this website is Eureqa Medicina y Cirugía S.L. (Tax ID: B10474732), with registered office at C/ Alborada, 26, 10200 Trujillo, Cáceres (Spain), operating under the commercial name "Eureqa3D" (hereinafter, "Eureqa3D" or "the Site"). The offices are located at Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
-    fr: 'Conformément à l\'article 10 de la Directive 2000/31/CE (Directive sur le commerce électronique), nous fournissons les informations suivantes : le propriétaire de ce site web est Eureqa Medicina y Cirugía S.L. (Numéro de TVA : B10474732), ayant son siège social à C/ Alborada, 26, 10200 Trujillo, Cáceres (Espagne), opérant sous le nom commercial « Eureqa3D » (ci-après, « Eureqa3D » ou « le Site »). Les bureaux sont situés au Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
-    de: 'Gemäß Artikel 10 der Richtlinie 2000/31/EG (E-Commerce-Richtlinie) teilen wir folgende Informationen mit: Der Inhaber dieser Website ist Eureqa Medicina y Cirugía S.L. (Steuernummer: B10474732), mit Sitz in C/ Alborada, 26, 10200 Trujillo, Cáceres (Spanien), tätig unter dem Handelsnamen „Eureqa3D" (nachstehend „Eureqa3D" oder „die Website"). Die Büros befinden sich in Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
-    it: 'In conformità all\'articolo 10 della Direttiva 2000/31/CE (Direttiva sul commercio elettronico), forniamo le seguenti informazioni: il proprietario di questo sito web è Eureqa Medicina y Cirugía S.L. (Codice Fiscale: B10474732), con sede legale in C/ Alborada, 26, 10200 Trujillo, Cáceres (Spagna), operante con il nome commerciale "Eureqa3D" (di seguito, "Eureqa3D" o "il Sito"). Gli uffici si trovano presso Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
-    el: 'Σύμφωνα με το άρθρο 10 της Οδηγίας 2000/31/ΕΚ (Οδηγία για το ηλεκτρονικό εμπόριο), παρέχουμε τις ακόλουθες πληροφορίες: ο κάτοχος αυτής της ιστοσελίδας είναι η Eureqa Medicina y Cirugía S.L. (Αριθμός φόρου: B10474732), με έδρα στη C/ Alborada, 26, 10200 Trujillo, Cáceres (Ισπανία), που δραστηριοποιείται με το εμπορικό όνομα "Eureqa3D" (στο εξής, "Eureqa3D" ή "το Ιστοχώρο"). Τα γραφεία βρίσκονται στο Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.'
+  'En cumplimiento del artículo 10 de la LSSI-CE, se informa de los siguientes datos: el titular de este sitio web es <strong>Eureqa Medicina y Cirugía S.L.</strong> (CIF <strong>B10474732</strong>), con domicilio social en C/ Alborada, 26, 10200 Trujillo, Cáceres (España), operando bajo el nombre comercial "Eureqa3D" (en adelante, "Eureqa3D" o "el Sitio"). Las oficinas se ubican en Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.': {
+    en: 'In compliance with Article 10 of Directive 2000/31/EC (Electronic Commerce Directive), we provide the following information: the owner of this website is <strong>Eureqa Medicina y Cirugía S.L.</strong> (Tax ID <strong>B10474732</strong>), with registered office at C/ Alborada, 26, 10200 Trujillo, Cáceres (Spain), operating under the commercial name "Eureqa3D" (hereinafter, "Eureqa3D" or "the Site"). The offices are located at Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
+    fr: 'Conformément à l\'article 10 de la Directive 2000/31/CE (Directive sur le commerce électronique), nous fournissons les informations suivantes : le propriétaire de ce site web est <strong>Eureqa Medicina y Cirugía S.L.</strong> (Numéro de TVA <strong>B10474732</strong>), ayant son siège social à C/ Alborada, 26, 10200 Trujillo, Cáceres (Espagne), opérant sous le nom commercial « Eureqa3D » (ci-après, « Eureqa3D » ou « le Site »). Les bureaux sont situés au Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
+    de: 'Gemäß Artikel 10 der Richtlinie 2000/31/EG (E-Commerce-Richtlinie) teilen wir folgende Informationen mit: Der Inhaber dieser Website ist <strong>Eureqa Medicina y Cirugía S.L.</strong> (Steuernummer <strong>B10474732</strong>), mit Sitz in C/ Alborada, 26, 10200 Trujillo, Cáceres (Spanien), tätig unter dem Handelsnamen „Eureqa3D" (nachstehend „Eureqa3D" oder „die Website"). Die Büros befinden sich in Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
+    it: 'In conformità all\'articolo 10 della Direttiva 2000/31/CE (Direttiva sul commercio elettronico), forniamo le seguenti informazioni: il proprietario di questo sito web è <strong>Eureqa Medicina y Cirugía S.L.</strong> (Codice Fiscale <strong>B10474732</strong>), con sede legale in C/ Alborada, 26, 10200 Trujillo, Cáceres (Spagna), operante con il nome commerciale "Eureqa3D" (di seguito, "Eureqa3D" o "il Sito"). Gli uffici si trovano presso Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
+    el: 'Σύμφωνα με το άρθρο 10 της Οδηγίας 2000/31/ΕΚ (Οδηγία για το ηλεκτρονικό εμπόριο), παρέχουμε τις ακόλουθες πληροφορίες: ο κάτοχος αυτής της ιστοσελίδας είναι η <strong>Eureqa Medicina y Cirugía S.L.</strong> (Αριθμός φόρου <strong>B10474732</strong>), με έδρα στη C/ Alborada, 26, 10200 Trujillo, Cáceres (Ισπανία), που δραστηριοποιείται με το εμπορικό όνομα "Eureqa3D" (στο εξής, "Eureqa3D" ή "το Ιστοχώρο"). Τα γραφεία βρίσκονται στο Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.'
   },
 
-  'Contacto: info@eureqa3d.com · 654 55 20 44': {
-    en: 'Contact: info@eureqa3d.com · +34 654 55 20 44',
-    fr: 'Contact : info@eureqa3d.com · +34 654 55 20 44',
-    de: 'Kontakt: info@eureqa3d.com · +34 654 55 20 44',
-    it: 'Contatti: info@eureqa3d.com · +34 654 55 20 44',
-    el: 'Επικοινωνία: info@eureqa3d.com · +34 654 55 20 44'
+  'Contacto: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a> · <a href="tel:+34654552044">+34 654 55 20 44</a>': {
+    en: 'Contact: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a> · <a href="tel:+34654552044">+34 654 55 20 44</a>',
+    fr: 'Contact : <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a> · <a href="tel:+34654552044">+34 654 55 20 44</a>',
+    de: 'Kontakt: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a> · <a href="tel:+34654552044">+34 654 55 20 44</a>',
+    it: 'Contatti: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a> · <a href="tel:+34654552044">+34 654 55 20 44</a>',
+    el: 'Επικοινωνία: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a> · <a href="tel:+34654552044">+34 654 55 20 44</a>'
   },
 
   '2. Objeto y ámbito de aplicación': {
@@ -1043,12 +1051,20 @@
     el: '4. Πνευματική ιδιοκτησία και βιομηχανική ιδιοκτησία'
   },
 
-  'Todos los contenidos de este sitio web —textos, imágenes, vídeos, modelos anatómicos digitales, logotipos, diseño, código fuente y demás elementos— son titularidad de Eureqa3D o de terceros que han autorizado su uso, y están protegidos por la normativa de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución, comunicación pública o transformación, total o parcial, sin autorización expresa de Eureqa3D, salvo para uso personal y privado.': {
-    en: 'All content on this website—texts, images, videos, digital anatomical models, logos, design, source code, and other elements—is owned by Eureqa3D or by third parties who have authorized its use, and is protected by intellectual and industrial property law. Reproduction, distribution, public communication, or transformation, in whole or in part, is strictly prohibited without express authorization from Eureqa3D, except for personal and private use.',
-    fr: 'Tous les contenus de ce site web—textes, images, vidéos, modèles anatomiques numériques, logos, conception, code source et autres éléments—sont la propriété d\'Eureqa3D ou de tiers ayant autorisé son utilisation, et sont protégés par la législation sur la propriété intellectuelle et industrielle. Leur reproduction, distribution, communication publique ou transformation, en tout ou en partie, est strictement interdite sans autorisation expresse d\'Eureqa3D, sauf pour un usage personnel et privé.',
-    de: 'Alle Inhalte auf dieser Website—Texte, Bilder, Videos, digitale anatomische Modelle, Logos, Design, Quellcode und andere Elemente—sind Eigentum von Eureqa3D oder von Dritten, die ihre Nutzung genehmigt haben, und sind durch Gesetze über Geistige Eigentumsrechte und Gewerbliche Schutzrechte geschützt. Die Vervielfältigung, Verbreitung, öffentliche Mitteilung oder Umwandlung, ganz oder teilweise, ist ohne ausdrückliche Genehmigung von Eureqa3D streng untersagt, außer für persönliche und private Nutzung.',
-    it: 'Tutti i contenuti di questo sito web—testi, immagini, video, modelli anatomici digitali, loghi, design, codice sorgente e altri elementi—sono di proprietà di Eureqa3D o di terze parti che hanno autorizzato il loro utilizzo, e sono protetti dalla normativa sulla proprietà intellettuale e industriale. La riproduzione, distribuzione, comunicazione pubblica o trasformazione, in tutto o in parte, è rigorosamente vietata senza autorizzazione espressa di Eureqa3D, salvo per uso personale e privato.',
-    el: 'Όλο το περιεχόμενο αυτής της ιστοσελίδας—κείμενα, εικόνες, βίντεο, ψηφιακά ανατομικά μοντέλα, λογότυπα, σχεδιασμός, πηγαίος κώδικας και άλλα στοιχεία—είναι ιδιοκτησία της Eureqa3D ή τρίτων που έχουν εγκρίνει τη χρήση του, και προστατεύεται από τη νομοθεσία περί πνευματικής ιδιοκτησίας και βιομηχανικής ιδιοκτησίας. Η αναπαραγωγή, διανομή, δημόσια επικοινωνία ή μετατροπή, εν όλω ή εν μέρει, απαγορεύεται αυστηρώς χωρίς ρητή έγκριση της Eureqa3D, εκτός από προσωπική και ιδιωτική χρήση.'
+  'Todos los contenidos de este sitio web —textos, imágenes, vídeos, modelos anatómicos digitales, logotipos, diseño, código fuente y demás elementos— son titularidad de Eureqa3D o de terceros que han autorizado su uso, y están protegidos por la normativa de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución, comunicación pública o transformación, total o parcial, sin autorización escrita previa de Eureqa3D, salvo para uso personal y privado.': {
+    en: 'All content on this website —texts, images, videos, digital anatomical models, logos, design, source code, and other elements— is owned by Eureqa3D or by third parties who have authorized its use, and is protected by intellectual and industrial property law. Reproduction, distribution, public communication, or transformation, in whole or in part, is strictly prohibited without Eureqa3D\'s prior written authorization, except for personal and private use.',
+    fr: 'Tous les contenus de ce site web —textes, images, vidéos, modèles anatomiques numériques, logos, conception, code source et autres éléments— sont la propriété d\'Eureqa3D ou de tiers ayant autorisé son utilisation, et sont protégés par la législation sur la propriété intellectuelle et industrielle. Leur reproduction, distribution, communication publique ou transformation, en tout ou en partie, est strictement interdite sans l\'autorisation écrite préalable d\'Eureqa3D, sauf pour un usage personnel et privé.',
+    de: 'Alle Inhalte auf dieser Website —Texte, Bilder, Videos, digitale anatomische Modelle, Logos, Design, Quellcode und andere Elemente— sind Eigentum von Eureqa3D oder von Dritten, die ihre Nutzung genehmigt haben, und sind durch Gesetze über Geistige Eigentumsrechte und Gewerbliche Schutzrechte geschützt. Die Vervielfältigung, Verbreitung, öffentliche Mitteilung oder Umwandlung, ganz oder teilweise, ist ohne vorherige schriftliche Genehmigung von Eureqa3D streng untersagt, außer für persönliche und private Nutzung.',
+    it: 'Tutti i contenuti di questo sito web —testi, immagini, video, modelli anatomici digitali, loghi, design, codice sorgente e altri elementi— sono di proprietà di Eureqa3D o di terze parti che hanno autorizzato il loro utilizzo, e sono protetti dalla normativa sulla proprietà intellettuale e industriale. La riproduzione, distribuzione, comunicazione pubblica o trasformazione, in tutto o in parte, è rigorosamente vietata senza la previa autorizzazione scritta di Eureqa3D, salvo per uso personale e privato.',
+    el: 'Όλο το περιεχόμενο αυτής της ιστοσελίδας —κείμενα, εικόνες, βίντεο, ψηφιακά ανατομικά μοντέλα, λογότυπα, σχεδιασμός, πηγαίος κώδικας και άλλα στοιχεία— είναι ιδιοκτησία της Eureqa3D ή τρίτων που έχουν εγκρίνει τη χρήση του, και προστατεύεται από τη νομοθεσία περί πνευματικής ιδιοκτησίας και βιομηχανικής ιδιοκτησίας. Η αναπαραγωγή, διανομή, δημόσια επικοινωνία ή μετατροπή, εν όλω ή εν μέρει, απαγορεύεται αυστηρώς χωρίς προηγούμενη γραπτή έγκριση της Eureqa3D, εκτός από προσωπική και ιδιωτική χρήση.'
+  },
+
+  'Si consideras que algún contenido de este Sitio infringe tus derechos de propiedad intelectual o industrial, puedes notificarlo a <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>, indicando el contenido afectado y acreditando tu titularidad.': {
+    en: 'If you believe that any content on this Site infringes your intellectual or industrial property rights, you can report it to <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>, indicating the affected content and proving your ownership.',
+    fr: 'Si vous estimez qu\'un contenu de ce Site porte atteinte à vos droits de propriété intellectuelle ou industrielle, vous pouvez le signaler à <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>, en indiquant le contenu concerné et en justifiant de votre titularité.',
+    de: 'Wenn Sie der Meinung sind, dass Inhalte dieser Website Ihre Rechte an geistigem oder gewerblichem Eigentum verletzen, können Sie dies an <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a> melden und dabei den betroffenen Inhalt angeben sowie Ihre Rechtsinhaberschaft nachweisen.',
+    it: 'Se ritieni che un contenuto di questo Sito violi i tuoi diritti di proprietà intellettuale o industriale, puoi segnalarlo a <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>, indicando il contenuto interessato e comprovando la tua titolarità.',
+    el: 'Εάν θεωρείτε ότι κάποιο περιεχόμενο αυτού του Ιστοχώρου παραβιάζει τα δικαιώματα πνευματικής ή βιομηχανικής ιδιοκτησίας σας, μπορείτε να το αναφέρετε στο <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>, υποδεικνύοντας το σχετικό περιεχόμενο και αποδεικνύοντας την κυριότητά σας.'
   },
 
   'Las imágenes y grabaciones de modelos anatómicos 3D mostradas en el Sitio corresponden a casos reales tratados con el consentimiento correspondiente y anonimizados; no constituyen, en ningún caso, un historial clínico ni deben usarse con fines diagnósticos.': {
@@ -1067,12 +1083,12 @@
     el: '5. Το EureqaVisor3D δεν είναι ιατρικό προϊόν'
   },
 
-  'El EureqaVisor3D —la herramienta de visualización de modelos anatómicos 3D digitales referenciada en este sitio web— es una herramienta de apoyo a la visualización. No es un producto sanitario certificado para la visualización de estudios radiológicos, no sustituye a un informe radiológico y no debe emplearse con fines diagnósticos.': {
-    en: 'EureqaVisor3D—the tool for viewing digital 3D anatomical models referenced on this website—is a visualization support tool. It is not a certified medical device for viewing radiological studies, does not replace a radiological report, and must not be used for diagnostic purposes.',
-    fr: 'EureqaVisor3D—l\'outil de visualisation de modèles anatomiques 3D numériques référencé sur ce site web—est un outil d\'aide à la visualisation. Ce n\'est pas un produit sanitaire certifié pour la visualisation d\'études radiologiques, ne remplace pas un rapport radiologique et ne doit pas être utilisé à des fins diagnostiques.',
-    de: 'EureqaVisor3D—das Tool zur Anzeige digitaler 3D-anatomischer Modelle, auf das auf dieser Website verwiesen wird—ist ein Visualisierungswerkzeug. Es ist kein zertifiziertes Medizinprodukt zur Anzeige radiologischer Untersuchungen, ersetzt keinen radiologischen Bericht und darf nicht für diagnostische Zwecke verwendet werden.',
-    it: 'EureqaVisor3D—lo strumento per visualizzare modelli anatomici 3D digitali referenziato su questo sito web—è uno strumento di supporto alla visualizzazione. Non è un dispositivo medico certificato per la visualizzazione di studi radiologici, non sostituisce un rapporto radiologico e non deve essere utilizzato per scopi diagnostici.',
-    el: 'Το EureqaVisor3D—το εργαλείο προβολής ψηφιακών τρισδιάστατων ανατομικών μοντέλων που αναφέρεται σε αυτήν την ιστοσελίδα—είναι ένα εργαλείο υποστήριξης προβολής. Δεν είναι πιστοποιημένο ιατρικό προϊόν για την προβολή ακτινολογικών μελετών, δεν αντικαθιστά μια ακτινολογική έκθεση και δεν πρέπει να χρησιμοποιείται για διαγνωστικούς σκοπούς.'
+  'El EureqaVisor3D —la herramienta de visualización de modelos anatómicos 3D digitales referenciada en este sitio web— es una herramienta de apoyo a la visualización. <strong>No es un producto sanitario certificado</strong> para la visualización de estudios radiológicos, no sustituye a un informe radiológico y no debe emplearse con fines diagnósticos.': {
+    en: 'EureqaVisor3D —the tool for viewing digital 3D anatomical models referenced on this website— is a visualization support tool. <strong>It is not a certified medical device</strong> for viewing radiological studies, does not replace a radiological report, and must not be used for diagnostic purposes.',
+    fr: 'EureqaVisor3D —l\'outil de visualisation de modèles anatomiques 3D numériques référencé sur ce site web— est un outil d\'aide à la visualisation. <strong>Ce n\'est pas un produit sanitaire certifié</strong> pour la visualisation d\'études radiologiques, ne remplace pas un rapport radiologique et ne doit pas être utilisé à des fins diagnostiques.',
+    de: 'EureqaVisor3D —das Tool zur Anzeige digitaler 3D-anatomischer Modelle, auf das auf dieser Website verwiesen wird— ist ein Visualisierungswerkzeug. <strong>Es ist kein zertifiziertes Medizinprodukt</strong> zur Anzeige radiologischer Untersuchungen, ersetzt keinen radiologischen Bericht und darf nicht für diagnostische Zwecke verwendet werden.',
+    it: 'EureqaVisor3D —lo strumento per visualizzare modelli anatomici 3D digitali referenziato su questo sito web— è uno strumento di supporto alla visualizzazione. <strong>Non è un dispositivo medico certificato</strong> per la visualizzazione di studi radiologici, non sostituisce un rapporto radiologico e non deve essere utilizzato per scopi diagnostici.',
+    el: 'Το EureqaVisor3D —το εργαλείο προβολής ψηφιακών τρισδιάστατων ανατομικών μοντέλων που αναφέρεται σε αυτήν την ιστοσελίδα— είναι ένα εργαλείο υποστήριξης προβολής. <strong>Δεν είναι πιστοποιημένο ιατρικό προϊόν</strong> για την προβολή ακτινολογικών μελετών, δεν αντικαθιστά μια ακτινολογική έκθεση και δεν πρέπει να χρησιμοποιείται για διαγνωστικούς σκοπούς.'
   },
 
   '6. Enlaces a terceros': {
@@ -1139,9 +1155,25 @@
     el: 'Η Eureqa3D διατηρεί το δικαίωμα να τροποποιήσει αυτή τη νομική σημείωση για να την προσαρμόσει σε νομοθετικές αλλαγές ή ενημερώσεις του Ιστοχώρου. Συνιστούμε να ελέγχετε αυτή τη σελίδα τακτικά.'
   },
 
+  'Para cualquier cuestión relacionada con este aviso legal, puedes escribirnos a <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>. Consulta también nuestra <a href="/politica-privacidad">Política de privacidad</a> y nuestra <a href="/politica-cookies">Política de cookies</a>.': {
+    en: 'For any question related to this legal notice, you can write to us at <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>. See also our <a href="/politica-privacidad">Privacy Policy</a> and our <a href="/politica-cookies">Cookie Policy</a>.',
+    fr: 'Pour toute question relative à ces mentions légales, vous pouvez nous écrire à <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>. Consultez également notre <a href="/politica-privacidad">Politique de confidentialité</a> et notre <a href="/politica-cookies">Politique sur les cookies</a>.',
+    de: 'Bei Fragen zu diesem Impressum können Sie uns unter <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a> schreiben. Beachten Sie auch unsere <a href="/politica-privacidad">Datenschutzerklärung</a> und unsere <a href="/politica-cookies">Cookie-Richtlinie</a>.',
+    it: 'Per qualsiasi domanda relativa a questo avviso legale, puoi scriverci a <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>. Consulta anche la nostra <a href="/politica-privacidad">Informativa sulla privacy</a> e la nostra <a href="/politica-cookies">Politica sui cookie</a>.',
+    el: 'Για οποιοδήποτε ζήτημα σχετικό με αυτήν τη νομική σημείωση, μπορείτε να μας γράψετε στο <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>. Συμβουλευτείτε επίσης την <a href="/politica-privacidad">Πολιτική απορρήτου</a> και την <a href="/politica-cookies">Πολιτική cookies</a> μας.'
+  },
+
   // ============================================================================
   // PRIVACY POLICY / POLÍTICA DE PRIVACIDAD
   // ============================================================================
+
+  'Política de privacidad — Eureqa3D': {
+    en: 'Privacy Policy — Eureqa3D',
+    fr: 'Politique de confidentialité — Eureqa3D',
+    de: 'Datenschutzerklärung — Eureqa3D',
+    it: 'Informativa sulla privacy — Eureqa3D',
+    el: 'Πολιτική απορρήτου — Eureqa3D'
+  },
 
   'POLÍTICA DE PRIVACIDAD': {
     en: 'PRIVACY POLICY',
@@ -1149,6 +1181,14 @@
     de: 'DATENSCHUTZERKLÄRUNG',
     it: 'INFORMATIVA SULLA PRIVACY',
     el: 'ΠΟΛΙΤΙΚΉ ΑΠΟΡΡΉΤΟΥ'
+  },
+
+  'Política de privacidad': {
+    en: 'Privacy Policy',
+    fr: 'Politique de confidentialité',
+    de: 'Datenschutzerklärung',
+    it: 'Informativa sulla privacy',
+    el: 'Πολιτική απορρήτου'
   },
 
   '1. Responsable del tratamiento': {
@@ -1159,20 +1199,12 @@
     el: '1. Υπεύθυνος επεξεργασίας δεδομένων'
   },
 
-  'Eureqa Medicina y Cirugía S.L. (nombre comercial "Eureqa3D"), CIF B10474732, con domicilio social en C/ Alborada, 26, 10200 Trujillo, Cáceres (España). Oficinas en Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.': {
-    en: 'Eureqa Medicina y Cirugía S.L. (commercial name "Eureqa3D"), Tax ID B10474732, with registered office at C/ Alborada, 26, 10200 Trujillo, Cáceres (Spain). Offices at Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
-    fr: 'Eureqa Medicina y Cirugía S.L. (nom commercial « Eureqa3D »), numéro de TVA B10474732, ayant son siège social à C/ Alborada, 26, 10200 Trujillo, Cáceres (Espagne). Bureaux au Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
-    de: 'Eureqa Medicina y Cirugía S.L. (Handelsname „Eureqa3D"), Steuernummer B10474732, mit Sitz in C/ Alborada, 26, 10200 Trujillo, Cáceres (Spanien). Büros in Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
-    it: 'Eureqa Medicina y Cirugía S.L. (nome commerciale "Eureqa3D"), Codice Fiscale B10474732, con sede legale in C/ Alborada, 26, 10200 Trujillo, Cáceres (Spagna). Uffici presso Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.',
-    el: 'Eureqa Medicina y Cirugía S.L. (εμπορικό όνομα "Eureqa3D"), Αριθμός φόρου B10474732, με έδρα στη C/ Alborada, 26, 10200 Trujillo, Cáceres (Ισπανία). Γραφεία στο Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.'
-  },
-
-  'Contacto para cuestiones de privacidad: info@eureqa3d.com.': {
-    en: 'Contact for privacy matters: info@eureqa3d.com.',
-    fr: 'Contact pour les questions de confidentialité : info@eureqa3d.com.',
-    de: 'Kontakt für Datenschutzfragen: info@eureqa3d.com.',
-    it: 'Contatto per questioni relative alla privacy: info@eureqa3d.com.',
-    el: 'Επικοινωνία για θέματα απορρήτου: info@eureqa3d.com.'
+  'Eureqa Medicina y Cirugía S.L. (nombre comercial "Eureqa3D"), CIF B10474732, con domicilio social en C/ Alborada, 26, 10200 Trujillo, Cáceres (España). Oficinas en Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.<br> Contacto para cuestiones de privacidad: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.': {
+    en: 'Eureqa Medicina y Cirugía S.L. (commercial name "Eureqa3D"), Tax ID B10474732, with registered office at C/ Alborada, 26, 10200 Trujillo, Cáceres (Spain). Offices at Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.<br>\n      Contact for privacy matters: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.',
+    fr: 'Eureqa Medicina y Cirugía S.L. (nom commercial « Eureqa3D »), numéro de TVA B10474732, ayant son siège social à C/ Alborada, 26, 10200 Trujillo, Cáceres (Espagne). Bureaux au Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.<br>\n      Contact pour les questions de confidentialité : <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.',
+    de: 'Eureqa Medicina y Cirugía S.L. (Handelsname „Eureqa3D"), Steuernummer B10474732, mit Sitz in C/ Alborada, 26, 10200 Trujillo, Cáceres (Spanien). Büros in Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.<br>\n      Kontakt für Datenschutzfragen: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.',
+    it: 'Eureqa Medicina y Cirugía S.L. (nome commerciale "Eureqa3D"), Codice Fiscale B10474732, con sede legale in C/ Alborada, 26, 10200 Trujillo, Cáceres (Spagna). Uffici presso Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.<br>\n      Contatto per questioni relative alla privacy: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.',
+    el: 'Eureqa Medicina y Cirugía S.L. (εμπορικό όνομα "Eureqa3D"), Αριθμός φόρου B10474732, με έδρα στη C/ Alborada, 26, 10200 Trujillo, Cáceres (Ισπανία). Γραφεία στο Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres.<br>\n      Επικοινωνία για θέματα απορρήτου: <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.'
   },
 
   '2. Aviso importante: este sitio web no trata imágenes médicas de pacientes': {
@@ -1183,12 +1215,12 @@
     el: '2. Σημαντικό σημείωμα: Αυτή η ιστοσελίδα δεν επεξεργάζεται ιατρικές εικόνες ασθενών'
   },
 
-  'Este sitio web es un escaparate informativo y comercial. No se suben, procesan ni almacenan estudios radiológicos, imágenes médicas ni datos de salud de pacientes a través de los formularios públicos de esta web. Cuando un profesional o centro sanitario solicita un caso de prueba, el envío del estudio radiológico y cualquier dato de salud asociado se gestiona siempre por un canal seguro acordado directamente con el equipo de Eureqa3D, fuera de este sitio web, y con las garantías de confidencialidad y trazabilidad propias del Método Eureqa.': {
-    en: 'This website is an informational and commercial showcase. Radiological studies, medical images, or patient health data are not uploaded, processed, or stored through the public forms on this website. When a healthcare professional or facility requests a trial case, the transmission of radiological studies and any associated health data is always managed through a secure channel agreed upon directly with the Eureqa3D team, outside of this website, and with the confidentiality and traceability guarantees inherent to the Eureqa Method.',
-    fr: 'Ce site web est une vitrine informative et commerciale. Aucune étude radiologique, image médicale ou donnée de santé de patients n\'est téléchargée, traitée ou stockée via les formulaires publics de ce site web. Lorsqu\'un professionnel ou un centre de santé demande un cas d\'essai, la transmission de l\'étude radiologique et de toute donnée de santé associée est toujours gérée par un canal sécurisé convenu directement avec l\'équipe Eureqa3D, en dehors de ce site web, et avec les garanties de confidentialité et de traçabilité propres à la Méthode Eureqa.',
-    de: 'Diese Website ist ein informatives und kommerzielles Schaufenster. Radiologische Untersuchungen, medizinische Bilder oder Patientengesundheitsdaten werden nicht über die öffentlichen Formulare auf dieser Website hochgeladen, verarbeitet oder gespeichert. Wenn ein Gesundheitsfachmann oder eine Einrichtung einen Testfall anfordert, wird die Übermittlung radiologischer Untersuchungen und aller damit verbundenen Gesundheitsdaten immer über einen sicheren Kanal verwaltet, der direkt mit dem Eureqa3D-Team außerhalb dieser Website vereinbart wurde, und mit den Vertraulichkeits- und Nachverfolgungsgarantien, die der Eureqa-Methode eigen sind.',
-    it: 'Questo sito web è una vetrina informativa e commerciale. Studi radiologici, immagini mediche o dati sanitari dei pazienti non vengono caricati, elaborati o archiviati attraverso i moduli pubblici di questo sito web. Quando un professionista sanitario o una struttura richiede un caso di prova, la trasmissione dello studio radiologico e di qualsiasi dato sanitario associato è sempre gestita attraverso un canale sicuro concordato direttamente con il team di Eureqa3D, al di fuori di questo sito web, e con le garanzie di riservatezza e tracciabilità proprie del Metodo Eureqa.',
-    el: 'Αυτή η ιστοσελίδα είναι μια ενημερωτική και εμπορική βιτρίνα. Ακτινολογικές μελέτες, ιατρικές εικόνες ή δεδομένα υγείας ασθενών δεν ανεβαίνουν, δεν επεξεργάζονται ή δεν αποθηκεύονται μέσω των δημόσιων φορμών σε αυτήν την ιστοσελίδα. Όταν ένας επαγγελματίας υγείας ή μια δομή ζητά μια δοκιμαστική περίπτωση, η μετάδοση της ακτινολογικής μελέτης και οποιωνδήποτε σχετικών δεδομένων υγείας διαχειρίζεται πάντα μέσω ενός ασφαλούς καναλιού που συμφωνήθηκε απευθείας με την ομάδα Eureqa3D, έξω από αυτήν την ιστοσελίδα, και με τις εγγυήσεις εμπιστευτικότητας και ανιχνευσιμότητας που είναι ενυπάρχουσες στη Μέθοδο Eureqa.'
+  'Este sitio web es un escaparate informativo y comercial. <strong>No se suben, procesan ni almacenan estudios radiológicos, imágenes médicas ni datos de salud de pacientes a través de los formularios públicos de esta web.</strong> Cuando un profesional o centro sanitario solicita un caso de prueba, el envío del estudio radiológico y cualquier dato de salud asociado se gestiona siempre por un canal seguro acordado directamente con el equipo de Eureqa3D, fuera de este sitio web, y con las garantías de confidencialidad y trazabilidad propias del Método Eureqa.': {
+    en: 'This website is an informational and commercial showcase. <strong>Radiological studies, medical images, or patient health data are not uploaded, processed, or stored through the public forms on this website.</strong> When a healthcare professional or facility requests a trial case, the transmission of radiological studies and any associated health data is always managed through a secure channel agreed upon directly with the Eureqa3D team, outside of this website, and with the confidentiality and traceability guarantees inherent to the Eureqa Method.',
+    fr: 'Ce site web est une vitrine informative et commerciale. <strong>Aucune étude radiologique, image médicale ou donnée de santé de patients n\'est téléchargée, traitée ou stockée via les formulaires publics de ce site web.</strong> Lorsqu\'un professionnel ou un centre de santé demande un cas d\'essai, la transmission de l\'étude radiologique et de toute donnée de santé associée est toujours gérée par un canal sécurisé convenu directement avec l\'équipe Eureqa3D, en dehors de ce site web, et avec les garanties de confidentialité et de traçabilité propres à la Méthode Eureqa.',
+    de: 'Diese Website ist ein informatives und kommerzielles Schaufenster. <strong>Radiologische Untersuchungen, medizinische Bilder oder Patientengesundheitsdaten werden nicht über die öffentlichen Formulare auf dieser Website hochgeladen, verarbeitet oder gespeichert.</strong> Wenn ein Gesundheitsfachmann oder eine Einrichtung einen Testfall anfordert, wird die Übermittlung radiologischer Untersuchungen und aller damit verbundenen Gesundheitsdaten immer über einen sicheren Kanal verwaltet, der direkt mit dem Eureqa3D-Team außerhalb dieser Website vereinbart wurde, und mit den Vertraulichkeits- und Nachverfolgungsgarantien, die der Eureqa-Methode eigen sind.',
+    it: 'Questo sito web è una vetrina informativa e commerciale. <strong>Studi radiologici, immagini mediche o dati sanitari dei pazienti non vengono caricati, elaborati o archiviati attraverso i moduli pubblici di questo sito web.</strong> Quando un professionista sanitario o una struttura richiede un caso di prova, la trasmissione dello studio radiologico e di qualsiasi dato sanitario associato è sempre gestita attraverso un canale sicuro concordato direttamente con il team di Eureqa3D, al di fuori di questo sito web, e con le garanzie di riservatezza e tracciabilità proprie del Metodo Eureqa.',
+    el: 'Αυτή η ιστοσελίδα είναι μια ενημερωτική και εμπορική βιτρίνα. <strong>Ακτινολογικές μελέτες, ιατρικές εικόνες ή δεδομένα υγείας ασθενών δεν ανεβαίνουν, δεν επεξεργάζονται ή δεν αποθηκεύονται μέσω των δημόσιων φορμών σε αυτήν την ιστοσελίδα.</strong> Όταν ένας επαγγελματίας υγείας ή μια δομή ζητά μια δοκιμαστική περίπτωση, η μετάδοση της ακτινολογικής μελέτης και οποιωνδήποτε σχετικών δεδομένων υγείας διαχειρίζεται πάντα μέσω ενός ασφαλούς καναλιού που συμφωνήθηκε απευθείας με την ομάδα Eureqa3D, έξω από αυτήν την ιστοσελίδα, και με τις εγγυήσεις εμπιστευτικότητας και ανιχνευσιμότητας που είναι ενυπάρχουσες στη Μέθοδο Eureqa.'
   },
 
   '3. Qué datos recogemos y para qué': {
@@ -1247,28 +1279,44 @@
     el: 'Εάν δεν συμπληρώσετε κανένα έντυπο και δεν συνδεθείτε, η επίσκεψή σας στις δημόσιες σελίδες αυτού του Ιστοχώρου δεν δημιουργεί κανένα αρχείο προσωπικών δεδομένων στους διακομιστές μας πέρα από τα συνήθη τεχνικά αρχεία οποιουδήποτε διακομιστή ιστού (διεύθυνση IP, ημερομηνία και ώρα του αιτήματος), τα οποία διατηρούνται για λόγους ασφαλείας.'
   },
 
-  '4. Base jurídica del tratamiento': {
-    en: '4. Legal Basis for Processing',
-    fr: '4. Base juridique du traitement',
-    de: '4. Rechtsgrundlage für die Verarbeitung',
-    it: '4. Base giuridica del trattamento',
-    el: '4. Νομική βάση της επεξεργασίας'
+  '4. Carácter obligatorio o facultativo de los datos': {
+    en: '4. Mandatory or Optional Nature of the Data',
+    fr: '4. Caractère obligatoire ou facultatif des données',
+    de: '4. Pflicht- oder freiwillige Angaben',
+    it: '4. Natura obbligatoria o facoltativa dei dati',
+    el: '4. Υποχρεωτικός ή προαιρετικός χαρακτήρας των δεδομένων'
   },
 
-  'La base jurídica para tratar los datos del formulario de contacto y del chat es tu consentimiento, prestado al rellenar y enviar voluntariamente el formulario (art. 6.1.a RGPD), así como nuestro interés legítimo en responder a las consultas comerciales que se nos dirigen (art. 6.1.f RGPD). El acceso a la zona privada se basa en la ejecución de la relación contractual o de colaboración con cada cliente (art. 6.1.b RGPD).': {
-    en: 'The legal basis for processing contact form and chat data is your consent, given when you voluntarily fill out and submit the form (Article 6.1.a GDPR), as well as our legitimate interest in responding to commercial inquiries directed to us (Article 6.1.f GDPR). Access to the private area is based on the performance of the contractual or partnership relationship with each client (Article 6.1.b GDPR).',
-    fr: 'La base juridique du traitement des données du formulaire de contact et du chat est votre consentement, donné lorsque vous remplissez et soumettez volontairement le formulaire (article 6.1.a RGPD), ainsi que notre intérêt légitime à répondre aux demandes commerciales qui nous sont adressées (article 6.1.f RGPD). L\'accès à la zone privée est basé sur l\'exécution de la relation contractuelle ou de partenariat avec chaque client (article 6.1.b RGPD).',
-    de: 'Die Rechtsgrundlage für die Verarbeitung von Kontaktformular- und Chat-Daten ist Ihre Zustimmung, die gegeben wird, wenn Sie das Formular freiwillig ausfüllen und absenden (Artikel 6.1.a DSGVO), sowie unser berechtigtes Interesse, auf an uns gerichtete geschäftliche Anfragen zu antworten (Artikel 6.1.f DSGVO). Der Zugriff auf den privaten Bereich basiert auf der Erfüllung der vertraglichen oder Partnerschaftsbeziehung mit jedem Kunden (Artikel 6.1.b DSGVO).',
-    it: 'La base giuridica per il trattamento dei dati del modulo di contatto e della chat è il tuo consenso, fornito quando compili e invii volontariamente il modulo (articolo 6.1.a RGPD), nonché il nostro interesse legittimo nel rispondere alle richieste commerciali rivolteci (articolo 6.1.f RGPD). L\'accesso all\'area privata si basa sull\'esecuzione della relazione contrattuale o di partnership con ogni cliente (articolo 6.1.b RGPD).',
-    el: 'Η νομική βάση για την επεξεργασία δεδομένων φόρμας επικοινωνίας και συνομιλίας είναι η συγκατάθεσή σας, δεδομένη όταν συμπληρώσετε και υποβάλετε εθελοντικά τη φόρμα (Άρθρο 6.1.α GDPR), καθώς και το δικό μας νόμιμο συμφέρον να αποκρινόμαστε σε εμπορικές ερωτήσεις που μας απευθύνονται (Άρθρο 6.1.f GDPR). Η πρόσβαση στην ιδιωτική περιοχή βασίζεται στην εκτέλεση της συμβατικής ή εταιρικής σχέσης με κάθε πελάτη (Άρθρο 6.1.β GDPR).'
+  'En el formulario de contacto, el nombre y el correo electrónico son obligatorios para poder responderte; el asunto y el resto de campos son opcionales. En el chat de la web, el nombre y el correo electrónico también son obligatorios para poder atender tu solicitud; la empresa o centro del que nos escribes es opcional. Si no facilitas los datos obligatorios, no podremos dar respuesta a tu consulta.': {
+    en: 'In the contact form, your name and email address are mandatory so we can respond to you; the subject and other fields are optional. In the website chat, your name and email address are also mandatory so we can attend to your request; the company or centre you write to us from is optional. If you do not provide the mandatory data, we will not be able to respond to your inquiry.',
+    fr: 'Dans le formulaire de contact, le nom et l\'adresse e-mail sont obligatoires pour pouvoir vous répondre ; l\'objet et les autres champs sont facultatifs. Dans le chat du site, le nom et l\'adresse e-mail sont également obligatoires pour pouvoir traiter votre demande ; l\'entreprise ou le centre depuis lequel vous nous écrivez est facultatif. Si vous ne fournissez pas les données obligatoires, nous ne pourrons pas répondre à votre demande.',
+    de: 'Im Kontaktformular sind Name und E-Mail-Adresse Pflichtfelder, damit wir Ihnen antworten können; Betreff und die übrigen Felder sind optional. Im Website-Chat sind Name und E-Mail-Adresse ebenfalls Pflichtfelder, damit wir Ihre Anfrage bearbeiten können; das Unternehmen oder die Einrichtung, von der aus Sie uns schreiben, ist optional. Wenn Sie die Pflichtangaben nicht machen, können wir Ihre Anfrage nicht beantworten.',
+    it: 'Nel modulo di contatto, il nome e l\'indirizzo e-mail sono obbligatori per poterti rispondere; l\'oggetto e gli altri campi sono facoltativi. Nella chat del sito, il nome e l\'indirizzo e-mail sono anch\'essi obbligatori per poter gestire la tua richiesta; l\'azienda o la struttura da cui ci scrivi è facoltativa. Se non fornisci i dati obbligatori, non potremo rispondere alla tua richiesta.',
+    el: 'Στη φόρμα επικοινωνίας, το όνομα και το email είναι υποχρεωτικά ώστε να μπορέσουμε να σας απαντήσουμε· το θέμα και τα υπόλοιπα πεδία είναι προαιρετικά. Στη συνομιλία της ιστοσελίδας, το όνομα και το email είναι επίσης υποχρεωτικά ώστε να εξυπηρετήσουμε το αίτημά σας· η εταιρεία ή το κέντρο από το οποίο μας γράφετε είναι προαιρετικό. Εάν δεν παρέχετε τα υποχρεωτικά δεδομένα, δεν θα μπορέσουμε να απαντήσουμε στο ερώτημά σας.'
   },
 
-  '5. Plazo de conservación': {
-    en: '5. Data Retention Period',
-    fr: '5. Durée de conservation',
-    de: '5. Aufbewahrungsdauer',
-    it: '5. Periodo di conservazione',
-    el: '5. Περίοδος διατήρησης δεδομένων'
+  '5. Base jurídica del tratamiento': {
+    en: '5. Legal Basis for Processing',
+    fr: '5. Base juridique du traitement',
+    de: '5. Rechtsgrundlage für die Verarbeitung',
+    it: '5. Base giuridica del trattamento',
+    el: '5. Νομική βάση της επεξεργασίας'
+  },
+
+  'La base jurídica para tratar los datos del formulario de contacto y del chat es tu <strong>consentimiento</strong>, prestado al rellenar y enviar voluntariamente el formulario (art. 6.1.a RGPD), así como nuestro <strong>interés legítimo</strong> en responder a las consultas comerciales que se nos dirigen (art. 6.1.f RGPD). El acceso a la zona privada se basa en la <strong>ejecución de la relación contractual o de colaboración</strong> con cada cliente (art. 6.1.b RGPD).': {
+    en: 'The legal basis for processing contact form and chat data is your <strong>consent</strong>, given when you voluntarily fill out and submit the form (Article 6.1.a GDPR), as well as our <strong>legitimate interest</strong> in responding to commercial inquiries directed to us (Article 6.1.f GDPR). Access to the private area is based on the <strong>performance of the contractual or partnership relationship</strong> with each client (Article 6.1.b GDPR).',
+    fr: 'La base juridique du traitement des données du formulaire de contact et du chat est votre <strong>consentement</strong>, donné lorsque vous remplissez et soumettez volontairement le formulaire (article 6.1.a RGPD), ainsi que notre <strong>intérêt légitime</strong> à répondre aux demandes commerciales qui nous sont adressées (article 6.1.f RGPD). L\'accès à la zone privée est basé sur l\'<strong>exécution de la relation contractuelle ou de partenariat</strong> avec chaque client (article 6.1.b RGPD).',
+    de: 'Die Rechtsgrundlage für die Verarbeitung von Kontaktformular- und Chat-Daten ist Ihre <strong>Zustimmung</strong>, die gegeben wird, wenn Sie das Formular freiwillig ausfüllen und absenden (Artikel 6.1.a DSGVO), sowie unser <strong>berechtigtes Interesse</strong>, auf an uns gerichtete geschäftliche Anfragen zu antworten (Artikel 6.1.f DSGVO). Der Zugriff auf den privaten Bereich basiert auf der <strong>Erfüllung der vertraglichen oder Partnerschaftsbeziehung</strong> mit jedem Kunden (Artikel 6.1.b DSGVO).',
+    it: 'La base giuridica per il trattamento dei dati del modulo di contatto e della chat è il tuo <strong>consenso</strong>, fornito quando compili e invii volontariamente il modulo (articolo 6.1.a RGPD), nonché il nostro <strong>interesse legittimo</strong> nel rispondere alle richieste commerciali rivolteci (articolo 6.1.f RGPD). L\'accesso all\'area privata si basa sull\'<strong>esecuzione della relazione contrattuale o di partnership</strong> con ogni cliente (articolo 6.1.b RGPD).',
+    el: 'Η νομική βάση για την επεξεργασία δεδομένων φόρμας επικοινωνίας και συνομιλίας είναι η <strong>συγκατάθεσή</strong> σας, δεδομένη όταν συμπληρώσετε και υποβάλετε εθελοντικά τη φόρμα (Άρθρο 6.1.α GDPR), καθώς και το δικό μας <strong>νόμιμο συμφέρον</strong> να αποκρινόμαστε σε εμπορικές ερωτήσεις που μας απευθύνονται (Άρθρο 6.1.f GDPR). Η πρόσβαση στην ιδιωτική περιοχή βασίζεται στην <strong>εκτέλεση της συμβατικής ή εταιρικής σχέσης</strong> με κάθε πελάτη (Άρθρο 6.1.β GDPR).'
+  },
+
+  '6. Plazo de conservación': {
+    en: '6. Data Retention Period',
+    fr: '6. Durée de conservation',
+    de: '6. Aufbewahrungsdauer',
+    it: '6. Periodo di conservazione',
+    el: '6. Περίοδος διατήρησης δεδομένων'
   },
 
   'Los datos de los formularios de contacto se conservan mientras exista una relación comercial o de interés mutuo con el remitente, y en todo caso hasta que solicites su supresión. Puedes pedir en cualquier momento que eliminemos tu mensaje y tus datos de contacto escribiendo a info@eureqa3d.com.': {
@@ -1279,12 +1327,12 @@
     el: 'Τα δεδομένα της φόρμας επικοινωνίας διατηρούνται εφόσον υπάρχει εμπορική σχέση ή αμοιβαίο ενδιαφέρον με τον αποστολέα, και σε κάθε περίπτωση έως ότου ζητήσετε τη διαγραφή του. Μπορείτε να ζητήσετε ανά πάσα στιγμή τη διαγραφή του μηνύματος και των δεδομένων επικοινωνίας σας γράφοντας στο info@eureqa3d.com.'
   },
 
-  '6. Destinatarios y encargados del tratamiento': {
-    en: '6. Recipients and Data Processors',
-    fr: '6. Destinataires et sous-traitants',
-    de: '6. Empfänger und Datenverarbeiter',
-    it: '6. Destinatari e responsabili del trattamento',
-    el: '6. Αποδέκτες και υπεργολάβοι επεξεργασίας'
+  '7. Destinatarios y encargados del tratamiento': {
+    en: '7. Recipients and Data Processors',
+    fr: '7. Destinataires et sous-traitants',
+    de: '7. Empfänger und Datenverarbeiter',
+    it: '7. Destinatari e responsabili del trattamento',
+    el: '7. Αποδέκτες και υπεργολάβοι επεξεργασίας'
   },
 
   'Tus datos no se ceden a terceros salvo obligación legal. Para prestar el servicio, contamos con los siguientes proveedores, que actúan como encargados del tratamiento:': {
@@ -1319,12 +1367,12 @@
     el: '- Google Analytics (Google Ireland Ltd. / Google LLC) — επί του παρόντος ανενεργό σε αυτόν τον Ιστοχώρο. Εάν ενεργοποιηθεί στο μέλλον, θα επεξεργάζεται μόνο δεδομένα πλοήγησης μετά τη ρητή συγκατάθεσή σας μέσω του banner των cookies.'
   },
 
-  '7. Transferencias internacionales': {
-    en: '7. International Transfers',
-    fr: '7. Transferts internationaux',
-    de: '7. Internationale Datenübertragungen',
-    it: '7. Trasferimenti internazionali',
-    el: '7. Διεθνείς μεταφορές δεδομένων'
+  '8. Transferencias internacionales': {
+    en: '8. International Transfers',
+    fr: '8. Transferts internationaux',
+    de: '8. Internationale Datenübertragungen',
+    it: '8. Trasferimenti internazionali',
+    el: '8. Διεθνείς μεταφορές δεδομένων'
   },
 
   'Railway y Google son empresas con sede en Estados Unidos. Cuando los datos se procesan fuera del Espacio Económico Europeo, se hace al amparo de las garantías previstas en el RGPD (cláusulas contractuales tipo de la Comisión Europea y, en el caso de Google, su adhesión al marco de protección de datos UE-EE.UU. — EU-U.S. Data Privacy Framework).': {
@@ -1335,12 +1383,12 @@
     el: 'Η Railway και η Google είναι εταιρείες με έδρα στις Ηνωμένες Πολιτείες. Όταν τα δεδομένα επεξεργάζονται έξω από τον Ευρωπαϊκό Οικονομικό Χώρο, γίνεται με τις εγγυήσεις που προβλέπονται στο GDPR (Τυποποιημένες Ρήτρες Συμβολαίου της Ευρωπαϊκής Επιτροπής και, στην περίπτωση της Google, η δέσμευσή της με το Πλαίσιο Προστασίας Δεδομένων ΕΕ-ΗΠΑ).'
   },
 
-  '8. Tus derechos': {
-    en: '8. Your Rights',
-    fr: '8. Vos droits',
-    de: '8. Ihre Rechte',
-    it: '8. I tuoi diritti',
-    el: '8. Τα δικαιώματά σας'
+  '9. Tus derechos': {
+    en: '9. Your Rights',
+    fr: '9. Vos droits',
+    de: '9. Ihre Rechte',
+    it: '9. I tuoi diritti',
+    el: '9. Τα δικαιώματά σας'
   },
 
   'Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, limitación del tratamiento, portabilidad y oposición escribiendo a info@eureqa3d.com, indicando el derecho que deseas ejercer y adjuntando, si es necesario, un documento que acredite tu identidad. Responderemos a tu solicitud en el plazo legalmente establecido.': {
@@ -1352,19 +1400,19 @@
   },
 
   'Si consideras que el tratamiento de tus datos no se ajusta a la normativa vigente, tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD), autoridad de control en materia de protección de datos en España.': {
-    en: 'If you believe that the processing of your data does not comply with current regulations, you have the right to lodge a complaint with the Spanish Data Protection Authority (AEPD), the data protection supervisory authority in Spain.',
-    fr: 'Si vous pensez que le traitement de vos données n\'est pas conforme à la réglementation en vigueur, vous avez le droit de déposer une plainte auprès de la Commission Nationale de l\'Informatique et des Libertés (CNIL), l\'autorité chargée de la protection des données en France.',
-    de: 'Wenn Sie der Meinung sind, dass die Verarbeitung Ihrer Daten nicht den geltenden Vorschriften entspricht, haben Sie das Recht, eine Beschwerde bei der Datenschutzbehörde Ihres Landes einzureichen, der Behörde, die für den Datenschutz zuständig ist.',
-    it: 'Se ritieni che il trattamento dei tuoi dati non sia conforme alle normative vigenti, hai il diritto di presentare un reclamo al Garante per la protezione dei dati personali (GDPR Authority), l\'autorità di controllo per la protezione dei dati in Italia.',
-    el: 'Εάν θεωρείτε ότι η επεξεργασία των δεδομένων σας δεν συμμορφώνεται με τις ισχύουσες κανονιστικές διατάξεις, έχετε το δικαίωμα να υποβάλετε παράπονο στην Αρχή Προστασίας Δεδομένων Προσώπων της χώρας σας, την αρχή εποπτείας για την προστασία δεδομένων.'
+    en: 'If you believe that the processing of your data does not comply with current regulations, you have the right to lodge a complaint with the Spanish Data Protection Agency (AEPD), the supervisory authority for data protection in Spain.',
+    fr: 'Si vous pensez que le traitement de vos données n\'est pas conforme à la réglementation en vigueur, vous avez le droit de déposer une plainte auprès de l\'Agence espagnole de protection des données (AEPD), l\'autorité de contrôle en matière de protection des données en Espagne.',
+    de: 'Wenn Sie der Meinung sind, dass die Verarbeitung Ihrer Daten nicht den geltenden Vorschriften entspricht, haben Sie das Recht, eine Beschwerde bei der spanischen Datenschutzbehörde (Agencia Española de Protección de Datos, AEPD) einzureichen, der zuständigen Aufsichtsbehörde für Datenschutz in Spanien.',
+    it: 'Se ritieni che il trattamento dei tuoi dati non sia conforme alle normative vigenti, hai il diritto di presentare un reclamo all\'Agenzia spagnola per la protezione dei dati (AEPD), l\'autorità di controllo in materia di protezione dei dati in Spagna.',
+    el: 'Εάν θεωρείτε ότι η επεξεργασία των δεδομένων σας δεν συμμορφώνεται με τις ισχύουσες κανονιστικές διατάξεις, έχετε το δικαίωμα να υποβάλετε καταγγελία στην Ισπανική Αρχή Προστασίας Δεδομένων (AEPD), την αρμόδια εποπτική αρχή για την προστασία δεδομένων στην Ισπανία.'
   },
 
-  '9. Medidas de seguridad': {
-    en: '9. Security Measures',
-    fr: '9. Mesures de sécurité',
-    de: '9. Sicherheitsmaßnahmen',
-    it: '9. Misure di sicurezza',
-    el: '9. Μέτρα ασφαλείας'
+  '10. Medidas de seguridad': {
+    en: '10. Security Measures',
+    fr: '10. Mesures de sécurité',
+    de: '10. Sicherheitsmaßnahmen',
+    it: '10. Misure di sicurezza',
+    el: '10. Μέτρα ασφαλείας'
   },
 
   'Aplicamos medidas técnicas y organizativas razonables para proteger los datos personales que tratamos frente a accesos no autorizados, pérdida o alteración, adecuadas al riesgo del tratamiento descrito en esta política.': {
@@ -1375,12 +1423,12 @@
     el: 'Εφαρμόζουμε λογικές τεχνικές και οργανωτικές μέτρα για να προστατεύσουμε τα προσωπικά δεδομένα που επεξεργαζόμαστε από μη εξουσιοδοτημένη πρόσβαση, απώλεια ή τροποποίηση, κατάλληλα για τον κίνδυνο της επεξεργασίας που περιγράφεται σε αυτή την πολιτική.'
   },
 
-  '10. Menores de edad': {
-    en: '10. Minors',
-    fr: '10. Mineurs',
-    de: '10. Minderjährige',
-    it: '10. Minori',
-    el: '10. Ανήλικοι'
+  '11. Menores de edad': {
+    en: '11. Minors',
+    fr: '11. Mineurs',
+    de: '11. Minderjährige',
+    it: '11. Minori',
+    el: '11. Ανήλικοι'
   },
 
   'Este Sitio está dirigido a profesionales del sector salud y no está destinado a menores de edad. No recogemos conscientemente datos de menores a través de los formularios de esta web.': {
@@ -1391,12 +1439,12 @@
     el: 'Αυτός ο Ιστοχώρος απευθύνεται σε επαγγελματίες υγείας και δεν προορίζεται για ανηλίκους. Δεν συλλέγουμε επίτηδες δεδομένα από ανηλίκους μέσω των φορμών σε αυτήν την ιστοσελίδα.'
   },
 
-  '11. Cambios en esta política': {
-    en: '11. Changes to This Policy',
-    fr: '11. Modifications de cette politique',
-    de: '11. Änderungen dieser Richtlinie',
-    it: '11. Modifiche a questa politica',
-    el: '11. Αλλαγές σε αυτή την πολιτική'
+  '12. Cambios en esta política': {
+    en: '12. Changes to This Policy',
+    fr: '12. Modifications de cette politique',
+    de: '12. Änderungen dieser Richtlinie',
+    it: '12. Modifiche a questa politica',
+    el: '12. Αλλαγές σε αυτή την πολιτική'
   },
 
   'Podemos actualizar esta política de privacidad para adaptarla a cambios legislativos o en nuestros servicios. La fecha de la última actualización figura al principio de esta página.': {
@@ -1411,12 +1459,28 @@
   // COOKIE POLICY / POLÍTICA DE COOKIES
   // ============================================================================
 
+  'Política de cookies — Eureqa3D': {
+    en: 'Cookie Policy — Eureqa3D',
+    fr: 'Politique sur les cookies — Eureqa3D',
+    de: 'Cookie-Richtlinie — Eureqa3D',
+    it: 'Politica sui cookie — Eureqa3D',
+    el: 'Πολιτική cookies — Eureqa3D'
+  },
+
   'POLÍTICA DE COOKIES': {
     en: 'COOKIE POLICY',
     fr: 'POLITIQUE SUR LES COOKIES',
     de: 'COOKIE-RICHTLINIE',
     it: 'POLITICA SUI COOKIE',
     el: 'ΠΟΛΙΤΙΚΉ ΣΧΕΤΙΚΆ ΜΕ ΤΑ COOKIES'
+  },
+
+  'Política de cookies': {
+    en: 'Cookie Policy',
+    fr: 'Politique sur les cookies',
+    de: 'Cookie-Richtlinie',
+    it: 'Politica sui cookie',
+    el: 'Πολιτική cookies'
   },
 
   '1. Qué es una cookie': {
@@ -1427,12 +1491,12 @@
     el: '1. Τι είναι ένα cookie'
   },
 
-  'Una cookie es un pequeño archivo que un sitio web guarda en tu navegador para recordar información entre visitas o durante tu sesión. Este sitio web también usa almacenamiento local del navegador (localStorage), una tecnología similar que, a diferencia de las cookies, no se envía automáticamente a nuestro servidor: los datos se quedan en tu propio dispositivo.': {
-    en: 'A cookie is a small file that a website stores in your browser to remember information between visits or during your session. This website also uses browser local storage (localStorage), a similar technology that, unlike cookies, is not automatically sent to our server: the data remains on your own device.',
-    fr: 'Un cookie est un petit fichier qu\'un site web stocke dans votre navigateur pour mémoriser les informations entre les visites ou pendant votre session. Ce site web utilise également le stockage local du navigateur (localStorage), une technologie similaire qui, contrairement aux cookies, n\'est pas automatiquement envoyée à notre serveur : les données restent sur votre propre appareil.',
-    de: 'Ein Cookie ist eine kleine Datei, die eine Website in Ihrem Browser speichert, um Informationen zwischen Besuchen oder während Ihrer Sitzung zu speichern. Diese Website verwendet auch den lokalen Browser-Speicher (localStorage), eine ähnliche Technologie, die im Gegensatz zu Cookies nicht automatisch an unseren Server gesendet wird: Die Daten bleiben auf Ihrem Gerät.',
-    it: 'Un cookie è un piccolo file che un sito web memorizza nel tuo browser per ricordare le informazioni tra le visite o durante la tua sessione. Questo sito web utilizza anche l\'archiviazione locale del browser (localStorage), una tecnologia simile che, a differenza dei cookie, non viene inviata automaticamente al nostro server: i dati rimangono sul tuo dispositivo.',
-    el: 'Ένα cookie είναι ένα μικρό αρχείο που μια ιστοσελίδα αποθηκεύει στο πρόγραμμα περιήγησής σας για να θυμάται πληροφορίες μεταξύ επισκέψεων ή κατά τη διάρκεια της συνεδρίας σας. Αυτή η ιστοσελίδα χρησιμοποιεί επίσης τοπικό αποθηκευτικό χώρο του προγράμματος περιήγησης (localStorage), μια παρόμοια τεχνολογία που, σε αντίθεση με τα cookies, δεν αποστέλλεται αυτόματα στο διακομιστή μας: τα δεδομένα παραμένουν στη δική σας συσκευή.'
+  'Una cookie es un pequeño archivo que un sitio web guarda en tu navegador para recordar información entre visitas o durante tu sesión. Este sitio web también usa <strong>almacenamiento local del navegador (localStorage)</strong>, una tecnología similar que, a diferencia de las cookies, no se envía automáticamente a nuestro servidor: los datos se quedan en tu propio dispositivo.': {
+    en: 'A cookie is a small file that a website stores in your browser to remember information between visits or during your session. This website also uses <strong>browser local storage (localStorage)</strong>, a similar technology that, unlike cookies, is not automatically sent to our server: the data remains on your own device.',
+    fr: 'Un cookie est un petit fichier qu\'un site web stocke dans votre navigateur pour mémoriser les informations entre les visites ou pendant votre session. Ce site web utilise également le <strong>stockage local du navigateur (localStorage)</strong>, une technologie similaire qui, contrairement aux cookies, n\'est pas automatiquement envoyée à notre serveur : les données restent sur votre propre appareil.',
+    de: 'Ein Cookie ist eine kleine Datei, die eine Website in Ihrem Browser speichert, um Informationen zwischen Besuchen oder während Ihrer Sitzung zu speichern. Diese Website verwendet auch den <strong>lokalen Browser-Speicher (localStorage)</strong>, eine ähnliche Technologie, die im Gegensatz zu Cookies nicht automatisch an unseren Server gesendet wird: Die Daten bleiben auf Ihrem Gerät.',
+    it: 'Un cookie è un piccolo file che un sito web memorizza nel tuo browser per ricordare le informazioni tra le visite o durante la tua sessione. Questo sito web utilizza anche l\'<strong>archiviazione locale del browser (localStorage)</strong>, una tecnologia simile che, a differenza dei cookie, non viene inviata automaticamente al nostro server: i dati rimangono sul tuo dispositivo.',
+    el: 'Ένα cookie είναι ένα μικρό αρχείο που μια ιστοσελίδα αποθηκεύει στο πρόγραμμα περιήγησής σας για να θυμάται πληροφορίες μεταξύ επισκέψεων ή κατά τη διάρκεια της συνεδρίας σας. Αυτή η ιστοσελίδα χρησιμοποιεί επίσης <strong>τοπικό αποθηκευτικό χώρο του προγράμματος περιήγησης (localStorage)</strong>, μια παρόμοια τεχνολογία που, σε αντίθεση με τα cookies, δεν αποστέλλεται αυτόματα στο διακομιστή μας: τα δεδομένα παραμένουν στη δική σας συσκευή.'
   },
 
   '2. Qué usamos hoy en este sitio web': {
@@ -1443,12 +1507,12 @@
     el: '2. Αυτό που χρησιμοποιούμε σήμερα σε αυτήν την ιστοσελίδα'
   },
 
-  'Si navegas por las páginas públicas de este Sitio sin iniciar sesión, no se instala ninguna cookie de seguimiento ni analítica. Concretamente:': {
-    en: 'If you navigate the public pages of this Site without logging in, no tracking or analytics cookies are installed. Specifically:',
-    fr: 'Si vous naviguez dans les pages publiques de ce Site sans vous connecter, aucun cookie de suivi ou d\'analyse n\'est installé. Concrètement :',
-    de: 'Wenn Sie die öffentlichen Seiten dieser Website durchsuchen, ohne sich anzumelden, werden keine Tracking- oder Analyse-Cookies installiert. Insbesondere:',
-    it: 'Se navighi le pagine pubbliche di questo Sito senza accedere, non vengono installati cookie di tracciamento o analitici. Nello specifico:',
-    el: 'Εάν περιηγηθείτε στις δημόσιες σελίδες αυτού του Ιστοχώρου χωρίς να συνδεθείτε, δεν εγκαθίστανται cookies παρακολούθησης ή ανάλυσης. Συγκεκριμένα:'
+  'Si navegas por las páginas públicas de este Sitio sin iniciar sesión, <strong>no se instala ninguna cookie de seguimiento ni analítica</strong>. Concretamente:': {
+    en: 'If you navigate the public pages of this Site without logging in, <strong>no tracking or analytics cookies are installed</strong>. Specifically:',
+    fr: 'Si vous naviguez dans les pages publiques de ce Site sans vous connecter, <strong>aucun cookie de suivi ou d\'analyse n\'est installé</strong>. Concrètement :',
+    de: 'Wenn Sie die öffentlichen Seiten dieser Website durchsuchen, ohne sich anzumelden, <strong>werden keine Tracking- oder Analyse-Cookies installiert</strong>. Insbesondere:',
+    it: 'Se navighi le pagine pubbliche di questo Sito senza accedere, <strong>non vengono installati cookie di tracciamento o analitici</strong>. Nello specifico:',
+    el: 'Εάν περιηγηθείτε στις δημόσιες σελίδες αυτού του Ιστοχώρου χωρίς να συνδεθείτε, <strong>δεν εγκαθίστανται cookies παρακολούθησης ή ανάλυσης</strong>. Συγκεκριμένα:'
   },
 
   '- connect.sid: Cookie técnica (propia). Mantiene tu sesión iniciada si accedes al panel privado o al visor de casos. Solo se crea si inicias sesión; no afecta a la navegación pública. Duración: 7 días o hasta cerrar sesión.': {
@@ -1483,12 +1547,12 @@
     el: '3. Cookies ανάλυσης (Google Analytics) — μόνο εάν τα δεχθείτε'
   },
 
-  'Este Sitio está preparado para usar Google Analytics 4 con el fin de entender, de forma agregada, qué páginas se visitan más y en qué idioma. A día de hoy esta herramienta está desactivada. Si en el futuro se activa, antes de instalar ninguna cookie de Google te pediremos tu consentimiento mediante el banner que aparece al entrar en la web. Si activamos Analytics, las cookies que instalaría serían, orientativamente:': {
-    en: 'This Site is set up to use Google Analytics 4 in order to understand, in aggregate, which pages are visited most and in which language. As of today, this tool is inactive. If it is activated in the future, before installing any Google cookie, we will ask for your consent through the banner that appears when you enter the website. If we activate Analytics, the cookies it would install would be, roughly:',
-    fr: 'Ce Site est configuré pour utiliser Google Analytics 4 afin de comprendre, de façon agrégée, quelles pages sont visitées le plus et dans quelle langue. À ce jour, cet outil est désactivé. S\'il est activé à l\'avenir, avant d\'installer un cookie Google, nous vous demandons votre consentement via la bannière qui apparaît lorsque vous entrez sur le site. Si nous activons Analytics, les cookies qu\'il installerait seraient, orientatif :',
-    de: 'Diese Website ist für die Verwendung von Google Analytics 4 konfiguriert, um zu verstehen, wie Seiten zusammengefasst am meisten besucht werden und in welcher Sprache. Heute ist dieses Tool inaktiv. Sollte es in Zukunft aktiviert werden, werden wir vor der Installation eines Google-Cookies Ihre Zustimmung über das Banner anfordern, das beim Betreten der Website erscheint. Wenn wir Analytics aktivieren, wären die Cookies, die es installieren würde, grob gesagt:',
-    it: 'Questo Sito è configurato per utilizzare Google Analytics 4 al fine di comprendere, in modo aggregato, quali pagine vengono visitate più frequentemente e in quale lingua. Ad oggi, questo strumento è disattivato. Se attivato in futuro, prima di installare un cookie Google, ti chiederemo il tuo consenso tramite il banner che appare quando entri nel sito web. Se attivassimo Analytics, i cookie che instalerebbe sarebbero, indicativamente:',
-    el: 'Αυτός ο Ιστοχώρος είναι ρυθμισμένος για τη χρήση του Google Analytics 4 για να καταλάβει, συνολικά, ποιες σελίδες επισκέπτονται περισσότερο και σε ποια γλώσσα. Σήμερα, αυτό το εργαλείο είναι ανενεργό. Εάν ενεργοποιηθεί στο μέλλον, πριν εγκαταστήσουμε ένα cookie της Google, θα σας ζητήσουμε τη συγκατάθεσή σας μέσω του banner που εμφανίζεται όταν εισέλθετε στην ιστοσελίδα. Εάν ενεργοποιούσαμε Analytics, τα cookies που θα εγκατέστησε θα ήταν, κατά προσέγγιση:'
+  'Este Sitio está preparado para usar Google Analytics 4 con el fin de entender, de forma agregada, qué páginas se visitan más y en qué idioma. <strong>A día de hoy esta herramienta está desactivada.</strong> Si en el futuro se activa, antes de instalar ninguna cookie de Google te pediremos tu consentimiento mediante el banner que aparece al entrar en la web. Si activamos Analytics, las cookies que instalaría serían, orientativamente:': {
+    en: 'This Site is set up to use Google Analytics 4 in order to understand, in aggregate, which pages are visited most and in which language. <strong>As of today, this tool is inactive.</strong> If it is activated in the future, before installing any Google cookie, we will ask for your consent through the banner that appears when you enter the website. If we activate Analytics, the cookies it would install would be, roughly:',
+    fr: 'Ce Site est configuré pour utiliser Google Analytics 4 afin de comprendre, de façon agrégée, quelles pages sont visitées le plus et dans quelle langue. <strong>À ce jour, cet outil est désactivé.</strong> S\'il est activé à l\'avenir, avant d\'installer un cookie Google, nous vous demandons votre consentement via la bannière qui apparaît lorsque vous entrez sur le site. Si nous activons Analytics, les cookies qu\'il installerait seraient, orientatif :',
+    de: 'Diese Website ist für die Verwendung von Google Analytics 4 konfiguriert, um zu verstehen, wie Seiten zusammengefasst am meisten besucht werden und in welcher Sprache. <strong>Heute ist dieses Tool inaktiv.</strong> Sollte es in Zukunft aktiviert werden, werden wir vor der Installation eines Google-Cookies Ihre Zustimmung über das Banner anfordern, das beim Betreten der Website erscheint. Wenn wir Analytics aktivieren, wären die Cookies, die es installieren würde, grob gesagt:',
+    it: 'Questo Sito è configurato per utilizzare Google Analytics 4 al fine di comprendere, in modo aggregato, quali pagine vengono visitate più frequentemente e in quale lingua. <strong>Ad oggi, questo strumento è disattivato.</strong> Se attivato in futuro, prima di installare un cookie Google, ti chiederemo il tuo consenso tramite il banner che appare quando entri nel sito web. Se attivassimo Analytics, i cookie che instalerebbe sarebbero, indicativamente:',
+    el: 'Αυτός ο Ιστοχώρος είναι ρυθμισμένος για τη χρήση του Google Analytics 4 για να καταλάβει, συνολικά, ποιες σελίδες επισκέπτονται περισσότερο και σε ποια γλώσσα. <strong>Σήμερα, αυτό το εργαλείο είναι ανενεργό.</strong> Εάν ενεργοποιηθεί στο μέλλον, πριν εγκαταστήσουμε ένα cookie της Google, θα σας ζητήσουμε τη συγκατάθεσή σας μέσω του banner που εμφανίζεται όταν εισέλθετε στην ιστοσελίδα. Εάν ενεργοποιούσαμε Analytics, τα cookies που θα εγκατέστησε θα ήταν, κατά προσέγγιση:'
   },
 
   '- _ga: Google Analytics. Distingue usuarios de forma anónima para las estadísticas de uso. Duración: Hasta 2 años.': {
@@ -1515,6 +1579,14 @@
     el: '4. Πώς να διαχειριστείτε τη συγκατάθεσή σας'
   },
 
+  '5. Más información': {
+    en: '5. More Information',
+    fr: '5. Plus d\'informations',
+    de: '5. Weitere Informationen',
+    it: '5. Maggiori informazioni',
+    el: '5. Περισσότερες πληροφορίες'
+  },
+
   'Puedes cambiar en cualquier momento la decisión que tomaste en el banner de cookies. También puedes bloquear o eliminar las cookies en cualquier momento desde la configuración de tu navegador (Chrome, Firefox, Safari, Edge u otro). Ten en cuenta que bloquear la cookie técnica connect.sid te impedirá mantener la sesión iniciada en el panel privado.': {
     en: 'You can change your cookie banner decision at any time. You can also block or delete cookies at any time from your browser settings (Chrome, Firefox, Safari, Edge, or other). Please note that blocking the technical cookie connect.sid will prevent you from maintaining your session in the private panel.',
     fr: 'Vous pouvez modifier votre décision sur la bannière de cookies à tout moment. Vous pouvez également bloquer ou supprimer les cookies à tout moment dans les paramètres de votre navigateur (Chrome, Firefox, Safari, Edge ou autre). Notez que bloquer le cookie technique connect.sid vous empêchera de maintenir votre session dans le panneau privé.',
@@ -1522,10 +1594,326 @@
     it: 'Puoi modificare la tua decisione sul banner dei cookie in qualsiasi momento. Puoi anche bloccare o eliminare i cookie in qualsiasi momento dalle impostazioni del tuo browser (Chrome, Firefox, Safari, Edge o altri). Tieni presente che il blocco del cookie tecnico connect.sid ti impedirà di mantenere la tua sessione nel pannello privato.',
     el: 'Μπορείτε να αλλάξετε την απόφασή σας για το banner των cookies ανά πάσα στιγμή. Μπορείτε επίσης να αποκλείσετε ή να διαγράψετε cookies ανά πάσα στιγμή από τις ρυθμίσεις του προγράμματος περιήγησής σας (Chrome, Firefox, Safari, Edge ή άλλο). Σημειώστε ότι το αποκλεισμό του τεχνικού cookie connect.sid θα σας εμποδίσει να διατηρήσετε τη συνεδρία σας στον ιδιωτικό πίνακα.'
   },
+
+  'Puedes cambiar en cualquier momento la decisión que tomaste en el banner de cookies:': {
+    en: 'You can change your cookie banner decision at any time:',
+    fr: 'Vous pouvez modifier votre décision sur la bannière de cookies à tout moment :',
+    de: 'Sie können Ihre Cookie-Banner-Entscheidung jederzeit ändern:',
+    it: 'Puoi modificare la tua decisione sul banner dei cookie in qualsiasi momento:',
+    el: 'Μπορείτε να αλλάξετε την απόφασή σας για το banner των cookies ανά πάσα στιγμή:'
+  },
+
+  'También puedes bloquear o eliminar las cookies en cualquier momento desde la configuración de tu navegador. Ten en cuenta que bloquear la cookie técnica <code>connect.sid</code> te impedirá mantener la sesión iniciada en el panel privado. Instrucciones para los navegadores más comunes:': {
+    en: 'You can also block or delete cookies at any time from your browser settings. Please note that blocking the technical cookie <code>connect.sid</code> will prevent you from staying logged into the private panel. Instructions for the most common browsers:',
+    fr: 'Vous pouvez également bloquer ou supprimer les cookies à tout moment dans les paramètres de votre navigateur. Notez que bloquer le cookie technique <code>connect.sid</code> vous empêchera de rester connecté au panneau privé. Instructions pour les navigateurs les plus courants :',
+    de: 'Sie können Cookies auch jederzeit in den Einstellungen Ihres Browsers blockieren oder löschen. Beachten Sie, dass das Blockieren des technischen Cookies <code>connect.sid</code> Sie daran hindert, im privaten Panel angemeldet zu bleiben. Anleitungen für die gängigsten Browser:',
+    it: 'Puoi anche bloccare o eliminare i cookie in qualsiasi momento dalle impostazioni del tuo browser. Tieni presente che il blocco del cookie tecnico <code>connect.sid</code> ti impedirà di rimanere connesso al pannello privato. Istruzioni per i browser più comuni:',
+    el: 'Μπορείτε επίσης να αποκλείσετε ή να διαγράψετε cookies ανά πάσα στιγμή από τις ρυθμίσεις του προγράμματος περιήγησής σας. Σημειώστε ότι το αποκλεισμό του τεχνικού cookie <code>connect.sid</code> θα σας εμποδίσει να παραμείνετε συνδεδεμένοι στον ιδιωτικό πίνακα. Οδηγίες για τους πιο συνηθισμένους browsers:'
+  },
+
+  'Consulta también nuestra <a href="/politica-privacidad">Política de privacidad</a> y nuestro <a href="/aviso-legal">Aviso legal</a>. Para cualquier duda sobre cookies, escríbenos a <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.': {
+    en: 'See also our <a href="/politica-privacidad">Privacy Policy</a> and our <a href="/aviso-legal">Legal Notice</a>. For any question about cookies, write to us at <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.',
+    fr: 'Consultez également notre <a href="/politica-privacidad">Politique de confidentialité</a> et nos <a href="/aviso-legal">Mentions légales</a>. Pour toute question sur les cookies, écrivez-nous à <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.',
+    de: 'Beachten Sie auch unsere <a href="/politica-privacidad">Datenschutzerklärung</a> und unser <a href="/aviso-legal">Impressum</a>. Bei Fragen zu Cookies schreiben Sie uns an <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.',
+    it: 'Consulta anche la nostra <a href="/politica-privacidad">Informativa sulla privacy</a> e le nostre <a href="/aviso-legal">Note legali</a>. Per qualsiasi dubbio sui cookie, scrivici a <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.',
+    el: 'Συμβουλευτείτε επίσης την <a href="/politica-privacidad">Πολιτική απορρήτου</a> και τη <a href="/aviso-legal">Νομική σημείωση</a> μας. Για οποιαδήποτε απορία σχετικά με τα cookies, γράψτε μας στο <a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>.'
+  },
+
+  /* ── Tabla de cookies ── */
+  'Nombre': { en: 'Name', fr: 'Nom', de: 'Name', it: 'Nome', el: 'Όνομα' },
+  'Tipo': { en: 'Type', fr: 'Type', de: 'Typ', it: 'Tipo', el: 'Τύπος' },
+  'Finalidad': { en: 'Purpose', fr: 'Finalité', de: 'Zweck', it: 'Finalità', el: 'Σκοπός' },
+  'Duración': { en: 'Duration', fr: 'Durée', de: 'Dauer', it: 'Durata', el: 'Διάρκεια' },
+  'Proveedor': { en: 'Provider', fr: 'Fournisseur', de: 'Anbieter', it: 'Fornitore', el: 'Πάροχος' },
+  'Cookie técnica (propia)': { en: 'Technical cookie (own)', fr: 'Cookie technique (propre)', de: 'Technisches Cookie (eigenes)', it: 'Cookie tecnico (proprio)', el: 'Τεχνικό cookie (δικό μας)' },
+  'localStorage (propio, no es una cookie)': { en: 'localStorage (own, not a cookie)', fr: 'localStorage (propre, ce n\'est pas un cookie)', de: 'localStorage (eigenes, kein Cookie)', it: 'localStorage (proprio, non è un cookie)', el: 'localStorage (δικό μας, δεν είναι cookie)' },
+  'Mantiene tu sesión iniciada si accedes al panel privado o al visor de casos. Solo se crea si inicias sesión; no afecta a la navegación pública.': {
+    en: 'Keeps your session active if you access the private panel or case viewer. Only created if you log in; does not affect public navigation.',
+    fr: 'Maintient votre session active si vous accédez au panneau privé ou à la visionneuse de cas. Créé uniquement si vous vous connectez ; n\'affecte pas la navigation publique.',
+    de: 'Hält Ihre Sitzung aktiv, wenn Sie auf das private Panel oder den Case Viewer zugreifen. Wird nur erstellt, wenn Sie sich anmelden; beeinflusst nicht die öffentliche Navigation.',
+    it: 'Mantiene la tua sessione attiva se accedi al pannello privato o al visualizzatore di casi. Creato solo se accedi; non influisce sulla navigazione pubblica.',
+    el: 'Διατηρεί τη συνεδρία σας ενεργή εάν αποκτάτε πρόσβαση στον ιδιωτικό πίνακα ή στο πρόγραμμα προβολής περιπτώσεων. Δημιουργείται μόνο εάν συνδεθείτε· δεν επηρεάζει τη δημόσια πλοήγηση.'
+  },
+  '7 días o hasta cerrar sesión': { en: '7 days or until logout', fr: '7 jours ou jusqu\'à la déconnexion', de: '7 Tage oder bis zur Abmeldung', it: '7 giorni o fino alla disconnessione', el: '7 ημέρες ή έως την αποσύνδεση' },
+  'Recuerda el idioma que has elegido en el selector de banderas.': {
+    en: 'Remembers the language you selected in the flag selector.',
+    fr: 'Mémorise la langue que vous avez sélectionnée dans le sélecteur de drapeaux.',
+    de: 'Merkt sich die Sprache, die Sie in der Flaggenauswahl ausgewählt haben.',
+    it: 'Ricorda la lingua che hai selezionato nel selettore di bandiere.',
+    el: 'Θυμάται τη γλώσσα που επιλέξατε στο πρόγραμμα επιλογής σημαιών.'
+  },
+  'Hasta que lo borres o cambies de idioma': { en: 'Until you delete it or change language', fr: 'Jusqu\'à ce que vous le supprimiez ou changiez de langue', de: 'Bis Sie es löschen oder die Sprache ändern', it: 'Fino a quando non lo elimini o cambi lingua', el: 'Έως ότου το διαγράψετε ή αλλάξετε γλώσσα' },
+  'Recuerda si aceptaste o rechazaste las cookies analíticas, para no volver a preguntarte en cada visita.': {
+    en: 'Remembers whether you accepted or rejected analytics cookies, so we don\'t ask you again on each visit.',
+    fr: 'Mémorise si vous avez accepté ou refusé les cookies d\'analyse, afin de ne pas vous le redemander à chaque visite.',
+    de: 'Merkt sich, ob Sie Analyse-Cookies akzeptiert oder abgelehnt haben, damit wir Sie nicht bei jedem Besuch erneut fragen.',
+    it: 'Ricorda se hai accettato o rifiutato i cookie analitici, per non chiedertelo di nuovo a ogni visita.',
+    el: 'Θυμάται εάν δεχθήκατε ή απορρίψατε τα cookies ανάλυσης, ώστε να μην σας ρωτάμε ξανά σε κάθε επίσκεψη.'
+  },
+  'Hasta que lo borres o cambies tu elección': { en: 'Until you delete it or change your choice', fr: 'Jusqu\'à ce que vous le supprimiez ou changiez votre choix', de: 'Bis Sie es löschen oder Ihre Wahl ändern', it: 'Fino a quando non lo elimini o cambi la tua scelta', el: 'Έως ότου το διαγράψετε ή αλλάξετε την επιλογή σας' },
+  'Distingue usuarios de forma anónima para las estadísticas de uso.': {
+    en: 'Distinguishes users anonymously for usage statistics.',
+    fr: 'Distingue les utilisateurs de manière anonyme pour les statistiques d\'utilisation.',
+    de: 'Unterscheidet Benutzer anonym für Nutzungsstatistiken.',
+    it: 'Distingue gli utenti in modo anonimo per le statistiche di utilizzo.',
+    el: 'Διακρίνει τους χρήστες ανώνυμα για τις στατιστικές χρήσης.'
+  },
+  'Hasta 2 años': { en: 'Up to 2 years', fr: 'Jusqu\'à 2 ans', de: 'Bis zu 2 Jahre', it: 'Fino a 2 anni', el: 'Έως 2 χρόνια' },
+  'Mantiene el estado de la sesión de navegación para las estadísticas.': {
+    en: 'Maintains the browsing session state for statistics.',
+    fr: 'Maintient l\'état de la session de navigation pour les statistiques.',
+    de: 'Behält den Status der Browser-Sitzung für Statistiken bei.',
+    it: 'Mantiene lo stato della sessione di navigazione per le statistiche.',
+    el: 'Διατηρεί την κατάσταση της συνεδρίας περιήγησης για τις στατιστικές.'
+  },
+
+  /* ── Otros huecos sueltos ── */
+  '7 días': { en: '7 days', fr: '7 jours', de: '7 Tage', it: '7 giorni', el: '7 ημέρες' },
+  'Total': { en: 'Total', fr: 'Total', de: 'Gesamt', it: 'Totale', el: 'Σύνολο' },
+  'RGPD': { en: 'GDPR', fr: 'RGPD', de: 'DSGVO', it: 'GDPR', el: 'ΓΚΠΔ' },
+  'Ver detalle →': { en: 'View details →', fr: 'Voir le détail →', de: 'Mehr erfahren →', it: 'Vedi dettagli →', el: 'Δείτε λεπτομέρειες →' },
+
+  'Modelos 3D quirúrgicos para planificación preoperatoria | Eureqa3D': {
+    en: 'Surgical 3D Models for Preoperative Planning | Eureqa3D',
+    fr: 'Modèles 3D chirurgicaux pour la planification préopératoire | Eureqa3D',
+    de: 'Chirurgische 3D-Modelle für die präoperative Planung | Eureqa3D',
+    it: 'Modelli 3D chirurgici per la pianificazione preoperatoria | Eureqa3D',
+    el: 'Χειρουργικά μοντέλα 3D για προεγχειρητικό σχεδιασμό | Eureqa3D'
+  },
+  'Quiénes somos — Empresa de impresión 3D quirúrgica': {
+    en: 'About Us — Surgical 3D Printing Company',
+    fr: 'Qui sommes-nous — Entreprise d\'impression 3D chirurgicale',
+    de: 'Über uns — Unternehmen für chirurgischen 3D-Druck',
+    it: 'Chi siamo — Azienda di stampa 3D chirurgica',
+    el: 'Ποιοι είμαστε — Εταιρεία χειρουργικής τρισδιάστατης εκτύπωσης'
+  },
+  'Método Eureqa — Proceso de impresión 3D quirúrgica RGPD': {
+    en: 'Eureqa Method — GDPR-Compliant Surgical 3D Printing Process',
+    fr: 'Méthode Eureqa — Processus d\'impression 3D chirurgicale conforme RGPD',
+    de: 'Eureqa-Methode — DSGVO-konformer chirurgischer 3D-Druckprozess',
+    it: 'Metodo Eureqa — Processo di stampa 3D chirurgica conforme al RGPD',
+    el: 'Μέθοδος Eureqa — Διαδικασία χειρουργικής τρισδιάστατης εκτύπωσης σύμφωνη με τον GDPR'
+  },
+  'Modelos 3D para traumatología — Impresión 3D de fracturas complejas': {
+    en: '3D Models for Traumatology — 3D Printing of Complex Fractures',
+    fr: 'Modèles 3D pour la traumatologie — Impression 3D de fractures complexes',
+    de: '3D-Modelle für die Traumatologie — 3D-Druck komplexer Frakturen',
+    it: 'Modelli 3D per la traumatologia — Stampa 3D di fratture complesse',
+    el: 'Μοντέλα 3D για την τραυματολογία — Τρισδιάστατη εκτύπωση σύνθετων καταγμάτων'
+  },
+  'Impresión 3D oncológica — Modelos para cirugía tumor': {
+    en: 'Oncological 3D Printing — Models for Tumor Surgery',
+    fr: 'Impression 3D oncologique — Modèles pour la chirurgie tumorale',
+    de: 'Onkologischer 3D-Druck — Modelle für die Tumorchirurgie',
+    it: 'Stampa 3D oncologica — Modelli per la chirurgia del tumore',
+    el: 'Ογκολογική τρισδιάστατη εκτύπωση — Μοντέλα για χειρουργική όγκου'
+  },
+  'Visor 3D interactivo para modelos anatómicos quirúrgicos': {
+    en: 'Interactive 3D Viewer for Surgical Anatomical Models',
+    fr: 'Visionneuse 3D interactive pour modèles anatomiques chirurgicaux',
+    de: 'Interaktiver 3D-Viewer für chirurgische Anatomiemodelle',
+    it: 'Visualizzatore 3D interattivo per modelli anatomici chirurgici',
+    el: 'Διαδραστικός προβολέας 3D για χειρουργικά ανατομικά μοντέλα'
+  },
+
+  '<span class="ic" data-ic="mail"></span><a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>': {
+    en: '<span class="ic" data-ic="mail"></span><a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>',
+    fr: '<span class="ic" data-ic="mail"></span><a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>',
+    de: '<span class="ic" data-ic="mail"></span><a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>',
+    it: '<span class="ic" data-ic="mail"></span><a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>',
+    el: '<span class="ic" data-ic="mail"></span><a href="mailto:info@eureqa3d.com">info@eureqa3d.com</a>'
+  },
+  '<span class="ic" data-ic="twitter"></span><a href="https://twitter.com/eureqa3D" target="_blank" rel="noopener">@eureqa3D</a>': {
+    en: '<span class="ic" data-ic="twitter"></span><a href="https://twitter.com/eureqa3D" target="_blank" rel="noopener">@eureqa3D</a>',
+    fr: '<span class="ic" data-ic="twitter"></span><a href="https://twitter.com/eureqa3D" target="_blank" rel="noopener">@eureqa3D</a>',
+    de: '<span class="ic" data-ic="twitter"></span><a href="https://twitter.com/eureqa3D" target="_blank" rel="noopener">@eureqa3D</a>',
+    it: '<span class="ic" data-ic="twitter"></span><a href="https://twitter.com/eureqa3D" target="_blank" rel="noopener">@eureqa3D</a>',
+    el: '<span class="ic" data-ic="twitter"></span><a href="https://twitter.com/eureqa3D" target="_blank" rel="noopener">@eureqa3D</a>'
+  },
+  '<span class="ic" data-ic="mapPin"></span><span>Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres</span>': {
+    en: '<span class="ic" data-ic="mapPin"></span><span>Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres</span>',
+    fr: '<span class="ic" data-ic="mapPin"></span><span>Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres</span>',
+    de: '<span class="ic" data-ic="mapPin"></span><span>Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres</span>',
+    it: '<span class="ic" data-ic="mapPin"></span><span>Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres</span>',
+    el: '<span class="ic" data-ic="mapPin"></span><span>Centro iNovo, Av. Miajadas, 32, 10200 Trujillo, Cáceres</span>'
+  },
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     FAQ PAGE — Preguntas frecuentes
+     ══════════════════════════════════════════════════════════════════════════ */
+  'Preguntas frecuentes': { en: 'Frequently Asked Questions', fr: 'Questions fréquentes', de: 'Häufig gestellte Fragen', it: 'Domande frequenti', el: 'Συχνές ερωτήσεις' },
+  'Preguntas frecuentes — Impresión 3D quirúrgica | Eureqa3D': {
+    en: 'Frequently Asked Questions — Surgical 3D Printing | Eureqa3D',
+    fr: 'Questions fréquentes — Impression 3D chirurgicale | Eureqa3D',
+    de: 'Häufig gestellte Fragen — Chirurgischer 3D-Druck | Eureqa3D',
+    it: 'Domande frequenti — Stampa 3D chirurgica | Eureqa3D',
+    el: 'Συχνές ερωτήσεις — Χειρουργική τρισδιάστατη εκτύπωση | Eureqa3D'
+  },
+  'Dudas sobre impresión 3D quirúrgica': { en: 'Questions about surgical 3D printing', fr: 'Questions sur l\'impression 3D chirurgicale', de: 'Fragen zum chirurgischen 3D-Druck', it: 'Domande sulla stampa 3D chirurgica', el: 'Ερωτήσεις σχετικά με τη χειρουργική τρισδιάστατη εκτύπωση' },
+  'Respuestas a las preguntas más comunes sobre el Método Eureqa, timeline, confidencialidad y especialidades.': {
+    en: 'Answers to the most common questions about the Eureqa Method, timeline, confidentiality and specialties.',
+    fr: 'Réponses aux questions les plus fréquentes sur la Méthode Eureqa, les délais, la confidentialité et les spécialités.',
+    de: 'Antworten auf die häufigsten Fragen zur Eureqa-Methode, zum Zeitplan, zur Vertraulichkeit und zu den Fachbereichen.',
+    it: 'Risposte alle domande più comuni sul Metodo Eureqa, tempistiche, riservatezza e specialità.',
+    el: 'Απαντήσεις στις πιο συνηθισμένες ερωτήσεις σχετικά με τη Μέθοδο Eureqa, το χρονοδιάγραμμα, την εμπιστευτικότητα και τις ειδικότητες.'
+  },
+
+  '¿Cuánto tarda en entregarse un modelo 3D? <span style="margin-left: 1rem;">+</span>': {
+    en: 'How long does it take to deliver a 3D model? <span style="margin-left: 1rem;">+</span>',
+    fr: 'Combien de temps faut-il pour livrer un modèle 3D ? <span style="margin-left: 1rem;">+</span>',
+    de: 'Wie lange dauert die Lieferung eines 3D-Modells? <span style="margin-left: 1rem;">+</span>',
+    it: 'Quanto tempo occorre per consegnare un modello 3D? <span style="margin-left: 1rem;">+</span>',
+    el: 'Πόσο χρόνο χρειάζεται η παράδοση ενός μοντέλου 3D; <span style="margin-left: 1rem;">+</span>'
+  },
+  'El Método Eureqa garantiza entrega en 7 días según especificaciones, material y destino. Desde la recogida de información hasta el envío del modelo listo para quirófano.': {
+    en: 'The Eureqa Method guarantees delivery within 7 days depending on specifications, material and destination — from gathering the information to shipping the model ready for the operating room.',
+    fr: 'La Méthode Eureqa garantit une livraison en 7 jours selon les spécifications, le matériau et la destination — de la collecte des informations à l\'envoi du modèle prêt pour le bloc opératoire.',
+    de: 'Die Eureqa-Methode garantiert die Lieferung innerhalb von 7 Tagen, je nach Spezifikationen, Material und Zielort — von der Informationserfassung bis zum Versand des OP-fertigen Modells.',
+    it: 'Il Metodo Eureqa garantisce la consegna entro 7 giorni in base a specifiche, materiale e destinazione — dalla raccolta delle informazioni all\'invio del modello pronto per la sala operatoria.',
+    el: 'Η Μέθοδος Eureqa εγγυάται παράδοση σε 7 ημέρες ανάλογα με τις προδιαγραφές, το υλικό και τον προορισμό — από τη συλλογή πληροφοριών έως την αποστολή του μοντέλου έτοιμου για το χειρουργείο.'
+  },
+
+  '¿Cómo se garantiza la confidencialidad del paciente? <span style="margin-left: 1rem;">+</span>': {
+    en: 'How is patient confidentiality guaranteed? <span style="margin-left: 1rem;">+</span>',
+    fr: 'Comment la confidentialité du patient est-elle garantie ? <span style="margin-left: 1rem;">+</span>',
+    de: 'Wie wird die Vertraulichkeit des Patienten gewährleistet? <span style="margin-left: 1rem;">+</span>',
+    it: 'Come viene garantita la riservatezza del paziente? <span style="margin-left: 1rem;">+</span>',
+    el: 'Πώς διασφαλίζεται η εμπιστευτικότητα του ασθενούς; <span style="margin-left: 1rem;">+</span>'
+  },
+  'Todos los casos se tratan con total anonimización y cumplimiento RGPD. Trazabilidad completa del proceso, envío seguro de imágenes médicas, y destrucción de datos tras finalizar el caso.': {
+    en: 'All cases are handled with full anonymization and GDPR compliance: complete process traceability, secure transmission of medical images, and data deletion once the case is finished.',
+    fr: 'Tous les cas sont traités avec une anonymisation totale et dans le respect du RGPD : traçabilité complète du processus, transmission sécurisée des images médicales, et destruction des données à la clôture du cas.',
+    de: 'Alle Fälle werden vollständig anonymisiert und DSGVO-konform behandelt: vollständige Rückverfolgbarkeit des Prozesses, sichere Übertragung medizinischer Bilder und Löschung der Daten nach Abschluss des Falls.',
+    it: 'Tutti i casi vengono trattati con completa anonimizzazione e conformità al RGPD: tracciabilità completa del processo, trasmissione sicura delle immagini mediche e cancellazione dei dati al termine del caso.',
+    el: 'Όλες οι περιπτώσεις αντιμετωπίζονται με πλήρη ανωνυμοποίηση και συμμόρφωση με τον GDPR: πλήρης ιχνηλασιμότητα της διαδικασίας, ασφαλής μετάδοση ιατρικών εικόνων και διαγραφή δεδομένων μετά την ολοκλήρωση της περίπτωσης.'
+  },
+
+  '¿Para qué especialidades funciona la impresión 3D? <span style="margin-left: 1rem;">+</span>': {
+    en: 'Which specialties does 3D printing work for? <span style="margin-left: 1rem;">+</span>',
+    fr: 'Pour quelles spécialités l\'impression 3D fonctionne-t-elle ? <span style="margin-left: 1rem;">+</span>',
+    de: 'Für welche Fachbereiche eignet sich der 3D-Druck? <span style="margin-left: 1rem;">+</span>',
+    it: 'Per quali specialità funziona la stampa 3D? <span style="margin-left: 1rem;">+</span>',
+    el: 'Για ποιες ειδικότητες λειτουργεί η τρισδιάστατη εκτύπωση; <span style="margin-left: 1rem;">+</span>'
+  },
+  'Traumatología, cirugía oncológica (general, hepatobiliopancreática, urología, ginecología, torácica), cardiología intervencionista, maxilofacial y otras especialidades quirúrgicas. Cada caso es único.': {
+    en: 'Traumatology, oncological surgery (general, hepatobiliopancreatic, urology, gynecology, thoracic), interventional cardiology, maxillofacial and other surgical specialties. Every case is unique.',
+    fr: 'Traumatologie, chirurgie oncologique (générale, hépatobiliopancréatique, urologie, gynécologie, thoracique), cardiologie interventionnelle, maxillo-faciale et autres spécialités chirurgicales. Chaque cas est unique.',
+    de: 'Traumatologie, onkologische Chirurgie (allgemein, hepatobiliopankreatisch, Urologie, Gynäkologie, Thorax), interventionelle Kardiologie, Mund-Kiefer-Gesichtschirurgie und weitere chirurgische Fachbereiche. Jeder Fall ist einzigartig.',
+    it: 'Traumatologia, chirurgia oncologica (generale, epatobiliopancreatica, urologia, ginecologia, toracica), cardiologia interventistica, maxillo-facciale e altre specialità chirurgiche. Ogni caso è unico.',
+    el: 'Τραυματολογία, ογκολογική χειρουργική (γενική, ηπατοχολοπαγκρεατική, ουρολογία, γυναικολογία, θωρακική), επεμβατική καρδιολογία, γναθοπροσωπική και άλλες χειρουργικές ειδικότητες. Κάθε περίπτωση είναι μοναδική.'
+  },
+
+  '¿Qué imágenes médicas se necesitan? <span style="margin-left: 1rem;">+</span>': {
+    en: 'What medical images are needed? <span style="margin-left: 1rem;">+</span>',
+    fr: 'Quelles images médicales sont nécessaires ? <span style="margin-left: 1rem;">+</span>',
+    de: 'Welche medizinischen Bilder werden benötigt? <span style="margin-left: 1rem;">+</span>',
+    it: 'Quali immagini mediche sono necessarie? <span style="margin-left: 1rem;">+</span>',
+    el: 'Ποιες ιατρικές εικόνες χρειάζονται; <span style="margin-left: 1rem;">+</span>'
+  },
+  'TC (TAC) o RMN del paciente. El formato DICOM es ideal. Nosotros te ayudamos a enviar las imágenes de forma segura o las podemos gestionar nosotros por ti.': {
+    en: 'A CT scan or MRI of the patient. DICOM format is ideal. We can help you send the images securely, or we can manage it for you.',
+    fr: 'Un scanner (CT) ou une IRM du patient. Le format DICOM est idéal. Nous pouvons vous aider à envoyer les images en toute sécurité, ou nous en charger pour vous.',
+    de: 'Ein CT oder MRT des Patienten. Das DICOM-Format ist ideal. Wir helfen Ihnen, die Bilder sicher zu übertragen, oder übernehmen dies für Sie.',
+    it: 'Una TC o una RM del paziente. Il formato DICOM è ideale. Possiamo aiutarti a inviare le immagini in modo sicuro, oppure occuparcene noi per te.',
+    el: 'Αξονική ή μαγνητική τομογραφία του ασθενούς. Η μορφή DICOM είναι ιδανική. Μπορούμε να σας βοηθήσουμε να στείλετε τις εικόνες με ασφάλεια, ή να το διαχειριστούμε εμείς για εσάς.'
+  },
+
+  '¿Cuál es la diferencia entre impresión 3D y modelo digital? <span style="margin-left: 1rem;">+</span>': {
+    en: 'What is the difference between 3D printing and a digital model? <span style="margin-left: 1rem;">+</span>',
+    fr: 'Quelle est la différence entre l\'impression 3D et un modèle numérique ? <span style="margin-left: 1rem;">+</span>',
+    de: 'Was ist der Unterschied zwischen 3D-Druck und digitalem Modell? <span style="margin-left: 1rem;">+</span>',
+    it: 'Qual è la differenza tra stampa 3D e modello digitale? <span style="margin-left: 1rem;">+</span>',
+    el: 'Ποια είναι η διαφορά μεταξύ τρισδιάστατης εκτύπωσης και ψηφιακού μοντέλου; <span style="margin-left: 1rem;">+</span>'
+  },
+  'Impresión 3D: réplica física del modelo a tamaño real (1:1), tangible, útil para simular cirugía en el quirófano. Modelo digital: visualización interactiva en navegador (Visor 3D), con rotación 360°, transparencias, sin instalaciones.': {
+    en: '3D printing: a full-scale (1:1) physical replica of the model, tangible, useful for simulating surgery in the operating room. Digital model: interactive browser viewing (3D Viewer), with 360° rotation, transparency, nothing to install.',
+    fr: 'Impression 3D : réplique physique du modèle à taille réelle (1:1), tangible, utile pour simuler la chirurgie au bloc opératoire. Modèle numérique : visualisation interactive dans le navigateur (Visor 3D), avec rotation à 360°, transparences, sans installation.',
+    de: '3D-Druck: physische Nachbildung des Modells in Originalgröße (1:1), greifbar, nützlich zur Simulation der Operation im OP. Digitales Modell: interaktive Ansicht im Browser (3D-Viewer), mit 360°-Drehung, Transparenzen, ohne Installation.',
+    it: 'Stampa 3D: replica fisica del modello a grandezza naturale (1:1), tangibile, utile per simulare l\'intervento in sala operatoria. Modello digitale: visualizzazione interattiva nel browser (Visor 3D), con rotazione a 360°, trasparenze, senza installazioni.',
+    el: 'Τρισδιάστατη εκτύπωση: φυσικό αντίγραφο του μοντέλου σε πραγματικό μέγεθος (1:1), απτό, χρήσιμο για την προσομοίωση της επέμβασης στο χειρουργείο. Ψηφιακό μοντέλο: διαδραστική προβολή στον browser (Visor 3D), με περιστροφή 360°, διαφάνειες, χωρίς εγκαταστάσεις.'
+  },
+
+  '¿Puedo simular la cirugía sobre el modelo? <span style="margin-left: 1rem;">+</span>': {
+    en: 'Can I simulate the surgery on the model? <span style="margin-left: 1rem;">+</span>',
+    fr: 'Puis-je simuler l\'intervention sur le modèle ? <span style="margin-left: 1rem;">+</span>',
+    de: 'Kann ich die Operation am Modell simulieren? <span style="margin-left: 1rem;">+</span>',
+    it: 'Posso simulare l\'intervento sul modello? <span style="margin-left: 1rem;">+</span>',
+    el: 'Μπορώ να προσομοιώσω την επέμβαση πάνω στο μοντέλο; <span style="margin-left: 1rem;">+</span>'
+  },
+  'Sí. Es un paso opcional del Método Eureqa. Fabricamos el modelo en materiales blandos que reproducen la consistencia de los tejidos, permitiendo ensayar el abordaje y anticipar complicaciones.': {
+    en: 'Yes. It\'s an optional step of the Eureqa Method. We manufacture the model in soft materials that reproduce tissue consistency, allowing you to rehearse the approach and anticipate complications.',
+    fr: 'Oui. C\'est une étape optionnelle de la Méthode Eureqa. Nous fabriquons le modèle dans des matériaux souples qui reproduisent la consistance des tissus, permettant de répéter l\'abord et d\'anticiper les complications.',
+    de: 'Ja. Das ist ein optionaler Schritt der Eureqa-Methode. Wir fertigen das Modell aus weichen Materialien, die die Gewebekonsistenz nachbilden, sodass Sie den Zugang einüben und Komplikationen vorwegnehmen können.',
+    it: 'Sì. È un passaggio opzionale del Metodo Eureqa. Realizziamo il modello con materiali morbidi che riproducono la consistenza dei tessuti, permettendo di provare l\'approccio e anticipare le complicanze.',
+    el: 'Ναι. Είναι ένα προαιρετικό βήμα της Μεθόδου Eureqa. Κατασκευάζουμε το μοντέλο σε μαλακά υλικά που αναπαράγουν τη σύσταση των ιστών, επιτρέποντας να δοκιμάσετε την προσέγγιση και να προβλέψετε επιπλοκές.'
+  },
+
+  '¿Es el Visor 3D un producto médico certificado? <span style="margin-left: 1rem;">+</span>': {
+    en: 'Is the 3D Viewer a certified medical device? <span style="margin-left: 1rem;">+</span>',
+    fr: 'Le Visor 3D est-il un produit médical certifié ? <span style="margin-left: 1rem;">+</span>',
+    de: 'Ist der 3D-Viewer ein zertifiziertes Medizinprodukt? <span style="margin-left: 1rem;">+</span>',
+    it: 'Il Visor 3D è un dispositivo medico certificato? <span style="margin-left: 1rem;">+</span>',
+    el: 'Είναι το Visor 3D πιστοποιημένο ιατρικό προϊόν; <span style="margin-left: 1rem;">+</span>'
+  },
+  'No. El EureqaVisor3D es una herramienta de apoyo a la visualización de modelos anatómicos 3D. No es un producto sanitario para visualizar estudios radiológicos y no sustituye a un informe radiológico. No usar con fines diagnósticos.': {
+    en: 'No. EureqaVisor3D is a support tool for viewing 3D anatomical models. It is not a medical device for viewing radiological studies and does not replace a radiological report. Not for diagnostic use.',
+    fr: 'Non. EureqaVisor3D est un outil d\'aide à la visualisation de modèles anatomiques 3D. Ce n\'est pas un produit sanitaire pour visualiser des études radiologiques et il ne remplace pas un rapport radiologique. Ne pas utiliser à des fins diagnostiques.',
+    de: 'Nein. EureqaVisor3D ist ein Hilfsmittel zur Anzeige von 3D-Anatomiemodellen. Es ist kein Medizinprodukt zur Anzeige radiologischer Untersuchungen und ersetzt keinen radiologischen Bericht. Nicht für diagnostische Zwecke verwenden.',
+    it: 'No. EureqaVisor3D è uno strumento di supporto per la visualizzazione di modelli anatomici 3D. Non è un dispositivo medico per visualizzare studi radiologici e non sostituisce un referto radiologico. Non utilizzare a scopo diagnostico.',
+    el: 'Όχι. Το EureqaVisor3D είναι ένα εργαλείο υποστήριξης για την προβολή ανατομικών μοντέλων 3D. Δεν είναι ιατρικό προϊόν για την προβολή ακτινολογικών μελετών και δεν αντικαθιστά μια ακτινολογική έκθεση. Να μη χρησιμοποιείται για διαγνωστικούς σκοπούς.'
+  },
+
+  '¿Cuál es el proceso completo? <span style="margin-left: 1rem;">+</span>': {
+    en: 'What is the full process? <span style="margin-left: 1rem;">+</span>',
+    fr: 'Quel est le processus complet ? <span style="margin-left: 1rem;">+</span>',
+    de: 'Wie läuft der gesamte Prozess ab? <span style="margin-left: 1rem;">+</span>',
+    it: 'Qual è il processo completo? <span style="margin-left: 1rem;">+</span>',
+    el: 'Ποια είναι η πλήρης διαδικασία; <span style="margin-left: 1rem;">+</span>'
+  },
+  '1. Recogida de información y necesidades. 2. Obtención segura de imágenes (TC/RMN). 3. Tratamiento de imagen médica con Método Eureqa. 4. Fabricación del modelo (físico o digital). 5. Simulación quirúrgica (opcional). 6. Preparación y envío.': {
+    en: '1. Gathering information and requirements. 2. Secure acquisition of images (CT/MRI). 3. Medical image processing with the Eureqa Method. 4. Manufacturing the model (physical or digital). 5. Surgical simulation (optional). 6. Preparation and shipping.',
+    fr: '1. Recueil des informations et besoins. 2. Obtention sécurisée des images (CT/IRM). 3. Traitement de l\'image médicale avec la Méthode Eureqa. 4. Fabrication du modèle (physique ou numérique). 5. Simulation chirurgicale (optionnelle). 6. Préparation et envoi.',
+    de: '1. Erfassung von Informationen und Anforderungen. 2. Sichere Beschaffung der Bilder (CT/MRT). 3. Verarbeitung der medizinischen Bilder mit der Eureqa-Methode. 4. Fertigung des Modells (physisch oder digital). 5. Chirurgische Simulation (optional). 6. Vorbereitung und Versand.',
+    it: '1. Raccolta di informazioni e necessità. 2. Acquisizione sicura delle immagini (TC/RM). 3. Trattamento dell\'immagine medica con il Metodo Eureqa. 4. Fabbricazione del modello (fisico o digitale). 5. Simulazione chirurgica (opzionale). 6. Preparazione e spedizione.',
+    el: '1. Συλλογή πληροφοριών και αναγκών. 2. Ασφαλής λήψη εικόνων (CT/MRI). 3. Επεξεργασία ιατρικής εικόνας με τη Μέθοδο Eureqa. 4. Κατασκευή του μοντέλου (φυσικό ή ψηφιακό). 5. Χειρουργική προσομοίωση (προαιρετικό). 6. Προετοιμασία και αποστολή.'
+  },
+
+  '¿Cómo puedo solicitar un caso? <span style="margin-left: 1rem;">+</span>': {
+    en: 'How can I request a case? <span style="margin-left: 1rem;">+</span>',
+    fr: 'Comment puis-je demander un cas ? <span style="margin-left: 1rem;">+</span>',
+    de: 'Wie kann ich einen Fall anfragen? <span style="margin-left: 1rem;">+</span>',
+    it: 'Come posso richiedere un caso? <span style="margin-left: 1rem;">+</span>',
+    el: 'Πώς μπορώ να ζητήσω μια περίπτωση; <span style="margin-left: 1rem;">+</span>'
+  },
+  'Contacta con nosotros: llamada +34 654 55 20 44, email info@eureqa3d.com, o rellena el formulario de contacto. Analizamos tu caso y te decimos si es viable. Sin compromiso.': {
+    en: 'Get in touch: call +34 654 55 20 44, email info@eureqa3d.com, or fill in the contact form. We\'ll analyze your case and tell you if it\'s viable. No commitment.',
+    fr: 'Contactez-nous : appelez le +34 654 55 20 44, écrivez à info@eureqa3d.com, ou remplissez le formulaire de contact. Nous analysons votre cas et vous disons s\'il est réalisable. Sans engagement.',
+    de: 'Kontaktieren Sie uns: Anruf unter +34 654 55 20 44, E-Mail an info@eureqa3d.com, oder füllen Sie das Kontaktformular aus. Wir analysieren Ihren Fall und sagen Ihnen, ob er machbar ist. Unverbindlich.',
+    it: 'Contattaci: chiama il +34 654 55 20 44, scrivi a info@eureqa3d.com, oppure compila il modulo di contatto. Analizziamo il tuo caso e ti diciamo se è fattibile. Senza impegno.',
+    el: 'Επικοινωνήστε μαζί μας: κλήση στο +34 654 55 20 44, email στο info@eureqa3d.com, ή συμπληρώστε τη φόρμα επικοινωνίας. Αναλύουμε την περίπτωσή σας και σας λέμε αν είναι εφικτή. Χωρίς δέσμευση.'
+  },
+
+  '¿Tienes otra pregunta?': { en: 'Have another question?', fr: 'Vous avez une autre question ?', de: 'Haben Sie noch eine Frage?', it: 'Hai un\'altra domanda?', el: 'Έχετε άλλη ερώτηση;' },
+  'Ponte en contacto directo con nosotros. Te responderemos lo antes posible.': {
+    en: 'Get in direct touch with us. We\'ll get back to you as soon as possible.',
+    fr: 'Contactez-nous directement. Nous vous répondrons dans les plus brefs délais.',
+    de: 'Nehmen Sie direkt Kontakt mit uns auf. Wir antworten Ihnen so schnell wie möglich.',
+    it: 'Contattaci direttamente. Ti risponderemo il prima possibile.',
+    el: 'Επικοινωνήστε απευθείας μαζί μας. Θα σας απαντήσουμε το συντομότερο δυνατό.'
+  },
+  'Contactar': { en: 'Contact', fr: 'Contacter', de: 'Kontaktieren', it: 'Contatta', el: 'Επικοινωνία' },
+
+  'Cuéntanos tu caso: la impresión 3D tiene aplicación en prácticamente cualquier procedimiento que requiera planificación anatómica.': {
+    en: 'Tell us about your case: 3D printing has applications in practically any procedure that requires anatomical planning.',
+    fr: 'Parlez-nous de votre cas : l\'impression 3D s\'applique à pratiquement toute intervention nécessitant une planification anatomique.',
+    de: 'Erzählen Sie uns von Ihrem Fall: 3D-Druck lässt sich bei praktisch jedem Eingriff einsetzen, der eine anatomische Planung erfordert.',
+    it: 'Raccontaci il tuo caso: la stampa 3D si applica praticamente a qualsiasi procedura che richieda una pianificazione anatomica.',
+    el: 'Πείτε μας για την περίπτωσή σας: η τρισδιάστατη εκτύπωση εφαρμόζεται σχεδόν σε κάθε διαδικασία που απαιτεί ανατομικό σχεδιασμό.'
+  },
 };
 
   /* Elementos de contenido a traducir (clave = innerHTML normalizado) */
-  const RICH = 'h1,h2,h3,h4,h5,h6,p,li,button,.eyebrow,a.btn,.lbl,.model-spec';
+  const RICH = 'h1,h2,h3,h4,h5,h6,p,li,button,td,th,summary,.eyebrow,a.btn,.lbl,.model-spec,.big,.num,.more,.hero-demo-label';
 
   const ORIG = new WeakMap();
   const norm = (s) => s.replace(/\s+/g, ' ').trim();
