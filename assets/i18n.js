@@ -1960,7 +1960,15 @@
   function setLang(code) {
     if (!LANGS.some(x => x.code === code)) return;
     localStorage.setItem(STORAGE_KEY, code);
-    location.reload();
+    // Si la URL trae ?lang=, hay que quitarlo: si no, en la próxima carga
+    // volvería a ganar sobre la elección manual que se acaba de hacer.
+    const url = new URL(location.href);
+    if (url.searchParams.has('lang')) {
+      url.searchParams.delete('lang');
+      location.href = url.toString();
+    } else {
+      location.reload();
+    }
   }
 
   /* Traduce una cadena suelta (para textos generados por JS) */
