@@ -7,13 +7,17 @@
 (function () {
   const STORAGE_KEY = 'eureqa3d_lang';
 
+  /* Códigos de texto en vez de banderas emoji: el soporte de banderas-emoji
+     varía según SO/navegador (p.ej. Windows o Android no siempre las pintan
+     como bandera y muestran el código de país en su lugar), así que un
+     código de texto se ve igual en todos los dispositivos. */
   const LANGS = [
-    { code: 'es', label: 'Español',  flag: '🇪🇸' },
-    { code: 'en', label: 'English',  flag: '🇬🇧' },
-    { code: 'fr', label: 'Français', flag: '🇫🇷' },
-    { code: 'de', label: 'Deutsch',  flag: '🇩🇪' },
-    { code: 'it', label: 'Italiano', flag: '🇮🇹' },
-    { code: 'el', label: 'Ελληνικά', flag: '🇬🇷' },
+    { code: 'es', label: 'Español',  short: 'ES' },
+    { code: 'en', label: 'English',  short: 'EN' },
+    { code: 'fr', label: 'Français', short: 'FR' },
+    { code: 'de', label: 'Deutsch',  short: 'DE' },
+    { code: 'it', label: 'Italiano', short: 'IT' },
+    { code: 'el', label: 'Ελληνικά', short: 'EL' },
   ];
 
   const LOCALE = { es: 'es-ES', en: 'en-GB', fr: 'fr-FR', de: 'de-DE', it: 'it-IT', el: 'el-GR' };
@@ -185,12 +189,12 @@
       it: 'Sappiamo quanto è importante il tuo tempo. Lascia che ti aiutiamo a integrare la tecnologia 3D nella tua pratica clinica.',
       el: 'Γνωρίζουμε πόσο σημαντικός είναι ο χρόνος σας. Αφήστε μας να σας βοηθήσουμε να εντάξετε την τρισδιάστατη τεχνολογία στην κλινική σας πρακτική.' },
     'Contacta con nosotros': { en: 'Get in touch', fr: 'Contactez-nous', de: 'Kontaktieren Sie uns', it: 'Contattaci', el: 'Επικοινωνήστε μαζί μας' },
-    'Modelo anatómico 3D real de tu paciente, listo en <span>tiempo récord</span>': {
-      en: 'Real 3D anatomical model of your patient, ready in <span>record time</span>',
-      fr: 'Modèle anatomique 3D réel de votre patient, prêt en <span>temps record</span>',
-      de: 'Echtes 3D-Anatomiemodell Ihres Patienten, fertig in <span>Rekordzeit</span>',
-      it: 'Modello anatomico 3D reale del tuo paziente, pronto in <span>tempo record</span>',
-      el: 'Πραγματικό ανατομικό μοντέλο 3D του ασθενούς σας, έτοιμο σε <span>χρόνο-ρεκόρ</span>' },
+    'Modelo anatómico 3D de la patología de tu paciente, listo en <span>tiempo récord</span>': {
+      en: "3D anatomical model of your patient's pathology, ready in <span>record time</span>",
+      fr: 'Modèle anatomique 3D de la pathologie de votre patient, prêt en <span>temps record</span>',
+      de: '3D-Anatomiemodell der Pathologie Ihres Patienten, fertig in <span>Rekordzeit</span>',
+      it: 'Modello anatomico 3D della patologia del tuo paziente, pronto in <span>tempo record</span>',
+      el: 'Ανατομικό μοντέλο 3D της παθολογίας του ασθενούς σας, έτοιμο σε <span>χρόνο-ρεκόρ</span>' },
     'Sin compromiso: analizamos tu caso y te decimos si es viable.': {
       en: 'No commitment: we analyze your case and tell you if it is viable.',
       fr: "Sans engagement : nous analysons votre cas et vous disons s'il est réalisable.",
@@ -1918,9 +1922,39 @@
   const ORIG = new WeakMap();
   const norm = (s) => s.replace(/\s+/g, ' ').trim();
 
+  /* Idioma del navegador (navigator.languages), si coincide con uno soportado */
+  function detectBrowserLang() {
+    const navLangs = (navigator.languages && navigator.languages.length)
+      ? navigator.languages
+      : [navigator.language].filter(Boolean);
+    for (const nl of navLangs) {
+      const code = String(nl).slice(0, 2).toLowerCase();
+      if (LANGS.some(x => x.code === code)) return code;
+    }
+    return 'es';
+  }
+
+  /* Idioma inicial: ?lang= en la URL (para compartir enlaces en un idioma
+     concreto) > preferencia ya guardada > idioma del navegador > español.
+     Se calcula una sola vez por carga de página y se guarda para que el
+     resto de la navegación (sin ?lang=) mantenga el idioma elegido. */
+  function resolveInitialLang() {
+    const urlLang = new URLSearchParams(location.search).get('lang');
+    if (urlLang && LANGS.some(x => x.code === urlLang)) {
+      localStorage.setItem(STORAGE_KEY, urlLang);
+      return urlLang;
+    }
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored && LANGS.some(x => x.code === stored)) return stored;
+    const detected = detectBrowserLang();
+    localStorage.setItem(STORAGE_KEY, detected);
+    return detected;
+  }
+
+  const CURRENT_LANG = resolveInitialLang();
+
   function getLang() {
-    const l = localStorage.getItem(STORAGE_KEY);
-    return LANGS.some(x => x.code === l) ? l : 'es';
+    return CURRENT_LANG;
   }
 
   function setLang(code) {

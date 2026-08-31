@@ -61,7 +61,7 @@ function renderLangSwitch() {
   const cur = window.I18N ? window.I18N.getLang() : 'es';
   if (!langs.length) return '';
   return `<div class="lang-switch" role="group" aria-label="Idioma">${langs.map(l =>
-    `<button type="button" class="lang-btn${l.code === cur ? ' active' : ''}" data-lang="${l.code}" lang="${l.code}" title="${l.label}" aria-label="${l.label}">${l.flag}</button>`
+    `<button type="button" class="lang-btn${l.code === cur ? ' active' : ''}" data-lang="${l.code}" lang="${l.code}" title="${l.label}" aria-label="${l.label}">${l.short}</button>`
   ).join('')}</div>`;
 }
 
