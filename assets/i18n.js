@@ -189,11 +189,11 @@
       it: 'Sappiamo quanto è importante il tuo tempo. Lascia che ti aiutiamo a integrare la tecnologia 3D nella tua pratica clinica.',
       el: 'Γνωρίζουμε πόσο σημαντικός είναι ο χρόνος σας. Αφήστε μας να σας βοηθήσουμε να εντάξετε την τρισδιάστατη τεχνολογία στην κλινική σας πρακτική.' },
     'Contacta con nosotros': { en: 'Get in touch', fr: 'Contactez-nous', de: 'Kontaktieren Sie uns', it: 'Contattaci', el: 'Επικοινωνήστε μαζί μας' },
-    'Modelo anatómico 3D de la patología de tu paciente, listo en <span>tiempo récord</span>': {
+    'Modelo anatómico 3D de la patología de su paciente, listo en <span>tiempo récord</span>': {
       en: "3D anatomical model of your patient's pathology, ready in <span>record time</span>",
       fr: 'Modèle anatomique 3D de la pathologie de votre patient, prêt en <span>temps record</span>',
       de: '3D-Anatomiemodell der Pathologie Ihres Patienten, fertig in <span>Rekordzeit</span>',
-      it: 'Modello anatomico 3D della patologia del tuo paziente, pronto in <span>tempo record</span>',
+      it: 'Modello anatomico 3D della patologia del suo paziente, pronto in <span>tempo record</span>',
       el: 'Ανατομικό μοντέλο 3D της παθολογίας του ασθενούς σας, έτοιμο σε <span>χρόνο-ρεκόρ</span>' },
     'Sin compromiso: analizamos tu caso y te decimos si es viable.': {
       en: 'No commitment: we analyze your case and tell you if it is viable.',
