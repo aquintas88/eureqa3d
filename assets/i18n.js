@@ -1939,7 +1939,8 @@
      Se calcula una sola vez por carga de página y se guarda para que el
      resto de la navegación (sin ?lang=) mantenga el idioma elegido. */
   function resolveInitialLang() {
-    const urlLang = new URLSearchParams(location.search).get('lang');
+    const urlLangRaw = new URLSearchParams(location.search).get('lang');
+    const urlLang = urlLangRaw ? urlLangRaw.toLowerCase() : urlLangRaw;
     if (urlLang && LANGS.some(x => x.code === urlLang)) {
       localStorage.setItem(STORAGE_KEY, urlLang);
       return urlLang;
