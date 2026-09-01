@@ -1254,12 +1254,13 @@ app.delete('/api/messages/:id', requireAdminAPI, async (req, res, next) => {
   } catch (e) { next(e); }
 });
 
-/* ── Static files ────────────────────────────────────────────── */
-app.use((req, res, next) => {
-  if (req.path.startsWith('/views/') || req.path.startsWith('/db/')) return res.status(404).end();
-  next();
-});
-app.use(express.static(path.join(__dirname, '.')));
+/* ── Static files ─────────────────────────────────────────────
+   Lista blanca explícita: solo /assets (CSS/JS/imágenes/vídeo) y
+   los archivos sueltos de /public (robots.txt, sitemap.xml). Antes
+   se servía express.static(__dirname), lo que exponía por HTTP el
+   código fuente entero (server.js, package.json, node_modules...). */
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 /* ── Error handler ───────────────────────────────────────────── */
 app.use((err, req, res, next) => {
