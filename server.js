@@ -120,11 +120,11 @@ app.use((req, res, next) => {
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   res.setHeader('Content-Security-Policy',
     "default-src 'self'; " +
-    "script-src 'self' https://esm.sh https://www.googletagmanager.com; " +
-    "style-src 'self' 'unsafe-inline'; " +
+    "script-src 'self' 'sha256-cC6LU4SNZJZthQhdZkPk9yODvjSEAkL2AWVtiSROPbQ=' https://esm.sh https://www.googletagmanager.com; " +
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
     "img-src 'self' data:; " +
-    "font-src 'self'; " +
-    "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://accounts.google.com; " +
+    "font-src 'self' https://fonts.gstatic.com; " +
+    "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://accounts.google.com; " +
     "frame-ancestors 'none'"
   );
   next();
