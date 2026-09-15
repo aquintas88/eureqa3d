@@ -1,14 +1,12 @@
 'use strict';
-/* ── Google Analytics 4 — cableado a la espera del ID real ───────
-   Para activarlo: pon aquí abajo tu Measurement ID (G-XXXXXXXXXX).
-   Mientras esté vacío, este script no hace nada: no carga ningún
-   script externo, no pide consentimiento, no deja cookies.
+/* ── Google Analytics 4 ───────────────────────────────────────────
+   Propiedad "Eureqa3D" (cuenta Eureqa3DWeb), flujo web eureqa3d.com.
 
    El idioma seleccionado por el visitante (ver i18n.js) viaja como
    user property y como parámetro de página en cada carga, para poder
    segmentar el tráfico por idioma en GA4 aunque todas las versiones
    compartan la misma URL. */
-const GA_MEASUREMENT_ID = '';
+const GA_MEASUREMENT_ID = 'G-ZZF5KX5T19';
 const COOKIE_CONSENT_KEY = 'eureqa3d_cookie_consent'; // 'accepted' | 'rejected'
 
 /* Botón "cambiar mi elección" en /politica-cookies: borra la elección
